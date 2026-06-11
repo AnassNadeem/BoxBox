@@ -1,15 +1,32 @@
 """Extraction tests: leakage (the most important test in the repo), determinism,
-count bounds, and exclusion rules."""
+type quota, and exclusion rules."""
 
 from __future__ import annotations
 
+from collections import Counter
+
 from boxbox.extract.decision_points import (
+    _Candidate,
+    apply_type_quota,
     build_state,
     extract_decision_points,
     truncate_race,
 )
 
 PIT_LOSS = 20.0
+
+
+def make_candidates(dp_type: str, n: int) -> list[_Candidate]:
+    return [
+        _Candidate(
+            driver=f"D{i:02d}",
+            lap=10 + i,
+            dp_type=dp_type,
+            trigger="test",
+            relevant_gap_s=float(i),
+        )
+        for i in range(n)
+    ]
 
 
 def test_leakage_states_identical_without_future_laps(race, extraction_cfg):
@@ -43,13 +60,59 @@ def test_determinism(race, extraction_cfg):
     assert [dp.model_dump() for dp in a] == [dp.model_dump() for dp in b]
 
 
-def test_count_bounds(race, extraction_cfg):
+def test_quota_balanced_when_all_types_plentiful():
+    pool = make_candidates("A", 10) + make_candidates("B", 10) + make_candidates("C", 10)
+    picked = apply_type_quota(pool, cap=18, target=6)
+    assert Counter(c.dp_type for c in picked) == {"A": 6, "B": 6, "C": 6}
+
+
+def test_quota_redistributes_unused_slots_to_b_first():
+    pool = make_candidates("B", 18) + make_candidates("C", 8)  # no Type A available
+    picked = apply_type_quota(pool, cap=18, target=6)
+    assert Counter(c.dp_type for c in picked) == {"B": 12, "C": 6}
+
+
+def test_quota_redistributes_to_c_before_a():
+    pool = make_candidates("A", 10) + make_candidates("B", 2) + make_candidates("C", 10)
+    picked = apply_type_quota(pool, cap=18, target=6)
+    # B is short by 4; C absorbs all 4 before A gets any
+    assert Counter(c.dp_type for c in picked) == {"A": 6, "B": 2, "C": 10}
+
+
+def test_quota_keeps_closest_battles_within_type():
+    pool = make_candidates("A", 10) + make_candidates("B", 10) + make_candidates("C", 10)
+    picked = apply_type_quota(pool, cap=18, target=6)
+    for dp_type in "ABC":
+        kept_gaps = sorted(c.relevant_gap_s for c in picked if c.dp_type == dp_type)
+        assert kept_gaps == [0.0, 1.0, 2.0, 3.0, 4.0, 5.0]
+
+
+def test_quota_keeps_everything_under_cap():
+    pool = make_candidates("A", 2) + make_candidates("B", 3) + make_candidates("C", 1)
+    picked = apply_type_quota(pool, cap=18, target=6)
+    assert len(picked) == 6
+
+
+def test_count_bounds_respect_quota(race, extraction_cfg):
     dps = extract_decision_points(race, PIT_LOSS, extraction_cfg)
     cap = int(extraction_cfg["max_dp_per_race"])
+    target = int(extraction_cfg["quota_per_type"])
     assert 1 <= len(dps) <= cap
     # dedupe: at most one DP per (driver, lap)
     keys = [(dp.driver, dp.lap) for dp in dps]
     assert len(keys) == len(set(keys))
+
+    # per-type availability with the cap lifted, then the expected quota allocation
+    uncapped = {**extraction_cfg, "max_dp_per_race": 10_000, "quota_per_type": 10_000}
+    avail = Counter(dp.dp_type for dp in extract_decision_points(race, PIT_LOSS, uncapped))
+    take = {t: min(target, avail.get(t, 0)) for t in "ABC"}
+    leftover = min(cap, sum(avail.values())) - sum(take.values())
+    for t in ("B", "C", "A"):
+        extra = min(leftover, avail.get(t, 0) - take[t])
+        take[t] += extra
+        leftover -= extra
+    got = Counter(dp.dp_type for dp in dps)
+    assert {t: got.get(t, 0) for t in "ABC"} == take
 
 
 def test_exclusion_windows(race, extraction_cfg):

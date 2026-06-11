@@ -30,7 +30,7 @@ from boxbox.data.schemas import (
 )
 
 _STATUS_PRIORITY = {"RED": 4, "SC": 3, "VSC": 2, "YELLOW": 1, "GREEN": 0}
-_TYPE_PRIORITY = {"B": 0, "C": 1, "A": 2}  # lower = kept first
+_TYPE_PRIORITY = {"B": 0, "C": 1, "A": 2}  # lower = kept first (dedupe + redistribution)
 
 
 class RaceIndex:
@@ -188,6 +188,39 @@ def _is_lapped(idx: RaceIndex, driver: str, t: int) -> bool:
 # ------------------------------------------------------------------------- extraction
 
 
+def apply_type_quota(survivors: list[_Candidate], cap: int, target: int) -> list[_Candidate]:
+    """Select up to `cap` candidates targeting `target` per type (A/B/C).
+
+    A type with fewer than `target` available donates its unused slots to the
+    remaining types in priority order B > C > A. Within a type the closest
+    battles are kept first, with stable (lap, driver) tie-breakers.
+    """
+    by_type: dict[str, list[_Candidate]] = {"A": [], "B": [], "C": []}
+    for cand in survivors:
+        by_type[cand.dp_type].append(cand)
+    for group in by_type.values():
+        group.sort(key=lambda c: (c.relevant_gap_s, c.lap, c.driver))
+
+    take = {t: min(target, len(group)) for t, group in by_type.items()}
+    for t in sorted(by_type, key=lambda t: _TYPE_PRIORITY[t], reverse=True):  # shed A, C, B
+        excess = sum(take.values()) - cap
+        if excess <= 0:
+            break
+        take[t] -= min(excess, take[t])  # only reachable if cap < 3 * target
+    leftover = cap - sum(take.values())
+    for t in sorted(by_type, key=lambda t: _TYPE_PRIORITY[t]):  # B, then C, then A
+        if leftover <= 0:
+            break
+        extra = min(leftover, len(by_type[t]) - take[t])
+        take[t] += extra
+        leftover -= extra
+
+    picked: list[_Candidate] = []
+    for t in ("A", "B", "C"):
+        picked.extend(by_type[t][: take[t]])
+    return picked
+
+
 def extract_decision_points(
     race: RaceData, pit_loss_s: float, cfg: dict[str, Any]
 ) -> list[DecisionPoint]:
@@ -288,9 +321,12 @@ def extract_decision_points(
             cand.relevant_gap_s = min(gaps)
         survivors.append(cand)
 
-    # --- cap: priority B > C > A, then closeness of the battle; stable tie-breakers
-    survivors.sort(key=lambda c: (_TYPE_PRIORITY[c.dp_type], c.relevant_gap_s, c.lap, c.driver))
-    survivors = survivors[: int(cfg.get("max_dp_per_race", 18))]
+    # --- cap with per-type quota; within a type, closest battles first
+    survivors = apply_type_quota(
+        survivors,
+        cap=int(cfg.get("max_dp_per_race", 18)),
+        target=int(cfg.get("quota_per_type", 6)),
+    )
     survivors.sort(key=lambda c: (c.lap, c.driver))
 
     # --- assemble DecisionPoints with hindsight team action

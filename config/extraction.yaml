@@ -10,7 +10,9 @@ type_c:
   rival_gap_s: 3.5           # |gap| to count a car as a direct rival
 
 dedupe_priority: [B, C, A]   # higher first for same (car, lap)
-max_dp_per_race: 18          # cap, trimmed by priority then battle closeness
+max_dp_per_race: 18          # cap; quota_per_type slots per type within it
+quota_per_type: 6            # target DPs per type (A/B/C); a type short of this
+                             # donates unused slots to the others, B > C > A first
 
 exclude:
   first_laps: 3              # never emit at lap t <= 3
