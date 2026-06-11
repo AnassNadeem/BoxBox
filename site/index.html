@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BOXBOX — F1 Strategy Benchmark for LLMs</title>
+<style>
+  :root {
+    --bg: #0e0e13; --panel: #16161e; --panel2: #1d1d27; --border: #2a2a38;
+    --text: #e8e8ee; --muted: #9a9aac; --accent: #e10600; --good: #27c47d; --bad: #ff5a5a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font: 15px/1.55 "Segoe UI", system-ui, -apple-system, sans-serif;
+    padding-bottom: 80px;
+  }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+  header { border-bottom: 1px solid var(--border); padding: 34px 0 26px; margin-bottom: 28px;
+    background: linear-gradient(180deg, #15050a 0%, var(--bg) 100%); }
+  h1 { font-size: 34px; letter-spacing: 1px; }
+  h1 .box { color: var(--accent); }
+  .tagline { color: var(--muted); margin-top: 6px; max-width: 720px; }
+  .meta { margin-top: 12px; font-size: 13px; color: var(--muted); }
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 12px;
+    font-weight: 600; margin-left: 8px; vertical-align: 1px; }
+  .badge.mock { background: #4a3206; color: #ffc862; border: 1px solid #6b4a09; }
+  .badge.real { background: #0a3b25; color: #4fe3a1; border: 1px solid #14573a; }
+  h2 { font-size: 20px; margin: 36px 0 14px; }
+  table { width: 100%; border-collapse: collapse; background: var(--panel);
+    border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  th, td { padding: 10px 12px; text-align: right; white-space: nowrap; }
+  th:nth-child(2), td:nth-child(2) { text-align: left; }
+  th:first-child, td:first-child { text-align: center; width: 44px; }
+  thead th { background: var(--panel2); color: var(--muted); font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.6px; cursor: pointer; user-select: none; }
+  thead th:hover { color: var(--text); }
+  thead th .arrow { font-size: 10px; margin-left: 3px; }
+  tbody tr { border-top: 1px solid var(--border); }
+  tbody tr:hover { background: var(--panel2); }
+  td.model { font-weight: 600; }
+  td.delta { color: var(--accent); font-weight: 600; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 14px; margin-top: 14px; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 18px; }
+  .card h3 { font-size: 16px; margin-bottom: 10px; }
+  .card .rank { color: var(--muted); font-weight: 400; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; }
+  .stat .k { font-size: 11px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.5px; }
+  .stat .v { font-size: 19px; font-weight: 650; }
+  .stat .v.good { color: var(--good); }
+  .stat .v.warn { color: #ffc862; }
+  .method { background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
+    padding: 20px 22px; color: var(--muted); }
+  .method p { margin-bottom: 10px; }
+  .method b { color: var(--text); }
+  .method code { background: var(--panel2); padding: 1px 6px; border-radius: 4px;
+    font-size: 13px; color: var(--text); }
+  #loader { border: 1px dashed var(--border); border-radius: 10px; padding: 26px;
+    text-align: center; color: var(--muted); display: none; }
+  #loader input { margin-top: 12px; }
+  footer { margin-top: 44px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1><span class="box">BOX</span>BOX <span id="modeBadge"></span></h1>
+    <div class="tagline">Can frontier LLMs call a Formula 1 race? Real decision points from
+      2026 races — pit or stay, which compound — scored against a hindsight-optimal
+      strategy from a race simulator.</div>
+    <div class="meta" id="meta"></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div id="loader">
+    <div>Could not load <code>leaderboard.json</code> automatically (your browser blocks
+    local file reads). Pick the file manually:</div>
+    <input type="file" accept=".json" id="filePick">
+  </div>
+
+  <div id="content" style="display:none">
+    <h2>Leaderboard</h2>
+    <table id="board">
+      <thead><tr>
+        <th>#</th>
+        <th data-k="model">Model</th>
+        <th data-k="mean_delta_s">Mean Δ vs optimal (s)<span class="arrow"></span></th>
+        <th data-k="median_delta_s">Median Δ (s)<span class="arrow"></span></th>
+        <th data-k="beat_team_pct">Beat team %<span class="arrow"></span></th>
+        <th data-k="agree_team_pct">Agree team %<span class="arrow"></span></th>
+        <th data-k="invalid_pct">Invalid %<span class="arrow"></span></th>
+        <th data-k="flip_rate_pct">Flip rate %<span class="arrow"></span></th>
+        <th data-k="n_calls">Calls<span class="arrow"></span></th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Model cards</h2>
+    <div class="cards" id="cards"></div>
+
+    <h2>Methodology</h2>
+    <div class="method">
+      <p><b>Decision points.</b> Rule-extracted from race timing data, never hand-picked:
+      pit-stop neighborhoods (the laps around every real stop), safety-car and VSC
+      deployments (top-10 cars), and undercut threats (a rival within 3.5s pits). Each
+      point freezes exactly what a strategist knew entering that lap — nothing from the
+      future leaks in, which is enforced by tests.</p>
+      <p><b>Scoring.</b> A per-race simulator fits each car's tyre-degradation curve and
+      pit loss from that race's own laps, then evaluates every candidate strategy
+      (pit now on any compound / stay and stop later) for the focal car.
+      <code>delta</code> = model's strategy time − hindsight-optimal strategy time;
+      0 is a perfect call. <b>Beat team %</b>: how often the model's call beats what the
+      real pit wall did. <b>Flip rate</b>: how often repeated identical prompts get
+      different answers. <b>Invalid %</b>: responses that failed strict JSON parsing.</p>
+      <p><b>Contamination control.</b> 2026 races post-date every model's training data.
+      The same pipeline runs on 2024–25 races; a model scoring much better on old races
+      than new ones is probably reciting, not reasoning.</p>
+      <p><b>Caveat.</b> The optimum is computed with hindsight (it knows future safety
+      cars); models decide ex-ante like a real strategist. Deltas measure distance from
+      hindsight-perfect, so even great strategists score above zero.</p>
+    </div>
+
+    <footer id="footer"></footer>
+  </div>
+</div>
+
+<script>
+"use strict";
+let BOARD = null;
+let sortKey = "mean_delta_s", sortAsc = true;
+
+function fmt(v) { return (v === null || v === undefined) ? "–" : v; }
+
+function render() {
+  const rows = [...BOARD.models];
+  rows.sort((a, b) => {
+    const x = a[sortKey], y = b[sortKey];
+    if (x === null || x === undefined) return 1;
+    if (y === null || y === undefined) return -1;
+    if (typeof x === "string") return sortAsc ? x.localeCompare(y) : y.localeCompare(x);
+    return sortAsc ? x - y : y - x;
+  });
+
+  const tbody = document.querySelector("#board tbody");
+  tbody.innerHTML = rows.map((r, i) => `
+    <tr>
+      <td>${i + 1}</td>
+      <td class="model">${r.model}</td>
+      <td class="delta">${fmt(r.mean_delta_s)}</td>
+      <td>${fmt(r.median_delta_s)}</td>
+      <td>${fmt(r.beat_team_pct)}</td>
+      <td>${fmt(r.agree_team_pct)}</td>
+      <td>${fmt(r.invalid_pct)}</td>
+      <td>${fmt(r.flip_rate_pct)}</td>
+      <td>${fmt(r.n_calls)}</td>
+    </tr>`).join("");
+
+  document.querySelectorAll("thead th[data-k]").forEach(th => {
+    th.querySelector(".arrow") && (th.querySelector(".arrow").textContent =
+      th.dataset.k === sortKey ? (sortAsc ? "▲" : "▼") : "");
+  });
+
+  // cards keep leaderboard (mean delta) order
+  const byDelta = [...BOARD.models].sort((a, b) =>
+    (a.mean_delta_s ?? 1e9) - (b.mean_delta_s ?? 1e9));
+  document.getElementById("cards").innerHTML = byDelta.map((r, i) => `
+    <div class="card">
+      <h3>${r.model} <span class="rank">#${i + 1}</span></h3>
+      <div class="stats">
+        <div class="stat"><div class="k">Mean Δ vs optimal</div>
+          <div class="v">${fmt(r.mean_delta_s)}s</div></div>
+        <div class="stat"><div class="k">Beat team</div>
+          <div class="v good">${fmt(r.beat_team_pct)}%</div></div>
+        <div class="stat"><div class="k">Invalid output</div>
+          <div class="v warn">${fmt(r.invalid_pct)}%</div></div>
+        <div class="stat"><div class="k">Flip rate</div>
+          <div class="v">${fmt(r.flip_rate_pct)}%</div></div>
+      </div>
+    </div>`).join("");
+
+  const mode = BOARD.mode || "mock";
+  const badge = document.getElementById("modeBadge");
+  badge.className = "badge " + mode;
+  badge.textContent = mode === "mock" ? "MOCK DATA" : "LIVE RESULTS";
+  document.getElementById("meta").textContent =
+    `${BOARD.n_decision_points} decision points · races: ${BOARD.races.join(", ")} · generated ${BOARD.generated_utc}`;
+  document.getElementById("footer").textContent =
+    "BOXBOX — benchmark pipeline by Anas + Claude. Mock numbers validate plumbing, not model skill.";
+  document.getElementById("content").style.display = "block";
+  document.getElementById("loader").style.display = "none";
+}
+
+document.querySelectorAll("thead th[data-k]").forEach(th => {
+  th.addEventListener("click", () => {
+    const k = th.dataset.k;
+    if (sortKey === k) sortAsc = !sortAsc; else { sortKey = k; sortAsc = k === "model" ? true : true; }
+    render();
+  });
+});
+
+document.getElementById("filePick").addEventListener("change", ev => {
+  const f = ev.target.files[0];
+  if (!f) return;
+  f.text().then(t => { BOARD = JSON.parse(t); render(); });
+});
+
+(async function init() {
+  for (const path of ["./leaderboard.json", "../outputs/leaderboard.json"]) {
+    try {
+      const resp = await fetch(path);
+      if (resp.ok) { BOARD = await resp.json(); render(); return; }
+    } catch (e) { /* try next path / fall through to manual picker */ }
+  }
+  document.getElementById("loader").style.display = "block";
+})();
+</script>
+</body>
+</html>

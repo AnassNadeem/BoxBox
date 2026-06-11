@@ -147,12 +147,12 @@ class LiveLoop:
                     else f"stay out, {driver} holds track position"
                 )
                 draft = (
-                    f' — DRAFT POST: "Lap {lap} — {model["name"]} says {call_text}. '
+                    f' - DRAFT POST: "Lap {lap} - {model["name"]} says {call_text}. '
                     f'Rationale: {decision.rationale}"'
                 )
             line = (
                 f"**Lap {lap} {driver}** [{dp_type}: {trigger}] state `{state_hash}` "
-                f"— {model['name']} → {verdict}{draft}"
+                f"- {model['name']} -> {verdict}{draft}"
             )
             self.console.print(line)
             self._log(line)

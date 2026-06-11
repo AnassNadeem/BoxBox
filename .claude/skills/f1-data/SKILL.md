@@ -71,3 +71,16 @@ No auth for historic data. Filters are query params; comparison ops like `date>=
   Japan, Miami, Canada, Monaco. Barcelona GP is 2026-06-14.
 - `session.total_laps` can be fewer than scheduled if the race was shortened — trust it
   over the schedule.
+- Several 2026 races (Australia, China, Canada) fail FastF1's lap-accuracy check for
+  individual drivers ("all laps marked as inaccurate") — do not gate clean-lap filters
+  on `IsAccurate`; use green-flag/no-in-out + MAD outlier filtering instead.
+- Miami 2026: `weather_data.Rainfall` has 3 True samples but they are AFTER the race
+  ended (session clock 02:39+; race ends ~02:28). `weather.rain=True` for the race is
+  technically right but no race lap was wet. Check lap-window overlap, not the session flag.
+- When a driver's clean laps on a compound all come from ONE stint, tyre_age and
+  lap_number are collinear → 3-param lstsq explodes (predicts ~0s laps). Drop the
+  fuel term in that case (handled in `boxbox.sim.degradation._fit`).
+- Monaco 2026 race had 89 pit-in records (heavy attrition/stop count) — sanity-check
+  stop-derived metrics against this kind of outlier race.
+- Windows console (cp1252) cannot print '→' (U+2192): rich console output crashes in
+  redirected/legacy terminals. Keep console strings ASCII; files are written UTF-8.
