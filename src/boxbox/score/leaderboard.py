@@ -26,8 +26,9 @@ def aggregate(scores: list[Score], mode: str = "mock") -> dict[str, Any]:
 
     rows: list[dict[str, Any]] = []
     for model, ss in sorted(by_model.items()):
-        valid = [s for s in ss if not s.invalid and s.delta_vs_optimal_s is not None]
-        deltas = [s.delta_vs_optimal_s for s in valid]
+        valid = [s for s in ss if not s.invalid and s.delta_exante_s is not None]
+        deltas = [s.delta_exante_s for s in valid]
+        deltas_hind = [s.delta_hindsight_s for s in valid if s.delta_hindsight_s is not None]
 
         # consistency flip rate: same dp answered differently across repeats
         by_dp: dict[str, set[str]] = {}
@@ -46,7 +47,7 @@ def aggregate(scores: list[Score], mode: str = "mock") -> dict[str, Any]:
         ):
             groups: dict[str, list[float]] = {}
             for s in valid:
-                groups.setdefault(key_fn(s), []).append(s.delta_vs_optimal_s)  # type: ignore[arg-type]
+                groups.setdefault(key_fn(s), []).append(s.delta_exante_s)  # type: ignore[arg-type]
             for k, v in groups.items():
                 target[k] = round(statistics.mean(v), 3)
 
@@ -55,18 +56,26 @@ def aggregate(scores: list[Score], mode: str = "mock") -> dict[str, Any]:
                 "model": model,
                 "n_calls": len(ss),
                 "n_valid": len(valid),
-                "mean_delta_s": round(statistics.mean(deltas), 3) if deltas else None,
-                "median_delta_s": round(statistics.median(deltas), 3) if deltas else None,
+                # PRIMARY metric: delta vs the ex-ante (no-future-SC) oracle
+                "mean_delta_exante_s": round(statistics.mean(deltas), 3) if deltas else None,
+                "median_delta_exante_s": round(statistics.median(deltas), 3) if deltas else None,
+                # secondary context: delta vs the hindsight oracle
+                "mean_delta_hindsight_s": (
+                    round(statistics.mean(deltas_hind), 3) if deltas_hind else None
+                ),
+                "median_delta_hindsight_s": (
+                    round(statistics.median(deltas_hind), 3) if deltas_hind else None
+                ),
                 "beat_team_pct": _pct(sum(1 for s in valid if s.beat_team), len(valid)),
                 "agree_team_pct": _pct(sum(1 for s in valid if s.agree_team_action), len(valid)),
                 "invalid_pct": _pct(sum(1 for s in ss if s.invalid), len(ss)),
                 "flip_rate_pct": _pct(len(flipped), len(multi)),
-                "per_race_mean_delta_s": per_race,
-                "per_season_mean_delta_s": per_season,
+                "per_race_mean_delta_exante_s": per_race,
+                "per_season_mean_delta_exante_s": per_season,
             }
         )
 
-    rows.sort(key=lambda r: (r["mean_delta_s"] is None, r["mean_delta_s"]))
+    rows.sort(key=lambda r: (r["mean_delta_exante_s"] is None, r["mean_delta_exante_s"]))
     return {
         "generated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "mode": mode,
@@ -87,12 +96,17 @@ def to_markdown(board: dict[str, Any]) -> str:
     if board["mode"] == "mock":
         lines += ["> **Mock results.** Numbers validate the pipeline, not model skill.", ""]
     lines += [
-        "| # | Model | Mean delta vs optimal (s) | Median (s) | Beat team % | Agree team % | Invalid % | Flip rate % | Calls |",
-        "|---|-------|--------------------------:|-----------:|------------:|-------------:|----------:|------------:|------:|",
+        "| # | Model | Mean delta vs ex-ante optimal (s) | Median (s) | "
+        "Mean delta vs hindsight (s) | Beat team % | Agree team % | Invalid % | "
+        "Flip rate % | Calls |",
+        "|---|-------|----------------------------------:|-----------:|"
+        "----------------------------:|------------:|-------------:|----------:|"
+        "------------:|------:|",
     ]
     for i, r in enumerate(board["models"], start=1):
         lines.append(
-            f"| {i} | {r['model']} | {r['mean_delta_s']} | {r['median_delta_s']} | "
+            f"| {i} | {r['model']} | {r['mean_delta_exante_s']} | "
+            f"{r['median_delta_exante_s']} | {r['mean_delta_hindsight_s']} | "
             f"{r['beat_team_pct']} | {r['agree_team_pct']} | {r['invalid_pct']} | "
             f"{r['flip_rate_pct']} | {r['n_calls']} |"
         )
@@ -113,8 +127,10 @@ def write_outputs(board: dict[str, Any], out_dir: Path = OUTPUTS_DIR) -> list[Pa
         "model",
         "n_calls",
         "n_valid",
-        "mean_delta_s",
-        "median_delta_s",
+        "mean_delta_exante_s",
+        "median_delta_exante_s",
+        "mean_delta_hindsight_s",
+        "median_delta_hindsight_s",
         "beat_team_pct",
         "agree_team_pct",
         "invalid_pct",

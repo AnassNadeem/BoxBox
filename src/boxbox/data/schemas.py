@@ -190,9 +190,11 @@ class Score(BaseModel):
     action: Optional[Action] = None
     compound: Optional[Compound] = None
     sim_model_s: Optional[float] = None
-    sim_optimal_s: float
+    sim_optimal_s: float  # hindsight oracle (knows future SC/VSC)
+    sim_exante_optimal_s: float  # realized time of the ex-ante (no-future-SC) plan
     sim_team_s: float
-    delta_vs_optimal_s: Optional[float] = None  # sim(model) - sim(optimal), >= 0
+    delta_exante_s: Optional[float] = None  # PRIMARY: sim(model) - sim(exante optimal)
+    delta_hindsight_s: Optional[float] = None  # secondary: sim(model) - sim(optimal), >= 0
     delta_vs_team_s: Optional[float] = None  # sim(model) - sim(team)
     beat_team: Optional[bool] = None  # strictly faster than the real team call
     agree_team_action: Optional[bool] = None  # PIT/STAY matches the team
@@ -201,3 +203,6 @@ class Score(BaseModel):
     optimal_action: Action
     optimal_compound: Optional[Compound] = None
     optimal_stop_lap: Optional[int] = None
+    exante_action: Action  # the ex-ante oracle's call at lap t
+    exante_compound: Optional[Compound] = None
+    exante_stop_lap: Optional[int] = None

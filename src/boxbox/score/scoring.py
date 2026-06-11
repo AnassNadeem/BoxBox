@@ -1,4 +1,5 @@
-"""Per-call scoring: simulator delta vs hindsight-optimal, plus team-relative metrics."""
+"""Per-call scoring: simulator deltas vs the ex-ante (primary) and hindsight
+(secondary) oracles, plus team-relative metrics."""
 
 from __future__ import annotations
 
@@ -33,11 +34,15 @@ def score_call(dp: DecisionPoint, ev: DPEvaluation, result: CallResult) -> Score
         model_name=result.model_name,
         repeat_index=result.repeat_index,
         sim_optimal_s=round(ev.sim_optimal_s, 3),
+        sim_exante_optimal_s=round(ev.sim_exante_optimal_s, 3),
         sim_team_s=round(ev.sim_team_s, 3),
         team_action=dp.team_action,
         optimal_action=ev.optimal_action,
         optimal_compound=ev.optimal_compound,
         optimal_stop_lap=ev.optimal_stop_lap,
+        exante_action=ev.exante_action,
+        exante_compound=ev.exante_compound,
+        exante_stop_lap=ev.exante_stop_lap,
     )
     if result.invalid or result.decision is None:
         return Score(invalid=True, **base)
@@ -56,7 +61,8 @@ def score_call(dp: DecisionPoint, ev: DPEvaluation, result: CallResult) -> Score
         action=decision.action,
         compound=decision.compound,
         sim_model_s=round(value, 3),
-        delta_vs_optimal_s=round(value - ev.sim_optimal_s, 3),
+        delta_exante_s=round(value - ev.sim_exante_optimal_s, 3),
+        delta_hindsight_s=round(value - ev.sim_optimal_s, 3),
         delta_vs_team_s=round(value - ev.sim_team_s, 3),
         beat_team=value < ev.sim_team_s - 1e-9,
         agree_team_action=agree_action,

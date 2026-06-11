@@ -91,6 +91,40 @@ def test_optimal_never_worse_than_team_or_any_action(race, extraction_cfg):
             assert ev.sim_optimal_s <= value + tol
 
 
+def test_exante_optimal_never_better_than_hindsight(race, extraction_cfg):
+    """The ex-ante plan, valued in the realized race, can never beat the
+    hindsight optimum (which minimizes exactly that realized value)."""
+    deg = DegradationModel(race)
+    sim = RaceSimulator(race, deg, pit_loss_s=PIT_LOSS, sc_pit_factor=0.55)
+    dps = extract_decision_points(race, PIT_LOSS, extraction_cfg)
+    assert dps
+    for dp in dps:
+        ev = evaluate_decision_point(dp, sim)
+        assert ev.sim_exante_optimal_s >= ev.sim_optimal_s - 1e-6
+
+
+def test_exante_rollout_assumes_green_future(race):
+    """With the SC on laps 9-10 unknown, the ex-ante rollout from lap 8 must be
+    faster than the hindsight rollout that charges the slow SC laps."""
+    deg = DegradationModel(race)
+    sim = RaceSimulator(race, deg, pit_loss_s=PIT_LOSS, sc_pit_factor=0.55)
+    hindsight = sim.rollout("AAA", 8, "MEDIUM", 7, [])
+    exante = sim.rollout("AAA", 8, "MEDIUM", 7, [], assume_green_after=8)
+    assert exante < hindsight
+
+
+def test_exante_rollout_keeps_current_lap_status(race):
+    """A stop on the decision lap itself (SC lap 9) keeps the SC pit discount in
+    ex-ante mode: the current track status is known, only the future is not."""
+    deg = DegradationModel(race)
+    sim = RaceSimulator(race, deg, pit_loss_s=PIT_LOSS, sc_pit_factor=0.55)
+    no_stop = sim.rollout("AAA", 9, "MEDIUM", 8, [], assume_green_after=9)
+    stop_now = sim.rollout("AAA", 9, "MEDIUM", 8, [(9, "HARD")], assume_green_after=9)
+    added = stop_now - no_stop
+    # full pit loss would be ~20s; the SC discount caps the addition well below it
+    assert added < PIT_LOSS * 0.55 + 2.0
+
+
 def test_sc_laps_use_field_median(race):
     """Rollout over the synthetic SC laps (9-10) must charge the slow SC pace."""
     deg = DegradationModel(race)

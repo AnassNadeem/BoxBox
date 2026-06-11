@@ -34,13 +34,19 @@ def test_end_to_end_mock(tmp_path, race, extraction_cfg, run_cfg):
     valid = [s for s in scores if not s.invalid]
     assert valid
     for s in valid:
-        assert s.delta_vs_optimal_s is not None and s.delta_vs_optimal_s >= -1e-6
+        assert s.delta_hindsight_s is not None and s.delta_hindsight_s >= -1e-6
+        assert s.delta_exante_s is not None
+        # both deltas share the realized-world currency, so the ex-ante delta
+        # is never larger than the hindsight delta (its baseline is never faster)
+        assert s.delta_exante_s <= s.delta_hindsight_s + 1e-6
         assert s.optimal_action in ("PIT", "STAY")
+        assert s.exante_action in ("PIT", "STAY")
 
     board = aggregate(scores, mode="mock")
     assert {m["model"] for m in board["models"]} == {"mock-a", "mock-b"}
     for row in board["models"]:
-        assert row["mean_delta_s"] is not None
+        assert row["mean_delta_exante_s"] is not None
+        assert row["mean_delta_hindsight_s"] is not None
         assert row["invalid_pct"] is not None
         assert row["flip_rate_pct"] is not None  # repeats=3 makes flips measurable
 

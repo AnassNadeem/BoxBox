@@ -69,8 +69,9 @@
   <div class="wrap">
     <h1><span class="box">BOX</span>BOX <span id="modeBadge"></span></h1>
     <div class="tagline">Can frontier LLMs call a Formula 1 race? Real decision points from
-      2026 races — pit or stay, which compound — scored against a hindsight-optimal
-      strategy from a race simulator.</div>
+      2026 races — pit or stay, which compound — scored against an ex-ante-optimal
+      strategy from a race simulator (no future safety-car knowledge), with a
+      hindsight-optimal oracle as context.</div>
     <div class="meta" id="meta"></div>
   </div>
 </header>
@@ -88,8 +89,9 @@
       <thead><tr>
         <th>#</th>
         <th data-k="model">Model</th>
-        <th data-k="mean_delta_s">Mean Δ vs optimal (s)<span class="arrow"></span></th>
-        <th data-k="median_delta_s">Median Δ (s)<span class="arrow"></span></th>
+        <th data-k="mean_delta_exante_s">Mean Δ vs ex-ante optimal (s)<span class="arrow"></span></th>
+        <th data-k="median_delta_exante_s">Median Δ (s)<span class="arrow"></span></th>
+        <th data-k="mean_delta_hindsight_s">Mean Δ vs hindsight (s)<span class="arrow"></span></th>
         <th data-k="beat_team_pct">Beat team %<span class="arrow"></span></th>
         <th data-k="agree_team_pct">Agree team %<span class="arrow"></span></th>
         <th data-k="invalid_pct">Invalid %<span class="arrow"></span></th>
@@ -111,17 +113,24 @@
       future leaks in, which is enforced by tests.</p>
       <p><b>Scoring.</b> A per-race simulator fits each car's tyre-degradation curve and
       pit loss from that race's own laps, then evaluates every candidate strategy
-      (pit now on any compound / stay and stop later) for the focal car.
-      <code>delta</code> = model's strategy time − hindsight-optimal strategy time;
-      0 is a perfect call. <b>Beat team %</b>: how often the model's call beats what the
+      (pit now on any compound / stay and stop later) for the focal car against two
+      oracles. The headline <code>Δ ex-ante</code> compares the model to the best
+      strategy choosable <i>without knowing future safety cars</i> — the same
+      information the model has; 0 means matching a perfect ex-ante strategist, and
+      negative is possible when a call happens to beat the ex-ante plan in the race
+      as it actually unfolded. <code>Δ hindsight</code> compares to the
+      retrospectively perfect strategy (knows every future SC/VSC) as context.
+      <b>Beat team %</b>: how often the model's call beats what the
       real pit wall did. <b>Flip rate</b>: how often repeated identical prompts get
       different answers. <b>Invalid %</b>: responses that failed strict JSON parsing.</p>
       <p><b>Contamination control.</b> 2026 races post-date every model's training data.
       The same pipeline runs on 2024–25 races; a model scoring much better on old races
       than new ones is probably reciting, not reasoning.</p>
-      <p><b>Caveat.</b> The optimum is computed with hindsight (it knows future safety
-      cars); models decide ex-ante like a real strategist. Deltas measure distance from
-      hindsight-perfect, so even great strategists score above zero.</p>
+      <p><b>Caveat.</b> Both oracles share the simulator's fitted lap-time models; the
+      ex-ante oracle assumes green-flag racing after the decision lap (it keeps the
+      current lap's known track status, which models also see). All strategies are
+      valued in the race as it really unfolded, so the ex-ante optimum is never
+      faster than the hindsight optimum.</p>
     </div>
 
     <footer id="footer"></footer>
@@ -131,7 +140,7 @@
 <script>
 "use strict";
 let BOARD = null;
-let sortKey = "mean_delta_s", sortAsc = true;
+let sortKey = "mean_delta_exante_s", sortAsc = true;
 
 function fmt(v) { return (v === null || v === undefined) ? "–" : v; }
 
@@ -150,8 +159,9 @@ function render() {
     <tr>
       <td>${i + 1}</td>
       <td class="model">${r.model}</td>
-      <td class="delta">${fmt(r.mean_delta_s)}</td>
-      <td>${fmt(r.median_delta_s)}</td>
+      <td class="delta">${fmt(r.mean_delta_exante_s)}</td>
+      <td>${fmt(r.median_delta_exante_s)}</td>
+      <td>${fmt(r.mean_delta_hindsight_s)}</td>
       <td>${fmt(r.beat_team_pct)}</td>
       <td>${fmt(r.agree_team_pct)}</td>
       <td>${fmt(r.invalid_pct)}</td>
@@ -164,15 +174,17 @@ function render() {
       th.dataset.k === sortKey ? (sortAsc ? "▲" : "▼") : "");
   });
 
-  // cards keep leaderboard (mean delta) order
+  // cards keep leaderboard (mean ex-ante delta) order
   const byDelta = [...BOARD.models].sort((a, b) =>
-    (a.mean_delta_s ?? 1e9) - (b.mean_delta_s ?? 1e9));
+    (a.mean_delta_exante_s ?? 1e9) - (b.mean_delta_exante_s ?? 1e9));
   document.getElementById("cards").innerHTML = byDelta.map((r, i) => `
     <div class="card">
       <h3>${r.model} <span class="rank">#${i + 1}</span></h3>
       <div class="stats">
-        <div class="stat"><div class="k">Mean Δ vs optimal</div>
-          <div class="v">${fmt(r.mean_delta_s)}s</div></div>
+        <div class="stat"><div class="k">Mean Δ vs ex-ante optimal</div>
+          <div class="v">${fmt(r.mean_delta_exante_s)}s</div></div>
+        <div class="stat"><div class="k">Mean Δ vs hindsight</div>
+          <div class="v">${fmt(r.mean_delta_hindsight_s)}s</div></div>
         <div class="stat"><div class="k">Beat team</div>
           <div class="v good">${fmt(r.beat_team_pct)}%</div></div>
         <div class="stat"><div class="k">Invalid output</div>

@@ -66,11 +66,17 @@ class RaceSimulator:
         start_compound: str,
         start_tyre_age: int,
         stops: list[tuple[int, str]],
+        assume_green_after: Optional[int] = None,
     ) -> float:
         """Total time (s) for laps from_lap..total_laps under the given stop plan.
 
         `start_tyre_age` = completed laps on the current set entering from_lap.
         A stop (n, compound) means: pit at the END of lap n, rejoin on `compound`.
+
+        `assume_green_after`: ex-ante mode - laps after this one are treated as
+        green-flag racing (no SC/VSC/rain neutralization, no SC pit discount)
+        regardless of what actually happened. Laps <= it keep their real, known
+        status. None = full hindsight (the default).
         """
         stop_map = dict(stops)
         total = 0.0
@@ -78,8 +84,9 @@ class RaceSimulator:
         age = start_tyre_age
         for n in range(from_lap, self.race.total_laps + 1):
             age += 1
-            status = self.lap_status(n)
-            if n in self._neutralized and n in self._lap_median:
+            unknown_future = assume_green_after is not None and n > assume_green_after
+            status = "GREEN" if unknown_future else self.lap_status(n)
+            if not unknown_future and n in self._neutralized and n in self._lap_median:
                 lap_time = self._lap_median[n]  # SC/VSC/red/damp: everyone runs field pace
             else:
                 lap_time = self.deg.predict(driver, compound, age, n)

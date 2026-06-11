@@ -37,15 +37,20 @@ def load_inputs() -> tuple[dict, list[dict]]:
 
 
 def fig_leaderboard_bar(board: dict) -> Path:
-    rows = [m for m in board["models"] if m["mean_delta_s"] is not None]
-    rows.sort(key=lambda m: m["mean_delta_s"])
+    rows = [m for m in board["models"] if m["mean_delta_exante_s"] is not None]
+    rows.sort(key=lambda m: m["mean_delta_exante_s"], reverse=True)  # best at top of barh
     names = [m["model"] for m in rows]
-    vals = [m["mean_delta_s"] for m in rows]
-    fig, ax = plt.subplots(figsize=(8, 4.2))
-    bars = ax.barh(names[::-1], vals[::-1], color=ACCENT)
+    exante = [m["mean_delta_exante_s"] for m in rows]
+    hindsight = [m.get("mean_delta_hindsight_s") or np.nan for m in rows]
+    y = np.arange(len(names))
+    fig, ax = plt.subplots(figsize=(8, 4.6))
+    bars = ax.barh(y + 0.2, exante, height=0.4, color=ACCENT, label="vs ex-ante optimal (primary)")
+    ax.barh(y - 0.2, hindsight, height=0.4, color="#888", label="vs hindsight optimal")
     ax.bar_label(bars, fmt="%.1f", padding=3, fontsize=9)
-    ax.set_xlabel("mean delta vs hindsight-optimal (s) - lower is better")
+    ax.set_yticks(y, names)
+    ax.set_xlabel("mean delta (s) - lower is better")
     ax.set_title(f"BOXBOX leaderboard ({board['mode']} data)")
+    ax.legend(fontsize=8)
     fig.tight_layout()
     path = FIG_DIR / "leaderboard_bar.png"
     fig.savefig(path)
@@ -56,8 +61,8 @@ def fig_leaderboard_bar(board: dict) -> Path:
 def fig_delta_distribution(scores: list[dict]) -> Path:
     by_model: dict[str, list[float]] = {}
     for s in scores:
-        if not s["invalid"] and s["delta_vs_optimal_s"] is not None:
-            by_model.setdefault(s["model_name"], []).append(s["delta_vs_optimal_s"])
+        if not s["invalid"] and s["delta_exante_s"] is not None:
+            by_model.setdefault(s["model_name"], []).append(s["delta_exante_s"])
     models = sorted(by_model)
     fig, ax = plt.subplots(figsize=(8.5, 4.5))
     data = [by_model[m] for m in models]
@@ -67,7 +72,7 @@ def fig_delta_distribution(scores: list[dict]) -> Path:
         patch.set_edgecolor(ACCENT)
     for med in bp["medians"]:
         med.set_color(ACCENT)
-    ax.set_ylabel("delta vs optimal (s)")
+    ax.set_ylabel("delta vs ex-ante optimal (s)")
     ax.set_title("score-delta distribution per model")
     plt.setp(ax.get_xticklabels(), rotation=20, ha="right")
     fig.tight_layout()
@@ -78,9 +83,11 @@ def fig_delta_distribution(scores: list[dict]) -> Path:
 
 
 def fig_race_heatmap(board: dict) -> Path:
-    models = [m for m in board["models"] if m.get("per_race_mean_delta_s")]
-    races = sorted({r for m in models for r in m["per_race_mean_delta_s"]})
-    grid = np.array([[m["per_race_mean_delta_s"].get(r, np.nan) for r in races] for m in models])
+    models = [m for m in board["models"] if m.get("per_race_mean_delta_exante_s")]
+    races = sorted({r for m in models for r in m["per_race_mean_delta_exante_s"]})
+    grid = np.array(
+        [[m["per_race_mean_delta_exante_s"].get(r, np.nan) for r in races] for m in models]
+    )
     fig, ax = plt.subplots(figsize=(max(7.0, 1.0 * len(races)), 0.6 * len(models) + 2))
     im = ax.imshow(grid, aspect="auto", cmap="RdYlGn_r")
     ax.set_xticks(range(len(races)), races, rotation=35, ha="right", fontsize=8)
@@ -89,7 +96,7 @@ def fig_race_heatmap(board: dict) -> Path:
         for j in range(grid.shape[1]):
             if not np.isnan(grid[i, j]):
                 ax.text(j, i, f"{grid[i, j]:.0f}", ha="center", va="center", fontsize=7)
-    fig.colorbar(im, label="mean delta vs optimal (s)")
+    fig.colorbar(im, label="mean delta vs ex-ante optimal (s)")
     ax.set_title("per-race performance heatmap")
     ax.grid(False)
     fig.tight_layout()
@@ -119,23 +126,29 @@ def fig_flip_rate(board: dict) -> Path:
 
 def fig_season_gap(board: dict) -> Path | None:
     """Contamination-gap chart: mean delta on pre-2026 vs 2026 races per model."""
-    models = [m for m in board["models"] if m.get("per_season_mean_delta_s")]
-    seasons = sorted({s for m in models for s in m["per_season_mean_delta_s"]})
+    models = [m for m in board["models"] if m.get("per_season_mean_delta_exante_s")]
+    seasons = sorted({s for m in models for s in m["per_season_mean_delta_exante_s"]})
     old = [s for s in seasons if s < "2026"]
     if not old or "2026" not in seasons:
         return None
     names = [m["model"] for m in models]
     pre = [
-        np.mean([m["per_season_mean_delta_s"][s] for s in old if s in m["per_season_mean_delta_s"]])
+        np.mean(
+            [
+                m["per_season_mean_delta_exante_s"][s]
+                for s in old
+                if s in m["per_season_mean_delta_exante_s"]
+            ]
+        )
         for m in models
     ]
-    new = [m["per_season_mean_delta_s"].get("2026", np.nan) for m in models]
+    new = [m["per_season_mean_delta_exante_s"].get("2026", np.nan) for m in models]
     x = np.arange(len(names))
     fig, ax = plt.subplots(figsize=(8.5, 4.2))
     ax.bar(x - 0.2, pre, width=0.4, label="2024-25 (possibly in training data)", color="#888")
     ax.bar(x + 0.2, new, width=0.4, label="2026 (contamination-proof)", color=ACCENT)
     ax.set_xticks(x, names, rotation=20, ha="right")
-    ax.set_ylabel("mean delta vs optimal (s)")
+    ax.set_ylabel("mean delta vs ex-ante optimal (s)")
     ax.set_title("contamination gap: old vs new races")
     ax.legend()
     fig.tight_layout()
