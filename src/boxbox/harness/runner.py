@@ -184,7 +184,8 @@ class Runner:
     # -- single call -------------------------------------------------------------
     def call(self, dp: DecisionPoint, model: dict, repeat_index: int) -> CallResult:
         model_name = model["name"]
-        model_id = "mock" if self.mock else model["openrouter_id"]
+        # mock ids stay distinct per model so cache keys never collide across models
+        model_id = f"mock/{model_name}" if self.mock else model["openrouter_id"]
         key = cache_key(model_id, PROMPT_VERSION, dp.dp_id, self.temperature, repeat_index)
         cached = self.cache.get(key)
         if cached is not None:
@@ -206,7 +207,7 @@ class Runner:
         return CallResult(
             dp_id=dp.dp_id,
             model_name=model_name,
-            model_id="mock",
+            model_id=f"mock/{model_name}",
             prompt_version=PROMPT_VERSION,
             temperature=self.temperature,
             repeat_index=repeat_index,

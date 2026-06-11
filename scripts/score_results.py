@@ -51,7 +51,7 @@ def main() -> int:
         for s in scores:
             fh.write(s.model_dump_json() + "\n")
 
-    mode = "mock" if all(r.model_id == "mock" for r in results) else "real"
+    mode = "mock" if all(r.model_id.startswith("mock") for r in results) else "real"
     board = aggregate(scores, mode=mode)
     paths = write_outputs(board)
     print(to_markdown(board))
