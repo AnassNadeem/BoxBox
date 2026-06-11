@@ -1,0 +1,43 @@
+# Decision-point extraction thresholds (OVERNIGHT_TASK.md §6).
+# Changing any value here is a logged decision -> docs/DECISIONS.md.
+
+type_a:
+  # laps before each real pit stop at which to emit DPs (0 = the stop lap itself)
+  offsets: [2, 1, 0]
+type_b:
+  top_n_positions: 10        # emit for cars running in the top N on SC/VSC deployment
+type_c:
+  rival_gap_s: 3.5           # |gap| to count a car as a direct rival
+
+dedupe_priority: [B, C, A]   # higher first for same (car, lap)
+max_dp_per_race: 18          # cap, trimmed by priority then battle closeness
+
+exclude:
+  first_laps: 3              # never emit at lap t <= 3
+  last_laps: 2               # never emit at lap t > total_laps - 2
+  lapped_cars: true
+  retirement_window_laps: 3  # no DPs within 3 laps of a car's retirement
+
+state:
+  last_n_lap_times: 3
+  top_n_summary: 10
+
+# Race lists (race_id = "<season>-<slug>")
+races_2026:
+  - {race_id: 2026-australia, year: 2026, event: Australia}
+  - {race_id: 2026-china, year: 2026, event: China}
+  - {race_id: 2026-japan, year: 2026, event: Japan}
+  - {race_id: 2026-miami, year: 2026, event: Miami}
+  - {race_id: 2026-canada, year: 2026, event: Canada}
+  - {race_id: 2026-monaco, year: 2026, event: Monaco}
+
+# P0 pipeline-validation race (known-good, pre-2026)
+races_validation:
+  - {race_id: 2025-monaco, year: 2025, event: Monaco}
+
+# P7 contamination-control races
+races_contamination:
+  - {race_id: 2024-bahrain, year: 2024, event: Bahrain}
+  - {race_id: 2024-monaco, year: 2024, event: Monaco}
+  - {race_id: 2025-monaco, year: 2025, event: Monaco}
+  - {race_id: 2025-silverstone, year: 2025, event: Silverstone}

@@ -1,0 +1,19 @@
+# Benchmark run settings
+temperature: 0.0
+max_tokens: 350
+repeats: 3                # repeats per (model, dp) — used for the consistency flip rate
+spend_cap_usd: 1.00       # hard abort if projected spend exceeds this
+mock_invalid_rate: 0.04   # fraction of mock responses that are deliberately malformed
+mock_pit_rate: 0.30       # mock models answer PIT ~30% of the time
+
+simulator:
+  candidate_stop_laps_max_ahead: 999   # search stop laps t..min(t+this, total-last_laps); 999 = to end
+  rejoin_penalty_s: 0.0                # flat penalty added on rejoin after a pit (v1 default off)
+  sc_pit_loss_factor_default: 0.55     # used when not computable from the race's own SC-era stops
+  min_clean_laps_for_fit: 4
+  outlier_mad: 3.0
+
+live:
+  poll_seconds: 45
+  tyre_age_trigger: 18      # Type A proxy: trigger when focal tyre age crosses this
+  stale_data_tolerance_s: 180
