@@ -271,14 +271,17 @@ def extract_decision_points(
                 )
         prev = status
 
-    # --- Type C: a direct rival (|gap| <= threshold at end of lap s-1) pits on lap s
+    # --- Type C: a direct rival pits on lap s. "Direct" = within +-1 race position
+    # AND within the gap threshold, both at the end of lap s-1.
     for stop in race.pit_stops:
         s = stop.lap
         pit_rec = idx.rec(stop.driver, s - 1)
-        if pit_rec is None or pit_rec.end_time_s is None:
+        if pit_rec is None or pit_rec.end_time_s is None or pit_rec.position is None:
             continue
         for rec in idx.by_lap.get(s - 1, []):
-            if rec.driver == stop.driver or rec.end_time_s is None:
+            if rec.driver == stop.driver or rec.end_time_s is None or rec.position is None:
+                continue
+            if abs(rec.position - pit_rec.position) > 1:
                 continue
             gap = abs(rec.end_time_s - pit_rec.end_time_s)
             if gap <= rival_gap_max:

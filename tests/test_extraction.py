@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from collections import Counter
 
+from boxbox.data.schemas import LapRecord, PitStop, RaceData, Weather
 from boxbox.extract.decision_points import (
     _Candidate,
     apply_type_quota,
@@ -130,6 +131,85 @@ def test_sc_produces_type_b(race, extraction_cfg):
     type_b = [dp for dp in dps if dp.dp_type == "B"]
     assert type_b and all(dp.lap == 9 for dp in type_b)
     assert all(dp.state.track_status == "SC" for dp in type_b)
+
+
+def three_car_race(gap2: float, gap3: float) -> RaceData:
+    """P1 ('PIT') stops on lap 10; 'ADJ' runs gap2 behind P1, 'FAR' gap3 behind P1.
+
+    Constant 90s pace keeps the running order PIT > ADJ > FAR until the stop,
+    so at the end of lap 9 ADJ is +-1 position from PIT and FAR is 2 away.
+    """
+    total = 20
+    laps: list[LapRecord] = []
+    for drv, offset in (("PIT", 0.0), ("ADJ", gap2), ("FAR", gap3)):
+        clock = offset
+        age = 0
+        compound = "MEDIUM"
+        for n in range(1, total + 1):
+            age += 1
+            lap_time = 90.0
+            pit_in = drv == "PIT" and n == 10
+            pit_out = drv == "PIT" and n == 11
+            if pit_in:
+                lap_time += 5.0
+            if pit_out:
+                lap_time += 12.0
+            start = clock
+            clock += lap_time
+            laps.append(
+                LapRecord(
+                    driver=drv,
+                    team="T",
+                    lap_number=n,
+                    lap_time_s=lap_time,
+                    start_time_s=start,
+                    end_time_s=clock,
+                    compound=compound,
+                    tyre_age=age,
+                    stint=1 if n <= 10 or drv != "PIT" else 2,
+                    position=None,
+                    pit_in=pit_in,
+                    pit_out=pit_out,
+                    track_status="GREEN",
+                )
+            )
+            if pit_in:
+                compound = "HARD"
+                age = 0
+    by_lap: dict[int, list[LapRecord]] = {}
+    for r in laps:
+        by_lap.setdefault(r.lap_number, []).append(r)
+    for recs in by_lap.values():
+        recs.sort(key=lambda r: r.end_time_s)
+        for pos, r in enumerate(recs, start=1):
+            r.position = pos
+    return RaceData(
+        race_id="2099-threecar",
+        season=2099,
+        track="Threeville",
+        total_laps=total,
+        weather=Weather(rain=False),
+        laps=laps,
+        pit_stops=[PitStop(driver="PIT", lap=10, old_compound="MEDIUM", new_compound="HARD")],
+        classified=["PIT", "ADJ", "FAR"],
+        teams={d: "T" for d in ("PIT", "ADJ", "FAR")},
+    )
+
+
+def test_type_c_requires_adjacent_position(extraction_cfg):
+    """Both cars are within 3.5s of the stopping car, but only the +-1-position
+    car may get a Type C point."""
+    race = three_car_race(gap2=2.0, gap3=3.0)
+    dps = extract_decision_points(race, PIT_LOSS, extraction_cfg)
+    type_c = [dp for dp in dps if dp.dp_type == "C"]
+    assert [(dp.driver, dp.lap) for dp in type_c] == [("ADJ", 11)]
+
+
+def test_type_c_requires_gap_threshold(extraction_cfg):
+    """An adjacent car outside the 3.5s threshold must not trigger Type C."""
+    race = three_car_race(gap2=4.0, gap3=8.0)
+    dps = extract_decision_points(race, PIT_LOSS, extraction_cfg)
+    assert not [dp for dp in dps if dp.dp_type == "C"]
 
 
 def test_team_action_matches_real_stop(race, extraction_cfg):
