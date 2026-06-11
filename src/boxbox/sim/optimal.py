@@ -65,9 +65,7 @@ def evaluate_decision_point(dp: DecisionPoint, sim: RaceSimulator) -> DPEvaluati
 
     no_stop_legal = legal([])
     options.append(
-        StrategyOption(
-            stop_lap=None, compound=None, total_time_s=roll([]), legal=no_stop_legal
-        )
+        StrategyOption(stop_lap=None, compound=None, total_time_s=roll([]), legal=no_stop_legal)
     )
 
     last_stop_lap = race.total_laps - 1

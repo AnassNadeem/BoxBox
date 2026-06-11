@@ -18,9 +18,7 @@ from typing import Any, Optional
 import httpx
 
 from boxbox.data.schemas import (
-    Compound,
     LapRecord,
-    PitStop,
     RaceData,
     Weather,
 )
@@ -93,9 +91,7 @@ def ingest_openf1(race_id: str, year: int, event: str) -> RaceData:
         session = find_race_session(client, year, event)
         key = session["session_key"]
 
-        drivers = {
-            d["driver_number"]: d for d in client.get("drivers", session_key=key)
-        }
+        drivers = {d["driver_number"]: d for d in client.get("drivers", session_key=key)}
         laps_raw = client.get("laps", session_key=key)
         stints_raw = client.get("stints", session_key=key)
         pits_raw = client.get("pit", session_key=key)
@@ -144,9 +140,7 @@ def ingest_openf1(race_id: str, year: int, event: str) -> RaceData:
         dur = lap.get("lap_duration")
         start_abs = _parse_date_s(lap.get("date_start"))
         start_s = (start_abs - t0) if start_abs is not None else None
-        end_s = (
-            start_s + float(dur) if (start_s is not None and dur is not None) else None
-        )
+        end_s = start_s + float(dur) if (start_s is not None and dur is not None) else None
         comp, age, stint_no = stint_info.get((num, n), ("UNKNOWN", 0, 0))
         status = _label_for_interval(start_abs, dur, sc_intervals, vsc_intervals)
         records.append(
@@ -182,9 +176,13 @@ def ingest_openf1(race_id: str, year: int, event: str) -> RaceData:
     weather = Weather()
     if weather_raw:
         try:
-            air = [w["air_temperature"] for w in weather_raw if w.get("air_temperature") is not None]
+            air = [
+                w["air_temperature"] for w in weather_raw if w.get("air_temperature") is not None
+            ]
             trk = [
-                w["track_temperature"] for w in weather_raw if w.get("track_temperature") is not None
+                w["track_temperature"]
+                for w in weather_raw
+                if w.get("track_temperature") is not None
             ]
             rain = any(float(w.get("rainfall") or 0) > 0 for w in weather_raw)
             weather = Weather(

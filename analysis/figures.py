@@ -80,9 +80,7 @@ def fig_delta_distribution(scores: list[dict]) -> Path:
 def fig_race_heatmap(board: dict) -> Path:
     models = [m for m in board["models"] if m.get("per_race_mean_delta_s")]
     races = sorted({r for m in models for r in m["per_race_mean_delta_s"]})
-    grid = np.array(
-        [[m["per_race_mean_delta_s"].get(r, np.nan) for r in races] for m in models]
-    )
+    grid = np.array([[m["per_race_mean_delta_s"].get(r, np.nan) for r in races] for m in models])
     fig, ax = plt.subplots(figsize=(max(7.0, 1.0 * len(races)), 0.6 * len(models) + 2))
     im = ax.imshow(grid, aspect="auto", cmap="RdYlGn_r")
     ax.set_xticks(range(len(races)), races, rotation=35, ha="right", fontsize=8)
@@ -105,8 +103,9 @@ def fig_flip_rate(board: dict) -> Path:
     rows = [m for m in board["models"] if m["flip_rate_pct"] is not None]
     rows.sort(key=lambda m: m["flip_rate_pct"])
     fig, ax = plt.subplots(figsize=(8, 4))
-    bars = ax.bar([m["model"] for m in rows], [m["flip_rate_pct"] for m in rows], color=DARK,
-                  edgecolor=ACCENT)
+    bars = ax.bar(
+        [m["model"] for m in rows], [m["flip_rate_pct"] for m in rows], color=DARK, edgecolor=ACCENT
+    )
     ax.bar_label(bars, fmt="%.0f%%", padding=2, fontsize=9)
     ax.set_ylabel("flip rate % (repeats disagree)")
     ax.set_title("consistency: how often repeated prompts flip the call")

@@ -182,6 +182,7 @@ class DegradationModel:
 
 # ---------------------------------------------------------------------------- pit loss
 
+
 def estimate_pit_loss(race: RaceData) -> tuple[float, float, str]:
     """(green pit loss s, SC pit-loss factor, note about which path was used).
 
@@ -249,6 +250,7 @@ def estimate_pit_loss(race: RaceData) -> tuple[float, float, str]:
 
 
 # -------------------------------------------------------------------------- calibration
+
 
 def calibration_records(race: RaceData, model: DegradationModel) -> list[dict]:
     """Per real stint: simulated vs actual stint time over its clean laps.

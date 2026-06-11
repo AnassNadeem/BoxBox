@@ -41,9 +41,7 @@ class ReplaySource:
 
     def poll(self) -> Optional[RaceData]:
         clock = self._race_clock()
-        visible = [
-            r for r in self._race.laps if r.end_time_s is not None and r.end_time_s <= clock
-        ]
+        visible = [r for r in self._race.laps if r.end_time_s is not None and r.end_time_s <= clock]
         visible_keys = {(r.driver, r.lap_number) for r in visible}
         stops = [s for s in self._race.pit_stops if (s.driver, s.lap) in visible_keys]
         return self._race.model_copy(update={"laps": visible, "pit_stops": stops})
@@ -68,8 +66,12 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--race", required=True, help="race id, e.g. monaco-2026")
     parser.add_argument("--speed", type=float, default=60.0)
-    parser.add_argument("--mock", action="store_true", default=True,
-                        help="mock model calls (the only mode wired tonight)")
+    parser.add_argument(
+        "--mock",
+        action="store_true",
+        default=True,
+        help="mock model calls (the only mode wired tonight)",
+    )
     args = parser.parse_args()
 
     race_id = normalize_race_id(args.race)

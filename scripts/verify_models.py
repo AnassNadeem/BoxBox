@@ -82,7 +82,10 @@ def main() -> int:
         model["verified"] = True
         model["note"] = f"verified against /models ({entry.get('name', '')})"
         table.add_row(
-            model["name"], entry["id"], f"{price_in:.2f}", f"{price_out:.2f}",
+            model["name"],
+            entry["id"],
+            f"{price_in:.2f}",
+            f"{price_out:.2f}",
             "[green]verified[/green]",
         )
 

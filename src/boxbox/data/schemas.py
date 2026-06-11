@@ -21,6 +21,7 @@ WET_COMPOUNDS: tuple[str, ...] = ("INTERMEDIATE", "WET")
 
 # --------------------------------------------------------------------------- ingestion
 
+
 class LapRecord(BaseModel):
     """One completed (or attempted) lap by one car, normalized across data sources."""
 
@@ -72,6 +73,7 @@ class RaceData(BaseModel):
 
 
 # ----------------------------------------------------------------------- decision points
+
 
 class RivalInfo(BaseModel):
     driver: str
@@ -135,6 +137,7 @@ class DecisionPoint(BaseModel):
 
 # ----------------------------------------------------------------------------- harness
 
+
 class ModelDecision(BaseModel):
     """The strict JSON answer schema models must produce."""
 
@@ -165,6 +168,7 @@ class CallResult(BaseModel):
 
 
 # ----------------------------------------------------------------------------- scoring
+
 
 class StrategyOption(BaseModel):
     """One candidate strategy evaluated by the simulator."""

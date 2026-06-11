@@ -256,6 +256,7 @@ def derive_pit_stops(records: list[LapRecord]) -> list[PitStop]:
 
 # --------------------------------------------------------------------------- persistence
 
+
 def processed_path(race_id: str) -> Path:
     return PROCESSED_DIR / f"{race_id}.json"
 

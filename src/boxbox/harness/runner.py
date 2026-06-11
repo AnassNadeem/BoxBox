@@ -148,6 +148,7 @@ def mock_response(dp: DecisionPoint, model_name: str, repeat_index: int, run_cfg
 
 # ---------------------------------------------------------------------------- runner
 
+
 class Runner:
     def __init__(
         self,
@@ -161,8 +162,10 @@ class Runner:
         self.models_cfg = models_cfg
         self.mock = mock
         self.cache = cache if cache is not None else ResponseCache()
-        self.ledger = ledger if ledger is not None else CostLedger(
-            spend_cap_usd=float(run_cfg.get("spend_cap_usd", 1.0))
+        self.ledger = (
+            ledger
+            if ledger is not None
+            else CostLedger(spend_cap_usd=float(run_cfg.get("spend_cap_usd", 1.0)))
         )
         self.temperature = float(run_cfg.get("temperature", 0.0))
         self.max_tokens = int(run_cfg.get("max_tokens", 350))
@@ -292,9 +295,7 @@ class Runner:
         return self._client
 
     # -- batch -------------------------------------------------------------------
-    def run_all(
-        self, dps: list[DecisionPoint], repeats: Optional[int] = None
-    ) -> list[CallResult]:
+    def run_all(self, dps: list[DecisionPoint], repeats: Optional[int] = None) -> list[CallResult]:
         n_rep = repeats if repeats is not None else int(self.run_cfg.get("repeats", 1))
         results: list[CallResult] = []
         for model in self.models():

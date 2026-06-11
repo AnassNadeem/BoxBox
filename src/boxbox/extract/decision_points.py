@@ -75,6 +75,7 @@ class _Candidate:
 
 # ------------------------------------------------------------------ state construction
 
+
 def truncate_race(race: RaceData, lap: int) -> RaceData:
     """Copy of race with all lap records after `lap` removed (leakage-test helper)."""
     return race.model_copy(
@@ -111,9 +112,7 @@ def build_state(
         if r is not None and r.compound != "UNKNOWN" and r.compound not in used:
             used.append(r.compound)
 
-    wet_race = race.weather.rain or any(
-        rec.compound in WET_COMPOUNDS for rec in visible
-    )
+    wet_race = race.weather.rain or any(rec.compound in WET_COMPOUNDS for rec in visible)
     available: list[Compound] = list(DRY_COMPOUNDS) + (list(WET_COMPOUNDS) if wet_race else [])
 
     order = idx.order_at(t - 1)
@@ -137,11 +136,7 @@ def build_state(
     top10 = []
     for rec in order[:top_n]:
         gap_leader = None
-        if (
-            leader is not None
-            and rec.end_time_s is not None
-            and leader.end_time_s is not None
-        ):
+        if leader is not None and rec.end_time_s is not None and leader.end_time_s is not None:
             gap_leader = round(rec.end_time_s - leader.end_time_s, 3)
         top10.append(
             TopNRow(
@@ -185,16 +180,13 @@ def _is_lapped(idx: RaceIndex, driver: str, t: int) -> bool:
     rec = idx.rec(driver, t - 1)
     if rec is None:
         return True  # has not even completed lap t-1: at least a lap down
-    if (
-        rec.end_time_s is None
-        or leader.end_time_s is None
-        or leader.lap_time_s is None
-    ):
+    if rec.end_time_s is None or leader.end_time_s is None or leader.lap_time_s is None:
         return False
     return (rec.end_time_s - leader.end_time_s) > leader.lap_time_s
 
 
 # ------------------------------------------------------------------------- extraction
+
 
 def extract_decision_points(
     race: RaceData, pit_loss_s: float, cfg: dict[str, Any]
@@ -212,9 +204,7 @@ def extract_decision_points(
     def add(cand: _Candidate) -> None:
         key = (cand.driver, cand.lap)
         existing = candidates.get(key)
-        if existing is None or (
-            _TYPE_PRIORITY[cand.dp_type] < _TYPE_PRIORITY[existing.dp_type]
-        ):
+        if existing is None or (_TYPE_PRIORITY[cand.dp_type] < _TYPE_PRIORITY[existing.dp_type]):
             candidates[key] = cand
 
     # --- Type A: pit-stop neighborhoods (classified cars only)
@@ -299,9 +289,7 @@ def extract_decision_points(
         survivors.append(cand)
 
     # --- cap: priority B > C > A, then closeness of the battle; stable tie-breakers
-    survivors.sort(
-        key=lambda c: (_TYPE_PRIORITY[c.dp_type], c.relevant_gap_s, c.lap, c.driver)
-    )
+    survivors.sort(key=lambda c: (_TYPE_PRIORITY[c.dp_type], c.relevant_gap_s, c.lap, c.driver))
     survivors = survivors[: int(cfg.get("max_dp_per_race", 18))]
     survivors.sort(key=lambda c: (c.lap, c.driver))
 

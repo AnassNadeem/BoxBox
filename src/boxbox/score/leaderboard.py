@@ -31,7 +31,6 @@ def aggregate(scores: list[Score], mode: str = "mock") -> dict[str, Any]:
 
         # consistency flip rate: same dp answered differently across repeats
         by_dp: dict[str, set[str]] = {}
-        dp_with_multi: set[str] = set()
         seen_once: dict[str, int] = {}
         for s in valid:
             by_dp.setdefault(s.dp_id, set()).add(s.action or "")
@@ -41,7 +40,10 @@ def aggregate(scores: list[Score], mode: str = "mock") -> dict[str, Any]:
 
         per_race: dict[str, float] = {}
         per_season: dict[str, float] = {}
-        for key_fn, target in ((lambda s: s.race_id, per_race), (lambda s: str(s.season), per_season)):
+        for key_fn, target in (
+            (lambda s: s.race_id, per_race),
+            (lambda s: str(s.season), per_season),
+        ):
             groups: dict[str, list[float]] = {}
             for s in valid:
                 groups.setdefault(key_fn(s), []).append(s.delta_vs_optimal_s)  # type: ignore[arg-type]
@@ -56,9 +58,7 @@ def aggregate(scores: list[Score], mode: str = "mock") -> dict[str, Any]:
                 "mean_delta_s": round(statistics.mean(deltas), 3) if deltas else None,
                 "median_delta_s": round(statistics.median(deltas), 3) if deltas else None,
                 "beat_team_pct": _pct(sum(1 for s in valid if s.beat_team), len(valid)),
-                "agree_team_pct": _pct(
-                    sum(1 for s in valid if s.agree_team_action), len(valid)
-                ),
+                "agree_team_pct": _pct(sum(1 for s in valid if s.agree_team_action), len(valid)),
                 "invalid_pct": _pct(sum(1 for s in ss if s.invalid), len(ss)),
                 "flip_rate_pct": _pct(len(flipped), len(multi)),
                 "per_race_mean_delta_s": per_race,

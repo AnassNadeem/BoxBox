@@ -20,9 +20,9 @@ def test_leakage_states_identical_without_future_laps(race, extraction_cfg):
         truncated = truncate_race(race, dp.lap)
         state_truncated = build_state(truncated, dp.driver, dp.lap, PIT_LOSS, extraction_cfg)
         assert state_truncated is not None
-        assert state_truncated.model_dump() == dp.state.model_dump(), (
-            f"{dp.dp_id}: state changed when future laps were removed"
-        )
+        assert (
+            state_truncated.model_dump() == dp.state.model_dump()
+        ), f"{dp.dp_id}: state changed when future laps were removed"
 
 
 def test_leakage_no_future_lap_times_in_state(race, extraction_cfg):
@@ -30,11 +30,7 @@ def test_leakage_no_future_lap_times_in_state(race, extraction_cfg):
     dps = extract_decision_points(race, PIT_LOSS, extraction_cfg)
     for dp in dps:
         lap_t = next(
-            (
-                r.lap_time_s
-                for r in race.laps
-                if r.driver == dp.driver and r.lap_number == dp.lap
-            ),
+            (r.lap_time_s for r in race.laps if r.driver == dp.driver and r.lap_number == dp.lap),
             None,
         )
         if lap_t is not None:

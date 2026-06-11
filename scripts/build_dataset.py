@@ -121,8 +121,10 @@ def main() -> int:
     DP_DIR.mkdir(parents=True, exist_ok=True)
     (DP_DIR / "manifest.json").write_text(json.dumps(manifest, indent=1), encoding="utf-8")
     if all_maes:
-        print(f"\nOverall calibration MAE: {statistics.mean(all_maes):.3f} s/lap "
-              f"(median {statistics.median(all_maes):.3f})")
+        print(
+            f"\nOverall calibration MAE: {statistics.mean(all_maes):.3f} s/lap "
+            f"(median {statistics.median(all_maes):.3f})"
+        )
     print(f"Manifest: {DP_DIR / 'manifest.json'}")
     return 0
 

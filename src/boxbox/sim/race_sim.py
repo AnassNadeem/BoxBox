@@ -106,7 +106,7 @@ def make_simulator(
         outlier_mad=float(cfg.get("outlier_mad", 3.0)),
     )
     pit_loss, sc_factor, note = estimate_pit_loss(race)
-    if not cfg.get("sc_pit_loss_factor_default") is None and "default" in note:
+    if cfg.get("sc_pit_loss_factor_default") is not None and "default" in note:
         sc_factor = float(cfg["sc_pit_loss_factor_default"])
     sim = RaceSimulator(
         race,
