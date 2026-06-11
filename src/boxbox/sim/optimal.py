@@ -115,7 +115,10 @@ def evaluate_decision_point(dp: DecisionPoint, sim: RaceSimulator) -> DPEvaluati
 
     legal_options = [options[i] for i in legal_idx]
 
-    # Value of every immediate action ------------------------------------------------
+    # Value of every immediate action as its Q-value: the best realized time
+    # achievable conditional on taking that action at lap t, minimizing over all
+    # continuations in the candidate space. The hindsight optimum is therefore
+    # the minimum over action Q-values.
     stay_candidates = [o for o in legal_options if o.stop_lap is None or o.stop_lap > t]
     sim_stay = min((o.total_time_s for o in stay_candidates), default=None)
 

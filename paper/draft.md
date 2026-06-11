@@ -77,10 +77,32 @@ remaining laps, holding all other cars and the SC/VSC timeline fixed at what act
 happened; SC/VSC and rain-neutralized laps are charged at the field-median time of
 that lap. The candidate space is: pit at the end of any lap from *t* to the
 penultimate lap onto any available compound, or make no further stop, subject to the
-two-compound rule in dry races. The hindsight optimum is the argmin. A model's STAY
-is valued as the best legal plan that does not stop at lap *t*; the real team's call
-is valued identically, so agreement scores as a tie. We report
-`delta = sim(model) − sim(optimal)` and `beat_team = sim(model) < sim(team)`.
+two-compound rule in dry races.
+
+Two oracles are computed over this candidate space, sharing the same fitted
+lap-time models. The **hindsight oracle** picks the plan minimizing realized time
+(it knows the future SC/VSC timeline). The **ex-ante oracle** picks the plan
+minimizing time under a green-flag assumption for every lap after *t* — the same
+information set the models decide under (the current lap's track status is
+real-time knowledge and is kept). Both oracles' plans are then valued in the race
+as it actually unfolded, so the two baselines share one currency and the ex-ante
+optimum's realized time can never beat the hindsight optimum (asserted by tests).
+Our primary metric is `delta_exante = sim(model) − sim(exante_optimal)`; we report
+`delta_hindsight = sim(model) − sim(hindsight_optimal)` as secondary context,
+along with `beat_team = sim(model) < sim(team)`.
+
+**Q-value framing.** Formally, each immediate action is scored as its Q-value: the
+best achievable total remaining race time conditional on taking that action at lap
+*t*, minimizing over all continuations in the candidate strategy space. For PIT
+onto compound *c*, this is the realized time of the best plan that stops at the end
+of lap *t* onto *c* (including, where the two-compound rule makes *c* illegal as a
+final stint, the cheapest legalizing later stop); for STAY, it is the realized time
+of the best legal plan that does not stop at lap *t*. The hindsight optimum is thus
+the minimum over action Q-values, and an action's hindsight delta is zero exactly
+when it is consistent with an optimal plan. This charitable valuation scores the
+decision itself rather than any fixed continuation, and is applied identically to
+model answers and to the real team's call — so agreement with the team scores as
+an exact tie.
 
 Calibration: across the ten ingested races the simulator reproduces real stint times
 with mean MAE ≈ 0.22 s/lap (median 0.09); per-race figures are published with the

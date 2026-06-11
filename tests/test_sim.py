@@ -89,6 +89,12 @@ def test_optimal_never_worse_than_team_or_any_action(race, extraction_cfg):
             assert ev.sim_optimal_s <= ev.sim_stay_s + tol
         for value in ev.sim_pit_s.values():
             assert ev.sim_optimal_s <= value + tol
+        # Q-value consistency: the optimal action's own Q-value IS the optimum,
+        # i.e. both PIT and STAY are valued with their optimal continuation.
+        if ev.optimal_action == "STAY":
+            assert ev.sim_stay_s == pytest.approx(ev.sim_optimal_s)
+        else:
+            assert ev.sim_pit_s[ev.optimal_compound] == pytest.approx(ev.sim_optimal_s)
 
 
 def test_exante_optimal_never_better_than_hindsight(race, extraction_cfg):
