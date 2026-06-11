@@ -38,6 +38,7 @@ class LapRecord(BaseModel):
     pit_out: bool = False  # car left the pit at the START of this lap
     track_status: TrackStatusLabel = "GREEN"  # worst status during the lap
     is_accurate: bool = True  # source's own clean-lap flag
+    rain_affected: bool = False  # rainfall recorded during this lap's time window
 
 
 class PitStop(BaseModel):

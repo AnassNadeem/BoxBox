@@ -124,6 +124,7 @@ def ingest_fastf1(race_id: str, year: int, event: str) -> RaceData:
         )
 
     _fill_missing_positions(records)
+    _mark_rain_laps(session, records)
 
     total_laps = int(getattr(session, "total_laps", 0) or 0)
     if total_laps <= 0:
@@ -162,6 +163,30 @@ def _fill_missing_positions(records: list[LapRecord]) -> None:
         for rank, r in enumerate(timed, start=1):
             if r.position is None:
                 r.position = rank
+
+
+def _mark_rain_laps(session: Any, records: list[LapRecord]) -> None:
+    """Flag laps whose time window overlaps recorded rainfall (slicks-on-damp ruins fits)."""
+    try:
+        wd = session.weather_data
+        if wd is None or len(wd) == 0 or not wd["Rainfall"].any():
+            return
+        rain_times = [
+            float(pd.Timedelta(t).total_seconds())
+            for t, raining in zip(wd["Time"], wd["Rainfall"])
+            if bool(raining)
+        ]
+    except Exception as exc:
+        log.warning("Rain marking skipped (%s)", exc)
+        return
+    if not rain_times:
+        return
+    # weather samples are ~1/min; pad the window accordingly
+    for rec in records:
+        if rec.start_time_s is None or rec.end_time_s is None:
+            continue
+        if any(rec.start_time_s - 60.0 <= t <= rec.end_time_s for t in rain_times):
+            rec.rain_affected = True
 
 
 def _classification(

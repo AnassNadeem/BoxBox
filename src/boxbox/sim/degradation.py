@@ -35,7 +35,7 @@ class LapTimeFit:
 
 
 def _clean_laps(race: RaceData) -> list[LapRecord]:
-    """Clean = timed, green flag, not an in/out lap. (IsAccurate is NOT required:
+    """Clean = timed, green flag, dry, not an in/out lap. (IsAccurate is NOT required:
     several 2026 sessions mark whole drivers inaccurate; MAD filtering covers it.)"""
     return [
         r
@@ -44,18 +44,33 @@ def _clean_laps(race: RaceData) -> list[LapRecord]:
         and r.track_status == "GREEN"
         and not r.pit_in
         and not r.pit_out
+        and not r.rain_affected
         and r.compound != "UNKNOWN"
         and r.tyre_age is not None
     ]
 
 
 def _fit(laps: list[LapRecord], source: FitSource) -> Optional[LapTimeFit]:
-    """Least-squares fit with one round of >3*MAD residual outlier removal."""
+    """Least-squares fit with one round of >3*MAD residual outlier removal.
+
+    When tyre age and lap number are (near-)collinear - all clean laps from one
+    stint - the 3-parameter fit is unidentifiable and explodes, so the fuel term
+    is dropped (c=0). If tyre age itself has no variance, only the base pace is fit.
+    """
     if len(laps) < 4:
         return None
 
+    ages = np.array([float(r.tyre_age) for r in laps])  # type: ignore[arg-type]
+    lapns = np.array([float(r.lap_number) for r in laps])
+    n_terms = 1
+    if np.std(ages) > 1e-9:
+        n_terms = 2
+        if np.std(lapns) > 1e-9 and abs(float(np.corrcoef(ages, lapns)[0, 1])) < 0.95:
+            n_terms = 3
+
     def solve(subset: list[LapRecord]) -> tuple[np.ndarray, np.ndarray]:
-        x = np.array([[1.0, r.tyre_age, r.lap_number] for r in subset])
+        cols = [[1.0, float(r.tyre_age), float(r.lap_number)][:n_terms] for r in subset]  # type: ignore[arg-type]
+        x = np.array(cols)
         y = np.array([r.lap_time_s for r in subset])
         coef, *_ = np.linalg.lstsq(x, y, rcond=None)
         return coef, y - x @ coef
@@ -67,8 +82,9 @@ def _fit(laps: list[LapRecord], source: FitSource) -> Optional[LapTimeFit]:
         if len(kept) >= 4 and len(kept) < len(laps):
             coef, _ = solve(kept)
             laps = kept
+    full = list(coef) + [0.0, 0.0]
     return LapTimeFit(
-        a=float(coef[0]), b=float(coef[1]), c=float(coef[2]), n_laps=len(laps), source=source
+        a=float(full[0]), b=float(full[1]), c=float(full[2]), n_laps=len(laps), source=source
     )
 
 
@@ -252,7 +268,9 @@ def calibration_records(race: RaceData, model: DegradationModel) -> list[dict]:
         compound = laps[0].compound
         actual = sum(r.lap_time_s for r in laps)  # type: ignore[misc]
         fit = model.fit_for(driver, compound)
-        predicted = sum(fit.predict(r.tyre_age, r.lap_number) for r in laps)  # type: ignore[arg-type]
+        predicted = sum(
+            model.predict(driver, compound, r.tyre_age, r.lap_number) for r in laps  # type: ignore[arg-type]
+        )
         records.append(
             {
                 "race_id": race.race_id,

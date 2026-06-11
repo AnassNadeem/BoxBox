@@ -32,7 +32,10 @@ class RaceSimulator:
 
         self._lap_status: dict[int, TrackStatusLabel] = {}
         self._lap_median: dict[int, float] = {}
+        self._neutralized: set[int] = set()  # SC/VSC/RED or mostly rain-affected laps
         by_lap: dict[int, list[float]] = {}
+        rain_count: dict[int, int] = {}
+        lap_count: dict[int, int] = {}
         prio = {"RED": 4, "SC": 3, "VSC": 2, "YELLOW": 1, "GREEN": 0}
         for r in race.laps:
             cur = self._lap_status.get(r.lap_number, "GREEN")
@@ -42,8 +45,16 @@ class RaceSimulator:
                 self._lap_status[r.lap_number] = r.track_status
             if r.lap_time_s is not None:
                 by_lap.setdefault(r.lap_number, []).append(r.lap_time_s)
+            lap_count[r.lap_number] = lap_count.get(r.lap_number, 0) + 1
+            if r.rain_affected:
+                rain_count[r.lap_number] = rain_count.get(r.lap_number, 0) + 1
         for n, times in by_lap.items():
             self._lap_median[n] = statistics.median(times)
+        for n, total_n in lap_count.items():
+            status = self._lap_status.get(n, "GREEN")
+            rainy = rain_count.get(n, 0) / total_n > 0.3
+            if status in ("SC", "VSC", "RED") or rainy:
+                self._neutralized.add(n)
 
     def lap_status(self, lap: int) -> TrackStatusLabel:
         return self._lap_status.get(lap, "GREEN")
@@ -68,8 +79,8 @@ class RaceSimulator:
         for n in range(from_lap, self.race.total_laps + 1):
             age += 1
             status = self.lap_status(n)
-            if status in ("SC", "VSC", "RED") and n in self._lap_median:
-                lap_time = self._lap_median[n]
+            if n in self._neutralized and n in self._lap_median:
+                lap_time = self._lap_median[n]  # SC/VSC/red/damp: everyone runs field pace
             else:
                 lap_time = self.deg.predict(driver, compound, age, n)
             if n in stop_map:
