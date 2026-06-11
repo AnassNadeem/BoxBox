@@ -19,10 +19,21 @@ def _pct(numer: int, denom: int) -> float | None:
     return round(100.0 * numer / denom, 1) if denom else None
 
 
-def aggregate(scores: list[Score], mode: str = "mock") -> dict[str, Any]:
+def aggregate(
+    scores: list[Score],
+    mode: str = "mock",
+    probe_scores: list[Score] | None = None,
+) -> dict[str, Any]:
     by_model: dict[str, list[Score]] = {}
     for s in scores:
         by_model.setdefault(s.model_name, []).append(s)
+
+    # The flip rate comes ONLY from the consistency probe (resampled at default
+    # temperature); the single-shot main pass never contributes to it.
+    probe_by_model: dict[str, list[Score]] = {}
+    for s in probe_scores or []:
+        if not s.invalid and s.action is not None:
+            probe_by_model.setdefault(s.model_name, []).append(s)
 
     rows: list[dict[str, Any]] = []
     for model, ss in sorted(by_model.items()):
@@ -30,10 +41,10 @@ def aggregate(scores: list[Score], mode: str = "mock") -> dict[str, Any]:
         deltas = [s.delta_exante_s for s in valid]
         deltas_hind = [s.delta_hindsight_s for s in valid if s.delta_hindsight_s is not None]
 
-        # consistency flip rate: same dp answered differently across repeats
+        # consistency flip rate: same dp answered differently across probe samples
         by_dp: dict[str, set[str]] = {}
         seen_once: dict[str, int] = {}
-        for s in valid:
+        for s in probe_by_model.get(model, []):
             by_dp.setdefault(s.dp_id, set()).add(s.action or "")
             seen_once[s.dp_id] = seen_once.get(s.dp_id, 0) + 1
         multi = [dp for dp, n in seen_once.items() if n >= 2]
@@ -80,6 +91,7 @@ def aggregate(scores: list[Score], mode: str = "mock") -> dict[str, Any]:
         "generated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "mode": mode,
         "n_decision_points": len({s.dp_id for s in scores}),
+        "n_probe_decision_points": len({s.dp_id for s in (probe_scores or [])}),
         "races": sorted({s.race_id for s in scores}),
         "models": rows,
     }
@@ -95,6 +107,14 @@ def to_markdown(board: dict[str, Any]) -> str:
     ]
     if board["mode"] == "mock":
         lines += ["> **Mock results.** Numbers validate the pipeline, not model skill.", ""]
+    if board.get("n_probe_decision_points"):
+        lines += [
+            f"Flip rate from a {board['n_probe_decision_points']}-DP consistency probe "
+            "(resampled at default temperature); all other columns from the main pass.",
+            "",
+        ]
+    else:
+        lines += ["Flip rate unavailable: no consistency probe has been scored yet.", ""]
     lines += [
         "| # | Model | Mean delta vs ex-ante optimal (s) | Median (s) | "
         "Mean delta vs hindsight (s) | Beat team % | Agree team % | Invalid % | "

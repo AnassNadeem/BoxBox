@@ -1,10 +1,18 @@
-# Benchmark run settings
+# Benchmark run settings — MAIN PASS (one deterministic call per model x DP)
 temperature: 0.0
 max_tokens: 350
-repeats: 3                # repeats per (model, dp) — used for the consistency flip rate
-spend_cap_usd: 1.00       # hard abort if projected spend exceeds this
+repeats: 1                # single-shot main pass; flip rate comes from the probe only
+spend_cap_usd: 20.00      # hard abort if projected spend exceeds this (main + probe)
 mock_invalid_rate: 0.04   # fraction of mock responses that are deliberately malformed
 mock_pit_rate: 0.30       # mock models answer PIT ~30% of the time
+
+# Consistency probe — run AFTER the main pass; the ONLY source of the flip rate.
+# Selects the decision points where models disagreed most in the main pass and
+# resamples them; selection is logged to outputs/probe_selection.json.
+consistency_probe:
+  n_decision_points: 20   # DPs with the highest cross-model action disagreement
+  samples: 5              # samples per (model, dp)
+  temperature: 1.0        # provider-default sampling temperature
 
 simulator:
   candidate_stop_laps_max_ahead: 999   # search stop laps t..min(t+this, total-last_laps); 999 = to end
