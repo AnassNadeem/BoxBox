@@ -1,56 +1,67 @@
 # MORNING REPORT — BOXBOX overnight build
 
-*Written by Claude Code, night of 2026-06-10 → 06-11. Everything below ran on this
-machine tonight; every number is reproducible with the commands in "How to see
-everything".*
+*Written by Claude Code, night of 2026-06-10 → 06-11; **updated 2026-06-11 after
+Anas resolved Q1–Q11** (see DECISIONS.md #26–36). Everything below ran on this
+machine; every number is reproducible with the commands in "How to see everything".*
 
 ## TL;DR
 
-The entire offline pipeline works end-to-end in mock mode: **10 races ingested
-(FastF1 worked for all 2026 races — no OpenF1 fallback needed), 180 leakage-tested
-decision points, simulator calibrated to 0.22 s/lap mean MAE (median 0.09), a full
-mock leaderboard, the live-loop replay of Monaco 2026 at 60×, the static site, paper
-figures, and the paper skeleton. 30/30 tests green. $0.00 spent.**
+The entire offline pipeline works end-to-end in mock mode: **10 races ingested,
+178 leakage-tested decision points under a 6/6/6 per-type quota, simulator
+calibrated to 0.22 s/lap mean MAE (median 0.09, unchanged by today's changes), a
+dual-oracle scoring system (ex-ante primary, hindsight secondary), a 20-DP
+consistency probe, mock leaderboard + site + figures, and the paper Method updated.
+43/43 tests green. $0.00 spent.**
 
-## Status by priority
+## What changed in the 2026-06-11 resolution pass
 
-| Priority | Status | Notes |
-|---|---|---|
-| P0 scaffolding + schemas + 2025 ingestion | **done** | Monaco 2025 validated the pipeline shape first |
-| P1 six 2026 races ingested | **done** | all via FastF1 3.8.3; OpenF1 fallback implemented but never triggered |
-| P2 decision-point extraction + leakage tests | **done** | 18 DPs per race (cap binds everywhere); leakage test asserts state equality after deleting laps > t |
-| P3 simulator + calibration | **done** | figures in `outputs/calibration/<race>.png`; see MAE table below |
-| P4 mock harness + scoring + leaderboard | **done** | 180 DPs × 6 models × 3 repeats = 3240 calls; rerun = 100% cache hits, 0 new calls |
-| P5 live replay runner | **done** | Monaco 2026 at 60×; `outputs/live_log.md` has SC/rival-pit/tyre-age triggered calls + draft posts |
-| P6 smoke test | **skipped — no OPENROUTER_API_KEY / ALLOW_SPEND in env** (per §2 this is the required behavior) | polish + extra tests done instead |
-| P7 contamination dataset | **done** | Bahrain 2024, Monaco 2024, Monaco 2025, Silverstone 2025; all DPs season-tagged; season-gap figure template ready |
-| P8 leaderboard site | **done** | `site/index.html`, dark theme, sortable, file://-safe (manual file picker fallback when the browser blocks local fetch) |
-| P9 figure templates | **done** | 5 figures in `outputs/figures/` incl. a bonus contamination-gap chart |
-| P10 paper skeleton | **done** | `paper/draft.md` with full Method section |
+1. **Type quota (Q2/Q10):** 6 A / 6 B / 6 C target inside the 18-per-race cap;
+   a type short of 6 donates its slots B > C > A. Every 2026 race is now exactly
+   6/6/6.
+2. **Type C tightened (Q3):** the pitting rival must be within ±1 race position
+   AND within 3.5s.
+3. **Ex-ante oracle (Q1):** a second optimal-strategy computation with no
+   knowledge of future SC/VSC (green assumed after the decision lap; the current
+   lap's known status is kept). Both oracles are valued in the realized race, so
+   `delta_exante` (PRIMARY) and `delta_hindsight` (secondary) share one currency
+   and ex-ante can never beat hindsight (tested). Leaderboard, site, and figures
+   headline `delta_exante`.
+4. **Q-value framing (Q4):** confirmed in code and stated formally in
+   paper/draft.md §3.2 — every action is scored as its Q-value.
+5. **Run config (Q6/Q9):** main pass repeats=1, temperature=0, spend_cap_usd=20.
+   New `scripts/run_consistency_probe.py`: the 20 highest cross-model-disagreement
+   DPs (selection logged to `outputs/probe_selection.json`), all models × 5
+   samples at temperature 1.0. **Flip rate comes only from the probe.**
+6. Dataset rebuilt; full mock pipeline rerun; simulator fitting/calibration
+   untouched.
 
 ## Per-race decision points and calibration
 
 | Race | DPs | A/B/C | Calibration MAE (s/lap) | Source |
 |---|---|---|---|---|
-| 2026 Australia | 18 | 0/18/0 | 0.480 | FastF1 |
-| 2026 China | 18 | 0/10/8 | 0.083 | FastF1 |
-| 2026 Japan | 18 | 0/10/8 | 0.208 | FastF1 |
-| 2026 Miami | 18 | 0/9/9 | 0.475 | FastF1 |
-| 2026 Canada | 18 | 0/18/0 | 0.302 | FastF1 |
-| 2026 Monaco | 18 | 0/13/5 | 0.100 | FastF1 |
-| 2024 Bahrain | 18 | 0/0/18 | 0.045 | FastF1 |
-| 2024 Monaco | 18 | 9/0/9 | 0.144 | FastF1 |
-| 2025 Monaco | 18 | 0/0/18 | 0.205 | FastF1 |
-| 2025 Silverstone | 18 | 0/10/8 | 0.177 | FastF1 |
+| 2026 Australia | 18 | 6/6/6 | 0.480 | FastF1 |
+| 2026 China | 18 | 6/6/6 | 0.083 | FastF1 |
+| 2026 Japan | 18 | 6/6/6 | 0.208 | FastF1 |
+| 2026 Miami | 18 | 6/6/6 | 0.475 | FastF1 |
+| 2026 Canada | 18 | 6/6/6 | 0.302 | FastF1 |
+| 2026 Monaco | 18 | 6/6/6 | 0.100 | FastF1 |
+| 2024 Bahrain | 18 | 6/0/12 | 0.045 | FastF1 |
+| 2024 Monaco | 16 | 11/0/5 | 0.144 | FastF1 |
+| 2025 Monaco | 18 | 6/0/12 | 0.205 | FastF1 |
+| 2025 Silverstone | 18 | 6/6/6 | 0.177 | FastF1 |
 
-**Overall: 180 DPs; calibration MAE 0.222 s/lap mean, 0.090 median** — well under the
-1.5 s/lap credibility bar. Two calibration problems were found and fixed during the
-night (collinear single-stint fits exploding; Miami's damp-phase laps) — see
-DECISIONS.md #13–#19. Per-race scatter+histogram figures: `outputs/calibration/`.
+**Overall: 178 DPs; calibration MAE 0.222 s/lap mean, 0.090 median** — identical to
+the overnight numbers, confirming the ex-ante oracle sits on top of an unchanged
+simulator. Races with no SC/VSC have B=0 and the slots flow to C then A; Monaco
+2024 only has 16 candidates that survive the excludes at all.
 
-Note the cap (18/race) binds everywhere and the B > C > A priority means Type A
-points only survive in races with no SC and few close battles. If you want guaranteed
-Type A representation, see QUESTIONS #2.
+## Mock pipeline state (today's rerun)
+
+- Main pass: 178 DPs × 6 models × 1 repeat = **1068 calls**, $0.00.
+- Probe: 20 DPs × 6 models × 5 samples = **600 calls**, $0.00 (selection +
+  reasons in `outputs/probe_selection.json`).
+- Leaderboard mode badge: MOCK — ordering is meaningless by construction
+  (mock answers are random), it validates plumbing only.
 
 ## FastF1 vs OpenF1 for 2026
 
@@ -61,72 +72,58 @@ live source on Sunday, but was never needed for historic ingestion.
 
 ## Money
 
-**$0.00 spent.** No key, no `ALLOW_SPEND` → mock everywhere. `outputs/cost_ledger.csv`
-contains only $0.00 mock rows. `scripts/verify_models.py` made one free, unauthenticated
-GET to OpenRouter `/models` and resolved all six models (real ids + prices now in
+**$0.00 spent, total, including today's rerun.** No key, no `ALLOW_SPEND` → mock
+everywhere. `outputs/cost_ledger.csv` contains only $0.00 mock rows.
+`scripts/verify_models.py` made one free, unauthenticated GET to OpenRouter
+`/models` overnight and resolved all six models (real ids + prices in
 `config/models.yaml`, all `enabled: true, verified: true`).
 
 ## Tests
 
-`pytest`: **30 passed** (leakage ×2, determinism, count bounds, exclusion windows,
-SC typing, team-action labeling, 9 parser cases, sim monotonicity/pit-loss/optimal-
-dominance/SC-pacing, cache zero-cost rerun, mock determinism, cost math, cap abort,
-ledger resume, end-to-end mock). black + ruff clean.
+`pytest`: **43 passed** (leakage ×2, determinism, quota unit tests ×5 +
+integration, Type C ±1-position and gap-threshold tests, exclusion windows, SC
+typing, team-action labeling, 9 parser cases, sim monotonicity/pit-loss/optimal-
+dominance + Q-value consistency/SC-pacing, ex-ante ≥ hindsight ×2 + current-lap
+status retention, probe selection ×3, cache zero-cost rerun, mock determinism,
+cost math, cap abort, ledger resume, end-to-end mock incl. probe + flip-rate
+provenance). black + ruff clean.
 
 ## How to see everything
 
 ```powershell
 .\venv\Scripts\Activate.ps1
-pytest                                              # 30 green
+pytest                                              # 43 green
 python scripts/build_dataset.py                     # rebuilds dataset (cached, fast)
-python scripts/run_benchmark.py --mock              # 3240 calls, all cache hits, $0
-python scripts/score_results.py                     # prints the mock leaderboard
+python scripts/run_benchmark.py --mock              # main pass, $0
+python scripts/run_consistency_probe.py --mock      # probe (after the main pass)
+python scripts/score_results.py                     # leaderboard (flip rate from probe)
 python -m boxbox.live.replay --race monaco-2026 --speed 60 --mock   # ~2.5 min
 python analysis/figures.py                          # outputs/figures/*.png
 start site\index.html                               # the leaderboard site
-type outputs\live_log.md                            # replayed live log + draft posts
 ```
 
 Key artifacts: `outputs/leaderboard.{md,csv,json}`, `outputs/scores.jsonl`,
+`outputs/probe_scores.jsonl`, `outputs/probe_selection.json`,
 `outputs/calibration/*.png`, `outputs/figures/*.png`, `outputs/live_log.md`,
 `data/decision_points/*.json` + `manifest.json`, `paper/draft.md`.
 
-## QUESTIONS FOR ANAS
+## Q1–Q11 status
 
-1. **Hindsight-SC optimal.** The oracle knows future SC periods (deliberate, disclosed).
-   Models can't. Fine for "distance from hindsight-perfect", but if you want an
-   ex-ante-fair metric too, we could add a second score vs a no-future-SC simulator.
-2. **Type B/C dominance.** With the 18/race cap and B > C > A priority, Type A pit-window
-   points rarely survive (only Monaco 2024). Raise the cap, quota per type (e.g. 6/6/6),
-   or accept as-is?
-3. **Type C gap definition.** "Direct rival within 3.5s" is implemented as *any* car
-   within 3.5s at the pre-stop lap, not just the adjacent car. Tighten to ±1 position?
-4. **STAY valuation.** STAY = best legal deferred plan (charitable optimum). Alternative:
-   value team-STAY with the team's *actual* later strategy. Current choice makes
-   model-team agreement an exact tie; the alternative is more "real" but asymmetric.
-5. **Invalid outputs** are excluded from delta means (separate column). Penalize instead?
-6. **Repeats=3 at temperature 0** for real runs too? Costs 3× and reasoning models may
-   not be deterministic anyway; flip rate is only meaningful with repeats ≥ 2.
-7. **Rejoin penalty** is 0s (config `simulator.rejoin_penalty_s`). Want a sensitivity run
-   at 2–4s before the paper?
-8. **gemini-3.1-pro resolved to `google/gemini-3.1-pro-preview`** — confirm that's the
-   intended target. Also confirm prompt wording + per-model reasoning-effort settings
-   before real runs.
-9. **Spend cap is $1.00 in run.yaml.** A full real run is 180 DPs × 6 models × 3 repeats;
-   with verified prices and ~1.6k tokens/call this is roughly $15–25 (Fable 5 dominates
-   at $10/$50 per MTok). Set the real budget and repeats and I'll project precisely.
-10. **2026 Australia & Canada had no Type C points** because every SC fell early enough
-    to flood the cap with Type B. OK, or quota as in #2?
-11. **Mock invalid rate (4%) and PIT rate (30%)** are arbitrary (run.yaml). Fine for
-    plumbing; flagging that mock leaderboard ordering is meaningless by construction.
+All resolved 2026-06-11 — see DECISIONS.md #26–36. Q1 (ex-ante oracle), Q2/Q10
+(quota), Q3 (±1 position), Q4 (Q-value framing), Q6/Q9 (repeats=1 @ temp 0,
+$20 cap, probe-only flip rate) implemented today. Q5, Q7, Q8, Q11 left as-is by
+the resolution pass (rejoin penalty 0s and the gemini preview id should be
+revisited before the real run / paper).
 
 ## Suggested next session
 
-1. Decide Q1–Q5 + Q9 (metric design + budget), then: `verify_models` re-check →
-   real smoke test (3 DPs × 2 cheapest) under the $1 cap → inspect raw outputs.
-2. Full real benchmark run with chosen repeats; regenerate leaderboard/site/figures.
+1. `verify_models` re-check → real smoke test (3 DPs × 2 cheapest models) under
+   the $20 cap → inspect raw outputs.
+2. Full real benchmark run (178 DPs × 6 models × 1 repeat) → then
+   `run_consistency_probe.py --real` → regenerate leaderboard/site/figures.
 3. Dry-run the live loop against OpenF1 during FP/quali (Sat) to validate the
-   OpenF1LiveSource path before Sunday; wire `live_models` to real (non-mock) runner.
+   OpenF1LiveSource path before Sunday; wire `live_models` to real (non-mock)
+   runner.
 4. Sunday: `live_runner` during the Barcelona GP; human posts the drafts.
 5. Paper: fill Results, add contamination-gap stats (per-season deltas already in
    leaderboard.json), tighten Limitations.

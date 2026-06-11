@@ -16,10 +16,14 @@
    not in public timing data; we assume all dry compounds are available to everyone.
 5. **SC/VSC laps modeled as field-median lap time.** Ignores the strategic value of
    track position concertina effects under SC.
-6. **Hindsight SC timeline.** The optimal strategy knows when future SC periods occur
-   (it is a hindsight oracle by design); models do not. delta_seconds therefore measures
-   distance from *hindsight*-optimal, not from the best *ex-ante* decision. This is
-   disclosed prominently; agreement-with-team and beat-team metrics partially compensate.
+6. **Oracle information sets.** The primary metric (`delta_exante`) now compares
+   against an oracle with the models' own information set: green-flag racing assumed
+   after the decision lap (the current lap's known status is kept), valued in the
+   realized race. The hindsight oracle (knows all future SC/VSC) remains as secondary
+   context. Residual hindsight in the ex-ante baseline: realized valuation still uses
+   the actual SC timeline and field-median paces, and the ex-ante oracle carries no
+   probabilistic SC model — a real strategist hedges on SC likelihood; ours assumes
+   zero.
 7. **Gap figures are end-of-lap interval approximations**, not live GPS gaps.
 8. **Pit-loss is a per-race scalar** (median of observed stops), not lap- or
    traffic-dependent. SC pit-loss factor defaults to 0.55 when not measurable.

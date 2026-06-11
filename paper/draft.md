@@ -8,14 +8,18 @@
 models can make competent Formula 1 race-strategy decisions under the information
 constraints of a real pit wall. From the timing data of six 2026 Grands Prix — all of
 which post-date the training cutoffs of every evaluated model — we mechanically
-reconstruct 108 frozen decision points (pit now or stay out; which tyre compound) and
-pose them to N models under identical prompts. Calls are scored against a
-hindsight-optimal strategy computed by a per-race simulator calibrated on each race's
-own lap data (median calibration error ≈ 0.09 s/lap). We report (i) mean time lost
-versus the hindsight optimum, (ii) how often models beat the real teams' decisions,
-(iii) output-validity and answer-consistency rates, and (iv) a contamination analysis
-comparing performance on 2026 races against 2024–25 races that plausibly appear in
-training corpora. (Headline numbers TBD.)
+reconstruct 108 frozen decision points (pit now or stay out; which tyre compound)
+balanced across pit-window, safety-car, and undercut-threat situations, and pose
+them to N models under identical prompts. Calls are scored against two oracles
+computed by a per-race simulator calibrated on each race's own lap data (median
+calibration error ≈ 0.09 s/lap): an ex-ante optimum restricted to the models' own
+information set (no future safety-car knowledge; the primary metric) and a
+hindsight optimum (secondary). We report (i) mean time lost versus the ex-ante
+optimum, (ii) how often models beat the real teams' decisions, (iii)
+output-validity rates and an answer-consistency probe on the most contentious
+decision points, and (iv) a contamination analysis comparing performance on 2026
+races against 2024–25 races that plausibly appear in training corpora. (Headline
+numbers TBD.)
 
 ## 1. Introduction (outline)
 
@@ -45,11 +49,13 @@ and normalize it to a per-lap record schema. Decision points are extracted by th
 mechanical rules, never by hand: **(A) pit-stop neighborhoods** — for every real pit
 stop by a classified car, the laps {s−2, s−1, s} around the stop lap s; **(B)
 safety-car moments** — the first lap of every Safety Car or Virtual Safety Car period,
-for each car running in the top ten; **(C) undercut threats** — when a car within
-3.5 s of a rival sees that rival pit, the following lap for the threatened car.
-Overlapping triggers for the same (car, lap) are deduplicated with priority B > C > A,
-and each race is capped at 18 points, trimmed by priority and then by closeness of the
-battle. The first three and last two laps, lapped cars, and cars within three laps of
+for each car running in the top ten; **(C) undercut threats** — when a directly
+adjacent rival (within ±1 race position and within 3.5 s) pits, the following lap for
+the threatened car. Overlapping triggers for the same (car, lap) are deduplicated with
+priority B > C > A. Each race is capped at 18 points under a per-type quota of six;
+a type with fewer than six candidates donates its unused slots to the remaining types
+in priority order B > C > A, and within a type the closest battles are kept first.
+The first three and last two laps, lapped cars, and cars within three laps of
 retirement are excluded (the latter prevents leaking an upcoming retirement).
 
 A decision point at lap *t* freezes exactly the information available entering lap
@@ -119,8 +125,12 @@ serialized state, the question, and the output schema
 Calls run through OpenRouter at temperature 0, max 350 tokens, JSON response format
 where supported, with one retry on parse failure; unparseable answers are recorded as
 invalid (a leaderboard column, not an exclusion). Each (model, decision point,
-repeat) is disk-cached by content hash; repeated runs are free and reproducible. Three
-repeats per point yield a consistency "flip rate". Token usage is read from API
+repeat) is disk-cached by content hash; repeated runs are free and reproducible. The
+main pass is single-shot per (model, decision point). Answer consistency is measured
+by a separate probe: the twenty decision points with the highest cross-model action
+disagreement in the main pass (selection logged with reasons) are rerun for all
+models with five samples each at the provider-default temperature, and the "flip
+rate" is computed exclusively from these probe samples. Token usage is read from API
 responses and priced into a cost ledger with a hard spend cap. A deterministic mock
 model exercises the full pipeline without spend.
 
@@ -135,9 +145,9 @@ on old races is evidence of recall rather than reasoning.
 ## 4. Results (placeholders)
 
 ### Table 1: Main leaderboard
-| Model | Mean Δ vs optimal (s) | Median Δ | Beat team % | Agree team % | Invalid % | Flip % |
-|---|---|---|---|---|---|---|
-| TBD | | | | | | |
+| Model | Mean Δ ex-ante (s) | Median Δ ex-ante | Mean Δ hindsight (s) | Beat team % | Agree team % | Invalid % | Flip % (probe) |
+|---|---|---|---|---|---|---|---|
+| TBD | | | | | | | |
 
 ### Table 2: Contamination gap
 | Model | Δ 2024–25 (s) | Δ 2026 (s) | Gap | p-value |
@@ -158,8 +168,9 @@ on old races is evidence of recall rather than reasoning.
 Imported from `docs/LIMITATIONS.md` (kept authoritative there): no traffic
 interaction in counterfactual rollouts (headline); single-further-stop strategy
 space; linear degradation; assumed compound availability; SC laps as field-median
-time; hindsight SC timeline in the oracle; interval-approximated gaps; scalar
-per-race pit loss; tyre-age provenance for used sets; mock numbers are placeholders.
+time; residual hindsight in the ex-ante baseline (realized valuation, no
+probabilistic SC model); interval-approximated gaps; scalar per-race pit loss;
+tyre-age provenance for used sets; mock numbers are placeholders.
 
 ## 6. Ethics and reproducibility
 

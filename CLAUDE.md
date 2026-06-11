@@ -4,7 +4,8 @@
 A benchmark testing whether frontier LLMs can make Formula 1 race strategy decisions.
 We reconstruct "decision points" from real 2026 F1 races (pit now or stay out? which
 compound?), feed identical frozen race states to multiple models via OpenRouter, and
-score their calls against a hindsight-optimal strategy computed by a race simulator.
+score their calls against two simulator oracles: ex-ante optimal (no future-SC
+knowledge; PRIMARY metric delta_exante) and hindsight optimal (secondary).
 2026 races post-date all models' training data → contamination-proof test set.
 
 Completed 2026 races used: Australia, China, Japan, Miami, Canada, Monaco.
@@ -17,7 +18,8 @@ Contamination-control races (P7): Bahrain 2024, Monaco 2024, Monaco 2025, Silver
 pip install -r requirements.txt
 pytest                                  # all tests must be green
 python scripts/build_dataset.py         # ingest -> extract -> data/decision_points/
-python scripts/run_benchmark.py --mock  # mock model calls -> outputs/raw_results/
+python scripts/run_benchmark.py --mock  # main pass -> outputs/raw_results/results.jsonl
+python scripts/run_consistency_probe.py --mock  # top-disagreement DPs x 5 samples; sole flip-rate source
 python scripts/score_results.py         # scores -> outputs/leaderboard.{md,csv,json}
 python -m boxbox.live.replay --race monaco-2026 --speed 60 --mock
 python scripts/verify_models.py         # free GET to OpenRouter /models, fixes config IDs
