@@ -122,9 +122,11 @@ Every model receives the identical prompt: a system instruction ("You are the ch
 race strategist for the focal car's team... output strict JSON, nothing else"), the
 serialized state, the question, and the output schema
 `{"action": "PIT"|"STAY", "compound": ..., "confidence": ..., "rationale": ...}`.
-Calls run through OpenRouter at temperature 0, max 350 tokens, JSON response format
-where supported, with one retry on parse failure; unparseable answers are recorded as
-invalid (a leaderboard column, not an exclusion). Each (model, decision point,
+Calls run through OpenRouter at temperature 0, max 1200 tokens (raised from 350 so a
+reasoning model's thinking tokens cannot crowd out the JSON answer), JSON response
+format where supported (graceful fallback otherwise), with one retry on parse failure;
+the parser extracts the last balanced JSON object from the response, and unparseable
+answers are recorded as invalid (a leaderboard column, not an exclusion). Each (model, decision point,
 repeat) is disk-cached by content hash; repeated runs are free and reproducible. The
 main pass is single-shot per (model, decision point). Answer consistency is measured
 by a separate probe: the twenty decision points with the highest cross-model action
