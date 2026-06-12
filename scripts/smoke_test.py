@@ -6,8 +6,9 @@ temperature 0. Mirrors Runner._call_real's request parameters exactly so this
 exercises the same code path the real benchmark will use, but additionally captures
 reasoning tokens, finish_reason, and OpenRouter's own reported cost.
 
-Hard aborts if the worst-case projected cost exceeds $1.00, and re-checks the cap
-before every individual call. Writes outputs/smoke_test.md.
+Hard aborts if the worst-case projected cost exceeds the cap, and re-checks the cap
+before every individual call. Writes outputs/smoke_test_v2.md, then projects the
+full-run cost (180 main-pass + 600 probe calls) from the observed token counts.
 
 Usage:
     python scripts/smoke_test.py        # requires OPENROUTER_API_KEY in .env
@@ -33,10 +34,19 @@ from boxbox.data.schemas import DecisionPoint  # noqa: E402
 from boxbox.dataset import load_all_decision_points  # noqa: E402
 from boxbox.harness.parse import parse_decision  # noqa: E402
 from boxbox.harness.prompts import PROMPT_VERSION, build_messages  # noqa: E402
-from boxbox.harness.runner import CostLedger  # noqa: E402
+from boxbox.harness.runner import (  # noqa: E402
+    _JSON_MODE_UNSUPPORTED,
+    CostLedger,
+    create_chat_completion,
+)
 
-SMOKE_CAP_USD = 1.00
-OUT_PATH = REPO_ROOT / "outputs" / "smoke_test.md"
+SMOKE_CAP_USD = 1.50
+OUT_PATH = REPO_ROOT / "outputs" / "smoke_test_v2.md"
+
+# Full-run sizing for the cost projection (per OVERNIGHT_TASK plan):
+# main pass 180 calls, consistency probe 20 DPs x 6 models x 5 samples = 600 calls.
+FULL_RUN_MAIN_CALLS = 180
+FULL_RUN_PROBE_CALLS = 600
 
 # (dp_type, race_id) picks — three different races, one of each type
 DP_PICKS = [("A", "2026-australia"), ("B", "2026-china"), ("C", "2026-japan")]
@@ -99,6 +109,7 @@ def call_model(
         "parse_error": None,
         "transport_error": None,
         "finish_reason": None,
+        "json_mode": None,
         "prompt_tokens": 0,
         "completion_tokens": 0,
         "reasoning_tokens": None,
@@ -111,17 +122,18 @@ def call_model(
     for attempt in range(3):
         try:
             t0 = time.monotonic()
-            resp = client.chat.completions.create(
-                model=model["openrouter_id"],
-                messages=messages,
-                temperature=temperature,
-                max_tokens=max_tokens,
-                response_format={"type": "json_object"},
+            resp = create_chat_completion(
+                client,
+                model["openrouter_id"],
+                messages,
+                temperature,
+                max_tokens,
                 extra_body={"usage": {"include": True}},  # ask OpenRouter for its cost
             )
             rec["latency_s"] = round(time.monotonic() - t0, 2)
             rec["raw_response"] = resp.choices[0].message.content or ""
             rec["finish_reason"] = resp.choices[0].finish_reason
+            rec["json_mode"] = model["openrouter_id"] not in _JSON_MODE_UNSUPPORTED
             usage = resp.usage
             rec["transport_error"] = None
             break
@@ -153,8 +165,41 @@ def call_model(
     return rec
 
 
+def project_full_run(records: list[dict], models: list[dict]) -> dict:
+    """Project main-pass + probe cost from observed per-call costs.
+    Calls are split evenly across models (same DPs x same models everywhere)."""
+    calls_per_model = (FULL_RUN_MAIN_CALLS + FULL_RUN_PROBE_CALLS) // len(models)
+    rows = []
+    total = 0.0
+    for model in models:
+        recs = [r for r in records if r["model_name"] == model["name"] and r["prompt_tokens"] > 0]
+        if not recs:
+            rows.append({"model": model["name"], "mean_call_usd": None, "projected_usd": None})
+            continue
+        mean_cost = sum(r["cost_usd"] for r in recs) / len(recs)
+        mean_prompt = sum(r["prompt_tokens"] for r in recs) / len(recs)
+        mean_completion = sum(r["completion_tokens"] for r in recs) / len(recs)
+        projected = mean_cost * calls_per_model
+        total += projected
+        rows.append(
+            {
+                "model": model["name"],
+                "mean_prompt_tok": round(mean_prompt),
+                "mean_completion_tok": round(mean_completion),
+                "mean_call_usd": mean_cost,
+                "calls": calls_per_model,
+                "projected_usd": projected,
+            }
+        )
+    return {"rows": rows, "total_usd": total, "calls_per_model": calls_per_model}
+
+
 def write_report(
-    records: list[dict], dps: list[DecisionPoint], projected_usd: float, total_usd: float
+    records: list[dict],
+    dps: list[DecisionPoint],
+    projected_usd: float,
+    total_usd: float,
+    projection: Optional[dict] = None,
 ) -> None:
     lines: list[str] = []
     add = lines.append
@@ -176,23 +221,55 @@ def write_report(
     add("## Summary")
     add("")
     add(
-        "| model | dp | ok | action | compound | prompt tok | completion tok | reasoning tok | cost USD | latency s |"
+        "| model | dp | ok | action | compound | prompt tok | completion tok | reasoning tok "
+        "| json mode | cost USD | latency s |"
     )
-    add("|---|---|---|---|---|---|---|---|---|---|")
+    add("|---|---|---|---|---|---|---|---|---|---|---|")
     for r in records:
         ok = "yes" if r["parsed"] else ("ERROR" if r["transport_error"] else "PARSE-FAIL")
         action = r["parsed"]["action"] if r["parsed"] else "—"
         compound = (r["parsed"].get("compound") or "—") if r["parsed"] else "—"
         rtok = r["reasoning_tokens"] if r["reasoning_tokens"] is not None else "n/r"
         lat = r["latency_s"] if r["latency_s"] is not None else "—"
+        jm = {True: "yes", False: "fallback", None: "—"}[r.get("json_mode")]
         add(
             f"| {r['model_name']} | {r['dp_id']} | {ok} | {action} | {compound} "
-            f"| {r['prompt_tokens']} | {r['completion_tokens']} | {rtok} "
+            f"| {r['prompt_tokens']} | {r['completion_tokens']} | {rtok} | {jm} "
             f"| {r['cost_usd']:.6f} | {lat} |"
         )
     add("")
-    add("`reasoning tok = n/r` means the API did not report a separate reasoning-token count.")
+    add(
+        "`reasoning tok = n/r` means the API did not report a separate reasoning-token count. "
+        "`json mode = fallback` means the provider rejected response_format=json_object and the "
+        "call was retried without it."
+    )
     add("")
+    if projection is not None:
+        add("## Full-run cost projection")
+        add("")
+        add(
+            f"Projected from this run's observed per-call costs: {FULL_RUN_MAIN_CALLS} main-pass "
+            f"+ {FULL_RUN_PROBE_CALLS} probe calls = {FULL_RUN_MAIN_CALLS + FULL_RUN_PROBE_CALLS} "
+            f"calls ({projection['calls_per_model']} per model)."
+        )
+        add("")
+        add(
+            "| model | mean prompt tok | mean completion tok | mean $/call | calls | projected USD |"
+        )
+        add("|---|---|---|---|---|---|")
+        for row in projection["rows"]:
+            if row["mean_call_usd"] is None:
+                add(f"| {row['model']} | — | — | — | — | no usable calls |")
+                continue
+            add(
+                f"| {row['model']} | {row['mean_prompt_tok']} | {row['mean_completion_tok']} "
+                f"| {row['mean_call_usd']:.6f} | {row['calls']} | {row['projected_usd']:.2f} |"
+            )
+        add("")
+        add(
+            f"**Projected full-run total: ${projection['total_usd']:.2f}** (cap in run.yaml: $20.00)"
+        )
+        add("")
     add("## Per-call detail")
     for r in records:
         add("")
@@ -303,10 +380,21 @@ def main() -> int:
                 )
             )
 
-    write_report(records, dps, projected, total)
+    projection = project_full_run(records, models)
+    write_report(records, dps, projected, total, projection)
     n_ok = sum(1 for r in records if r["parsed"])
     print(f"\n{n_ok}/{len(records)} calls returned valid decisions")
     print(f"TOTAL SPEND: ${total:.4f}")
+    print(
+        f"FULL-RUN PROJECTION ({FULL_RUN_MAIN_CALLS} main + {FULL_RUN_PROBE_CALLS} probe calls): "
+        f"${projection['total_usd']:.2f}"
+    )
+    for row in projection["rows"]:
+        if row["mean_call_usd"] is not None:
+            print(
+                f"  {row['model']:<18} ${row['mean_call_usd']:.6f}/call x {row['calls']} "
+                f"= ${row['projected_usd']:.2f}"
+            )
     print(f"-> {OUT_PATH}")
     return 0
 

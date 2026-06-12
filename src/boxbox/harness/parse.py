@@ -13,23 +13,42 @@ from boxbox.data.schemas import ModelDecision
 _FENCE_RE = re.compile(r"```(?:json)?\s*(.*?)```", re.DOTALL)
 
 
+def _balanced_objects(text: str) -> list[str]:
+    """Every top-level balanced {...} block, in order of appearance.
+    String-aware: braces inside JSON string literals don't affect depth."""
+    blocks: list[str] = []
+    depth = 0
+    start = -1
+    in_string = False
+    escaped = False
+    for i, ch in enumerate(text):
+        if in_string:
+            if escaped:
+                escaped = False
+            elif ch == "\\":
+                escaped = True
+            elif ch == '"':
+                in_string = False
+        elif ch == '"':
+            in_string = True
+        elif ch == "{":
+            if depth == 0:
+                start = i
+            depth += 1
+        elif ch == "}" and depth > 0:
+            depth -= 1
+            if depth == 0:
+                blocks.append(text[start : i + 1])
+    return blocks
+
+
 def _candidate_payloads(text: str) -> list[str]:
-    """Plausible JSON substrings, most specific first."""
+    """Plausible JSON substrings, most specific first. Reasoning models emit
+    thinking/prose before their answer, so the LAST object wins over earlier ones."""
     candidates: list[str] = []
-    for m in _FENCE_RE.finditer(text):
+    for m in reversed(list(_FENCE_RE.finditer(text))):
         candidates.append(m.group(1).strip())
-    # first balanced {...} block in the raw text
-    start = text.find("{")
-    if start != -1:
-        depth = 0
-        for i in range(start, len(text)):
-            if text[i] == "{":
-                depth += 1
-            elif text[i] == "}":
-                depth -= 1
-                if depth == 0:
-                    candidates.append(text[start : i + 1])
-                    break
+    candidates.extend(reversed(_balanced_objects(text)))
     candidates.append(text.strip())
     return candidates
 

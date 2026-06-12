@@ -1,6 +1,8 @@
 # Benchmark run settings — MAIN PASS (one deterministic call per model x DP)
 temperature: 0.0
-max_tokens: 350
+max_tokens: 1200           # reasoning models (Fable 5, GPT-5.5, Gemini 3.1) consume this
+                           # budget on thinking before emitting JSON; 350 starved them
+                           # (empty/truncated output with finish_reason=length)
 repeats: 1                # single-shot main pass; flip rate comes from the probe only
 spend_cap_usd: 20.00      # hard abort if projected spend exceeds this (main + probe)
 mock_invalid_rate: 0.04   # fraction of mock responses that are deliberately malformed

@@ -32,6 +32,47 @@ class SpendCapExceeded(RuntimeError):
     pass
 
 
+# Models that rejected response_format=json_object this session; we stop asking.
+_JSON_MODE_UNSUPPORTED: set[str] = set()
+
+
+def create_chat_completion(
+    client: Any,
+    model_id: str,
+    messages: list[dict[str, str]],
+    temperature: float,
+    max_tokens: int,
+    extra_body: Optional[dict] = None,
+) -> Any:
+    """One chat completion, requesting JSON mode where the provider supports it.
+    If the provider rejects response_format=json_object, retry once without it and
+    remember the model so later calls skip straight to plain mode."""
+    kwargs: dict[str, Any] = dict(
+        model=model_id, messages=messages, temperature=temperature, max_tokens=max_tokens
+    )
+    if extra_body:
+        kwargs["extra_body"] = extra_body
+    if model_id not in _JSON_MODE_UNSUPPORTED:
+        try:
+            return client.chat.completions.create(response_format={"type": "json_object"}, **kwargs)
+        except Exception as exc:
+            status = getattr(exc, "status_code", None)
+            msg = str(exc).lower()
+            rejected_json_mode = (
+                status is not None
+                and 400 <= status < 500
+                and status != 429
+                and ("response_format" in msg or "json_object" in msg or "structured output" in msg)
+            )
+            if not rejected_json_mode:
+                raise
+            _JSON_MODE_UNSUPPORTED.add(model_id)
+            log.warning(
+                "%s rejected response_format=json_object; falling back without it", model_id
+            )
+    return client.chat.completions.create(**kwargs)
+
+
 def _utcnow() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
@@ -239,12 +280,8 @@ class Runner:
         for attempt in range(4):  # backoff on 429/5xx; one extra parse retry below
             try:
                 self.api_calls += 1
-                resp = client.chat.completions.create(
-                    model=model_id,
-                    messages=messages,
-                    temperature=self.temperature,
-                    max_tokens=self.max_tokens,
-                    response_format={"type": "json_object"},
+                resp = create_chat_completion(
+                    client, model_id, messages, self.temperature, self.max_tokens
                 )
                 raw = resp.choices[0].message.content or ""
                 usage = resp.usage
