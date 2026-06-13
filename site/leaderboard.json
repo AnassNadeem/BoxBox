@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-06-13T21:22:08+00:00",
+ "generated_utc": "2026-06-13T22:00:36+00:00",
  "mode": "real",
  "headline_subset": "dry (changeable_conditions == false)",
  "n_decision_points": 159,
@@ -92,14 +92,14 @@
   {
    "model": "claude-opus-4.8",
    "n_calls": 159,
-   "n_valid": 159,
-   "mean_delta_exante_s": 7.196,
+   "n_valid": 158,
+   "mean_delta_exante_s": 7.126,
    "median_delta_exante_s": 0.0,
-   "mean_delta_hindsight_s": 7.57,
-   "median_delta_hindsight_s": 0.826,
-   "beat_team_pct": 22.0,
-   "agree_team_pct": 58.5,
-   "invalid_pct": 0.0,
+   "mean_delta_hindsight_s": 7.502,
+   "median_delta_hindsight_s": 0.773,
+   "beat_team_pct": 22.2,
+   "agree_team_pct": 58.9,
+   "invalid_pct": 0.6,
    "flip_rate_pct": 5.6,
    "per_race_mean_delta_exante_s": {
     "2024-bahrain": 2.568,
@@ -110,12 +110,12 @@
     "2026-japan": 4.28,
     "2026-monaco": 2.8,
     "2026-canada": 12.661,
-    "2026-miami": 13.821
+    "2026-miami": 13.552
    },
    "per_season_mean_delta_exante_s": {
     "2024": 2.661,
     "2025": 3.156,
-    "2026": 9.317
+    "2026": 9.232
    }
   },
   {
@@ -240,14 +240,14 @@
   {
    "model": "claude-opus-4.8",
    "n_calls": 178,
-   "n_valid": 178,
-   "mean_delta_exante_s": 20.818,
-   "median_delta_exante_s": 0.773,
-   "mean_delta_hindsight_s": 21.152,
-   "median_delta_hindsight_s": 1.623,
-   "beat_team_pct": 20.2,
-   "agree_team_pct": 58.4,
-   "invalid_pct": 0.0,
+   "n_valid": 177,
+   "mean_delta_exante_s": 20.832,
+   "median_delta_exante_s": 0.721,
+   "mean_delta_hindsight_s": 21.167,
+   "median_delta_hindsight_s": 1.607,
+   "beat_team_pct": 20.3,
+   "agree_team_pct": 58.8,
+   "invalid_pct": 0.6,
    "flip_rate_pct": 5.0,
    "per_race_mean_delta_exante_s": {
     "2024-bahrain": 2.568,
@@ -259,12 +259,12 @@
     "2026-china": 16.718,
     "2026-japan": 4.28,
     "2026-monaco": 2.8,
-    "2026-miami": 13.821
+    "2026-miami": 13.552
    },
    "per_season_mean_delta_exante_s": {
     "2024": 2.661,
     "2025": 72.506,
-    "2026": 9.304
+    "2026": 9.22
    }
   },
   {

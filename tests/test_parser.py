@@ -109,3 +109,35 @@ def test_braces_inside_string_values():
 def test_whitespace_only_is_invalid():
     decision, reason = parse_decision("   \n\t  ")
     assert decision is None and reason
+
+
+# --- compounds_available enforcement (compound not offered -> invalid) ---
+
+
+def test_compound_offered_is_valid():
+    decision, reason = parse_decision(VALID, compounds_available=["SOFT", "MEDIUM", "HARD"])
+    assert reason is None and decision is not None and decision.compound == "HARD"
+
+
+def test_compound_not_offered_is_invalid():
+    decision, reason = parse_decision(
+        '{"action": "PIT", "compound": "INTERMEDIATE", "confidence": 0.8, "rationale": "x"}',
+        compounds_available=["SOFT", "MEDIUM", "HARD"],
+    )
+    assert decision is None and reason == "compound not offered"
+
+
+def test_pit_without_compound_unaffected_by_availability():
+    decision, _ = parse_decision(
+        '{"action": "PIT", "compound": null, "confidence": 0.5, "rationale": ""}',
+        compounds_available=["SOFT", "MEDIUM", "HARD"],
+    )
+    assert decision is not None and decision.action == "PIT" and decision.compound is None
+
+
+def test_stay_unaffected_by_availability():
+    decision, _ = parse_decision(
+        '{"action": "STAY", "compound": null, "confidence": 0.5, "rationale": ""}',
+        compounds_available=["SOFT", "MEDIUM", "HARD"],
+    )
+    assert decision is not None and decision.action == "STAY"

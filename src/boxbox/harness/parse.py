@@ -53,8 +53,16 @@ def _candidate_payloads(text: str) -> list[str]:
     return candidates
 
 
-def parse_decision(text: str) -> tuple[Optional[ModelDecision], Optional[str]]:
-    """(decision, None) on success; (None, reason) on failure. Never raises."""
+def parse_decision(
+    text: str, compounds_available: Optional[list[str]] = None
+) -> tuple[Optional[ModelDecision], Optional[str]]:
+    """(decision, None) on success; (None, reason) on failure. Never raises.
+
+    If `compounds_available` is given, a PIT answer naming a compound that was not
+    offered for this decision point is rejected as invalid ("compound not offered")
+    rather than charitably remapped. PIT with no compound is unaffected. JSON
+    extraction is otherwise unchanged.
+    """
     if not text or not text.strip():
         return None, "empty response"
     last_reason = "no JSON object found"
@@ -85,5 +93,12 @@ def parse_decision(text: str) -> tuple[Optional[ModelDecision], Optional[str]]:
             continue
         if isinstance(decision.rationale, str) and len(decision.rationale.split()) > 80:
             decision.rationale = " ".join(decision.rationale.split()[:80]) + "..."
+        if (
+            compounds_available is not None
+            and decision.action == "PIT"
+            and decision.compound is not None
+            and decision.compound not in compounds_available
+        ):
+            return None, "compound not offered"
         return decision, None
     return None, last_reason

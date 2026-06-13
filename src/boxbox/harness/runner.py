@@ -246,7 +246,7 @@ class Runner:
     def _call_mock(self, dp: DecisionPoint, model_name: str, repeat_index: int) -> CallResult:
         self.api_calls += 1
         raw = mock_response(dp, model_name, repeat_index, self.run_cfg)
-        decision, reason = parse_decision(raw)
+        decision, reason = parse_decision(raw, dp.state.focal.compounds_available)
         prompt_chars = sum(len(m["content"]) for m in build_messages(dp))
         return CallResult(
             dp_id=dp.dp_id,
@@ -285,7 +285,7 @@ class Runner:
                 )
                 raw = resp.choices[0].message.content or ""
                 usage = resp.usage
-                decision, error = parse_decision(raw)
+                decision, error = parse_decision(raw, dp.state.focal.compounds_available)
                 if decision is None and attempt == 0:
                     continue  # the single parse-failure retry
                 break
