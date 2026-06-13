@@ -3,7 +3,8 @@ models:
   openrouter_id: anthropic/claude-fable-5
   pricing_in_per_mtok: 10.0
   pricing_out_per_mtok: 50.0
-  enabled: true
+  enabled: false   # 2026-06-13: Fable 5 suspended by a US export-control directive
+                   # (2026-06-12); API returns 404. See prereg-v2 / DECISIONS #43.
   verified: true
   note: 'verified against /models (Anthropic: Claude Fable 5)'
 - name: claude-opus-4.8

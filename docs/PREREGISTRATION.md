@@ -1,3 +1,53 @@
+# BOXBOX — Preregistration
+
+**Version history.** *prereg-v1* — original six-model design, frozen 2026-06-13 (tag
+`prereg-v1`), preserved unedited in the "Preregistration (v1)" section below and in git
+history. ***prereg-v2*** *(2026-06-13)* — model roster reduced from six to five after
+Claude Fable 5 became inaccessible; see the amendment immediately below. Only the roster
+changed; every other frozen element is identical to v1.
+
+## Amendment v2 (2026-06-13) — Claude Fable 5 removed from the roster
+
+prereg-v1 froze a **six-model** roster (§4 below). After it was frozen, **Claude Fable 5
+became unavailable through the API**, so it is removed from the benchmark. The paid run
+uses the **five remaining models**: claude-opus-4.8, gpt-5.5, gemini-3.1-pro,
+deepseek-v3.2, claude-haiku-4.5. This supersedes the six-model roster in §4.
+
+**Cause (verified against the provider's own statement).** On **2026-06-12** the US
+government, citing national-security authorities, issued an **export-control directive
+suspending all access to Claude Fable 5 and Claude Mythos 5** (Anthropic's notice,
+linked from the API error itself: <https://www.anthropic.com/news/fable-mythos-access> —
+"The US government, citing national security authorities, has issued an export control
+directive to suspend all access to Fable 5 and Mythos 5"; the trigger was a demonstrated
+jailbreak technique, and access to all other Anthropic models is unaffected). Anthropic
+states it disagrees with the directive and is working to restore access.
+
+**Empirical confirmation.** One real call to `anthropic/claude-fable-5` through the
+normal benchmark `Runner` path on **2026-06-13T10:42:20Z** returned **HTTP 404** from
+every OpenRouter provider (Anthropic, Amazon Bedrock, Google Vertex): *"Claude Fable 5
+is not available. Please use Opus 4.8."* The call consumed 0 tokens and $0; the exact
+error is recorded in `outputs/fable_unavailable_check.md`. Our cost ledger shows Fable 5
+was still reachable on the morning of 2026-06-12 (six successful smoke-test calls at
+09:57 and 10:09 UTC), so access ceased after the directive took effect — between those
+calls and the 2026-06-13 check — rather than instantaneously at issuance.
+
+**Captured Fable 5 data — separate observation, not in the leaderboard.** The three
+Claude Fable 5 smoke-test calls captured on 2026-06-12 (decision points
+`2026-australia-L007-COL-A`, `2026-china-L010-ANT-B`, `2026-japan-L018-ANT-C`; full
+responses in `outputs/smoke_test_v2.md`) are **preserved** and will be reported only as
+a **separate, time-limited observation** (n = 3, single-shot, not balanced across
+decision types or races) — explicitly **not** part of the main leaderboard, which covers
+the five available models over the full 178-DP dataset.
+
+**Scope.** Only the model roster changes. The hypotheses, the `delta_exante` primary
+metric, the 178-DP dataset and extraction rules, the simulator/oracle scoring, the
+prompt (`v1`), and the run/probe configuration are all unchanged from prereg-v1, which
+remains intact in git history (tag `prereg-v1`) and unedited below. Projected cost of the
+five-model run: ~$10.90 (temp-0) / ~$12.27 with the temperature-1.0 probe, within the
+$20 cap.
+
+---
+
 # BOXBOX — Preregistration (v1)
 
 **Status: methodology frozen. This document is committed _before_ any full benchmark
