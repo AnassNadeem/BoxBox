@@ -171,6 +171,28 @@ def build_state(
     )
 
 
+def is_changeable(race: RaceData, focal_compound: str, t: int) -> bool:
+    """Conditions-only test (NEVER uses score/delta): is the decision at lap t in a
+    wet/changeable phase the dry-only v1 simulator cannot model?
+
+    True if ANY of:
+      - the session is declared wet (rain in the weather feed) — race-level signal;
+      - the focal car is on INTERMEDIATE/WET entering lap t;
+      - any car runs an INTER/WET or rain-affected lap at or after lap t (so the
+        rollout to the flag would cross changeable conditions).
+
+    The v1 simulator runs a single stint to the flag and cannot switch wet<->slick,
+    so such points are out of scope for the headline metric (see docs/LIMITATIONS.md).
+    """
+    if race.weather.rain:
+        return True
+    if focal_compound in WET_COMPOUNDS:
+        return True
+    return any(
+        r.lap_number >= t and (r.compound in WET_COMPOUNDS or r.rain_affected) for r in race.laps
+    )
+
+
 def _is_lapped(idx: RaceIndex, driver: str, t: int) -> bool:
     """Leak-free lapped check: gap to leader at end of t-1 exceeds the leader's lap time."""
     order = idx.order_at(t - 1)
@@ -353,6 +375,9 @@ def extract_decision_points(
                 team_action=team_action,
                 team_compound=team_compound,
                 trigger=cand.trigger,
+                changeable_conditions=is_changeable(
+                    race, cand.state.focal.compound, cand.lap  # type: ignore[union-attr]
+                ),
             )
         )
     return points

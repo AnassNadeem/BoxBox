@@ -133,6 +133,10 @@ class DecisionPoint(BaseModel):
     team_action: Action
     team_compound: Optional[Compound] = None
     trigger: str = ""  # human-readable reason this DP was emitted
+    # Conditions-only flag (NEVER from score/delta): the decision sits in a wet/
+    # changeable phase the dry-only v1 simulator cannot model (no wet->dry crossover).
+    # Excluded from the headline metric. See extract.decision_points.is_changeable.
+    changeable_conditions: bool = False
 
 
 # ----------------------------------------------------------------------------- harness
@@ -206,3 +210,4 @@ class Score(BaseModel):
     exante_action: Action  # the ex-ante oracle's call at lap t
     exante_compound: Optional[Compound] = None
     exante_stop_lap: Optional[int] = None
+    changeable_conditions: bool = False  # carried from the DP; excluded from headline

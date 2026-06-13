@@ -4,7 +4,50 @@
 `prereg-v1`), preserved unedited in the "Preregistration (v1)" section below and in git
 history. ***prereg-v2*** *(2026-06-13)* — model roster reduced from six to five after
 Claude Fable 5 became inaccessible; see the amendment immediately below. Only the roster
-changed; every other frozen element is identical to v1.
+changed; every other frozen element is identical to v1. ***prereg-v3*** *(2026-06-13)* —
+the headline metric is now computed on the DRY SUBSET of decision points (wet/changeable
+conditions are out of the v1 simulator's scope); see Amendment v3 directly below.
+
+## Amendment v3 (2026-06-13) — headline metric on the dry subset (wet exclusion)
+
+Diagnosis of the outlier deltas (2026-Miami, 2025-Silverstone) found that the v1
+simulator's single-stint rollout cannot model a wet→dry crossover: a model that pits onto
+INTERMEDIATE/WET is run on wet tyres to the flag at wet pace, producing an artifactual
+penalty (wet-tyre calls averaged ~235s of "loss" vs ~8.5s for all other calls). This is
+the documented no-wet-modeling scope of the v1 simulator (LIMITATIONS.md #2, #11), not a
+strategy error by the models.
+
+**Change.** The HEADLINE metric is computed on the **dry subset** (`changeable_conditions
+== false`). A decision point is tagged changeable **mechanically, from realized conditions
+only — never from score/delta** (criterion in `extract.decision_points.is_changeable`):
+- the session is declared wet (rain in the weather feed); OR
+- the focal car is on INTERMEDIATE/WET entering the decision lap; OR
+- any car runs an INTER/WET or rain-affected lap at or after the decision lap (so the
+  rollout to the flag would cross changeable conditions).
+
+At this commit that excludes **36 of 178 DPs** (2026-Miami 18, 2025-Silverstone 18);
+the dry headline set is **142 DPs**. Full-set numbers are retained as a clearly-labelled
+**appendix** in the leaderboard (they include the wet artifacts and are NOT the headline).
+The contamination analysis is likewise computed on the dry subset.
+
+**Effect.** Dry-subset mean `delta_exante` is 3–12s per model (vs 29–36s on the full
+set). The earlier apparent "worse on pre-2026" contamination result does **not** survive
+on the dry subset — no model is significantly better on pre-2026 (Holm-corrected
+Mann-Whitney U); it had been driven entirely by the wet 2025-Silverstone calls.
+
+**Calibration note — attempted fit-hardening was NOT adopted.** Rejecting thin/
+implausible degradation fits and falling back to team-mate/field fits was implemented and
+measured, but it **regressed** the in-sample calibration MAE (0.222 → 0.239 overall;
+Miami 0.475 → 0.521; Monaco 0.10 → 0.15). Calibration is measured on each driver's own
+stint, and a driver's own fit — already clamped by the existing fastest-clean floor and
+age cap — fits their own laps better than any pooled fallback. It was reverted; the
+degradation model is unchanged from prereg-v1.
+
+**Scope.** Only the headline DP subset (and the contamination subset) changes, plus the
+additive conditions-only `changeable_conditions` flag and documentation. Hypotheses, the
+`delta_exante` definition, the dataset/extraction rules, the simulator/oracle, the prompt,
+and the run/probe config are otherwise unchanged. prereg-v1 and prereg-v2 remain intact
+in history.
 
 ## Amendment v2 (2026-06-13) — Claude Fable 5 removed from the roster
 

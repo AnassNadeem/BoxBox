@@ -31,3 +31,16 @@
    practice-used sets may carry hidden age in 2026 data sources.
 10. **The mock leaderboard is fake by construction** — it validates plumbing, not model
     skill. All numbers in tonight's outputs are placeholders until real runs.
+11. **Wet/changeable-condition decision points are excluded from the headline metric**
+    (the dry subset is the headline). The simulator runs a single stint to the flag and
+    cannot model a wet→dry crossover (a stint cannot switch back to slicks), so a model
+    that pits onto INTERMEDIATE/WET is rolled out on wet tyres to the end at wet pace —
+    an artifact, not a strategy error (this produced the Miami and Silverstone delta
+    outliers, mean ~235s on wet-tyre calls vs ~8.5s on all others). A point is tagged
+    `changeable_conditions` MECHANICALLY, from conditions only (never from score/delta):
+    the session is declared wet (rain in the weather feed), OR the focal car is on
+    INTER/WET entering the lap, OR any car runs an INTER/WET or rain-affected lap at or
+    after the decision lap (so the rollout would cross changeable conditions). Headline
+    leaderboard/figures/contamination use `changeable_conditions == false`; full-set
+    numbers are retained in a clearly-labelled appendix. This excluded 36 of 178 DPs
+    (Miami 18, Silverstone 18). Consistent with limitation 2 (no wet→dry modeling).

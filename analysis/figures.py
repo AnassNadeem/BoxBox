@@ -59,10 +59,12 @@ def fig_leaderboard_bar(board: dict) -> Path:
 
 
 def fig_delta_distribution(scores: list[dict]) -> Path:
+    # Headline = dry subset: exclude changeable-condition DPs (out of v1-sim scope).
     by_model: dict[str, list[float]] = {}
     for s in scores:
-        if not s["invalid"] and s["delta_exante_s"] is not None:
-            by_model.setdefault(s["model_name"], []).append(s["delta_exante_s"])
+        if s["invalid"] or s["delta_exante_s"] is None or s.get("changeable_conditions"):
+            continue
+        by_model.setdefault(s["model_name"], []).append(s["delta_exante_s"])
     models = sorted(by_model)
     fig, ax = plt.subplots(figsize=(8.5, 4.5))
     data = [by_model[m] for m in models]

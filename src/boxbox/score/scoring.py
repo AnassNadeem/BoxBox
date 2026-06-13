@@ -33,6 +33,7 @@ def score_call(dp: DecisionPoint, ev: DPEvaluation, result: CallResult) -> Score
         dp_type=dp.dp_type,
         model_name=result.model_name,
         repeat_index=result.repeat_index,
+        changeable_conditions=dp.changeable_conditions,
         sim_optimal_s=round(ev.sim_optimal_s, 3),
         sim_exante_optimal_s=round(ev.sim_exante_optimal_s, 3),
         sim_team_s=round(ev.sim_team_s, 3),
