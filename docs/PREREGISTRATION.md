@@ -7,6 +7,52 @@ Claude Fable 5 became inaccessible; see the amendment immediately below. Only th
 changed; every other frozen element is identical to v1. ***prereg-v3*** *(2026-06-13)* —
 the headline metric is now computed on the DRY SUBSET of decision points (wet/changeable
 conditions are out of the v1 simulator's scope); see Amendment v3 directly below.
+***prereg-v4*** *(2026-06-13)* — wet detection corrected at the source: INTER/WET is
+offered (and a DP tagged changeable) only on **actual nearby wet running**, not the
+race-level rain flag; this moves the dry Miami race into the headline. See Amendment v4.
+
+## Amendment v4 (2026-06-13) — wet detection corrected at the source
+
+Amendment v3's exclusion test, and the `compounds_available` offer logic it mirrored,
+keyed off the race-level `weather.rain` flag plus an "any wet lap seen so far" latch. A
+conditions audit found these OVER-offered INTER/WET in two nominally dry cases:
+- **Miami (false positive):** `weather.rain=True` from 3 stray rainfall samples (of 168)
+  on a 33–42 °C track where the field never ran a single inter lap. INTER was offered at
+  all 18 DPs; models picked it on 60 calls and the dry-only sim ran inters to the flag
+  (~140–260 s artifact deltas). All 18 Miami DPs were wrongly tagged changeable.
+- **Canada (early-damp latch):** a damp start (inters laps 1–3) latched INTER "on" for
+  the entire dry remainder of the race (offered at all 18 DPs, out to lap 53).
+
+**Fix.** Both the offered compound set AND `is_changeable` now use one conditions-only
+test, `wet_running_near(race, t, window)`: wet is "in play" only if the field actually
+ran INTER/WET or had rain-affected laps within `window=5` laps of t (range `[t-5, t]`,
+`≤ t` so it is leakage-safe; threshold in `config/extraction.yaml`). The bare rain flag
+and the latch are gone; the test is applied uniformly.
+
+**Verified outcomes (conditions-only, never from delta):**
+- **Silverstone** (genuinely wet, inters laps 1–44) — stays FULLY excluded (18/18).
+- **Miami** (dry) — now INCLUDED in the headline (changeable 18→0); INTER no longer
+  offered (18/18 → 0/18).
+- **Canada** — dry-phase DPs INCLUDED; only L004 (the lap immediately after the damp)
+  remains changeable/offered (changeable 0→1, INTER offered 18→1).
+
+**Re-run.** Only the 35 DPs whose offered compound set changed were re-called (Miami 18 +
+Canada 17; Canada L004 unchanged) = 175 calls at temperature 0; every unchanged call was
+left untouched (cache entries and `results.jsonl` rows preserved verbatim). Projected
+**$1.358**, actual **$1.375**; cumulative ledger $11.13 → **$12.50**.
+
+**Effect on results.** Headline dry subset grows 142 → **159 DPs** (Miami +18, Canada
+−1); exclusions fall 36 → **19** (Silverstone 18 + Canada L004). Miami's mean
+`delta_exante` collapses **92.56 s → 13.65 s** (artifact removed) and now counts in the
+headline; Canada **20.04 → 10.89 s**. New headline means: deepseek 5.30, opus 7.20,
+gemini 7.38, gpt-5.5 9.20, haiku 12.76. The full-set appendix means also fall (Miami
+artifact gone; only the genuinely-wet Silverstone calls still inflate it). The
+contamination "worse on pre-2026" result still does not survive on the dry subset.
+
+**Scope.** The offered compound set for Miami/Canada changes (hence the re-run), plus
+the conditions-only `changeable_conditions` flag. Hypotheses, the `delta_exante`
+definition, the simulator/oracle, the prompt template, and run/probe config are
+unchanged. prereg v1–v3 remain intact in history.
 
 ## Amendment v3 (2026-06-13) — headline metric on the dry subset (wet exclusion)
 

@@ -24,6 +24,15 @@ state:
   last_n_lap_times: 3
   top_n_summary: 10
 
+# Wet-conditions detection. INTER/WET is offered in compounds_available (and a DP is
+# tagged changeable_conditions) ONLY if the field actually ran wet tyres / had
+# rain-affected laps within this many laps of the decision lap t (window [t-w, t], so
+# <= t and leakage-safe). Replaces the race-level Rainfall.any() flag AND the "any wet
+# lap seen so far" latch, which over-offered INTER in dry phases (Miami false positive;
+# Canada early-damp latch). See docs/DECISIONS.md.
+wet:
+  window_laps: 5
+
 # Race lists (race_id = "<season>-<slug>")
 races_2026:
   - {race_id: 2026-australia, year: 2026, event: Australia}

@@ -1,13 +1,57 @@
 {
- "generated_utc": "2026-06-11T18:24:31+00:00",
- "mode": "mock",
- "n_decision_points": 178,
- "n_probe_decision_points": 20,
+ "generated_utc": "2026-06-13T21:22:08+00:00",
+ "mode": "real",
+ "headline_subset": "dry (changeable_conditions == false)",
+ "n_decision_points": 159,
+ "n_decision_points_full": 178,
+ "n_excluded_changeable_dps": 19,
+ "excluded_by_race": {
+  "2024-bahrain": {
+   "excluded": 0,
+   "total": 18
+  },
+  "2024-monaco": {
+   "excluded": 0,
+   "total": 16
+  },
+  "2025-monaco": {
+   "excluded": 0,
+   "total": 18
+  },
+  "2025-silverstone": {
+   "excluded": 18,
+   "total": 18
+  },
+  "2026-australia": {
+   "excluded": 0,
+   "total": 18
+  },
+  "2026-canada": {
+   "excluded": 1,
+   "total": 18
+  },
+  "2026-china": {
+   "excluded": 0,
+   "total": 18
+  },
+  "2026-japan": {
+   "excluded": 0,
+   "total": 18
+  },
+  "2026-miami": {
+   "excluded": 0,
+   "total": 18
+  },
+  "2026-monaco": {
+   "excluded": 0,
+   "total": 18
+  }
+ },
+ "n_probe_decision_points": 18,
  "races": [
   "2024-bahrain",
   "2024-monaco",
   "2025-monaco",
-  "2025-silverstone",
   "2026-australia",
   "2026-canada",
   "2026-china",
@@ -17,183 +61,300 @@
  ],
  "models": [
   {
-   "model": "gemini-3.1-pro",
-   "n_calls": 178,
-   "n_valid": 166,
-   "mean_delta_exante_s": 19.569,
-   "median_delta_exante_s": 1.586,
-   "mean_delta_hindsight_s": 20.083,
-   "median_delta_hindsight_s": 1.586,
-   "beat_team_pct": 16.9,
-   "agree_team_pct": 58.4,
-   "invalid_pct": 6.7,
-   "flip_rate_pct": 80.0,
+   "model": "deepseek-v3.2",
+   "n_calls": 159,
+   "n_valid": 159,
+   "mean_delta_exante_s": 5.303,
+   "median_delta_exante_s": 0.0,
+   "mean_delta_hindsight_s": 5.676,
+   "median_delta_hindsight_s": 0.0,
+   "beat_team_pct": 18.2,
+   "agree_team_pct": 73.0,
+   "invalid_pct": 0.0,
+   "flip_rate_pct": 38.9,
    "per_race_mean_delta_exante_s": {
-    "2024-bahrain": 21.208,
-    "2024-monaco": 38.584,
-    "2025-monaco": 24.175,
-    "2025-silverstone": 29.674,
-    "2026-australia": 8.309,
-    "2026-canada": 18.758,
-    "2026-china": 2.929,
-    "2026-japan": 12.396,
-    "2026-miami": 24.19,
-    "2026-monaco": 18.472
+    "2024-bahrain": 0.092,
+    "2024-monaco": 2.766,
+    "2025-monaco": 9.756,
+    "2026-australia": 0.164,
+    "2026-china": -0.032,
+    "2026-japan": 3.384,
+    "2026-monaco": 4.169,
+    "2026-canada": 4.113,
+    "2026-miami": 22.964
    },
    "per_season_mean_delta_exante_s": {
-    "2024": 28.997,
-    "2025": 27.003,
-    "2026": 14.338
+    "2024": 1.35,
+    "2025": 9.756,
+    "2026": 5.809
+   }
+  },
+  {
+   "model": "claude-opus-4.8",
+   "n_calls": 159,
+   "n_valid": 159,
+   "mean_delta_exante_s": 7.196,
+   "median_delta_exante_s": 0.0,
+   "mean_delta_hindsight_s": 7.57,
+   "median_delta_hindsight_s": 0.826,
+   "beat_team_pct": 22.0,
+   "agree_team_pct": 58.5,
+   "invalid_pct": 0.0,
+   "flip_rate_pct": 5.6,
+   "per_race_mean_delta_exante_s": {
+    "2024-bahrain": 2.568,
+    "2024-monaco": 2.766,
+    "2025-monaco": 3.156,
+    "2026-australia": 5.81,
+    "2026-china": 16.718,
+    "2026-japan": 4.28,
+    "2026-monaco": 2.8,
+    "2026-canada": 12.661,
+    "2026-miami": 13.821
+   },
+   "per_season_mean_delta_exante_s": {
+    "2024": 2.661,
+    "2025": 3.156,
+    "2026": 9.317
+   }
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "n_calls": 159,
+   "n_valid": 158,
+   "mean_delta_exante_s": 7.375,
+   "median_delta_exante_s": 0.171,
+   "mean_delta_hindsight_s": 7.751,
+   "median_delta_hindsight_s": 0.522,
+   "beat_team_pct": 19.6,
+   "agree_team_pct": 60.1,
+   "invalid_pct": 0.6,
+   "flip_rate_pct": 22.2,
+   "per_race_mean_delta_exante_s": {
+    "2024-bahrain": 5.157,
+    "2024-monaco": 5.528,
+    "2025-monaco": 3.527,
+    "2026-australia": 5.757,
+    "2026-china": 15.178,
+    "2026-japan": 4.441,
+    "2026-monaco": 4.867,
+    "2026-canada": 16.413,
+    "2026-miami": 5.588
+   },
+   "per_season_mean_delta_exante_s": {
+    "2024": 5.332,
+    "2025": 3.527,
+    "2026": 8.635
    }
   },
   {
    "model": "gpt-5.5",
-   "n_calls": 178,
-   "n_valid": 169,
-   "mean_delta_exante_s": 19.74,
-   "median_delta_exante_s": 0.994,
-   "mean_delta_hindsight_s": 20.239,
-   "median_delta_hindsight_s": 0.997,
-   "beat_team_pct": 16.6,
-   "agree_team_pct": 67.5,
-   "invalid_pct": 5.1,
-   "flip_rate_pct": 90.0,
+   "n_calls": 159,
+   "n_valid": 159,
+   "mean_delta_exante_s": 9.203,
+   "median_delta_exante_s": 1.021,
+   "mean_delta_hindsight_s": 9.577,
+   "median_delta_hindsight_s": 1.564,
+   "beat_team_pct": 18.2,
+   "agree_team_pct": 59.1,
+   "invalid_pct": 0.0,
+   "flip_rate_pct": 55.6,
    "per_race_mean_delta_exante_s": {
-    "2024-bahrain": 10.295,
-    "2024-monaco": 28.019,
-    "2025-monaco": 24.022,
-    "2025-silverstone": 18.878,
-    "2026-australia": 7.137,
-    "2026-canada": 22.858,
-    "2026-china": 8.644,
-    "2026-japan": 5.312,
-    "2026-miami": 62.411,
-    "2026-monaco": 12.013
+    "2024-bahrain": 12.038,
+    "2024-monaco": 14.006,
+    "2025-monaco": 3.331,
+    "2026-australia": 5.815,
+    "2026-china": 17.877,
+    "2026-japan": 4.162,
+    "2026-monaco": 0.716,
+    "2026-canada": 20.548,
+    "2026-miami": 5.5
    },
    "per_season_mean_delta_exante_s": {
-    "2024": 18.871,
-    "2025": 21.216,
-    "2026": 19.533
+    "2024": 12.964,
+    "2025": 3.331,
+    "2026": 8.996
    }
   },
   {
    "model": "claude-haiku-4.5",
-   "n_calls": 178,
-   "n_valid": 169,
-   "mean_delta_exante_s": 21.706,
-   "median_delta_exante_s": 0.826,
-   "mean_delta_hindsight_s": 22.126,
-   "median_delta_hindsight_s": 0.994,
-   "beat_team_pct": 16.0,
-   "agree_team_pct": 63.9,
-   "invalid_pct": 5.1,
-   "flip_rate_pct": 90.0,
-   "per_race_mean_delta_exante_s": {
-    "2024-bahrain": 4.258,
-    "2024-monaco": 25.8,
-    "2025-monaco": 54.066,
-    "2025-silverstone": 24.449,
-    "2026-australia": 10.781,
-    "2026-canada": 39.011,
-    "2026-china": 6.573,
-    "2026-japan": 8.175,
-    "2026-miami": 34.245,
-    "2026-monaco": 7.721
-   },
-   "per_season_mean_delta_exante_s": {
-    "2024": 14.05,
-    "2025": 39.258,
-    "2026": 17.914
-   }
-  },
-  {
-   "model": "claude-fable-5",
-   "n_calls": 178,
-   "n_valid": 171,
-   "mean_delta_exante_s": 24.005,
-   "median_delta_exante_s": 0.997,
-   "mean_delta_hindsight_s": 24.52,
-   "median_delta_hindsight_s": 1.1,
+   "n_calls": 159,
+   "n_valid": 159,
+   "mean_delta_exante_s": 12.764,
+   "median_delta_exante_s": 0.312,
+   "mean_delta_hindsight_s": 13.137,
+   "median_delta_hindsight_s": 0.438,
    "beat_team_pct": 17.0,
-   "agree_team_pct": 63.2,
-   "invalid_pct": 3.9,
-   "flip_rate_pct": 95.0,
+   "agree_team_pct": 64.2,
+   "invalid_pct": 0.0,
+   "flip_rate_pct": 0.0,
    "per_race_mean_delta_exante_s": {
-    "2024-bahrain": 7.88,
-    "2024-monaco": 46.013,
-    "2025-monaco": 45.845,
-    "2025-silverstone": 49.759,
-    "2026-australia": 5.522,
-    "2026-canada": 28.579,
-    "2026-china": 8.825,
-    "2026-japan": 0.459,
-    "2026-miami": 38.114,
-    "2026-monaco": 10.497
+    "2024-bahrain": 9.831,
+    "2024-monaco": 49.154,
+    "2025-monaco": 9.756,
+    "2026-australia": 16.852,
+    "2026-china": 0.718,
+    "2026-japan": 6.232,
+    "2026-monaco": 3.788,
+    "2026-canada": 1.562,
+    "2026-miami": 20.4
    },
    "per_season_mean_delta_exante_s": {
-    "2024": 25.825,
-    "2025": 47.917,
-    "2026": 15.511
+    "2024": 28.336,
+    "2025": 9.756,
+    "2026": 8.321
+   }
+  }
+ ],
+ "appendix_full_set": [
+  {
+   "model": "gpt-5.5",
+   "n_calls": 178,
+   "n_valid": 178,
+   "mean_delta_exante_s": 19.769,
+   "median_delta_exante_s": 1.829,
+   "mean_delta_hindsight_s": 20.102,
+   "median_delta_hindsight_s": 1.974,
+   "beat_team_pct": 16.9,
+   "agree_team_pct": 59.6,
+   "invalid_pct": 0.0,
+   "flip_rate_pct": 55.0,
+   "per_race_mean_delta_exante_s": {
+    "2024-bahrain": 12.038,
+    "2024-monaco": 14.006,
+    "2025-monaco": 3.331,
+    "2025-silverstone": 113.754,
+    "2026-australia": 5.815,
+    "2026-canada": 19.847,
+    "2026-china": 17.877,
+    "2026-japan": 4.162,
+    "2026-monaco": 0.716,
+    "2026-miami": 5.5
+   },
+   "per_season_mean_delta_exante_s": {
+    "2024": 12.964,
+    "2025": 58.543,
+    "2026": 8.986
    }
   },
   {
    "model": "claude-opus-4.8",
    "n_calls": 178,
-   "n_valid": 172,
-   "mean_delta_exante_s": 26.446,
-   "median_delta_exante_s": 1.201,
-   "mean_delta_hindsight_s": 26.959,
-   "median_delta_hindsight_s": 1.473,
-   "beat_team_pct": 19.8,
-   "agree_team_pct": 56.4,
-   "invalid_pct": 3.4,
-   "flip_rate_pct": 85.0,
+   "n_valid": 178,
+   "mean_delta_exante_s": 20.818,
+   "median_delta_exante_s": 0.773,
+   "mean_delta_hindsight_s": 21.152,
+   "median_delta_hindsight_s": 1.623,
+   "beat_team_pct": 20.2,
+   "agree_team_pct": 58.4,
+   "invalid_pct": 0.0,
+   "flip_rate_pct": 5.0,
    "per_race_mean_delta_exante_s": {
-    "2024-bahrain": 13.139,
-    "2024-monaco": 23.722,
-    "2025-monaco": 83.568,
-    "2025-silverstone": 44.134,
-    "2026-australia": 4.542,
-    "2026-canada": 39.415,
-    "2026-china": 6.857,
-    "2026-japan": 9.197,
-    "2026-miami": 32.235,
-    "2026-monaco": 7.662
+    "2024-bahrain": 2.568,
+    "2024-monaco": 2.766,
+    "2025-monaco": 3.156,
+    "2025-silverstone": 141.856,
+    "2026-australia": 5.81,
+    "2026-canada": 12.398,
+    "2026-china": 16.718,
+    "2026-japan": 4.28,
+    "2026-monaco": 2.8,
+    "2026-miami": 13.821
    },
    "per_season_mean_delta_exante_s": {
-    "2024": 18.119,
-    "2025": 64.414,
-    "2026": 16.293
+    "2024": 2.661,
+    "2025": 72.506,
+    "2026": 9.304
+   }
+  },
+  {
+   "model": "gemini-3.1-pro",
+   "n_calls": 178,
+   "n_valid": 177,
+   "mean_delta_exante_s": 20.928,
+   "median_delta_exante_s": 1.603,
+   "mean_delta_hindsight_s": 21.264,
+   "median_delta_hindsight_s": 1.639,
+   "beat_team_pct": 18.1,
+   "agree_team_pct": 59.9,
+   "invalid_pct": 0.6,
+   "flip_rate_pct": 25.0,
+   "per_race_mean_delta_exante_s": {
+    "2024-bahrain": 5.157,
+    "2024-monaco": 5.528,
+    "2025-monaco": 3.527,
+    "2025-silverstone": 140.619,
+    "2026-australia": 5.757,
+    "2026-canada": 15.941,
+    "2026-china": 15.178,
+    "2026-japan": 4.441,
+    "2026-monaco": 4.867,
+    "2026-miami": 5.588
+   },
+   "per_season_mean_delta_exante_s": {
+    "2024": 5.332,
+    "2025": 74.031,
+    "2026": 8.629
    }
   },
   {
    "model": "deepseek-v3.2",
    "n_calls": 178,
-   "n_valid": 170,
-   "mean_delta_exante_s": 27.674,
-   "median_delta_exante_s": 1.667,
-   "mean_delta_hindsight_s": 28.174,
-   "median_delta_hindsight_s": 1.829,
-   "beat_team_pct": 19.4,
-   "agree_team_pct": 58.2,
-   "invalid_pct": 4.5,
-   "flip_rate_pct": 80.0,
+   "n_valid": 178,
+   "mean_delta_exante_s": 24.058,
+   "median_delta_exante_s": 0.339,
+   "mean_delta_hindsight_s": 24.391,
+   "median_delta_hindsight_s": 0.349,
+   "beat_team_pct": 16.9,
+   "agree_team_pct": 70.2,
+   "invalid_pct": 0.0,
+   "flip_rate_pct": 40.0,
    "per_race_mean_delta_exante_s": {
-    "2024-bahrain": 8.999,
-    "2024-monaco": 20.966,
-    "2025-monaco": 77.559,
-    "2025-silverstone": 38.251,
-    "2026-australia": 11.29,
-    "2026-canada": 58.644,
-    "2026-china": 7.034,
-    "2026-japan": 13.646,
-    "2026-miami": 21.396,
-    "2026-monaco": 16.47
+    "2024-bahrain": 0.092,
+    "2024-monaco": 2.766,
+    "2025-monaco": 9.756,
+    "2025-silverstone": 190.623,
+    "2026-australia": 0.164,
+    "2026-canada": 4.325,
+    "2026-china": -0.032,
+    "2026-japan": 3.384,
+    "2026-monaco": 4.169,
+    "2026-miami": 22.964
    },
    "per_season_mean_delta_exante_s": {
-    "2024": 14.235,
-    "2025": 58.467,
-    "2026": 21.386
+    "2024": 1.35,
+    "2025": 100.189,
+    "2026": 5.829
+   }
+  },
+  {
+   "model": "claude-haiku-4.5",
+   "n_calls": 178,
+   "n_valid": 178,
+   "mean_delta_exante_s": 30.948,
+   "median_delta_exante_s": 0.934,
+   "mean_delta_hindsight_s": 31.281,
+   "median_delta_hindsight_s": 1.211,
+   "beat_team_pct": 15.7,
+   "agree_team_pct": 62.4,
+   "invalid_pct": 0.0,
+   "flip_rate_pct": 0.0,
+   "per_race_mean_delta_exante_s": {
+    "2024-bahrain": 9.831,
+    "2024-monaco": 49.154,
+    "2025-monaco": 9.756,
+    "2025-silverstone": 192.852,
+    "2026-australia": 16.852,
+    "2026-canada": 1.916,
+    "2026-china": 0.718,
+    "2026-japan": 6.232,
+    "2026-monaco": 3.788,
+    "2026-miami": 20.4
+   },
+   "per_season_mean_delta_exante_s": {
+    "2024": 28.336,
+    "2025": 101.304,
+    "2026": 8.318
    }
   }
  ]

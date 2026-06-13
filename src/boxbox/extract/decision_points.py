@@ -83,6 +83,24 @@ def truncate_race(race: RaceData, lap: int) -> RaceData:
     )
 
 
+def wet_running_near(race: RaceData, t: int, window: int) -> bool:
+    """Conditions-only: did the field actually run INTERMEDIATE/WET tyres, or have
+    rain-affected laps, within `window` laps of the decision lap t — i.e. on a lap in
+    [t-window, t]? The upper bound is t (not t+window), keeping this <= t so it is
+    leakage-safe for the offered compound set.
+
+    This replaces the v1 wet test (`weather.rain or any wet lap seen so far`), which
+    over-offered INTER in two ways the audit found: the race-level Rainfall.any() flag
+    (Miami: 3 stray pings on a 42C dry race) and a latch that stayed on for the rest of
+    the race after one early damp lap (Canada: damp laps 1-3 leaking into a dry race).
+    """
+    lo = t - window
+    return any(
+        lo <= r.lap_number <= t and (r.compound in WET_COMPOUNDS or r.rain_affected)
+        for r in race.laps
+    )
+
+
 def build_state(
     race: RaceData,
     driver: str,
@@ -112,8 +130,11 @@ def build_state(
         if r is not None and r.compound != "UNKNOWN" and r.compound not in used:
             used.append(r.compound)
 
-    wet_race = race.weather.rain or any(rec.compound in WET_COMPOUNDS for rec in visible)
-    available: list[Compound] = list(DRY_COMPOUNDS) + (list(WET_COMPOUNDS) if wet_race else [])
+    # Offer wet compounds only if the field actually ran them near this lap (not the
+    # race-level rain flag, not a whole-race latch). Leakage-safe: window is <= t.
+    window = int(cfg.get("wet", {}).get("window_laps", 5))
+    wet_nearby = wet_running_near(race, t, window)
+    available: list[Compound] = list(DRY_COMPOUNDS) + (list(WET_COMPOUNDS) if wet_nearby else [])
 
     order = idx.order_at(t - 1)
     leader = order[0] if order else None
@@ -171,26 +192,17 @@ def build_state(
     )
 
 
-def is_changeable(race: RaceData, focal_compound: str, t: int) -> bool:
+def is_changeable(race: RaceData, focal_compound: str, t: int, window: int) -> bool:
     """Conditions-only test (NEVER uses score/delta): is the decision at lap t in a
     wet/changeable phase the dry-only v1 simulator cannot model?
 
-    True if ANY of:
-      - the session is declared wet (rain in the weather feed) — race-level signal;
-      - the focal car is on INTERMEDIATE/WET entering lap t;
-      - any car runs an INTER/WET or rain-affected lap at or after lap t (so the
-        rollout to the flag would cross changeable conditions).
-
-    The v1 simulator runs a single stint to the flag and cannot switch wet<->slick,
-    so such points are out of scope for the headline metric (see docs/LIMITATIONS.md).
+    Uses the SAME actual-wet-running test as the offered compound set (no dependence on
+    the race-level rain flag): True if the field ran INTER/WET or had rain-affected laps
+    within `window` laps of t, OR the focal car is itself on INTER/WET entering lap t
+    (mid-changeover). The v1 simulator runs a single stint to the flag and cannot switch
+    wet<->slick, so such points are out of scope for the headline (see LIMITATIONS.md).
     """
-    if race.weather.rain:
-        return True
-    if focal_compound in WET_COMPOUNDS:
-        return True
-    return any(
-        r.lap_number >= t and (r.compound in WET_COMPOUNDS or r.rain_affected) for r in race.laps
-    )
+    return wet_running_near(race, t, window) or focal_compound in WET_COMPOUNDS
 
 
 def _is_lapped(idx: RaceIndex, driver: str, t: int) -> bool:
@@ -376,7 +388,10 @@ def extract_decision_points(
                 team_compound=team_compound,
                 trigger=cand.trigger,
                 changeable_conditions=is_changeable(
-                    race, cand.state.focal.compound, cand.lap  # type: ignore[union-attr]
+                    race,
+                    cand.state.focal.compound,  # type: ignore[union-attr]
+                    cand.lap,
+                    int(cfg.get("wet", {}).get("window_laps", 5)),
                 ),
             )
         )
