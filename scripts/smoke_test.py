@@ -43,9 +43,12 @@ from boxbox.harness.runner import (  # noqa: E402
 SMOKE_CAP_USD = 1.50
 OUT_PATH = REPO_ROOT / "outputs" / "smoke_test_v2.md"
 
-# Full-run sizing for the cost projection (per OVERNIGHT_TASK plan):
-# main pass 180 calls, consistency probe 20 DPs x 6 models x 5 samples = 600 calls.
-FULL_RUN_MAIN_CALLS = 180
+# Full-run sizing for the cost projection. Main pass = every decision point in the
+# dataset (178 at prereg-v1) x 6 enabled models = 1068 calls; consistency probe =
+# 20 DPs x 6 models x 5 samples = 600 calls. (An earlier 180 here was a wrong
+# placeholder that under-counted the main pass by ~6x; the real benchmark loads the
+# DP count dynamically, so treat these as sizing constants for this script only.)
+FULL_RUN_MAIN_CALLS = 1068
 FULL_RUN_PROBE_CALLS = 600
 
 # (dp_type, race_id) picks — three different races, one of each type
