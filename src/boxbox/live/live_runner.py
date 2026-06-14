@@ -45,12 +45,13 @@ class LiveSource(Protocol):
 class OpenF1LiveSource:
     """Real OpenF1 polling source (full refetch per poll: simple and robust)."""
 
-    def __init__(self, year: int, event: str, race_id: str):
+    def __init__(self, year: int, event: str, race_id: str, total_laps: Optional[int] = None):
         from boxbox.data.openf1 import OpenF1Client, auth_from_env, find_race_session
 
         self.year = year
         self.event = event
         self.race_id = race_id
+        self.total_laps = total_laps  # scheduled distance; OpenF1 gives no total-laps field
         # One authed client (and therefore one auto-refreshing bearer token) is reused
         # across every poll, so we don't refetch a token each cycle.
         self.auth = auth_from_env()
@@ -63,7 +64,14 @@ class OpenF1LiveSource:
         from boxbox.data.openf1 import ingest_openf1
 
         try:
-            race = ingest_openf1(self.race_id, self.year, self.event, client=self.client, live=True)
+            race = ingest_openf1(
+                self.race_id,
+                self.year,
+                self.event,
+                client=self.client,
+                live=True,
+                total_laps_override=self.total_laps,
+            )
             self._last_data_wall = time.time()
             return race
         except Exception as exc:
@@ -223,7 +231,21 @@ class LiveLoop:
         idx = RaceIndex(race)
         if not idx.by_lap:
             return
-        max_lap = max(idx.by_lap.keys())
+        # The live edge is ragged: the newest laps are only partly completed, so they
+        # have few positioned cars. Use the lap that MOST of the field has completed =
+        # the median over each car's latest positioned lap. That ignores the in-progress
+        # edge laps and is robust to retired/lapped cars (they sit at the low end). For
+        # replay/historic the whole field is at the same edge, so this is the latest lap
+        # and behaviour is unchanged.
+        last_positioned: dict[str, int] = {}
+        for lp in idx.by_lap:
+            for rec in idx.order_at(lp):
+                last_positioned[rec.driver] = max(last_positioned.get(rec.driver, 0), lp)
+        if last_positioned:
+            vals = sorted(last_positioned.values())
+            max_lap = vals[len(vals) // 2]
+        else:
+            max_lap = max(idx.by_lap.keys())
         if max_lap > self.last_max_lap:
             self.last_max_lap = max_lap
             self.last_progress_wall = time.time()

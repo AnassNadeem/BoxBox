@@ -300,7 +300,9 @@ def main() -> int:
             return 2
         from boxbox.live.live_runner import OpenF1LiveSource
 
-        source = OpenF1LiveSource(LIVE_YEAR, LIVE_EVENT, LIVE_RACE_ID)
+        source = OpenF1LiveSource(
+            LIVE_YEAR, LIVE_EVENT, LIVE_RACE_ID, total_laps=live_cfg.get("total_laps")
+        )
         mode_label = "live"
         console.print(
             f"[bold]Source:[/bold] LIVE OpenF1 - {LIVE_RACE_ID} "

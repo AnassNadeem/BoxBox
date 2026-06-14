@@ -268,12 +268,15 @@ def ingest_openf1(
     client: Optional[OpenF1Client] = None,
     auth: Optional[OpenF1Auth] = None,
     live: bool = False,
+    total_laps_override: Optional[int] = None,
 ) -> RaceData:
     """Fallback / live ingestion: build the same RaceData shape FastF1 would give us.
 
     Pass an existing ``client`` (the live loop does, to reuse one authed bearer token
     across polls). When no client is given we build one, using ``auth`` if supplied else
-    auto-detecting paid creds from the environment."""
+    auto-detecting paid creds from the environment. ``total_laps_override`` sets the
+    scheduled race distance: during a LIVE race max-lap-seen is only the current lap, so
+    without it the loop would treat the race as already finished."""
     own_client = client is None
     if client is None:
         client = OpenF1Client(auth=auth if auth is not None else auth_from_env())
@@ -357,7 +360,9 @@ def ingest_openf1(
 
     _fill_missing_positions(records)
 
-    total_laps = max((r.lap_number for r in records), default=0)
+    laps_seen = max((r.lap_number for r in records), default=0)
+    # During a live race laps_seen is just the current lap; prefer the scheduled distance.
+    total_laps = max(laps_seen, total_laps_override or 0)
     last_lap: dict[str, int] = {}
     for r in records:
         last_lap[r.driver] = max(last_lap.get(r.driver, 0), r.lap_number)
