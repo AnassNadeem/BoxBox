@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BOXBOX — Live Ops Console</title>
+<style>
+  :root {
+    --bg: #0d1117; --panel: #161b22; --panel2: #1c232c; --line: #2b333d;
+    --ink: #e6edf3; --dim: #8b949e; --accent: #58a6ff;
+    --green: #2ea043; --yellow: #d29922; --orange: #e8731a; --red: #da3633;
+    --soft: #e8443a; --medium: #e3c000; --hard: #d7dce1; --inter: #2ea043; --wet: #3b8eea;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 14px/1.45 ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+  }
+  header {
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+    padding: 12px 18px; background: var(--panel); border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; z-index: 5;
+  }
+  .brand { font-weight: 700; letter-spacing: .5px; font-size: 16px; }
+  .brand small { color: var(--dim); font-weight: 400; letter-spacing: 0; }
+  .lap { font-size: 20px; font-weight: 700; }
+  .lap small { font-size: 13px; color: var(--dim); font-weight: 400; }
+  .status-pill {
+    font-weight: 700; font-size: 15px; padding: 6px 16px; border-radius: 6px;
+    letter-spacing: 1px; color: #0d1117;
+  }
+  .s-GREEN { background: var(--green); color: #fff; }
+  .s-SC { background: var(--yellow); }
+  .s-VSC { background: var(--orange); }
+  .s-RED { background: var(--red); color: #fff; }
+  .wx { color: var(--dim); }
+  .wx b { color: var(--ink); }
+  .rain-yes { color: var(--wet); font-weight: 700; }
+  .mode-badge {
+    margin-left: auto; padding: 4px 10px; border: 1px solid var(--line);
+    border-radius: 5px; color: var(--dim); font-size: 12px;
+  }
+  .updated { font-size: 12px; color: var(--dim); }
+  .stale { color: var(--orange); font-weight: 700; }
+  main { display: grid; grid-template-columns: minmax(360px, 1fr) 1.4fr; gap: 14px; padding: 14px; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+  .panel h2 {
+    margin: 0; padding: 9px 14px; font-size: 12px; letter-spacing: 1.5px; color: var(--dim);
+    text-transform: uppercase; border-bottom: 1px solid var(--line);
+  }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 7px 10px; text-align: left; }
+  th { color: var(--dim); font-size: 11px; text-transform: uppercase; letter-spacing: .5px; }
+  tbody tr { border-top: 1px solid var(--line); }
+  td.pos { color: var(--dim); width: 28px; }
+  td.drv { font-weight: 700; }
+  td.gap { color: var(--dim); text-align: right; font-variant-numeric: tabular-nums; }
+  .tyre {
+    display: inline-block; min-width: 20px; text-align: center; font-weight: 700;
+    padding: 1px 6px; border-radius: 4px; color: #0d1117; font-size: 12px;
+  }
+  .t-SOFT { background: var(--soft); color: #fff; }
+  .t-MEDIUM { background: var(--medium); }
+  .t-HARD { background: var(--hard); }
+  .t-INTERMEDIATE { background: var(--inter); color: #fff; }
+  .t-WET { background: var(--wet); color: #fff; }
+  .t-UNKNOWN { background: #444c56; color: var(--ink); }
+  .age { color: var(--dim); font-size: 12px; margin-left: 4px; }
+  .feed { max-height: calc(100vh - 130px); overflow-y: auto; }
+  .dp { border-top: 1px solid var(--line); padding: 10px 14px; }
+  .dp:first-child { border-top: none; }
+  .dp-head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; margin-bottom: 7px; }
+  .dp-lap { font-weight: 700; }
+  .dp-type { font-size: 11px; padding: 1px 6px; border-radius: 4px; background: var(--panel2); color: var(--dim); }
+  .dp-trigger { color: var(--dim); font-size: 12px; }
+  .dp-time { color: var(--dim); font-size: 11px; margin-left: auto; }
+  .calls { display: grid; grid-template-columns: 1fr; gap: 5px; }
+  .call { display: grid; grid-template-columns: 120px 92px 1fr; gap: 8px; align-items: baseline;
+          background: var(--panel2); padding: 5px 8px; border-radius: 5px; }
+  .call .m { color: var(--accent); font-weight: 700; font-size: 12px; }
+  .verdict { font-weight: 700; font-size: 12px; }
+  .v-PIT { color: var(--medium); }
+  .v-STAY { color: var(--dim); }
+  .v-INVALID { color: var(--red); }
+  .rat { color: var(--ink); opacity: .85; font-size: 12px; }
+  .team { margin-top: 6px; font-size: 12px; color: var(--dim); }
+  .team b { color: var(--green); }
+  .empty { padding: 28px 14px; color: var(--dim); text-align: center; }
+  footer { padding: 8px 18px; color: var(--dim); font-size: 11px; border-top: 1px solid var(--line); }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">BOXBOX <small>live ops</small></div>
+  <div class="lap"><span id="lap">—</span><small> / <span id="total">—</span></small></div>
+  <div id="status" class="status-pill s-GREEN">—</div>
+  <div class="wx" id="wx">—</div>
+  <div class="updated" id="updated"></div>
+  <div class="mode-badge" id="mode">—</div>
+</header>
+
+<main>
+  <section class="panel">
+    <h2>Running order · top 10</h2>
+    <table>
+      <thead><tr><th class="pos">P</th><th>Driver</th><th>Tyre</th><th style="text-align:right">Gap</th></tr></thead>
+      <tbody id="standings"><tr><td colspan="4" class="empty">waiting for data…</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h2>Live decisions · 3 models per trigger</h2>
+    <div class="feed" id="feed"><div class="empty">no decision points yet</div></div>
+  </section>
+</main>
+
+<footer id="foot">BOXBOX operations console · post-race scoring is separate · auto-refresh 3s</footer>
+
+<script>
+const POLL_MS = 3000;
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s == null ? "" : s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const tyre = (c) => { const u = (c || "UNKNOWN").toUpperCase();
+  return `<span class="tyre t-${u}">${u[0] || "?"}</span>`; };
+
+function renderStatus(s) {
+  const el = $("status"); const st = (s || "GREEN").toUpperCase();
+  el.className = "status-pill s-" + (["GREEN","SC","VSC","RED"].includes(st) ? st : "GREEN");
+  el.textContent = st === "GREEN" ? "GREEN" : st;
+}
+
+function renderWeather(w) {
+  if (!w) { $("wx").textContent = ""; return; }
+  const rain = w.rain ? '<span class="rain-yes">RAIN</span>' : "dry";
+  $("wx").innerHTML = `air <b>${w.air_temp_c ?? "?"}°</b> · track <b>${w.track_temp_c ?? "?"}°</b> · ${rain}`;
+}
+
+function renderStandings(rows) {
+  const tb = $("standings");
+  if (!rows || !rows.length) { tb.innerHTML = '<tr><td colspan="4" class="empty">waiting for data…</td></tr>'; return; }
+  tb.innerHTML = rows.map(r => {
+    const gap = r.position === 1 || r.gap_to_leader_s == null ? "—" : "+" + r.gap_to_leader_s.toFixed(1);
+    const age = r.tyre_age == null ? "" : `<span class="age">${r.tyre_age}L</span>`;
+    return `<tr><td class="pos">${r.position}</td><td class="drv">${esc(r.driver)}</td>`
+      + `<td>${tyre(r.compound)}${age}</td><td class="gap">${gap}</td></tr>`;
+  }).join("");
+}
+
+function verdict(call) {
+  if (call.action === "PIT") return `<span class="verdict v-PIT">BOX · ${esc(call.compound || "?")}</span>`;
+  if (call.action === "STAY") return `<span class="verdict v-STAY">STAY OUT</span>`;
+  return `<span class="verdict v-INVALID">INVALID</span>`;
+}
+
+function renderFeed(decisions) {
+  const f = $("feed");
+  if (!decisions || !decisions.length) { f.innerHTML = '<div class="empty">no decision points yet</div>'; return; }
+  f.innerHTML = decisions.map(d => {
+    const calls = (d.calls || []).map(c => {
+      const conf = c.confidence == null ? "" : ` (${(c.confidence).toFixed(2)})`;
+      return `<div class="call"><span class="m">${esc(c.model)}</span>`
+        + `<span>${verdict(c)}${conf}</span>`
+        + `<span class="rat">${esc(c.rationale)}</span></div>`;
+    }).join("");
+    const team = d.team_action && d.team_action !== "STAY"
+      ? `<div class="team">Real team: <b>${esc(d.team_action)}</b></div>`
+      : `<div class="team">Real team: <span>unknown live (scored post-race)</span></div>`;
+    return `<div class="dp"><div class="dp-head">`
+      + `<span class="dp-lap">Lap ${d.lap} · ${esc(d.driver)}</span>`
+      + `<span class="dp-type">${esc(d.dp_type)}</span>`
+      + `<span class="dp-trigger">${esc(d.trigger)}</span>`
+      + `<span class="dp-time">${esc((d.ts || "").replace("T", " ").replace("+00:00", "Z"))}</span>`
+      + `</div><div class="calls">${calls}</div>${team}</div>`;
+  }).join("");
+}
+
+let lastUpdated = null;
+async function tick() {
+  try {
+    const r = await fetch("/live_state.json", { cache: "no-store" });
+    const s = await r.json();
+    if (s.status && !s.lap) { $("updated").textContent = s.status; return; }
+    $("lap").textContent = s.lap ?? "—";
+    $("total").textContent = s.total_laps ?? "—";
+    $("mode").textContent = s.mode || "live";
+    $("foot").textContent = `${s.race_id || ""} · ${esc((s.track||""))} · models: ${(s.models||[]).join(", ")} · post-race scoring is separate`;
+    renderStatus(s.track_status);
+    renderWeather(s.weather);
+    renderStandings(s.standings);
+    renderFeed(s.decisions);
+    lastUpdated = s.updated;
+    const upd = $("updated");
+    upd.textContent = "updated " + (s.updated || "").replace("T", " ").replace("+00:00", "Z");
+    upd.className = "updated";
+  } catch (e) {
+    const upd = $("updated"); upd.textContent = "state unavailable — retrying"; upd.className = "updated stale";
+  }
+}
+tick();
+setInterval(tick, POLL_MS);
+</script>
+</body>
+</html>

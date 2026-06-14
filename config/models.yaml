@@ -42,6 +42,7 @@ models:
   enabled: true
   verified: true
   note: 'verified against /models (Anthropic: Claude Haiku 4.5)'
-live_models:
-- claude-fable-5
+live_models:        # the 3 models that make live calls on race day (Barcelona 2026)
+- claude-opus-4.8
 - gpt-5.5
+- deepseek-v3.2

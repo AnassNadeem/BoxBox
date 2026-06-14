@@ -9,7 +9,9 @@ never publishes anything - social post lines are DRAFTS in outputs/live_log.md.
 from __future__ import annotations
 
 import hashlib
+import json
 import logging
+import os
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -27,6 +29,7 @@ log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 LIVE_LOG = REPO_ROOT / "outputs" / "live_log.md"
+LIVE_STATE = REPO_ROOT / "outputs" / "live_state.json"
 
 
 class LiveSource(Protocol):
@@ -84,6 +87,7 @@ class LiveLoop:
         extraction_cfg: dict,
         log_path: Path = LIVE_LOG,
         console: Optional[Console] = None,
+        state_path: Optional[Path] = LIVE_STATE,
     ):
         self.source = source
         self.runner = runner
@@ -91,6 +95,7 @@ class LiveLoop:
         self.live_cfg = live_cfg
         self.extraction_cfg = extraction_cfg
         self.log_path = log_path
+        self.state_path = state_path
         self.console = console or Console()
         self.seen: set[tuple[str, int]] = set()  # dedupe per (car, lap)
         self.known_stops: set[tuple[str, int]] = set()
@@ -98,6 +103,9 @@ class LiveLoop:
         self.age_triggered: set[str] = set()
         self.last_progress_wall = time.time()
         self.last_max_lap = 0
+        self.decisions: list[dict] = []  # structured decision history for the dashboard
+        self.started_wall = time.time()
+        self.mode_label = "live"  # set by the launcher (replay/live/manual) for the UI
         log_path.parent.mkdir(parents=True, exist_ok=True)
 
     # ------------------------------------------------------------------ helpers
@@ -130,6 +138,7 @@ class LiveLoop:
             trigger=trigger,
         )
         state_hash = hashlib.sha256(state.model_dump_json().encode()).hexdigest()[:8]
+        calls: list[dict] = []
         for model in self.runner.models():
             if model["name"] not in self.model_names:
                 continue
@@ -138,6 +147,15 @@ class LiveLoop:
             if decision is None:
                 verdict = "INVALID OUTPUT"
                 draft = ""
+                calls.append(
+                    {
+                        "model": model["name"],
+                        "action": None,
+                        "compound": None,
+                        "confidence": None,
+                        "rationale": "INVALID OUTPUT",
+                    }
+                )
             else:
                 verdict = (
                     f"**{'BOX, ' + (decision.compound or '?') if decision.action == 'PIT' else 'STAY OUT'}** "
@@ -153,12 +171,37 @@ class LiveLoop:
                     f' - DRAFT POST: "Lap {lap} - {model["name"]} says {call_text}. '
                     f'Rationale: {decision.rationale}"'
                 )
+                calls.append(
+                    {
+                        "model": model["name"],
+                        "action": decision.action,
+                        "compound": decision.compound,
+                        "confidence": decision.confidence,
+                        "rationale": decision.rationale,
+                    }
+                )
             line = (
                 f"**Lap {lap} {driver}** [{dp_type}: {trigger}] state `{state_hash}` "
                 f"- {model['name']} -> {verdict}{draft}"
             )
             self.console.print(line)
             self._log(line)
+
+        # accumulate a structured record for the operations dashboard (most-recent-last)
+        self.decisions.append(
+            {
+                "ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "lap": lap,
+                "driver": driver,
+                "from_compound": state.focal.compound,
+                "dp_type": dp_type,
+                "trigger": trigger,
+                "state_hash": state_hash,
+                "team_action": dp.team_action,  # placeholder live; real action known post-race
+                "calls": calls,
+            }
+        )
+        del self.decisions[:-100]  # keep the last 100
 
     # --------------------------------------------------------------------- tick
     def tick(self, race: RaceData) -> None:
@@ -220,6 +263,56 @@ class LiveLoop:
                         f"tyre age {rec.tyre_age} >= window threshold",
                     )
 
+        # publish the structured snapshot the operations dashboard reads
+        self._write_state(race, idx, max_lap, status)
+
+    # ------------------------------------------------------------- dashboard state
+    def _write_state(self, race: RaceData, idx: RaceIndex, lap: int, status: str) -> None:
+        """Atomically write the current operations snapshot to state_path (best effort)."""
+        if self.state_path is None:
+            return
+        try:
+            order = idx.order_at(lap)[:10]
+            leader_end = order[0].end_time_s if order else None
+            standings = []
+            for i, rec in enumerate(order, start=1):
+                gap = None
+                if leader_end is not None and rec.end_time_s is not None and i > 1:
+                    gap = round(rec.end_time_s - leader_end, 1)
+                standings.append(
+                    {
+                        "position": rec.position or i,
+                        "driver": rec.driver,
+                        "compound": rec.compound,
+                        "tyre_age": rec.tyre_age,
+                        "stint": rec.stint,
+                        "gap_to_leader_s": gap,
+                    }
+                )
+            state = {
+                "updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "mode": self.mode_label,
+                "race_id": race.race_id,
+                "season": race.season,
+                "track": race.track,
+                "lap": lap,
+                "total_laps": race.total_laps,
+                "track_status": status,
+                "weather": {
+                    "air_temp_c": race.weather.air_temp_c,
+                    "track_temp_c": race.weather.track_temp_c,
+                    "rain": race.weather.rain,
+                },
+                "models": self.model_names,
+                "standings": standings,
+                "decisions": list(reversed(self.decisions[-30:])),  # most recent first
+            }
+            tmp = self.state_path.with_suffix(".json.tmp")
+            tmp.write_text(json.dumps(state, indent=2), encoding="utf-8")
+            os.replace(tmp, self.state_path)
+        except Exception as exc:  # state is non-critical; never break the loop
+            log.warning("live state write failed: %s", exc)
+
     def run(self) -> None:
         poll_s = float(self.live_cfg.get("poll_seconds", 45))
         stale_tol = float(self.live_cfg.get("stale_data_tolerance_s", 180))
@@ -245,10 +338,50 @@ class LiveLoop:
         self.console.print(f"[green]Live loop finished.[/green] Log: {self.log_path}")
 
 
+class ManualSource:
+    """Fallback source for when the live feed dies mid-race.
+
+    The operator hand-maintains a RaceData JSON file (same schema ingest produces);
+    we re-read it each poll so the IDENTICAL LiveLoop keeps producing model calls from
+    manually-entered state. Returns None (treated as 'no fresh data') if the file is
+    missing or unparseable, so a half-written edit never crashes the loop."""
+
+    def __init__(self, feed_path: Path, race_id: str):
+        self.feed_path = feed_path
+        self.race_id = race_id
+        self._done = False
+
+    def poll(self) -> Optional[RaceData]:
+        try:
+            if not self.feed_path.exists():
+                return None
+            return RaceData.model_validate_json(self.feed_path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            log.warning("manual feed read failed (%s); waiting for a valid edit", exc)
+            return None
+
+    def active(self) -> bool:
+        return not self._done
+
+    def sleep(self, seconds: float) -> None:
+        time.sleep(seconds)
+
+
+def _restrict_names(model_names: list[str], models_cfg: dict) -> list[str]:
+    available = {m["name"] for m in models_cfg.get("models", [])}
+    return [n for n in model_names if n in available]
+
+
 def build_mock_runner(model_names: list[str]) -> tuple[Runner, list[str]]:
     """Mock-mode runner restricted to the configured live models."""
     run_cfg = load_config("run")
     models_cfg = load_config("models")
-    available = {m["name"] for m in models_cfg.get("models", [])}
-    names = [n for n in model_names if n in available]
-    return Runner(run_cfg, models_cfg, mock=True), names
+    return Runner(run_cfg, models_cfg, mock=True), _restrict_names(model_names, models_cfg)
+
+
+def build_live_runner(model_names: list[str]) -> tuple[Runner, list[str]]:
+    """Real-call runner restricted to the live models. Spend is still gated inside the
+    Runner by ALLOW_SPEND=1 + OPENROUTER_API_KEY; the launcher checks those up front."""
+    run_cfg = load_config("run")
+    models_cfg = load_config("models")
+    return Runner(run_cfg, models_cfg, mock=False), _restrict_names(model_names, models_cfg)
