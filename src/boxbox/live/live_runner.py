@@ -43,13 +43,16 @@ class OpenF1LiveSource:
     """Real OpenF1 polling source (full refetch per poll: simple and robust)."""
 
     def __init__(self, year: int, event: str, race_id: str):
-        from boxbox.data.openf1 import OpenF1Client, find_race_session
+        from boxbox.data.openf1 import OpenF1Client, auth_from_env, find_race_session
 
         self.year = year
         self.event = event
         self.race_id = race_id
-        self.client = OpenF1Client()
-        self.session = find_race_session(self.client, year, event)
+        # One authed client (and therefore one auto-refreshing bearer token) is reused
+        # across every poll, so we don't refetch a token each cycle.
+        self.auth = auth_from_env()
+        self.client = OpenF1Client(auth=self.auth)
+        self.session = find_race_session(self.client, year, event, live=True)
         self._last_data_wall = time.time()
         self._done = False
 
@@ -57,7 +60,7 @@ class OpenF1LiveSource:
         from boxbox.data.openf1 import ingest_openf1
 
         try:
-            race = ingest_openf1(self.race_id, self.year, self.event)
+            race = ingest_openf1(self.race_id, self.year, self.event, client=self.client, live=True)
             self._last_data_wall = time.time()
             return race
         except Exception as exc:
