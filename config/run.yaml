@@ -27,3 +27,8 @@ live:
   poll_seconds: 45
   tyre_age_trigger: 18      # Type A proxy: trigger when focal tyre age crosses this
   stale_data_tolerance_s: 180
+  # Only cars on these teams generate model-call triggers (match is case-insensitive
+  # substring, so "Red Bull" matches "Red Bull Racing"). Other cars are still ingested
+  # for race state. Incident detection (SC/VSC/flags/race_control) stays global.
+  # Empty list = track every car (back-compat).
+  tracked_teams: [Ferrari, McLaren, Red Bull, Mercedes]

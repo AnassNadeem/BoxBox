@@ -106,7 +106,21 @@ class LiveLoop:
         self.decisions: list[dict] = []  # structured decision history for the dashboard
         self.started_wall = time.time()
         self.mode_label = "live"  # set by the launcher (replay/live/manual) for the UI
+        # Only cars on these teams generate triggers; empty = every car (back-compat).
+        self.tracked_teams = [str(t).lower() for t in live_cfg.get("tracked_teams", [])]
         log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # -------------------------------------------------------------- team filter
+    def _team_of(self, race: RaceData, driver: str) -> str:
+        return (race.teams or {}).get(driver, "")
+
+    def _tracked(self, race: RaceData, driver: str) -> bool:
+        """True if the driver's team is in tracked_teams (case-insensitive substring,
+        so 'Red Bull' matches 'Red Bull Racing'). Empty config tracks everyone."""
+        if not self.tracked_teams:
+            return True
+        team = self._team_of(race, driver).lower()
+        return bool(team) and any(t in team for t in self.tracked_teams)
 
     # ------------------------------------------------------------------ helpers
     def _log(self, line: str) -> None:
@@ -193,6 +207,7 @@ class LiveLoop:
                 "ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                 "lap": lap,
                 "driver": driver,
+                "team": self._team_of(race, driver),
                 "from_compound": state.focal.compound,
                 "dp_type": dp_type,
                 "trigger": trigger,
@@ -215,18 +230,21 @@ class LiveLoop:
         decision_lap = max_lap + 1
         if decision_lap > race.total_laps:
             return
-        top_n = int(self.extraction_cfg.get("type_b", {}).get("top_n_positions", 10))
-        leaders = idx.order_at(max_lap)[:top_n]
+        # Cars that may generate triggers = tracked-team cars in the field. Other cars
+        # are still ingested (positions/gaps) but never produce model calls.
+        tracked = [rec for rec in idx.order_at(max_lap) if self._tracked(race, rec.driver)]
 
-        # Trigger 1: SC/VSC deployment (Type B)
+        # Trigger 1: SC/VSC deployment (Type B). Detection is GLOBAL — the field status
+        # is set by any car's incident — but we only fire for the tracked teams' cars.
         status = idx.field_status(max_lap)
         if status in ("SC", "VSC") and self.prev_status not in ("SC", "VSC"):
             self._log(f"**{status} deployed** (detected at lap {max_lap})")
-            for rec in leaders:
+            for rec in tracked:
                 self._emit(race, rec.driver, decision_lap, "B", f"{status} deployed")
         self.prev_status = status
 
-        # Trigger 2: rival pit detection (Type C)
+        # Trigger 2: rival pit detection (Type C). The pitting rival may be ANY car;
+        # only a tracked-team focal car reacting to it generates a decision point.
         rival_gap = float(self.extraction_cfg.get("type_c", {}).get("rival_gap_s", 3.5))
         for stop in race.pit_stops:
             key = (stop.driver, stop.lap)
@@ -239,6 +257,8 @@ class LiveLoop:
             for rec in idx.by_lap.get(stop.lap - 1, []):
                 if rec.driver == stop.driver or rec.end_time_s is None:
                     continue
+                if not self._tracked(race, rec.driver):
+                    continue
                 if abs(rec.end_time_s - pit_rec.end_time_s) <= rival_gap:
                     self._emit(
                         race,
@@ -248,9 +268,9 @@ class LiveLoop:
                         f"rival {stop.driver} pitted on lap {stop.lap}",
                     )
 
-        # Trigger 3: tyre age crosses the window threshold (Type A proxy)
+        # Trigger 3: tyre age crosses the window threshold (Type A proxy), tracked cars only.
         age_threshold = int(self.live_cfg.get("tyre_age_trigger", 18))
-        for rec in leaders:
+        for rec in tracked:
             if rec.tyre_age is not None and rec.tyre_age >= age_threshold:
                 marker = f"{rec.driver}:{rec.stint}"
                 if marker not in self.age_triggered:
@@ -283,6 +303,8 @@ class LiveLoop:
                     {
                         "position": rec.position or i,
                         "driver": rec.driver,
+                        "team": self._team_of(race, rec.driver),
+                        "tracked": self._tracked(race, rec.driver),
                         "compound": rec.compound,
                         "tyre_age": rec.tyre_age,
                         "stint": rec.stint,
