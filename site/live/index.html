@@ -42,6 +42,11 @@
   }
   .updated { font-size: 12px; color: var(--dim); }
   .stale { color: var(--orange); font-weight: 700; }
+  .health { font-weight: 700; font-size: 12px; padding: 4px 11px; border-radius: 5px; white-space: nowrap; }
+  .h-ok { background: rgba(46,160,67,.15); color: #3fb950; border: 1px solid var(--green); }
+  .h-bad { background: rgba(218,54,51,.18); color: #ff7b72; border: 1px solid var(--red); animation: pulse 1.2s infinite; }
+  .h-wait { background: rgba(210,153,34,.15); color: var(--yellow); border: 1px solid var(--yellow); }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .55; } }
   main { display: grid; grid-template-columns: minmax(360px, 1fr) 1.4fr; gap: 14px; padding: 14px; }
   @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
   .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
@@ -96,6 +101,7 @@
   <div class="lap"><span id="lap">—</span><small> / <span id="total">—</span></small></div>
   <div id="status" class="status-pill s-GREEN">—</div>
   <div class="wx" id="wx">—</div>
+  <div class="health h-wait" id="health">● connecting…</div>
   <div class="updated" id="updated"></div>
   <div class="mode-badge" id="mode">—</div>
 </header>
@@ -175,12 +181,30 @@ function renderFeed(decisions) {
   }).join("");
 }
 
-let lastUpdated = null;
+// Feed-health indicator. Three failure modes are made visible:
+//   OFFLINE   — the dashboard cannot reach the loop's state at all
+//   FROZEN    — the loop stopped writing (its "updated" stamp isn't changing) → process died
+//   FEED STALE— loop alive but no new lap for longer than tolerance → live feed died
+let lastSeenUpdated = null, lastChangeWall = 0;
+function setHealth(cls, text) { const el = $("health"); el.className = "health " + cls; el.textContent = text; }
+function renderHealth(s, offline) {
+  if (offline) { setHealth("h-bad", "● OFFLINE — can't reach loop"); return; }
+  if (!s || (s.status && !s.lap)) { setHealth("h-wait", "● waiting for first poll"); return; }
+  const now = Date.now();
+  if (s.updated !== lastSeenUpdated) { lastSeenUpdated = s.updated; lastChangeWall = now; }
+  const frozenS = (now - lastChangeWall) / 1000;
+  const frozenLimit = Math.max((s.poll_seconds || 45) * 2.5, 20);
+  if (frozenS > frozenLimit) { setHealth("h-bad", `● LOOP NOT UPDATING — ${Math.round(frozenS)}s`); return; }
+  if (s.feed_stale) { setHealth("h-bad", `● FEED STALE — no new lap ${Math.round(s.seconds_since_lap_advance)}s`); return; }
+  const since = s.seconds_since_lap_advance;
+  setHealth("h-ok", `● LIVE — lap advanced ${since == null ? "?" : Math.round(since) + "s"} ago`);
+}
+
 async function tick() {
   try {
     const r = await fetch("/live_state.json", { cache: "no-store" });
     const s = await r.json();
-    if (s.status && !s.lap) { $("updated").textContent = s.status; return; }
+    if (s.status && !s.lap) { $("updated").textContent = s.status; renderHealth(s, false); return; }
     $("lap").textContent = s.lap ?? "—";
     $("total").textContent = s.total_laps ?? "—";
     $("mode").textContent = s.mode || "live";
@@ -189,12 +213,14 @@ async function tick() {
     renderWeather(s.weather);
     renderStandings(s.standings);
     renderFeed(s.decisions);
-    lastUpdated = s.updated;
     const upd = $("updated");
     upd.textContent = "updated " + (s.updated || "").replace("T", " ").replace("+00:00", "Z");
     upd.className = "updated";
+    renderHealth(s, false);
   } catch (e) {
-    const upd = $("updated"); upd.textContent = "state unavailable — retrying"; upd.className = "updated stale";
+    $("updated").textContent = "state unavailable — retrying";
+    $("updated").className = "updated stale";
+    renderHealth(null, true);
   }
 }
 tick();

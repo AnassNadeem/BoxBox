@@ -289,6 +289,10 @@ class LiveLoop:
                         "gap_to_leader_s": gap,
                     }
                 )
+            # feed health: a lap should complete every ~90s; if the field stops
+            # advancing for longer than the tolerance, the live feed has likely died.
+            stale_tol = float(self.live_cfg.get("stale_data_tolerance_s", 180))
+            since_lap = round(time.time() - self.last_progress_wall, 1)
             state = {
                 "updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                 "mode": self.mode_label,
@@ -306,6 +310,11 @@ class LiveLoop:
                 "models": self.model_names,
                 "standings": standings,
                 "decisions": list(reversed(self.decisions[-30:])),  # most recent first
+                # health signals the dashboard surfaces so a dead feed is visible
+                "poll_seconds": float(self.live_cfg.get("poll_seconds", 45)),
+                "seconds_since_lap_advance": since_lap,
+                "stale_tolerance_s": stale_tol,
+                "feed_stale": since_lap > stale_tol,
             }
             tmp = self.state_path.with_suffix(".json.tmp")
             tmp.write_text(json.dumps(state, indent=2), encoding="utf-8")

@@ -1,4 +1,4 @@
-"""BOXBOX live launcher — the one-command start for race day (2026 Spanish GP, Barcelona).
+"""BOXBOX live launcher - the one-command start for race day (2026 Spanish GP, Barcelona).
 
 Three source modes (pick one):
   --live                 real authed OpenF1 stream + REAL model calls (race morning)
@@ -104,7 +104,7 @@ def assert_live_is_barcelona_race(allow_non_race: bool) -> bool:
     if not is_race:
         why += " Live data opens 30 min before lights-out (12:30 UTC); wait until then."
     if is_race and not is_barcelona:
-        why += " This looks like a different race (Madrid?) — do NOT launch against it."
+        why += " This looks like a different race (Madrid?) - do NOT launch against it."
     if allow_non_race:
         console.print(f"[yellow]{why} Proceeding anyway (--allow-non-race).[/yellow]")
         return True
@@ -139,12 +139,104 @@ def start_dashboard(port: int) -> None:
     console.print(f"[bold cyan]Dashboard:[/bold cyan] http://127.0.0.1:{port}/  (Ctrl-C to stop)")
 
 
+def run_check() -> int:
+    """Race-morning preflight: auth + latest-session resolution. Prints GO/NO-GO and
+    exits (0 = GO, 2 = NO-GO). No loop, no model calls, no spend."""
+    from boxbox.data.openf1 import OpenF1Client, auth_from_env
+
+    console.print("[bold]=== BOXBOX race-morning check ===[/bold]")
+
+    auth = auth_from_env()
+    if auth is None:
+        console.print("[red][NO-GO] auth:[/red] OPENF1_USERNAME/OPENF1_PASSWORD missing from .env")
+        return _verdict(False, "set OpenF1 credentials in .env")
+    try:
+        auth.token()
+        console.print(
+            f"[green][GO]   auth:[/green] token acquired, valid ~{auth.expires_in():.0f}s"
+        )
+    except Exception as exc:
+        console.print(f"[red][NO-GO] auth:[/red] token fetch failed: {exc}")
+        return _verdict(False, "fix OpenF1 credentials/subscription in .env")
+
+    client = OpenF1Client(auth=auth)
+    try:
+        latest = client.get("sessions", session_key="latest")
+    except Exception as exc:
+        console.print(f"[red][NO-GO] session:[/red] latest lookup failed: {exc}")
+        return _verdict(False, "OpenF1 sessions endpoint error")
+    finally:
+        client.close()
+
+    session_go = False
+    reason = ""
+    if not latest:
+        console.print(
+            "[yellow][WAIT] session:[/yellow] latest returned nothing - live window not open yet"
+        )
+        reason = "wait for the live window (opens ~30 min before lights-out, 12:30 UTC)"
+    else:
+        s = latest[-1]
+        name = str(s.get("session_name", "")) or str(s.get("session_type", ""))
+        loc = str(s.get("location", ""))
+        key = s.get("session_key")
+        is_race = name.lower() == "race" or str(s.get("session_type", "")).lower() == "race"
+        is_barca = "barcelona" in loc.lower()
+        if is_race and is_barca:
+            console.print(f"[green][GO]   session:[/green] latest is the Race @ {loc} (key {key})")
+            session_go = True
+        elif is_barca and not is_race:
+            console.print(
+                f"[yellow][WAIT] session:[/yellow] latest is {name} @ {loc} (key {key}); "
+                "live data opens 30 min before lights-out (12:30 UTC)"
+            )
+            reason = (
+                "Barcelona weekend confirmed but race session not live yet - re-run after 12:30 UTC"
+            )
+        elif is_race and not is_barca:
+            console.print(
+                f"[red][NO-GO] session:[/red] latest Race is @ {loc} (key {key}), NOT Barcelona"
+            )
+            reason = f"latest race is {loc}, not Barcelona - do NOT launch against it"
+        else:
+            console.print(
+                f"[yellow][WAIT] session:[/yellow] latest is {name} @ {loc} - not the Barcelona race"
+            )
+            reason = "the Barcelona race is not the active session yet"
+
+    # spend advisory (not a hard gate - you may intend a --mock run)
+    if os.environ.get("ALLOW_SPEND") == "1" and os.environ.get("OPENROUTER_API_KEY"):
+        console.print(
+            "[green][GO]   spend:[/green] ALLOW_SPEND=1 + key present - real models will run"
+        )
+    else:
+        console.print(
+            "[yellow][warn] spend:[/yellow] ALLOW_SPEND!=1 - real models will refuse; "
+            "set ALLOW_SPEND=1 in .env for the scored run (or launch with --mock)"
+        )
+
+    return _verdict(session_go, reason or "clear")
+
+
+def _verdict(go: bool, reason: str) -> int:
+    console.print("[dim]" + "-" * 40 + "[/dim]")
+    if go:
+        console.print(
+            "[bold green]GO[/bold green] - clear to launch:  "
+            "python scripts/run_live.py --live --dashboard"
+        )
+        return 0
+    console.print(f"[bold red]NO-GO[/bold red] - {reason}")
+    return 2
+
+
 def main() -> int:
     logging.basicConfig(level=logging.WARNING)
     p = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )
     mode = p.add_mutually_exclusive_group(required=True)
+    mode.add_argument("--check", action="store_true", help="preflight GO/NO-GO, no loop, no spend")
     mode.add_argument("--live", action="store_true", help="real authed OpenF1 stream (race day)")
     mode.add_argument(
         "--replay", metavar="RACE_ID", help="replay a processed race, e.g. 2026-monaco"
@@ -164,6 +256,9 @@ def main() -> int:
     p.add_argument("--port", type=int, default=8011, help="dashboard port")
     args = p.parse_args()
 
+    if args.check:
+        return run_check()
+
     # ---- decide model mode (mock vs real) and enforce the spend gate up front --------
     use_mock = True if args.replay else args.mock
     if not use_mock:
@@ -178,7 +273,7 @@ def main() -> int:
     if not names:
         return die("no live models matched config/models.yaml (live_models)")
     console.print(
-        f"[bold]Models:[/bold] {names}  ({'MOCK — no spend' if use_mock else 'REAL — billing on'})"
+        f"[bold]Models:[/bold] {names}  ({'MOCK - no spend' if use_mock else 'REAL - billing on'})"
     )
 
     extraction_cfg = load_config("extraction")
@@ -208,7 +303,7 @@ def main() -> int:
         source = OpenF1LiveSource(LIVE_YEAR, LIVE_EVENT, LIVE_RACE_ID)
         mode_label = "live"
         console.print(
-            f"[bold]Source:[/bold] LIVE OpenF1 — {LIVE_RACE_ID} "
+            f"[bold]Source:[/bold] LIVE OpenF1 - {LIVE_RACE_ID} "
             f"(session_key {source.session.get('session_key')})"
         )
 
