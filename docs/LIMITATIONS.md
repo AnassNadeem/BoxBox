@@ -29,18 +29,22 @@
    traffic-dependent. SC pit-loss factor defaults to 0.55 when not measurable.
 9. **Tyre age for used sets**: FastF1 TyreLife includes pre-race usage where known, but
    practice-used sets may carry hidden age in 2026 data sources.
-10. **The mock leaderboard is fake by construction** — it validates plumbing, not model
-    skill. All numbers in tonight's outputs are placeholders until real runs.
+10. **Mock mode validates plumbing, not model skill** — mock runs produce fake placeholder
+    numbers and remain available for pipeline testing. The headline leaderboard and all
+    paper numbers come from the **real paid run** (mode: real, 2026-06-13, prereg-v4); they
+    are not placeholders.
 11. **Wet/changeable-condition decision points are excluded from the headline metric**
     (the dry subset is the headline). The simulator runs a single stint to the flag and
     cannot model a wet→dry crossover (a stint cannot switch back to slicks), so a model
     that pits onto INTERMEDIATE/WET is rolled out on wet tyres to the end at wet pace —
-    an artifact, not a strategy error (this produced the Miami and Silverstone delta
-    outliers, mean ~235s on wet-tyre calls vs ~8.5s on all others). A point is tagged
-    `changeable_conditions` MECHANICALLY, from conditions only (never from score/delta):
-    the session is declared wet (rain in the weather feed), OR the focal car is on
-    INTER/WET entering the lap, OR any car runs an INTER/WET or rain-affected lap at or
-    after the decision lap (so the rollout would cross changeable conditions). Headline
-    leaderboard/figures/contamination use `changeable_conditions == false`; full-set
-    numbers are retained in a clearly-labelled appendix. This excluded 36 of 178 DPs
-    (Miami 18, Silverstone 18). Consistent with limitation 2 (no wet→dry modeling).
+    an artifact, not a strategy error (this produced the Silverstone delta outliers,
+    mean ~235s on wet-tyre calls vs ~8.5s on all others). A point is tagged
+    `changeable_conditions` MECHANICALLY, from conditions only (never from score/delta),
+    via `wet_running_near(t, window=5)`: the field actually ran an INTER/WET or
+    rain-affected lap within 5 laps of t (range `[t−5, t]`, `≤ t` so leakage-safe), OR the
+    focal car is on INTER/WET entering the lap. (prereg-v4 replaced the earlier race-level
+    rain flag + "any wet lap seen" latch, which over-offered INTER on the dry Miami race
+    and Canada's dry phase.) Headline leaderboard/figures/contamination use
+    `changeable_conditions == false`; full-set numbers are retained in a clearly-labelled
+    appendix. This excludes **19 of 178 DPs** (Silverstone 18, Canada 1); the dry headline
+    set is **159**. Consistent with limitation 2 (no wet→dry modeling).

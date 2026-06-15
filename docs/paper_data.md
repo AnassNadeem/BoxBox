@@ -13,10 +13,10 @@ Sources of truth: `outputs/leaderboard.{json,md}`, `outputs/contamination.md`,
 >   retrospective is blocked on incomplete tyre-compound data (FastF1 still has no 2026
 >   Spain session; OpenF1 stints frozen at 27 rows → 58% UNKNOWN compounds). Do not cite a
 >   Barcelona benchmark row; it does not exist.
-> - **`docs/LIMITATIONS.md` items #10 and #11 are STALE.** #10 calls the leaderboard "mock"
->   (it is now a real run). #11 cites "36 of 178 excluded / 142 dry" — that is the
->   prereg-v3 number; the **current prereg-v4 truth is 19 excluded / 159 dry** (see §1, §10).
->   Use the v4 numbers; flag LIMITATIONS.md for a refresh before submission.
+> - **`docs/LIMITATIONS.md` items #10 and #11 were corrected** (commit after this doc): #10
+>   now reflects the real paid run (not "mock"); #11 now reads **19 excluded / 159 dry**
+>   (Silverstone 18, Canada 1) with the prereg-v4 `wet_running_near` criterion. Use the v4
+>   numbers throughout (see §1, §10).
 > - **H1 (bootstrap CIs) and H2 (beat-team binomial test) have NOT been computed as
 >   artifacts.** Only H3 (contamination) exists (`outputs/contamination.md`). See §7/§8.
 > - Two distinct "headline" definitions exist — the leaderboard's all-seasons dry mean vs
@@ -241,10 +241,9 @@ rule in dry races** (waived once wet tyres are in play).
 7. Gap figures are end-of-lap interval approximations, not live GPS.
 8. Pit loss is a per-race scalar.
 9. Tyre age for used sets may carry hidden pre-race usage in 2026 data.
-10. ⚠️ **STALE** — says the leaderboard is mock; it is now a **real** run.
-11. ⚠️ **STALE numbers** — says "36 of 178 excluded / 142 dry (Miami 18, Silverstone 18)";
-    the current prereg-v4 truth is **19 excluded / 159 dry (Silverstone 18, Canada 1)**.
-    The mechanism description (wet→dry crossover artifact) is still correct.
+10. **Corrected** — now reflects the real paid run (mock mode is plumbing-only).
+11. **Corrected** — now reads **19 excluded / 159 dry (Silverstone 18, Canada 1)** with the
+    prereg-v4 `wet_running_near` criterion; the wet→dry crossover mechanism is retained.
 
 ---
 
@@ -605,7 +604,7 @@ Cite **52** for "tests at the benchmark commit", **61** for the current repo sta
 ---
 
 ### Open items to resolve before submission (flagged, not guessed)
-1. **Refresh `docs/LIMITATIONS.md` #10 (mock→real) and #11 (36/142 → 19/159).**
+1. ✅ Resolved — `docs/LIMITATIONS.md` #10 (mock→real) and #11 (→ 19/159) corrected.
 2. **Compute H1** (per-model 95% bootstrap CI of mean Δexante, 10,000 resamples, excludes 0?)
    and **H2** (per-model two-sided binomial of beat_team vs 0.5) — **neither is computed yet**;
    only H3 exists.
