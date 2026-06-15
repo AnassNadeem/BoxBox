@@ -17,8 +17,10 @@ Sources of truth: `outputs/leaderboard.{json,md}`, `outputs/contamination.md`,
 >   now reflects the real paid run (not "mock"); #11 now reads **19 excluded / 159 dry**
 >   (Silverstone 18, Canada 1) with the prereg-v4 `wet_running_near` criterion. Use the v4
 >   numbers throughout (see §1, §10).
-> - **H1 (bootstrap CIs) and H2 (beat-team binomial test) have NOT been computed as
->   artifacts.** Only H3 (contamination) exists (`outputs/contamination.md`). See §7/§8.
+> - **H1 (bootstrap CIs), H2 (beat-team binomial), and H3 (contamination) are all now
+>   computed.** H1/H2 → `outputs/hypothesis_tests.md` (both the 2026-only-107 and
+>   all-seasons-159 dry sets; all H1 CIs exclude 0, all H2 tests significant & below 50%);
+>   H3 → `outputs/contamination.md`. See §8e.
 > - Two distinct "headline" definitions exist — the leaderboard's all-seasons dry mean vs
 >   the prereg's 2026-only primary mean. They rank differently in the middle. See §8.
 
@@ -605,9 +607,9 @@ Cite **52** for "tests at the benchmark commit", **61** for the current repo sta
 
 ### Open items to resolve before submission (flagged, not guessed)
 1. ✅ Resolved — `docs/LIMITATIONS.md` #10 (mock→real) and #11 (→ 19/159) corrected.
-2. **Compute H1** (per-model 95% bootstrap CI of mean Δexante, 10,000 resamples, excludes 0?)
-   and **H2** (per-model two-sided binomial of beat_team vs 0.5) — **neither is computed yet**;
-   only H3 exists.
+2. ✅ Resolved — H1 (bootstrap CIs) and H2 (beat-team binomial) computed in
+   `outputs/hypothesis_tests.md`: all H1 CIs exclude 0 (every model sub-optimal), all H2
+   significant with beat rates below 50%, on both candidate headline sets.
 3. **Decide the single headline definition** (all-seasons dry 159 vs 2026-only 107) and use it
    consistently — they reorder models 2–5.
 4. **Generate the 2 missing figures** (accuracy-vs-consistency scatter; decision-point
