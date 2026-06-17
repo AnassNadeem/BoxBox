@@ -41,6 +41,14 @@ races_2026:
   - {race_id: 2026-miami, year: 2026, event: Miami}
   - {race_id: 2026-canada, year: 2026, event: Canada}
   - {race_id: 2026-monaco, year: 2026, event: Monaco}
+  - {race_id: 2026-barcelona, year: 2026, event: barcelona}  # Round 7 (raced 2026-06-14),
+                                                             # Barcelona-Catalunya. race_id matches
+                                                             # run_live.py (2026-barcelona).
+                                                             # NOTE: event MUST be "barcelona" — bare
+                                                             # "Spain" resolves to the MADRID round
+                                                             # (R14, 2026-09-13, a future race with no
+                                                             # data). Madrid, if ever added, needs its
+                                                             # own row with event "madrid".
 
 # P0 pipeline-validation race (known-good, pre-2026)
 races_validation:
