@@ -1,0 +1,6 @@
+model,n_calls,n_valid,mean_delta_exante_s,median_delta_exante_s,mean_delta_hindsight_s,median_delta_hindsight_s,beat_team_pct,agree_team_pct,invalid_pct,flip_rate_pct
+deepseek-v3.2,177,177,4.736,0.0,5.562,0.0,18.1,72.9,0.0,38.9
+gemini-3.1-pro,177,176,7.107,0.0,7.938,0.522,18.2,60.8,0.6,22.2
+claude-opus-4.8,177,177,7.337,0.0,8.163,0.384,21.5,59.3,0.0,5.6
+gpt-5.5,177,176,8.535,0.481,9.341,1.007,17.6,60.8,0.6,50.0
+claude-haiku-4.5,177,177,12.656,0.0,13.482,0.703,15.3,64.4,0.0,0.0
