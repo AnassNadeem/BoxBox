@@ -15,11 +15,22 @@ __pycache__/
 build/
 dist/
 
-# Data and outputs are local-only artifacts
+# Data is local-only (FastF1 cache is gigabytes)
 data/*
 !data/.gitkeep
+
+# Outputs: block everything, then allow published artifacts
 outputs/*
 !outputs/.gitkeep
+!outputs/leaderboard.json
+!outputs/leaderboard.csv
+!outputs/leaderboard.md
+!outputs/scores.jsonl
+!outputs/hypothesis_tests.md
+!outputs/contamination.md
+!outputs/cost_ledger.csv
+!outputs/fable_comparison.md
+!outputs/figures/
 
 # OS noise
 Thumbs.db
