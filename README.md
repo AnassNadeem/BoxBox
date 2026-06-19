@@ -4,13 +4,36 @@
 
 BOXBOX is a contamination-resistant benchmark that tests whether large language models can make Formula 1 pit-stop strategy decisions in real time. We reconstruct *decision points* from real 2026 races — *pit now or stay out? which compound?* — feed the identical frozen race state to five frontier models, and score every call against an ex-ante optimal strategy computed by a race simulator.
 
-Because every completed 2026 race post-dates all models' training data, the **2026 test set is contamination-proof by construction**. A 2024/2025 control set separately measures the contamination gap.
+Because every completed 2026 race postdates all models' training data, the 2026 test set is designed to resist contamination by construction. A direct test against a 2024/2025 control set finds a weak and inconsistent signal — see the paper's Section 4.5 for the full result and its caveats.
+
+*A sixth model, Claude Fable 5, was in the original design but became unavailable due to an export-control directive before the main run — see the paper's Section 4.6 for the 3 data points it produced before withdrawal.*
 
 ---
 
-## Results (177 dry decision points · 11 races · 5 models)
+## Results (primary set: 125 dry decision points · 2026 season · 5 models)
 
 ![Leaderboard bar chart](outputs/figures/leaderboard_bar.png)
+
+| # | Model | Mean Δ ex-ante (s) ↓ | Median (s) | Beat team % | Flip rate % |
+|---|-------|---------------------:|------------|------------:|------------:|
+| 1 | deepseek-v3.2 | **4.93** | 0.0 | 19.2% | 38.9% |
+| 2 | gpt-5.5 | 8.08 | 0.0 | 19.4% | 50.0% |
+| 3 | gemini-3.1-pro | 8.08 | 0.0 | 20.0% | 22.2% |
+| 4 | claude-haiku-4.5 | 8.81 | 0.0 | 16.0% | 0.0% |
+| 5 | claude-opus-4.8 | 9.21 | 0.0 | **24.0%** | **5.6%** |
+
+*Primary metric: **mean Δ ex-ante** — seconds lost vs. the no-future-SC optimal strategy (lower is better). Primary set = the 125 dry decision points from the post-cutoff 2026 season (matches paper Table 2).*
+
+**Key findings:**
+- DeepSeek V3.2 leads on raw accuracy but reverses its own call on identical inputs ~2 in 5 times (flip rate 38.9%).
+- Model price does not predict decision quality: the cheapest (open-weight) model has the lowest mean delta, and there is no evidence costlier models decide better.
+- Accuracy and self-consistency diverge: Claude Haiku 4.5 never flips (0.0%) and Opus rarely does (5.6%), while GPT-5.5 flips on half the probed points — the most accurate model is among the least consistent.
+- All models show median delta = 0 — they mostly stay out when the team stays out, but are penalised on the minority of laps where the optimal call is to pit.
+- **Contamination test:** a weak, inconsistent signal — deepseek-v3.2 and gemini-3.1-pro score significantly better on 2024-25 than 2026 (the recall direction), but gpt-5.5 and claude-haiku-4.5 go the opposite way and a same-circuit (Monaco ×3) comparison shows no consistent advantage. See the paper's Section 4.5.
+
+### Robustness check (all 177 dry decision points)
+
+The full set pools all three seasons (177 dry DPs, 883 valid scored calls). DeepSeek remains first; the middle of the table reorders, consistent with overlapping confidence intervals (paper Appendix C).
 
 | # | Model | Mean Δ ex-ante (s) ↓ | Median (s) | Beat team % | Flip rate % |
 |---|-------|---------------------:|------------|------------:|------------:|
@@ -20,13 +43,7 @@ Because every completed 2026 race post-dates all models' training data, the **20
 | 4 | gpt-5.5 | 8.54 | 0.5 | 17.6% | 50.0% |
 | 5 | claude-haiku-4.5 | 12.66 | 0.0 | 15.3% | 0.0% |
 
-*Primary metric: **mean Δ ex-ante** — seconds lost vs. the no-future-SC optimal strategy (lower is better). Headline = dry subset; 19 changeable-condition DPs excluded (v1 simulator cannot model wet→dry crossovers).*
-
-**Key findings:**
-- DeepSeek V3 leads on raw accuracy but has the second-highest flip rate (38.9%), suggesting noisy reasoning.
-- Claude Opus 4.8 is the most *consistent* strong performer: 3rd on accuracy but best flip rate (5.6%) and highest beat-the-team rate (21.5%).
-- All models show median delta = 0 — they mostly stay out when the team stays out, but are penalised on the minority of laps where the optimal call is to pit.
-- **Contamination signal detected** for deepseek-v3.2 and gemini-3.1-pro (significantly better on 2024-25 races vs. 2026; Mann-Whitney U, Holm-corrected p < 0.05).
+*Dry subset of all 11 races; 19 changeable-condition DPs excluded from the 196 total (v1 simulator cannot model wet→dry crossovers).*
 
 ---
 
@@ -34,8 +51,10 @@ Because every completed 2026 race post-dates all models' training data, the **20
 
 | Set | Races | Decision points |
 |-----|-------|-----------------|
-| **2026 (contamination-proof)** | Australia, China, Japan, Miami, Monaco, Canada, Barcelona | 140 dry DPs |
-| **2024/25 (contamination control)** | Bahrain 2024, Monaco 2024, Monaco 2025, Silverstone 2025 | 37 dry DPs + 18 excluded (wet) |
+| **2026 (primary, post-cutoff)** | Australia, China, Japan, Miami, Monaco, Canada, Barcelona | 125 dry DPs (+1 excluded, wet) |
+| **2024/25 (contamination control)** | Bahrain 2024, Monaco 2024, Monaco 2025, Silverstone 2025 | 52 dry DPs (+18 excluded, wet) |
+
+*177 dry decision points total (196 including changeable-condition exclusions).*
 
 ---
 
@@ -130,6 +149,8 @@ DecisionPoints  ←  rule-based extractor (pit neighborhoods,       │
 ---
 
 ## Pre-registration
+
+Before running any model on the full dataset, the design, hypotheses, and analysis plan were written down and committed to this repository with a timestamp, so the results could not be shaped by what the data showed.
 
 Hypotheses were pre-registered before data collection. The full procedure is in `docs/PREREGISTRATION.md`; amendments are in `docs/DECISIONS.md`. The pre-registration trail is anchored to git tags:
 
