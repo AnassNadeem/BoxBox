@@ -42,4 +42,3 @@ Thumbs.db
 # Claude Code tooling / internal build artifacts
 .claude/
 CLAUDE.md
-docs/build-process/
