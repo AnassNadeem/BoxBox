@@ -1,3 +1,10 @@
+> This is the autonomous build brief used to direct Claude Code for the initial
+> end-to-end pipeline build. Kept here for transparency into the development process.
+> All design decisions, thresholds, and judgment calls made during this build are
+> logged in `docs/DECISIONS.md`.
+
+---
+
 # OVERNIGHT_TASK.md — BOXBOX Build Brief
 
 You are Claude Code, working autonomously overnight. Your operator (Anas) is asleep.
