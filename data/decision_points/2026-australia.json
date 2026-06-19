@@ -1,0 +1,2333 @@
+{
+ "race_id": "2026-australia",
+ "decision_points": [
+  {
+   "dp_id": "2026-australia-L007-COL-A",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 7,
+   "driver": "COL",
+   "dp_type": "A",
+   "question": "It is lap 7 of 58. Decide for COL: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 7,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "COL",
+     "position": 15,
+     "compound": "HARD",
+     "tyre_age": 6,
+     "compounds_used": [
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      86.812,
+      87.512,
+      87.513
+     ],
+     "car_ahead": {
+      "driver": "SAI",
+      "gap_s": 1.064,
+      "compound": "SOFT",
+      "tyre_age": 6
+     },
+     "car_behind": {
+      "driver": "ALO",
+      "gap_s": 0.375,
+      "compound": "SOFT",
+      "tyre_age": 6
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 6,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 6,
+      "gap_to_leader_s": 0.64
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 6,
+      "gap_to_leader_s": 2.082
+     },
+     {
+      "position": 4,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 6,
+      "gap_to_leader_s": 6.542
+     },
+     {
+      "position": 5,
+      "driver": "HAD",
+      "compound": "MEDIUM",
+      "tyre_age": 6,
+      "gap_to_leader_s": 7.215
+     },
+     {
+      "position": 6,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 6,
+      "gap_to_leader_s": 9.545
+     },
+     {
+      "position": 7,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 6,
+      "gap_to_leader_s": 10.181
+     },
+     {
+      "position": 8,
+      "driver": "OCO",
+      "compound": "MEDIUM",
+      "tyre_age": 6,
+      "gap_to_leader_s": 12.715
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 6,
+      "gap_to_leader_s": 13.605
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "MEDIUM",
+      "tyre_age": 6,
+      "gap_to_leader_s": 14.478
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 9",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L009-NOR-A",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 9,
+   "driver": "NOR",
+   "dp_type": "A",
+   "question": "It is lap 9 of 58. Decide for NOR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 9,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "NOR",
+     "position": 7,
+     "compound": "MEDIUM",
+     "tyre_age": 8,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      85.036,
+      84.978,
+      85.299
+     ],
+     "car_ahead": {
+      "driver": "LIN",
+      "gap_s": 0.459,
+      "compound": "MEDIUM",
+      "tyre_age": 8
+     },
+     "car_behind": {
+      "driver": "OCO",
+      "gap_s": 2.373,
+      "compound": "MEDIUM",
+      "tyre_age": 8
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 8,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 8,
+      "gap_to_leader_s": 0.332
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 8,
+      "gap_to_leader_s": 1.258
+     },
+     {
+      "position": 4,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 8,
+      "gap_to_leader_s": 4.463
+     },
+     {
+      "position": 5,
+      "driver": "HAD",
+      "compound": "MEDIUM",
+      "tyre_age": 8,
+      "gap_to_leader_s": 8.376
+     },
+     {
+      "position": 6,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 8,
+      "gap_to_leader_s": 10.402
+     },
+     {
+      "position": 7,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 8,
+      "gap_to_leader_s": 10.861
+     },
+     {
+      "position": 8,
+      "driver": "OCO",
+      "compound": "MEDIUM",
+      "tyre_age": 8,
+      "gap_to_leader_s": 13.234
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 8,
+      "gap_to_leader_s": 14.051
+     },
+     {
+      "position": 10,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 8,
+      "gap_to_leader_s": 15.219
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 11",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L011-LIN-B",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 11,
+   "driver": "LIN",
+   "dp_type": "B",
+   "question": "It is lap 11 of 58. Decide for LIN: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 11,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "LIN",
+     "position": 6,
+     "compound": "MEDIUM",
+     "tyre_age": 10,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      85.26,
+      85.337,
+      85.565
+     ],
+     "car_ahead": {
+      "driver": "HAD",
+      "gap_s": 2.326,
+      "compound": "MEDIUM",
+      "tyre_age": 10
+     },
+     "car_behind": {
+      "driver": "NOR",
+      "gap_s": 0.491,
+      "compound": "MEDIUM",
+      "tyre_age": 10
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 0.843
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 1.778
+     },
+     {
+      "position": 4,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 2.829
+     },
+     {
+      "position": 5,
+      "driver": "HAD",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 9.399
+     },
+     {
+      "position": 6,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 11.725
+     },
+     {
+      "position": 7,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 12.216
+     },
+     {
+      "position": 8,
+      "driver": "OCO",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 14.839
+     },
+     {
+      "position": 9,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 10,
+      "gap_to_leader_s": 15.844
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 16.582
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 11",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L011-NOR-B",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 11,
+   "driver": "NOR",
+   "dp_type": "B",
+   "question": "It is lap 11 of 58. Decide for NOR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 11,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "NOR",
+     "position": 7,
+     "compound": "MEDIUM",
+     "tyre_age": 10,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      85.299,
+      85.639,
+      85.295
+     ],
+     "car_ahead": {
+      "driver": "LIN",
+      "gap_s": 0.491,
+      "compound": "MEDIUM",
+      "tyre_age": 10
+     },
+     "car_behind": {
+      "driver": "OCO",
+      "gap_s": 2.623,
+      "compound": "MEDIUM",
+      "tyre_age": 10
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 0.843
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 1.778
+     },
+     {
+      "position": 4,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 2.829
+     },
+     {
+      "position": 5,
+      "driver": "HAD",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 9.399
+     },
+     {
+      "position": 6,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 11.725
+     },
+     {
+      "position": 7,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 12.216
+     },
+     {
+      "position": 8,
+      "driver": "OCO",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 14.839
+     },
+     {
+      "position": 9,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 10,
+      "gap_to_leader_s": 15.844
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 16.582
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "HARD",
+   "trigger": "VSC deployed on lap 11",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L012-LIN-C",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 12,
+   "driver": "LIN",
+   "dp_type": "C",
+   "question": "It is lap 12 of 58. Decide for LIN: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 12,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "LIN",
+     "position": 5,
+     "compound": "MEDIUM",
+     "tyre_age": 11,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      85.337,
+      85.565,
+      92.238
+     ],
+     "car_ahead": {
+      "driver": "ANT",
+      "gap_s": 17.244,
+      "compound": "MEDIUM",
+      "tyre_age": 11
+     },
+     "car_behind": {
+      "driver": "VER",
+      "gap_s": 2.91,
+      "compound": "HARD",
+      "tyre_age": 11
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 1.012
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 2.053
+     },
+     {
+      "position": 4,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 2.921
+     },
+     {
+      "position": 5,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 20.165
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 11,
+      "gap_to_leader_s": 23.075
+     },
+     {
+      "position": 7,
+      "driver": "BEA",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 25.213
+     },
+     {
+      "position": 8,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 26.417
+     },
+     {
+      "position": 9,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 31.809
+     },
+     {
+      "position": 10,
+      "driver": "ALB",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 33.251
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival NOR pitted on lap 11 (0.5s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L012-VER-C",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 12,
+   "driver": "VER",
+   "dp_type": "C",
+   "question": "It is lap 12 of 58. Decide for VER: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 12,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "VER",
+     "position": 6,
+     "compound": "HARD",
+     "tyre_age": 11,
+     "compounds_used": [
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      85.071,
+      85.133,
+      91.029
+     ],
+     "car_ahead": {
+      "driver": "LIN",
+      "gap_s": 2.91,
+      "compound": "MEDIUM",
+      "tyre_age": 11
+     },
+     "car_behind": {
+      "driver": "BEA",
+      "gap_s": 2.138,
+      "compound": "MEDIUM",
+      "tyre_age": 11
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 1.012
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 2.053
+     },
+     {
+      "position": 4,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 2.921
+     },
+     {
+      "position": 5,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 20.165
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 11,
+      "gap_to_leader_s": 23.075
+     },
+     {
+      "position": 7,
+      "driver": "BEA",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 25.213
+     },
+     {
+      "position": 8,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 26.417
+     },
+     {
+      "position": 9,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 31.809
+     },
+     {
+      "position": 10,
+      "driver": "ALB",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 33.251
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival GAS pitted on lap 11 (0.7s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L013-HAM-C",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 13,
+   "driver": "HAM",
+   "dp_type": "C",
+   "question": "It is lap 13 of 58. Decide for HAM: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 13,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "HAM",
+     "position": 2,
+     "compound": "MEDIUM",
+     "tyre_age": 12,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      84.255,
+      84.073,
+      114.958
+     ],
+     "car_ahead": {
+      "driver": "LEC",
+      "gap_s": 3.003,
+      "compound": "MEDIUM",
+      "tyre_age": 12
+     },
+     "car_behind": {
+      "driver": "RUS",
+      "gap_s": 9.941,
+      "compound": "MEDIUM",
+      "tyre_age": 12
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 3.003
+     },
+     {
+      "position": 3,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 12.944
+     },
+     {
+      "position": 4,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 18.157
+     },
+     {
+      "position": 5,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 18.595
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 12,
+      "gap_to_leader_s": 23.281
+     },
+     {
+      "position": 7,
+      "driver": "BEA",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 26.244
+     },
+     {
+      "position": 8,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 26.773
+     },
+     {
+      "position": 9,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 35.876
+     },
+     {
+      "position": 10,
+      "driver": "OCO",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 39.387
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival ANT pitted on lap 12 (0.9s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L013-LAW-C",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 13,
+   "driver": "LAW",
+   "dp_type": "C",
+   "question": "It is lap 13 of 58. Decide for LAW: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 13,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "LAW",
+     "position": 15,
+     "compound": "HARD",
+     "tyre_age": 1,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      85.751,
+      110.026,
+      130.384
+     ],
+     "car_ahead": {
+      "driver": "PER",
+      "gap_s": 17.953,
+      "compound": "MEDIUM",
+      "tyre_age": 12
+     },
+     "car_behind": {
+      "driver": "ALO",
+      "gap_s": 6.364,
+      "compound": "SOFT",
+      "tyre_age": 1
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 3.003
+     },
+     {
+      "position": 3,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 12.944
+     },
+     {
+      "position": 4,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 18.157
+     },
+     {
+      "position": 5,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 18.595
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 12,
+      "gap_to_leader_s": 23.281
+     },
+     {
+      "position": 7,
+      "driver": "BEA",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 26.244
+     },
+     {
+      "position": 8,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 26.773
+     },
+     {
+      "position": 9,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 35.876
+     },
+     {
+      "position": 10,
+      "driver": "OCO",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 39.387
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival BOT pitted on lap 12 (0.7s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L016-ANT-B",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 16,
+   "driver": "ANT",
+   "dp_type": "B",
+   "question": "It is lap 16 of 58. Decide for ANT: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 16,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "ANT",
+     "position": 5,
+     "compound": "HARD",
+     "tyre_age": 3,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      117.691,
+      86.679,
+      83.287
+     ],
+     "car_ahead": {
+      "driver": "LIN",
+      "gap_s": 0.179,
+      "compound": "MEDIUM",
+      "tyre_age": 15
+     },
+     "car_behind": {
+      "driver": "VER",
+      "gap_s": 2.118,
+      "compound": "HARD",
+      "tyre_age": 15
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 1.916
+     },
+     {
+      "position": 3,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 11.09
+     },
+     {
+      "position": 4,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 16.641
+     },
+     {
+      "position": 5,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 16.82
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 18.938
+     },
+     {
+      "position": 7,
+      "driver": "BEA",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 20.785
+     },
+     {
+      "position": 8,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 22.563
+     },
+     {
+      "position": 9,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 26.393
+     },
+     {
+      "position": 10,
+      "driver": "OCO",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 32.836
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 16",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L016-LIN-B",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 16,
+   "driver": "LIN",
+   "dp_type": "B",
+   "question": "It is lap 16 of 58. Decide for LIN: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 16,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "LIN",
+     "position": 4,
+     "compound": "MEDIUM",
+     "tyre_age": 15,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      114.878,
+      88.161,
+      84.877
+     ],
+     "car_ahead": {
+      "driver": "RUS",
+      "gap_s": 5.551,
+      "compound": "HARD",
+      "tyre_age": 3
+     },
+     "car_behind": {
+      "driver": "ANT",
+      "gap_s": 0.179,
+      "compound": "HARD",
+      "tyre_age": 3
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 1.916
+     },
+     {
+      "position": 3,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 11.09
+     },
+     {
+      "position": 4,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 16.641
+     },
+     {
+      "position": 5,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 16.82
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 18.938
+     },
+     {
+      "position": 7,
+      "driver": "BEA",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 20.785
+     },
+     {
+      "position": 8,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 22.563
+     },
+     {
+      "position": 9,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 26.393
+     },
+     {
+      "position": 10,
+      "driver": "OCO",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 32.836
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 16",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L016-PER-A",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 16,
+   "driver": "PER",
+   "dp_type": "A",
+   "question": "It is lap 16 of 58. Decide for PER: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 16,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "PER",
+     "position": 14,
+     "compound": "MEDIUM",
+     "tyre_age": 15,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      110.001,
+      87.084,
+      88.137
+     ],
+     "car_ahead": {
+      "driver": "SAI",
+      "gap_s": 8.848,
+      "compound": "HARD",
+      "tyre_age": 4
+     },
+     "car_behind": {
+      "driver": "LAW",
+      "gap_s": 0.205,
+      "compound": "HARD",
+      "tyre_age": 4
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 1.916
+     },
+     {
+      "position": 3,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 11.09
+     },
+     {
+      "position": 4,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 16.641
+     },
+     {
+      "position": 5,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 16.82
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 18.938
+     },
+     {
+      "position": 7,
+      "driver": "BEA",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 20.785
+     },
+     {
+      "position": 8,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 22.563
+     },
+     {
+      "position": 9,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 26.393
+     },
+     {
+      "position": 10,
+      "driver": "OCO",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 32.836
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 18",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L018-LIN-A",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 18,
+   "driver": "LIN",
+   "dp_type": "A",
+   "question": "It is lap 18 of 58. Decide for LIN: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 18,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "LIN",
+     "position": 5,
+     "compound": "MEDIUM",
+     "tyre_age": 17,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      84.877,
+      85.898,
+      85.096
+     ],
+     "car_ahead": {
+      "driver": "ANT",
+      "gap_s": 3.937,
+      "compound": "HARD",
+      "tyre_age": 5
+     },
+     "car_behind": {
+      "driver": "VER",
+      "gap_s": 0.666,
+      "compound": "HARD",
+      "tyre_age": 17
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 1.506
+     },
+     {
+      "position": 3,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 8.911
+     },
+     {
+      "position": 4,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 15.831
+     },
+     {
+      "position": 5,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 19.768
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 17,
+      "gap_to_leader_s": 20.434
+     },
+     {
+      "position": 7,
+      "driver": "BEA",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 22.288
+     },
+     {
+      "position": 8,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 24.737
+     },
+     {
+      "position": 9,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 26.491
+     },
+     {
+      "position": 10,
+      "driver": "OCO",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 36.115
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "HARD",
+   "trigger": "own pit stop on lap 18",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L018-VER-A",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 18,
+   "driver": "VER",
+   "dp_type": "A",
+   "question": "It is lap 18 of 58. Decide for VER: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 18,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "VER",
+     "position": 6,
+     "compound": "HARD",
+     "tyre_age": 17,
+     "compounds_used": [
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      84.098,
+      84.606,
+      84.757
+     ],
+     "car_ahead": {
+      "driver": "LIN",
+      "gap_s": 0.666,
+      "compound": "MEDIUM",
+      "tyre_age": 17
+     },
+     "car_behind": {
+      "driver": "BEA",
+      "gap_s": 1.854,
+      "compound": "MEDIUM",
+      "tyre_age": 17
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 1.506
+     },
+     {
+      "position": 3,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 8.911
+     },
+     {
+      "position": 4,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 15.831
+     },
+     {
+      "position": 5,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 19.768
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 17,
+      "gap_to_leader_s": 20.434
+     },
+     {
+      "position": 7,
+      "driver": "BEA",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 22.288
+     },
+     {
+      "position": 8,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 24.737
+     },
+     {
+      "position": 9,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 26.491
+     },
+     {
+      "position": 10,
+      "driver": "OCO",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 36.115
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "MEDIUM",
+   "trigger": "own pit stop on lap 18",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L019-LIN-C",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 19,
+   "driver": "LIN",
+   "dp_type": "C",
+   "question": "It is lap 19 of 58. Decide for LIN: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 19,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "LIN",
+     "position": 6,
+     "compound": "MEDIUM",
+     "tyre_age": 18,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      85.898,
+      85.096,
+      108.224
+     ],
+     "car_ahead": {
+      "driver": "NOR",
+      "gap_s": 6.097,
+      "compound": "HARD",
+      "tyre_age": 7
+     },
+     "car_behind": {
+      "driver": "VER",
+      "gap_s": 0.989,
+      "compound": "HARD",
+      "tyre_age": 18
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 3.501
+     },
+     {
+      "position": 3,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 8.288
+     },
+     {
+      "position": 4,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 17.211
+     },
+     {
+      "position": 5,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 7,
+      "gap_to_leader_s": 32.293
+     },
+     {
+      "position": 6,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 38.39
+     },
+     {
+      "position": 7,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 18,
+      "gap_to_leader_s": 39.379
+     },
+     {
+      "position": 8,
+      "driver": "BEA",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 40.29
+     },
+     {
+      "position": 9,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 45.494
+     },
+     {
+      "position": 10,
+      "driver": "OCO",
+      "compound": "HARD",
+      "tyre_age": 7,
+      "gap_to_leader_s": 47.894
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival VER pitted on lap 18 (0.7s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L022-GAS-B",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 22,
+   "driver": "GAS",
+   "dp_type": "B",
+   "question": "It is lap 22 of 58. Decide for GAS: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 22,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "GAS",
+     "position": 10,
+     "compound": "HARD",
+     "tyre_age": 10,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      112.95,
+      86.578,
+      85.678
+     ],
+     "car_ahead": {
+      "driver": "BOR",
+      "gap_s": 1.879,
+      "compound": "HARD",
+      "tyre_age": 3
+     },
+     "car_behind": {
+      "driver": "OCO",
+      "gap_s": 0.592,
+      "compound": "HARD",
+      "tyre_age": 10
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 21,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 21,
+      "gap_to_leader_s": 1.697
+     },
+     {
+      "position": 3,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 9,
+      "gap_to_leader_s": 6.993
+     },
+     {
+      "position": 4,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 9,
+      "gap_to_leader_s": 13.647
+     },
+     {
+      "position": 5,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 10,
+      "gap_to_leader_s": 27.951
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 3,
+      "gap_to_leader_s": 32.672
+     },
+     {
+      "position": 7,
+      "driver": "LIN",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 35.063
+     },
+     {
+      "position": 8,
+      "driver": "BEA",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 36.198
+     },
+     {
+      "position": 9,
+      "driver": "BOR",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 41.26
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 10,
+      "gap_to_leader_s": 43.139
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 22",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L032-GAS-B",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 32,
+   "driver": "GAS",
+   "dp_type": "B",
+   "question": "It is lap 32 of 58. Decide for GAS: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 32,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "GAS",
+     "position": 10,
+     "compound": "HARD",
+     "tyre_age": 20,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      85.096,
+      85.242,
+      85.271
+     ],
+     "car_ahead": {
+      "driver": "BOR",
+      "gap_s": 6.013,
+      "compound": "HARD",
+      "tyre_age": 13
+     },
+     "car_behind": {
+      "driver": "OCO",
+      "gap_s": 0.705,
+      "compound": "HARD",
+      "tyre_age": 20
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 19,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 19,
+      "gap_to_leader_s": 6.232
+     },
+     {
+      "position": 3,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 14.211
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 21.104
+     },
+     {
+      "position": 5,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 26.906
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 13,
+      "gap_to_leader_s": 28.943
+     },
+     {
+      "position": 7,
+      "driver": "LIN",
+      "compound": "HARD",
+      "tyre_age": 13,
+      "gap_to_leader_s": 41.56
+     },
+     {
+      "position": 8,
+      "driver": "BEA",
+      "compound": "HARD",
+      "tyre_age": 13,
+      "gap_to_leader_s": 42.408
+     },
+     {
+      "position": 9,
+      "driver": "BOR",
+      "compound": "HARD",
+      "tyre_age": 13,
+      "gap_to_leader_s": 46.805
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 52.818
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 32",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L034-NOR-A",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 34,
+   "driver": "NOR",
+   "dp_type": "A",
+   "question": "It is lap 34 of 58. Decide for NOR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 34,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "NOR",
+     "position": 5,
+     "compound": "HARD",
+     "tyre_age": 22,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      84.094,
+      84.075,
+      84.79
+     ],
+     "car_ahead": {
+      "driver": "HAM",
+      "gap_s": 7.707,
+      "compound": "HARD",
+      "tyre_age": 5
+     },
+     "car_behind": {
+      "driver": "VER",
+      "gap_s": 0.689,
+      "compound": "MEDIUM",
+      "tyre_age": 15
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 21,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 21,
+      "gap_to_leader_s": 5.11
+     },
+     {
+      "position": 3,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 8,
+      "gap_to_leader_s": 12.954
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 20.686
+     },
+     {
+      "position": 5,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 22,
+      "gap_to_leader_s": 28.393
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 29.082
+     },
+     {
+      "position": 7,
+      "driver": "LIN",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 48.279
+     },
+     {
+      "position": 8,
+      "driver": "BEA",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 50.683
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 22,
+      "gap_to_leader_s": 62.918
+     },
+     {
+      "position": 10,
+      "driver": "OCO",
+      "compound": "HARD",
+      "tyre_age": 22,
+      "gap_to_leader_s": 64.474
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "MEDIUM",
+   "trigger": "own pit stop on lap 34",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-australia-L035-VER-C",
+   "race_id": "2026-australia",
+   "season": 2026,
+   "lap": 35,
+   "driver": "VER",
+   "dp_type": "C",
+   "question": "It is lap 35 of 58. Decide for VER: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-australia",
+    "track": "Melbourne",
+    "total_laps": 58,
+    "current_lap": 35,
+    "weather": {
+     "air_temp_c": 24.2,
+     "track_temp_c": 36.1,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 23.28,
+    "focal": {
+     "driver": "VER",
+     "position": 5,
+     "compound": "MEDIUM",
+     "tyre_age": 16,
+     "compounds_used": [
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      83.587,
+      83.93,
+      98.216
+     ],
+     "car_ahead": {
+      "driver": "HAM",
+      "gap_s": 8.297,
+      "compound": "HARD",
+      "tyre_age": 6
+     },
+     "car_behind": {
+      "driver": "NOR",
+      "gap_s": 13.827,
+      "compound": "HARD",
+      "tyre_age": 23
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 22,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 22,
+      "gap_to_leader_s": 5.905
+     },
+     {
+      "position": 3,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 9,
+      "gap_to_leader_s": 13.878
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 21.409
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 16,
+      "gap_to_leader_s": 29.706
+     },
+     {
+      "position": 6,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 23,
+      "gap_to_leader_s": 43.533
+     },
+     {
+      "position": 7,
+      "driver": "LIN",
+      "compound": "HARD",
+      "tyre_age": 16,
+      "gap_to_leader_s": 44.499
+     },
+     {
+      "position": 8,
+      "driver": "BEA",
+      "compound": "HARD",
+      "tyre_age": 16,
+      "gap_to_leader_s": 45.401
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 23,
+      "gap_to_leader_s": 56.57
+     },
+     {
+      "position": 10,
+      "driver": "OCO",
+      "compound": "HARD",
+      "tyre_age": 23,
+      "gap_to_leader_s": 57.117
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival NOR pitted on lap 34 (0.7s away)",
+   "changeable_conditions": false
+  }
+ ]
+}

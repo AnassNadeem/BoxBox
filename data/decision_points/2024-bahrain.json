@@ -1,0 +1,2336 @@
+{
+ "race_id": "2024-bahrain",
+ "decision_points": [
+  {
+   "dp_id": "2024-bahrain-L008-ZHO-A",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 8,
+   "driver": "ZHO",
+   "dp_type": "A",
+   "question": "It is lap 8 of 57. Decide for ZHO: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 8,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "ZHO",
+     "position": 13,
+     "compound": "SOFT",
+     "tyre_age": 7,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      98.798,
+      98.488,
+      99.517
+     ],
+     "car_ahead": {
+      "driver": "MAG",
+      "gap_s": 0.215,
+      "compound": "SOFT",
+      "tyre_age": 7
+     },
+     "car_behind": {
+      "driver": "SAR",
+      "gap_s": 0.768,
+      "compound": "SOFT",
+      "tyre_age": 7
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 10,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 10,
+      "gap_to_leader_s": 5.706
+     },
+     {
+      "position": 3,
+      "driver": "PER",
+      "compound": "SOFT",
+      "tyre_age": 10,
+      "gap_to_leader_s": 7.018
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 10,
+      "gap_to_leader_s": 7.534
+     },
+     {
+      "position": 5,
+      "driver": "SAI",
+      "compound": "SOFT",
+      "tyre_age": 10,
+      "gap_to_leader_s": 7.95
+     },
+     {
+      "position": 6,
+      "driver": "NOR",
+      "compound": "SOFT",
+      "tyre_age": 10,
+      "gap_to_leader_s": 10.682
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "SOFT",
+      "tyre_age": 10,
+      "gap_to_leader_s": 12.575
+     },
+     {
+      "position": 8,
+      "driver": "ALO",
+      "compound": "SOFT",
+      "tyre_age": 10,
+      "gap_to_leader_s": 13.591
+     },
+     {
+      "position": 9,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 10,
+      "gap_to_leader_s": 14.074
+     },
+     {
+      "position": 10,
+      "driver": "TSU",
+      "compound": "SOFT",
+      "tyre_age": 7,
+      "gap_to_leader_s": 15.678
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 9",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L010-GAS-C",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 10,
+   "driver": "GAS",
+   "dp_type": "C",
+   "question": "It is lap 10 of 57. Decide for GAS: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 10,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "GAS",
+     "position": 17,
+     "compound": "SOFT",
+     "tyre_age": 9,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      99.078,
+      99.287,
+      99.452
+     ],
+     "car_ahead": {
+      "driver": "ZHO",
+      "gap_s": 0.097,
+      "compound": "SOFT",
+      "tyre_age": 9
+     },
+     "car_behind": {
+      "driver": "BOT",
+      "gap_s": 1.489,
+      "compound": "SOFT",
+      "tyre_age": 9
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 7.045
+     },
+     {
+      "position": 3,
+      "driver": "PER",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 8.199
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 9.261
+     },
+     {
+      "position": 5,
+      "driver": "SAI",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 9.91
+     },
+     {
+      "position": 6,
+      "driver": "NOR",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 12.627
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 14.374
+     },
+     {
+      "position": 8,
+      "driver": "ALO",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 16.337
+     },
+     {
+      "position": 9,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 16.687
+     },
+     {
+      "position": 10,
+      "driver": "TSU",
+      "compound": "SOFT",
+      "tyre_age": 9,
+      "gap_to_leader_s": 18.492
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival STR pitted on lap 9 (0.4s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L010-HAM-A",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 10,
+   "driver": "HAM",
+   "dp_type": "A",
+   "question": "It is lap 10 of 57. Decide for HAM: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 10,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "HAM",
+     "position": 9,
+     "compound": "SOFT",
+     "tyre_age": 12,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      97.839,
+      98.221,
+      98.645
+     ],
+     "car_ahead": {
+      "driver": "ALO",
+      "gap_s": 0.35,
+      "compound": "SOFT",
+      "tyre_age": 12
+     },
+     "car_behind": {
+      "driver": "TSU",
+      "gap_s": 1.805,
+      "compound": "SOFT",
+      "tyre_age": 9
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 7.045
+     },
+     {
+      "position": 3,
+      "driver": "PER",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 8.199
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 9.261
+     },
+     {
+      "position": 5,
+      "driver": "SAI",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 9.91
+     },
+     {
+      "position": 6,
+      "driver": "NOR",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 12.627
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 14.374
+     },
+     {
+      "position": 8,
+      "driver": "ALO",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 16.337
+     },
+     {
+      "position": 9,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 16.687
+     },
+     {
+      "position": 10,
+      "driver": "TSU",
+      "compound": "SOFT",
+      "tyre_age": 9,
+      "gap_to_leader_s": 18.492
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 12",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L010-MAG-C",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 10,
+   "driver": "MAG",
+   "dp_type": "C",
+   "question": "It is lap 10 of 57. Decide for MAG: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 10,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "MAG",
+     "position": 12,
+     "compound": "SOFT",
+     "tyre_age": 9,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      100.058,
+      99.172,
+      98.861
+     ],
+     "car_ahead": {
+      "driver": "ALB",
+      "gap_s": 2.342,
+      "compound": "SOFT",
+      "tyre_age": 9
+     },
+     "car_behind": {
+      "driver": "SAR",
+      "gap_s": 1.896,
+      "compound": "SOFT",
+      "tyre_age": 9
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 7.045
+     },
+     {
+      "position": 3,
+      "driver": "PER",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 8.199
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 9.261
+     },
+     {
+      "position": 5,
+      "driver": "SAI",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 9.91
+     },
+     {
+      "position": 6,
+      "driver": "NOR",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 12.627
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 14.374
+     },
+     {
+      "position": 8,
+      "driver": "ALO",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 16.337
+     },
+     {
+      "position": 9,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 16.687
+     },
+     {
+      "position": 10,
+      "driver": "TSU",
+      "compound": "SOFT",
+      "tyre_age": 9,
+      "gap_to_leader_s": 18.492
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival ZHO pitted on lap 9 (0.7s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L010-SAR-C",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 10,
+   "driver": "SAR",
+   "dp_type": "C",
+   "question": "It is lap 10 of 57. Decide for SAR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 10,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "SAR",
+     "position": 13,
+     "compound": "SOFT",
+     "tyre_age": 9,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      99.464,
+      99.58,
+      99.366
+     ],
+     "car_ahead": {
+      "driver": "MAG",
+      "gap_s": 1.896,
+      "compound": "SOFT",
+      "tyre_age": 9
+     },
+     "car_behind": {
+      "driver": "RIC",
+      "gap_s": 0.752,
+      "compound": "SOFT",
+      "tyre_age": 12
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 7.045
+     },
+     {
+      "position": 3,
+      "driver": "PER",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 8.199
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 9.261
+     },
+     {
+      "position": 5,
+      "driver": "SAI",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 9.91
+     },
+     {
+      "position": 6,
+      "driver": "NOR",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 12.627
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 14.374
+     },
+     {
+      "position": 8,
+      "driver": "ALO",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 16.337
+     },
+     {
+      "position": 9,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 16.687
+     },
+     {
+      "position": 10,
+      "driver": "TSU",
+      "compound": "SOFT",
+      "tyre_age": 9,
+      "gap_to_leader_s": 18.492
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "HARD",
+   "trigger": "rival ZHO pitted on lap 9 (0.7s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L011-RIC-C",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 11,
+   "driver": "RIC",
+   "dp_type": "C",
+   "question": "It is lap 11 of 57. Decide for RIC: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 11,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "RIC",
+     "position": 13,
+     "compound": "SOFT",
+     "tyre_age": 13,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      99.529,
+      99.338,
+      98.782
+     ],
+     "car_ahead": {
+      "driver": "MAG",
+      "gap_s": 2.683,
+      "compound": "SOFT",
+      "tyre_age": 10
+     },
+     "car_behind": {
+      "driver": "GAS",
+      "gap_s": 1.273,
+      "compound": "SOFT",
+      "tyre_age": 10
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 7.867
+     },
+     {
+      "position": 3,
+      "driver": "PER",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 8.869
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 10.185
+     },
+     {
+      "position": 5,
+      "driver": "SAI",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 10.558
+     },
+     {
+      "position": 6,
+      "driver": "NOR",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 13.603
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 15.487
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 17.764
+     },
+     {
+      "position": 9,
+      "driver": "ALO",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 18.702
+     },
+     {
+      "position": 10,
+      "driver": "TSU",
+      "compound": "SOFT",
+      "tyre_age": 10,
+      "gap_to_leader_s": 20.444
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival OCO pitted on lap 10 (0.5s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L011-ZHO-C",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 11,
+   "driver": "ZHO",
+   "dp_type": "C",
+   "question": "It is lap 11 of 57. Decide for ZHO: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 11,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "ZHO",
+     "position": 17,
+     "compound": "HARD",
+     "tyre_age": 1,
+     "compounds_used": [
+      "SOFT",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      99.646,
+      101.849,
+      119.328
+     ],
+     "car_ahead": {
+      "driver": "OCO",
+      "gap_s": 18.168,
+      "compound": "SOFT",
+      "tyre_age": 10
+     },
+     "car_behind": {
+      "driver": "STR",
+      "gap_s": 1.69,
+      "compound": "HARD",
+      "tyre_age": 1
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 7.867
+     },
+     {
+      "position": 3,
+      "driver": "PER",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 8.869
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 10.185
+     },
+     {
+      "position": 5,
+      "driver": "SAI",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 10.558
+     },
+     {
+      "position": 6,
+      "driver": "NOR",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 13.603
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 15.487
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 17.764
+     },
+     {
+      "position": 9,
+      "driver": "ALO",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 18.702
+     },
+     {
+      "position": 10,
+      "driver": "TSU",
+      "compound": "SOFT",
+      "tyre_age": 10,
+      "gap_to_leader_s": 20.444
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival OCO pitted on lap 10 (0.5s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L012-NOR-A",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 12,
+   "driver": "NOR",
+   "dp_type": "A",
+   "question": "It is lap 12 of 57. Decide for NOR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 12,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "NOR",
+     "position": 5,
+     "compound": "SOFT",
+     "tyre_age": 14,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      98.064,
+      97.936,
+      98.172
+     ],
+     "car_ahead": {
+      "driver": "RUS",
+      "gap_s": 3.393,
+      "compound": "SOFT",
+      "tyre_age": 14
+     },
+     "car_behind": {
+      "driver": "LEC",
+      "gap_s": 0.147,
+      "compound": "SOFT",
+      "tyre_age": 14
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PER",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 9.62
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 11.129
+     },
+     {
+      "position": 4,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 11.297
+     },
+     {
+      "position": 5,
+      "driver": "NOR",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 14.69
+     },
+     {
+      "position": 6,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 14.837
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 16.799
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 18.915
+     },
+     {
+      "position": 9,
+      "driver": "ALO",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 20.171
+     },
+     {
+      "position": 10,
+      "driver": "TSU",
+      "compound": "SOFT",
+      "tyre_age": 11,
+      "gap_to_leader_s": 22.158
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 13",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L012-SAI-C",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 12,
+   "driver": "SAI",
+   "dp_type": "C",
+   "question": "It is lap 12 of 57. Decide for SAI: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 12,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "SAI",
+     "position": 3,
+     "compound": "SOFT",
+     "tyre_age": 14,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      98.03,
+      97.608,
+      97.656
+     ],
+     "car_ahead": {
+      "driver": "PER",
+      "gap_s": 1.509,
+      "compound": "SOFT",
+      "tyre_age": 14
+     },
+     "car_behind": {
+      "driver": "RUS",
+      "gap_s": 0.168,
+      "compound": "SOFT",
+      "tyre_age": 14
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PER",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 9.62
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 11.129
+     },
+     {
+      "position": 4,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 11.297
+     },
+     {
+      "position": 5,
+      "driver": "NOR",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 14.69
+     },
+     {
+      "position": 6,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 14.837
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 16.799
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 18.915
+     },
+     {
+      "position": 9,
+      "driver": "ALO",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 20.171
+     },
+     {
+      "position": 10,
+      "driver": "TSU",
+      "compound": "SOFT",
+      "tyre_age": 11,
+      "gap_to_leader_s": 22.158
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival LEC pitted on lap 11 (0.4s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L013-RIC-C",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 13,
+   "driver": "RIC",
+   "dp_type": "C",
+   "question": "It is lap 13 of 57. Decide for RIC: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 13,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "RIC",
+     "position": 10,
+     "compound": "SOFT",
+     "tyre_age": 15,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      98.782,
+      99.033,
+      98.893
+     ],
+     "car_ahead": {
+      "driver": "ALB",
+      "gap_s": 4.977,
+      "compound": "SOFT",
+      "tyre_age": 12
+     },
+     "car_behind": {
+      "driver": "RUS",
+      "gap_s": 1.63,
+      "compound": "HARD",
+      "tyre_age": 1
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "SAI",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 11.734
+     },
+     {
+      "position": 3,
+      "driver": "PER",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 12.852
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 15.727
+     },
+     {
+      "position": 5,
+      "driver": "PIA",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 20.493
+     },
+     {
+      "position": 6,
+      "driver": "ALO",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 21.669
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 22.759
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 23.882
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 26.105
+     },
+     {
+      "position": 10,
+      "driver": "RIC",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 31.082
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "HARD",
+   "trigger": "rival GAS pitted on lap 12 (0.9s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L016-TSU-C",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 16,
+   "driver": "TSU",
+   "dp_type": "C",
+   "question": "It is lap 16 of 57. Decide for TSU: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 16,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "TSU",
+     "position": 13,
+     "compound": "HARD",
+     "tyre_age": 1,
+     "compounds_used": [
+      "SOFT",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      98.86,
+      101.138,
+      119.588
+     ],
+     "car_ahead": {
+      "driver": "STR",
+      "gap_s": 0.932,
+      "compound": "HARD",
+      "tyre_age": 6
+     },
+     "car_behind": {
+      "driver": "MAG",
+      "gap_s": 0.587,
+      "compound": "HARD",
+      "tyre_age": 4
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 18,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ALO",
+      "compound": "SOFT",
+      "tyre_age": 18,
+      "gap_to_leader_s": 28.9
+     },
+     {
+      "position": 3,
+      "driver": "PER",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 31.828
+     },
+     {
+      "position": 4,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 33.303
+     },
+     {
+      "position": 5,
+      "driver": "ALB",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 34.007
+     },
+     {
+      "position": 6,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 34.195
+     },
+     {
+      "position": 7,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 34.886
+     },
+     {
+      "position": 8,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 39.975
+     },
+     {
+      "position": 9,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 41.732
+     },
+     {
+      "position": 10,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 44.777
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival ALB pitted on lap 15 (0.0s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L021-BOT-C",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 21,
+   "driver": "BOT",
+   "dp_type": "C",
+   "question": "It is lap 21 of 57. Decide for BOT: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 21,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "BOT",
+     "position": 17,
+     "compound": "HARD",
+     "tyre_age": 8,
+     "compounds_used": [
+      "SOFT",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      97.918,
+      97.662,
+      98.285
+     ],
+     "car_ahead": {
+      "driver": "RIC",
+      "gap_s": 4.489,
+      "compound": "HARD",
+      "tyre_age": 7
+     },
+     "car_behind": {
+      "driver": "GAS",
+      "gap_s": 0.683,
+      "compound": "HARD",
+      "tyre_age": 8
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PER",
+      "compound": "HARD",
+      "tyre_age": 8,
+      "gap_to_leader_s": 7.331
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 9.766
+     },
+     {
+      "position": 4,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 9,
+      "gap_to_leader_s": 12.643
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 9,
+      "gap_to_leader_s": 13.862
+     },
+     {
+      "position": 6,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 7,
+      "gap_to_leader_s": 17.38
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 8,
+      "gap_to_leader_s": 19.986
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 8,
+      "gap_to_leader_s": 23.426
+     },
+     {
+      "position": 9,
+      "driver": "ALO",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 31.113
+     },
+     {
+      "position": 10,
+      "driver": "ZHO",
+      "compound": "HARD",
+      "tyre_age": 11,
+      "gap_to_leader_s": 33.166
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival HUL pitted on lap 20 (0.6s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L029-TSU-C",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 29,
+   "driver": "TSU",
+   "dp_type": "C",
+   "question": "It is lap 29 of 57. Decide for TSU: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 29,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "TSU",
+     "position": 10,
+     "compound": "HARD",
+     "tyre_age": 14,
+     "compounds_used": [
+      "SOFT",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      98.058,
+      98.083,
+      98.164
+     ],
+     "car_ahead": {
+      "driver": "ALO",
+      "gap_s": 8.726,
+      "compound": "HARD",
+      "tyre_age": 13
+     },
+     "car_behind": {
+      "driver": "ZHO",
+      "gap_s": 1.621,
+      "compound": "HARD",
+      "tyre_age": 19
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 11,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PER",
+      "compound": "HARD",
+      "tyre_age": 16,
+      "gap_to_leader_s": 14.495
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 14,
+      "gap_to_leader_s": 16.826
+     },
+     {
+      "position": 4,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 17,
+      "gap_to_leader_s": 24.901
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 17,
+      "gap_to_leader_s": 26.206
+     },
+     {
+      "position": 6,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 28.579
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 16,
+      "gap_to_leader_s": 31.89
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 16,
+      "gap_to_leader_s": 34.83
+     },
+     {
+      "position": 9,
+      "driver": "ALO",
+      "compound": "HARD",
+      "tyre_age": 13,
+      "gap_to_leader_s": 46.258
+     },
+     {
+      "position": 10,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 14,
+      "gap_to_leader_s": 54.984
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival ZHO pitted on lap 28 (0.9s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L031-GAS-C",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 31,
+   "driver": "GAS",
+   "dp_type": "C",
+   "question": "It is lap 31 of 57. Decide for GAS: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 31,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "GAS",
+     "position": 15,
+     "compound": "HARD",
+     "tyre_age": 18,
+     "compounds_used": [
+      "SOFT",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      98.615,
+      98.55,
+      98.832
+     ],
+     "car_ahead": {
+      "driver": "OCO",
+      "gap_s": 0.42,
+      "compound": "HARD",
+      "tyre_age": 20
+     },
+     "car_behind": {
+      "driver": "BOT",
+      "gap_s": 1.674,
+      "compound": "HARD",
+      "tyre_age": 18
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 13,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PER",
+      "compound": "HARD",
+      "tyre_age": 18,
+      "gap_to_leader_s": 15.681
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 16,
+      "gap_to_leader_s": 18.199
+     },
+     {
+      "position": 4,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 19,
+      "gap_to_leader_s": 27.589
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 19,
+      "gap_to_leader_s": 28.763
+     },
+     {
+      "position": 6,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 17,
+      "gap_to_leader_s": 31.042
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 18,
+      "gap_to_leader_s": 34.682
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 18,
+      "gap_to_leader_s": 37.296
+     },
+     {
+      "position": 9,
+      "driver": "ALO",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 48.78
+     },
+     {
+      "position": 10,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 16,
+      "gap_to_leader_s": 58.674
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "HARD",
+   "trigger": "rival BOT pitted on lap 30 (0.7s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L033-ALB-C",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 33,
+   "driver": "ALB",
+   "dp_type": "C",
+   "question": "It is lap 33 of 57. Decide for ALB: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 33,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "ALB",
+     "position": 11,
+     "compound": "HARD",
+     "tyre_age": 17,
+     "compounds_used": [
+      "SOFT",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      97.968,
+      98.135,
+      98.183
+     ],
+     "car_ahead": {
+      "driver": "TSU",
+      "gap_s": 7.089,
+      "compound": "HARD",
+      "tyre_age": 18
+     },
+     "car_behind": {
+      "driver": "RIC",
+      "gap_s": 1.39,
+      "compound": "HARD",
+      "tyre_age": 19
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PER",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 16.731
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 18,
+      "gap_to_leader_s": 19.933
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 21,
+      "gap_to_leader_s": 31.17
+     },
+     {
+      "position": 5,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 19,
+      "gap_to_leader_s": 33.731
+     },
+     {
+      "position": 6,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 37.85
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 40.031
+     },
+     {
+      "position": 8,
+      "driver": "ALO",
+      "compound": "HARD",
+      "tyre_age": 17,
+      "gap_to_leader_s": 51.228
+     },
+     {
+      "position": 9,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 52.696
+     },
+     {
+      "position": 10,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 18,
+      "gap_to_leader_s": 62.424
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival MAG pitted on lap 32 (0.9s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L033-RIC-A",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 33,
+   "driver": "RIC",
+   "dp_type": "A",
+   "question": "It is lap 33 of 57. Decide for RIC: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 33,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "RIC",
+     "position": 12,
+     "compound": "HARD",
+     "tyre_age": 19,
+     "compounds_used": [
+      "SOFT",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      97.978,
+      98.154,
+      98.025
+     ],
+     "car_ahead": {
+      "driver": "ALB",
+      "gap_s": 1.39,
+      "compound": "HARD",
+      "tyre_age": 17
+     },
+     "car_behind": {
+      "driver": "MAG",
+      "gap_s": 0.134,
+      "compound": "HARD",
+      "tyre_age": 21
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PER",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 16.731
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 18,
+      "gap_to_leader_s": 19.933
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 21,
+      "gap_to_leader_s": 31.17
+     },
+     {
+      "position": 5,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 19,
+      "gap_to_leader_s": 33.731
+     },
+     {
+      "position": 6,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 37.85
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 40.031
+     },
+     {
+      "position": 8,
+      "driver": "ALO",
+      "compound": "HARD",
+      "tyre_age": 17,
+      "gap_to_leader_s": 51.228
+     },
+     {
+      "position": 9,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 52.696
+     },
+     {
+      "position": 10,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 18,
+      "gap_to_leader_s": 62.424
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 35",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L039-ALO-A",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 39,
+   "driver": "ALO",
+   "dp_type": "A",
+   "question": "It is lap 39 of 57. Decide for ALO: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 39,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "ALO",
+     "position": 7,
+     "compound": "HARD",
+     "tyre_age": 23,
+     "compounds_used": [
+      "SOFT",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      98.343,
+      96.799,
+      97.297
+     ],
+     "car_ahead": {
+      "driver": "NOR",
+      "gap_s": 5.106,
+      "compound": "HARD",
+      "tyre_age": 5
+     },
+     "car_behind": {
+      "driver": "HAM",
+      "gap_s": 0.289,
+      "compound": "HARD",
+      "tyre_age": 5
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 1,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PER",
+      "compound": "SOFT",
+      "tyre_age": 2,
+      "gap_to_leader_s": 16.528
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 18.438
+     },
+     {
+      "position": 4,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 7,
+      "gap_to_leader_s": 26.043
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 27.563
+     },
+     {
+      "position": 6,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 30.739
+     },
+     {
+      "position": 7,
+      "driver": "ALO",
+      "compound": "HARD",
+      "tyre_age": 23,
+      "gap_to_leader_s": 35.845
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 36.134
+     },
+     {
+      "position": 9,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 39.179
+     },
+     {
+      "position": 10,
+      "driver": "STR",
+      "compound": "HARD",
+      "tyre_age": 11,
+      "gap_to_leader_s": 56.572
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 41",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-bahrain-L040-ALO-A",
+   "race_id": "2024-bahrain",
+   "season": 2024,
+   "lap": 40,
+   "driver": "ALO",
+   "dp_type": "A",
+   "question": "It is lap 40 of 57. Decide for ALO: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-bahrain",
+    "track": "Sakhir",
+    "total_laps": 57,
+    "current_lap": 40,
+    "weather": {
+     "air_temp_c": 18.2,
+     "track_temp_c": 23.7,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.97,
+    "focal": {
+     "driver": "ALO",
+     "position": 8,
+     "compound": "HARD",
+     "tyre_age": 24,
+     "compounds_used": [
+      "SOFT",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      96.799,
+      97.297,
+      97.946
+     ],
+     "car_ahead": {
+      "driver": "HAM",
+      "gap_s": 2.935,
+      "compound": "HARD",
+      "tyre_age": 6
+     },
+     "car_behind": {
+      "driver": "PIA",
+      "gap_s": 0.371,
+      "compound": "HARD",
+      "tyre_age": 5
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 2,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PER",
+      "compound": "SOFT",
+      "tyre_age": 3,
+      "gap_to_leader_s": 18.527
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 20.539
+     },
+     {
+      "position": 4,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 8,
+      "gap_to_leader_s": 28.639
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 30.042
+     },
+     {
+      "position": 6,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 33.011
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 38.248
+     },
+     {
+      "position": 8,
+      "driver": "ALO",
+      "compound": "HARD",
+      "tyre_age": 24,
+      "gap_to_leader_s": 41.183
+     },
+     {
+      "position": 9,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 41.554
+     },
+     {
+      "position": 10,
+      "driver": "STR",
+      "compound": "HARD",
+      "tyre_age": 12,
+      "gap_to_leader_s": 60.317
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 41",
+   "changeable_conditions": false
+  }
+ ]
+}

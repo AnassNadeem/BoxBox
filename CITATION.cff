@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite it as below."
+type: software
+title: "BOXBOX: Evaluating Large Language Models on Sequential Race-Strategy Decisions"
+abstract: >
+  A contamination-resistant benchmark that evaluates frontier language models on
+  Formula 1 pit-strategy decisions. Decision points are extracted mechanically from
+  eleven real races (2024–2026) and scored against an ex-ante optimum from a
+  calibrated race simulator.
+authors:
+  - family-names: Nadeem
+    given-names: Muhammad Anas
+    affiliation: "Department of Computer Science, Brunel University London"
+repository-code: "https://github.com/AnassNadeem/BoxBox"
+license: MIT
+version: "1.0"
+date-released: "2026-06-19"
+keywords:
+  - formula1
+  - llm-benchmark
+  - race-strategy
+  - contamination-resistant
+  - ai-evaluation

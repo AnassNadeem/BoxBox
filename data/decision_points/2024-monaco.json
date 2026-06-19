@@ -1,0 +1,2084 @@
+{
+ "race_id": "2024-monaco",
+ "decision_points": [
+  {
+   "dp_id": "2024-monaco-L013-BOT-A",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 13,
+   "driver": "BOT",
+   "dp_type": "A",
+   "question": "It is lap 13 of 78. Decide for BOT: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 13,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "BOT",
+     "position": 14,
+     "compound": "MEDIUM",
+     "tyre_age": 11,
+     "compounds_used": [
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      81.947,
+      81.547,
+      81.328
+     ],
+     "car_ahead": {
+      "driver": "RIC",
+      "gap_s": 0.479,
+      "compound": "HARD",
+      "tyre_age": 12
+     },
+     "car_behind": {
+      "driver": "SAR",
+      "gap_s": 0.547,
+      "compound": "HARD",
+      "tyre_age": 12
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 11,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 12,
+      "gap_to_leader_s": 0.633
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 11,
+      "gap_to_leader_s": 1.065
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 12,
+      "gap_to_leader_s": 2.971
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 9.48
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 12.095
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 14.338
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 12,
+      "gap_to_leader_s": 15.262
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 11,
+      "gap_to_leader_s": 15.754
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 16.697
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 15",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-monaco-L014-BOT-A",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 14,
+   "driver": "BOT",
+   "dp_type": "A",
+   "question": "It is lap 14 of 78. Decide for BOT: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 14,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "BOT",
+     "position": 14,
+     "compound": "MEDIUM",
+     "tyre_age": 12,
+     "compounds_used": [
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      81.547,
+      81.328,
+      81.54
+     ],
+     "car_ahead": {
+      "driver": "RIC",
+      "gap_s": 0.603,
+      "compound": "HARD",
+      "tyre_age": 13
+     },
+     "car_behind": {
+      "driver": "SAR",
+      "gap_s": 0.506,
+      "compound": "HARD",
+      "tyre_age": 13
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 12,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 13,
+      "gap_to_leader_s": 0.361
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 12,
+      "gap_to_leader_s": 2.065
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 13,
+      "gap_to_leader_s": 3.774
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 10.988
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 12.982
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 15.492
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 13,
+      "gap_to_leader_s": 16.927
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 12,
+      "gap_to_leader_s": 18.157
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 19.21
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 15",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-monaco-L015-BOT-A",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 15,
+   "driver": "BOT",
+   "dp_type": "A",
+   "question": "It is lap 15 of 78. Decide for BOT: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 15,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "BOT",
+     "position": 14,
+     "compound": "MEDIUM",
+     "tyre_age": 13,
+     "compounds_used": [
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      81.328,
+      81.54,
+      81.221
+     ],
+     "car_ahead": {
+      "driver": "RIC",
+      "gap_s": 0.433,
+      "compound": "HARD",
+      "tyre_age": 14
+     },
+     "car_behind": {
+      "driver": "SAR",
+      "gap_s": 0.504,
+      "compound": "HARD",
+      "tyre_age": 14
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 13,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 14,
+      "gap_to_leader_s": 0.462
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 13,
+      "gap_to_leader_s": 1.632
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 14,
+      "gap_to_leader_s": 3.246
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 13,
+      "gap_to_leader_s": 11.347
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 13,
+      "gap_to_leader_s": 12.792
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 13,
+      "gap_to_leader_s": 15.705
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 14,
+      "gap_to_leader_s": 18.263
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 13,
+      "gap_to_leader_s": 18.835
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 13,
+      "gap_to_leader_s": 19.217
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "HARD",
+   "trigger": "own pit stop on lap 15",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-monaco-L016-RIC-C",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 16,
+   "driver": "RIC",
+   "dp_type": "C",
+   "question": "It is lap 16 of 78. Decide for RIC: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 16,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "RIC",
+     "position": 13,
+     "compound": "HARD",
+     "tyre_age": 15,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      81.416,
+      81.391,
+      81.177
+     ],
+     "car_ahead": {
+      "driver": "ALO",
+      "gap_s": 0.568,
+      "compound": "MEDIUM",
+      "tyre_age": 15
+     },
+     "car_behind": {
+      "driver": "SAR",
+      "gap_s": 1.1,
+      "compound": "HARD",
+      "tyre_age": 15
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 14,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 0.888
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 14,
+      "gap_to_leader_s": 1.337
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 3.183
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 11.711
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 13.324
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 15.838
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 18.524
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 14,
+      "gap_to_leader_s": 19.588
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 20.445
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival BOT pitted on lap 15 (0.4s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-monaco-L016-SAR-C",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 16,
+   "driver": "SAR",
+   "dp_type": "C",
+   "question": "It is lap 16 of 78. Decide for SAR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 16,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "SAR",
+     "position": 14,
+     "compound": "HARD",
+     "tyre_age": 15,
+     "compounds_used": [
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      81.499,
+      81.219,
+      81.34
+     ],
+     "car_ahead": {
+      "driver": "RIC",
+      "gap_s": 1.1,
+      "compound": "HARD",
+      "tyre_age": 15
+     },
+     "car_behind": {
+      "driver": "ZHO",
+      "gap_s": 0.525,
+      "compound": "HARD",
+      "tyre_age": 14
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 14,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 0.888
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 14,
+      "gap_to_leader_s": 1.337
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 3.183
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 11.711
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 13.324
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 15.838
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 18.524
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 14,
+      "gap_to_leader_s": 19.588
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 20.445
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival BOT pitted on lap 15 (0.5s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-monaco-L040-STR-A",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 40,
+   "driver": "STR",
+   "dp_type": "A",
+   "question": "It is lap 40 of 78. Decide for STR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 40,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "STR",
+     "position": 11,
+     "compound": "MEDIUM",
+     "tyre_age": 39,
+     "compounds_used": [
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      79.638,
+      79.706,
+      79.867
+     ],
+     "car_ahead": {
+      "driver": "GAS",
+      "gap_s": 0.524,
+      "compound": "MEDIUM",
+      "tyre_age": 38
+     },
+     "car_behind": {
+      "driver": "ALO",
+      "gap_s": 14.802,
+      "compound": "MEDIUM",
+      "tyre_age": 39
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 38,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 39,
+      "gap_to_leader_s": 1.376
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 38,
+      "gap_to_leader_s": 3.046
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 39,
+      "gap_to_leader_s": 3.736
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 38,
+      "gap_to_leader_s": 21.314
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 38,
+      "gap_to_leader_s": 23.682
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 38,
+      "gap_to_leader_s": 27.666
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 39,
+      "gap_to_leader_s": 51.022
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 38,
+      "gap_to_leader_s": 54.948
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 38,
+      "gap_to_leader_s": 59.373
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 42",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-monaco-L041-STR-A",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 41,
+   "driver": "STR",
+   "dp_type": "A",
+   "question": "It is lap 41 of 78. Decide for STR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 41,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "STR",
+     "position": 11,
+     "compound": "MEDIUM",
+     "tyre_age": 40,
+     "compounds_used": [
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      79.706,
+      79.867,
+      80.45
+     ],
+     "car_ahead": {
+      "driver": "GAS",
+      "gap_s": 0.59,
+      "compound": "MEDIUM",
+      "tyre_age": 39
+     },
+     "car_behind": {
+      "driver": "ALO",
+      "gap_s": 15.107,
+      "compound": "MEDIUM",
+      "tyre_age": 40
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 39,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 40,
+      "gap_to_leader_s": 1.594
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 39,
+      "gap_to_leader_s": 2.966
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 40,
+      "gap_to_leader_s": 3.827
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 39,
+      "gap_to_leader_s": 20.72
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 39,
+      "gap_to_leader_s": 23.358
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 39,
+      "gap_to_leader_s": 27.606
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 40,
+      "gap_to_leader_s": 52.034
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 39,
+      "gap_to_leader_s": 56.027
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 39,
+      "gap_to_leader_s": 61.024
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 42",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-monaco-L042-STR-A",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 42,
+   "driver": "STR",
+   "dp_type": "A",
+   "question": "It is lap 42 of 78. Decide for STR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 42,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "STR",
+     "position": 11,
+     "compound": "MEDIUM",
+     "tyre_age": 41,
+     "compounds_used": [
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      79.867,
+      80.45,
+      80.2
+     ],
+     "car_ahead": {
+      "driver": "GAS",
+      "gap_s": 0.59,
+      "compound": "MEDIUM",
+      "tyre_age": 40
+     },
+     "car_behind": {
+      "driver": "ALO",
+      "gap_s": 18.353,
+      "compound": "MEDIUM",
+      "tyre_age": 41
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 40,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 41,
+      "gap_to_leader_s": 1.746
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 40,
+      "gap_to_leader_s": 2.986
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 41,
+      "gap_to_leader_s": 3.652
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 40,
+      "gap_to_leader_s": 20.334
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 40,
+      "gap_to_leader_s": 22.747
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 40,
+      "gap_to_leader_s": 27.858
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 41,
+      "gap_to_leader_s": 54.112
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 40,
+      "gap_to_leader_s": 56.662
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 40,
+      "gap_to_leader_s": 62.53
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "HARD",
+   "trigger": "own pit stop on lap 42",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-monaco-L043-GAS-C",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 43,
+   "driver": "GAS",
+   "dp_type": "C",
+   "question": "It is lap 43 of 78. Decide for GAS: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 43,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "GAS",
+     "position": 10,
+     "compound": "MEDIUM",
+     "tyre_age": 41,
+     "compounds_used": [
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      80.384,
+      80.2,
+      79.977
+     ],
+     "car_ahead": {
+      "driver": "ALB",
+      "gap_s": 5.761,
+      "compound": "HARD",
+      "tyre_age": 41
+     },
+     "car_behind": {
+      "driver": "STR",
+      "gap_s": 17.675,
+      "compound": "MEDIUM",
+      "tyre_age": 42
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 41,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 42,
+      "gap_to_leader_s": 2.264
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 41,
+      "gap_to_leader_s": 2.88
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 42,
+      "gap_to_leader_s": 3.811
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 41,
+      "gap_to_leader_s": 19.261
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 41,
+      "gap_to_leader_s": 21.544
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 41,
+      "gap_to_leader_s": 26.123
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 42,
+      "gap_to_leader_s": 55.155
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 41,
+      "gap_to_leader_s": 57.469
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 41,
+      "gap_to_leader_s": 63.23
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival STR pitted on lap 42 (0.6s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-monaco-L049-HAM-A",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 49,
+   "driver": "HAM",
+   "dp_type": "A",
+   "question": "It is lap 49 of 78. Decide for HAM: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 49,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "HAM",
+     "position": 7,
+     "compound": "MEDIUM",
+     "tyre_age": 47,
+     "compounds_used": [
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      78.104,
+      78.331,
+      77.831
+     ],
+     "car_ahead": {
+      "driver": "VER",
+      "gap_s": 2.94,
+      "compound": "MEDIUM",
+      "tyre_age": 47
+     },
+     "car_behind": {
+      "driver": "TSU",
+      "gap_s": 42.454,
+      "compound": "HARD",
+      "tyre_age": 48
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 47,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 48,
+      "gap_to_leader_s": 1.863
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 47,
+      "gap_to_leader_s": 3.512
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 48,
+      "gap_to_leader_s": 4.366
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 47,
+      "gap_to_leader_s": 19.599
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 47,
+      "gap_to_leader_s": 21.322
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 47,
+      "gap_to_leader_s": 24.262
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 48,
+      "gap_to_leader_s": 66.716
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 47,
+      "gap_to_leader_s": 68.398
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 47,
+      "gap_to_leader_s": 73.176
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 51",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-monaco-L050-HAM-A",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 50,
+   "driver": "HAM",
+   "dp_type": "A",
+   "question": "It is lap 50 of 78. Decide for HAM: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 50,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "HAM",
+     "position": 7,
+     "compound": "MEDIUM",
+     "tyre_age": 48,
+     "compounds_used": [
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      78.331,
+      77.831,
+      77.398
+     ],
+     "car_ahead": {
+      "driver": "VER",
+      "gap_s": 1.861,
+      "compound": "MEDIUM",
+      "tyre_age": 48
+     },
+     "car_behind": {
+      "driver": "TSU",
+      "gap_s": 45.165,
+      "compound": "HARD",
+      "tyre_age": 49
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 48,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 49,
+      "gap_to_leader_s": 1.493
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 48,
+      "gap_to_leader_s": 3.265
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 49,
+      "gap_to_leader_s": 4.037
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 48,
+      "gap_to_leader_s": 20.078
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 48,
+      "gap_to_leader_s": 21.293
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 48,
+      "gap_to_leader_s": 23.154
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 49,
+      "gap_to_leader_s": 68.319
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 48,
+      "gap_to_leader_s": 69.27
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 48,
+      "gap_to_leader_s": 75.204
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 51",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-monaco-L050-VER-A",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 50,
+   "driver": "VER",
+   "dp_type": "A",
+   "question": "It is lap 50 of 78. Decide for VER: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 50,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "VER",
+     "position": 6,
+     "compound": "MEDIUM",
+     "tyre_age": 48,
+     "compounds_used": [
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      78.537,
+      78.337,
+      78.477
+     ],
+     "car_ahead": {
+      "driver": "RUS",
+      "gap_s": 1.215,
+      "compound": "MEDIUM",
+      "tyre_age": 48
+     },
+     "car_behind": {
+      "driver": "HAM",
+      "gap_s": 1.861,
+      "compound": "MEDIUM",
+      "tyre_age": 48
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 48,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 49,
+      "gap_to_leader_s": 1.493
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 48,
+      "gap_to_leader_s": 3.265
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 49,
+      "gap_to_leader_s": 4.037
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 48,
+      "gap_to_leader_s": 20.078
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 48,
+      "gap_to_leader_s": 21.293
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 48,
+      "gap_to_leader_s": 23.154
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 49,
+      "gap_to_leader_s": 68.319
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 48,
+      "gap_to_leader_s": 69.27
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 48,
+      "gap_to_leader_s": 75.204
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 52",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-monaco-L051-HAM-A",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 51,
+   "driver": "HAM",
+   "dp_type": "A",
+   "question": "It is lap 51 of 78. Decide for HAM: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 51,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "HAM",
+     "position": 7,
+     "compound": "MEDIUM",
+     "tyre_age": 49,
+     "compounds_used": [
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      77.831,
+      77.398,
+      78.461
+     ],
+     "car_ahead": {
+      "driver": "VER",
+      "gap_s": 1.442,
+      "compound": "MEDIUM",
+      "tyre_age": 49
+     },
+     "car_behind": {
+      "driver": "TSU",
+      "gap_s": 46.257,
+      "compound": "HARD",
+      "tyre_age": 50
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 49,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 50,
+      "gap_to_leader_s": 1.658
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 49,
+      "gap_to_leader_s": 3.625
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 50,
+      "gap_to_leader_s": 4.07
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 49,
+      "gap_to_leader_s": 20.34
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 49,
+      "gap_to_leader_s": 21.988
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 49,
+      "gap_to_leader_s": 23.43
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 50,
+      "gap_to_leader_s": 69.687
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 49,
+      "gap_to_leader_s": 70.353
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 49,
+      "gap_to_leader_s": 78.042
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "HARD",
+   "trigger": "own pit stop on lap 51",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-monaco-L051-VER-A",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 51,
+   "driver": "VER",
+   "dp_type": "A",
+   "question": "It is lap 51 of 78. Decide for VER: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 51,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "VER",
+     "position": 6,
+     "compound": "MEDIUM",
+     "tyre_age": 49,
+     "compounds_used": [
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      78.337,
+      78.477,
+      78.88
+     ],
+     "car_ahead": {
+      "driver": "RUS",
+      "gap_s": 1.648,
+      "compound": "MEDIUM",
+      "tyre_age": 49
+     },
+     "car_behind": {
+      "driver": "HAM",
+      "gap_s": 1.442,
+      "compound": "MEDIUM",
+      "tyre_age": 49
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 49,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 50,
+      "gap_to_leader_s": 1.658
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 49,
+      "gap_to_leader_s": 3.625
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 50,
+      "gap_to_leader_s": 4.07
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 49,
+      "gap_to_leader_s": 20.34
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 49,
+      "gap_to_leader_s": 21.988
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 49,
+      "gap_to_leader_s": 23.43
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 50,
+      "gap_to_leader_s": 69.687
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 49,
+      "gap_to_leader_s": 70.353
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 49,
+      "gap_to_leader_s": 78.042
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 52",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-monaco-L052-VER-C",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 52,
+   "driver": "VER",
+   "dp_type": "C",
+   "question": "It is lap 52 of 78. Decide for VER: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 52,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "VER",
+     "position": 6,
+     "compound": "MEDIUM",
+     "tyre_age": 50,
+     "compounds_used": [
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      78.477,
+      78.88,
+      78.142
+     ],
+     "car_ahead": {
+      "driver": "RUS",
+      "gap_s": 1.741,
+      "compound": "MEDIUM",
+      "tyre_age": 50
+     },
+     "car_behind": {
+      "driver": "HAM",
+      "gap_s": 18.509,
+      "compound": "MEDIUM",
+      "tyre_age": 50
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 50,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 51,
+      "gap_to_leader_s": 1.777
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 50,
+      "gap_to_leader_s": 3.363
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 51,
+      "gap_to_leader_s": 4.052
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 50,
+      "gap_to_leader_s": 20.599
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 50,
+      "gap_to_leader_s": 22.34
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 50,
+      "gap_to_leader_s": 40.849
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 51,
+      "gap_to_leader_s": 70.537
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 50,
+      "gap_to_leader_s": 71.426
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 50,
+      "gap_to_leader_s": 84.725
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "HARD",
+   "trigger": "rival HAM pitted on lap 51 (1.4s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2024-monaco-L053-RUS-C",
+   "race_id": "2024-monaco",
+   "season": 2024,
+   "lap": 53,
+   "driver": "RUS",
+   "dp_type": "C",
+   "question": "It is lap 53 of 78. Decide for RUS: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2024-monaco",
+    "track": "Monaco",
+    "total_laps": 78,
+    "current_lap": 53,
+    "weather": {
+     "air_temp_c": 21.6,
+     "track_temp_c": 46.3,
+     "rain": false
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 17.89,
+    "focal": {
+     "driver": "RUS",
+     "position": 5,
+     "compound": "MEDIUM",
+     "tyre_age": 51,
+     "compounds_used": [
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      78.447,
+      78.049,
+      78.602
+     ],
+     "car_ahead": {
+      "driver": "NOR",
+      "gap_s": 16.926,
+      "compound": "HARD",
+      "tyre_age": 52
+     },
+     "car_behind": {
+      "driver": "VER",
+      "gap_s": 17.044,
+      "compound": "MEDIUM",
+      "tyre_age": 51
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 51,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 52,
+      "gap_to_leader_s": 1.68
+     },
+     {
+      "position": 3,
+      "driver": "SAI",
+      "compound": "HARD",
+      "tyre_age": 51,
+      "gap_to_leader_s": 3.146
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 52,
+      "gap_to_leader_s": 3.964
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 51,
+      "gap_to_leader_s": 20.89
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 51,
+      "gap_to_leader_s": 37.934
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 42.24
+     },
+     {
+      "position": 8,
+      "driver": "TSU",
+      "compound": "HARD",
+      "tyre_age": 52,
+      "gap_to_leader_s": 72.34
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "HARD",
+      "tyre_age": 51,
+      "gap_to_leader_s": 74.669
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 51,
+      "gap_to_leader_s": 86.157
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival VER pitted on lap 52 (1.7s away)",
+   "changeable_conditions": false
+  }
+ ]
+}

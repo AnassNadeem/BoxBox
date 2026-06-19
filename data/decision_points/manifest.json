@@ -1,0 +1,321 @@
+{
+ "2026-australia": {
+  "season": 2026,
+  "track": "Melbourne",
+  "source": "fastf1",
+  "total_laps": 58,
+  "n_decision_points": 18,
+  "dp_type_counts": {
+   "A": 6,
+   "B": 6,
+   "C": 6
+  },
+  "pit_loss_s": 23.28,
+  "sc_pit_factor": 1.0,
+  "pit_loss_note": "green loss from 9 stops; SC factor measured from 20 SC-era stops",
+  "calibration_mae_per_lap_s": 0.48,
+  "calibration_stints": 50,
+  "calibration_figure": null,
+  "fit_report": {
+   "race_id": "2026-australia",
+   "n_driver_fits": 42,
+   "n_field_fits": 3,
+   "lookups_by_source": {
+    "driver": 902,
+    "teammate": 0,
+    "field": 0,
+    "unseen-compound": 0
+   }
+  }
+ },
+ "2026-china": {
+  "season": 2026,
+  "track": "Shanghai",
+  "source": "fastf1",
+  "total_laps": 56,
+  "n_decision_points": 18,
+  "dp_type_counts": {
+   "A": 6,
+   "B": 6,
+   "C": 6
+  },
+  "pit_loss_s": 33.23,
+  "sc_pit_factor": 1.0,
+  "pit_loss_note": "green loss from 7 stops; SC factor measured from 4 SC-era stops",
+  "calibration_mae_per_lap_s": 0.083,
+  "calibration_stints": 35,
+  "calibration_figure": null,
+  "fit_report": {
+   "race_id": "2026-china",
+   "n_driver_fits": 34,
+   "n_field_fits": 3,
+   "lookups_by_source": {
+    "driver": 773,
+    "teammate": 0,
+    "field": 0,
+    "unseen-compound": 0
+   }
+  }
+ },
+ "2026-japan": {
+  "season": 2026,
+  "track": "Suzuka",
+  "source": "fastf1",
+  "total_laps": 53,
+  "n_decision_points": 18,
+  "dp_type_counts": {
+   "A": 6,
+   "B": 6,
+   "C": 6
+  },
+  "pit_loss_s": 25.42,
+  "sc_pit_factor": 1.0,
+  "pit_loss_note": "green loss from 14 stops; SC factor measured from 13 SC-era stops",
+  "calibration_mae_per_lap_s": 0.208,
+  "calibration_stints": 43,
+  "calibration_figure": null,
+  "fit_report": {
+   "race_id": "2026-japan",
+   "n_driver_fits": 41,
+   "n_field_fits": 2,
+   "lookups_by_source": {
+    "driver": 977,
+    "teammate": 4,
+    "field": 0,
+    "unseen-compound": 0
+   }
+  }
+ },
+ "2026-miami": {
+  "season": 2026,
+  "track": "Miami Gardens",
+  "source": "fastf1",
+  "total_laps": 57,
+  "n_decision_points": 18,
+  "dp_type_counts": {
+   "A": 6,
+   "B": 6,
+   "C": 6
+  },
+  "pit_loss_s": 19.42,
+  "sc_pit_factor": 1.0,
+  "pit_loss_note": "green loss from 19 stops; SC factor measured from 2 SC-era stops",
+  "calibration_mae_per_lap_s": 0.475,
+  "calibration_stints": 42,
+  "calibration_figure": null,
+  "fit_report": {
+   "race_id": "2026-miami",
+   "n_driver_fits": 38,
+   "n_field_fits": 3,
+   "lookups_by_source": {
+    "driver": 847,
+    "teammate": 4,
+    "field": 0,
+    "unseen-compound": 0
+   }
+  }
+ },
+ "2026-canada": {
+  "season": 2026,
+  "track": "Montr\u00e9al",
+  "source": "fastf1",
+  "total_laps": 68,
+  "n_decision_points": 18,
+  "dp_type_counts": {
+   "A": 6,
+   "B": 6,
+   "C": 6
+  },
+  "pit_loss_s": 28.71,
+  "sc_pit_factor": 1.0,
+  "pit_loss_note": "green loss from 17 stops; SC factor measured from 17 SC-era stops",
+  "calibration_mae_per_lap_s": 0.302,
+  "calibration_stints": 47,
+  "calibration_figure": null,
+  "fit_report": {
+   "race_id": "2026-canada",
+   "n_driver_fits": 37,
+   "n_field_fits": 4,
+   "lookups_by_source": {
+    "driver": 992,
+    "teammate": 0,
+    "field": 0,
+    "unseen-compound": 0
+   }
+  }
+ },
+ "2026-monaco": {
+  "season": 2026,
+  "track": "Monte Carlo",
+  "source": "fastf1",
+  "total_laps": 78,
+  "n_decision_points": 18,
+  "dp_type_counts": {
+   "A": 6,
+   "B": 6,
+   "C": 6
+  },
+  "pit_loss_s": 22.98,
+  "sc_pit_factor": 1.0,
+  "pit_loss_note": "green loss from 22 stops; SC factor measured from 46 SC-era stops",
+  "calibration_mae_per_lap_s": 0.1,
+  "calibration_stints": 51,
+  "calibration_figure": null,
+  "fit_report": {
+   "race_id": "2026-monaco",
+   "n_driver_fits": 47,
+   "n_field_fits": 3,
+   "lookups_by_source": {
+    "driver": 1207,
+    "teammate": 0,
+    "field": 0,
+    "unseen-compound": 0
+   }
+  }
+ },
+ "2026-barcelona": {
+  "season": 2026,
+  "track": "Barcelona",
+  "source": "fastf1",
+  "total_laps": 66,
+  "n_decision_points": 18,
+  "dp_type_counts": {
+   "A": 6,
+   "B": 6,
+   "C": 6
+  },
+  "pit_loss_s": 25.04,
+  "sc_pit_factor": 1.0,
+  "pit_loss_note": "green loss from 40 stops; SC factor measured from 7 SC-era stops",
+  "calibration_mae_per_lap_s": 0.214,
+  "calibration_stints": 65,
+  "calibration_figure": null,
+  "fit_report": {
+   "race_id": "2026-barcelona",
+   "n_driver_fits": 48,
+   "n_field_fits": 3,
+   "lookups_by_source": {
+    "driver": 1090,
+    "teammate": 0,
+    "field": 0,
+    "unseen-compound": 0
+   }
+  }
+ },
+ "2024-bahrain": {
+  "season": 2024,
+  "track": "Sakhir",
+  "source": "fastf1",
+  "total_laps": 57,
+  "n_decision_points": 18,
+  "dp_type_counts": {
+   "A": 6,
+   "B": 0,
+   "C": 12
+  },
+  "pit_loss_s": 24.97,
+  "sc_pit_factor": 0.55,
+  "pit_loss_note": "green loss from 41 stops; SC factor default 0.55",
+  "calibration_mae_per_lap_s": 0.045,
+  "calibration_stints": 62,
+  "calibration_figure": null,
+  "fit_report": {
+   "race_id": "2024-bahrain",
+   "n_driver_fits": 40,
+   "n_field_fits": 2,
+   "lookups_by_source": {
+    "driver": 1068,
+    "teammate": 0,
+    "field": 0,
+    "unseen-compound": 0
+   }
+  }
+ },
+ "2024-monaco": {
+  "season": 2024,
+  "track": "Monaco",
+  "source": "fastf1",
+  "total_laps": 78,
+  "n_decision_points": 16,
+  "dp_type_counts": {
+   "A": 11,
+   "B": 0,
+   "C": 5
+  },
+  "pit_loss_s": 17.89,
+  "sc_pit_factor": 0.55,
+  "pit_loss_note": "green loss from 7 stops; SC factor default 0.55",
+  "calibration_mae_per_lap_s": 0.144,
+  "calibration_stints": 23,
+  "calibration_figure": null,
+  "fit_report": {
+   "race_id": "2024-monaco",
+   "n_driver_fits": 23,
+   "n_field_fits": 3,
+   "lookups_by_source": {
+    "driver": 1194,
+    "teammate": 0,
+    "field": 0,
+    "unseen-compound": 0
+   }
+  }
+ },
+ "2025-monaco": {
+  "season": 2025,
+  "track": "Monaco",
+  "source": "fastf1",
+  "total_laps": 78,
+  "n_decision_points": 18,
+  "dp_type_counts": {
+   "A": 6,
+   "B": 0,
+   "C": 12
+  },
+  "pit_loss_s": 19.08,
+  "sc_pit_factor": 1.0,
+  "pit_loss_note": "green loss from 36 stops; SC factor measured from 3 SC-era stops",
+  "calibration_mae_per_lap_s": 0.205,
+  "calibration_stints": 52,
+  "calibration_figure": null,
+  "fit_report": {
+   "race_id": "2025-monaco",
+   "n_driver_fits": 37,
+   "n_field_fits": 3,
+   "lookups_by_source": {
+    "driver": 1215,
+    "teammate": 12,
+    "field": 0,
+    "unseen-compound": 0
+   }
+  }
+ },
+ "2025-silverstone": {
+  "season": 2025,
+  "track": "Silverstone",
+  "source": "fastf1",
+  "total_laps": 52,
+  "n_decision_points": 18,
+  "dp_type_counts": {
+   "A": 6,
+   "B": 6,
+   "C": 6
+  },
+  "pit_loss_s": 24.38,
+  "sc_pit_factor": 1.0,
+  "pit_loss_note": "green loss from 28 stops; SC factor measured from 2 SC-era stops",
+  "calibration_mae_per_lap_s": 0.177,
+  "calibration_stints": 40,
+  "calibration_figure": null,
+  "fit_report": {
+   "race_id": "2025-silverstone",
+   "n_driver_fits": 30,
+   "n_field_fits": 4,
+   "lookups_by_source": {
+    "driver": 456,
+    "teammate": 0,
+    "field": 0,
+    "unseen-compound": 0
+   }
+  }
+ }
+}

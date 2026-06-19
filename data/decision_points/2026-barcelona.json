@@ -1,0 +1,2329 @@
+{
+ "race_id": "2026-barcelona",
+ "decision_points": [
+  {
+   "dp_id": "2026-barcelona-L006-ALO-C",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 6,
+   "driver": "ALO",
+   "dp_type": "C",
+   "question": "It is lap 6 of 66. Decide for ALO: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 6,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "ALO",
+     "position": 21,
+     "compound": "HARD",
+     "tyre_age": 5,
+     "compounds_used": [
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      86.254,
+      86.079,
+      86.728
+     ],
+     "car_ahead": {
+      "driver": "BOT",
+      "gap_s": 1.996,
+      "compound": "MEDIUM",
+      "tyre_age": 5
+     },
+     "car_behind": {
+      "driver": "STR",
+      "gap_s": 7.074,
+      "compound": "HARD",
+      "tyre_age": 5
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 5,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 7,
+      "gap_to_leader_s": 2.419
+     },
+     {
+      "position": 3,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 5,
+      "gap_to_leader_s": 3.497
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 5,
+      "gap_to_leader_s": 6.05
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 8,
+      "gap_to_leader_s": 7.428
+     },
+     {
+      "position": 6,
+      "driver": "PIA",
+      "compound": "MEDIUM",
+      "tyre_age": 5,
+      "gap_to_leader_s": 8.598
+     },
+     {
+      "position": 7,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 5,
+      "gap_to_leader_s": 8.99
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 5,
+      "gap_to_leader_s": 13.957
+     },
+     {
+      "position": 9,
+      "driver": "HUL",
+      "compound": "SOFT",
+      "tyre_age": 5,
+      "gap_to_leader_s": 14.682
+     },
+     {
+      "position": 10,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 5,
+      "gap_to_leader_s": 16.29
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival STR pitted on lap 5 (0.5s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L011-VER-A",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 11,
+   "driver": "VER",
+   "dp_type": "A",
+   "question": "It is lap 11 of 66. Decide for VER: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 11,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "VER",
+     "position": 5,
+     "compound": "SOFT",
+     "tyre_age": 13,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      83.663,
+      83.969,
+      84.313
+     ],
+     "car_ahead": {
+      "driver": "NOR",
+      "gap_s": 3.284,
+      "compound": "MEDIUM",
+      "tyre_age": 10
+     },
+     "car_behind": {
+      "driver": "LEC",
+      "gap_s": 0.561,
+      "compound": "MEDIUM",
+      "tyre_age": 10
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 3.514
+     },
+     {
+      "position": 3,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 5.655
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 7.724
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 11.008
+     },
+     {
+      "position": 6,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 11.569
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 14.8
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 24.605
+     },
+     {
+      "position": 9,
+      "driver": "HUL",
+      "compound": "SOFT",
+      "tyre_age": 10,
+      "gap_to_leader_s": 25.781
+     },
+     {
+      "position": 10,
+      "driver": "HAD",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 28.438
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 12",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L012-NOR-A",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 12,
+   "driver": "NOR",
+   "dp_type": "A",
+   "question": "It is lap 12 of 66. Decide for NOR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 12,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "NOR",
+     "position": 3,
+     "compound": "MEDIUM",
+     "tyre_age": 11,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      83.501,
+      83.319,
+      83.401
+     ],
+     "car_ahead": {
+      "driver": "ANT",
+      "gap_s": 1.884,
+      "compound": "MEDIUM",
+      "tyre_age": 11
+     },
+     "car_behind": {
+      "driver": "HAM",
+      "gap_s": 0.217,
+      "compound": "SOFT",
+      "tyre_age": 13
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 5.54
+     },
+     {
+      "position": 3,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 7.424
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 7.641
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 11.484
+     },
+     {
+      "position": 6,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 12.046
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 15.196
+     },
+     {
+      "position": 8,
+      "driver": "HUL",
+      "compound": "SOFT",
+      "tyre_age": 11,
+      "gap_to_leader_s": 27.467
+     },
+     {
+      "position": 9,
+      "driver": "HAD",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 29.268
+     },
+     {
+      "position": 10,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 29.972
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 13",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L012-VER-A",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 12,
+   "driver": "VER",
+   "dp_type": "A",
+   "question": "It is lap 12 of 66. Decide for VER: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 12,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "VER",
+     "position": 5,
+     "compound": "SOFT",
+     "tyre_age": 14,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      83.969,
+      84.313,
+      84.177
+     ],
+     "car_ahead": {
+      "driver": "HAM",
+      "gap_s": 3.843,
+      "compound": "SOFT",
+      "tyre_age": 13
+     },
+     "car_behind": {
+      "driver": "LEC",
+      "gap_s": 0.562,
+      "compound": "MEDIUM",
+      "tyre_age": 11
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 5.54
+     },
+     {
+      "position": 3,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 7.424
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 13,
+      "gap_to_leader_s": 7.641
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 11.484
+     },
+     {
+      "position": 6,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 12.046
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 15.196
+     },
+     {
+      "position": 8,
+      "driver": "HUL",
+      "compound": "SOFT",
+      "tyre_age": 11,
+      "gap_to_leader_s": 27.467
+     },
+     {
+      "position": 9,
+      "driver": "HAD",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 29.268
+     },
+     {
+      "position": 10,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 29.972
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "MEDIUM",
+   "trigger": "own pit stop on lap 12",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L013-LEC-C",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 13,
+   "driver": "LEC",
+   "dp_type": "C",
+   "question": "It is lap 13 of 66. Decide for LEC: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 13,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "LEC",
+     "position": 4,
+     "compound": "MEDIUM",
+     "tyre_age": 12,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      83.8,
+      84.178,
+      84.3
+     ],
+     "car_ahead": {
+      "driver": "NOR",
+      "gap_s": 5.304,
+      "compound": "MEDIUM",
+      "tyre_age": 12
+     },
+     "car_behind": {
+      "driver": "PIA",
+      "gap_s": 2.967,
+      "compound": "MEDIUM",
+      "tyre_age": 12
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 1.453
+     },
+     {
+      "position": 3,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 3.588
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 8.892
+     },
+     {
+      "position": 5,
+      "driver": "PIA",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 11.859
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 12.524
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 20.987
+     },
+     {
+      "position": 8,
+      "driver": "HUL",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 25.758
+     },
+     {
+      "position": 9,
+      "driver": "HAD",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 26.901
+     },
+     {
+      "position": 10,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 30.629
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival VER pitted on lap 12 (0.6s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L013-SAI-A",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 13,
+   "driver": "SAI",
+   "dp_type": "A",
+   "question": "It is lap 13 of 66. Decide for SAI: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 13,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "SAI",
+     "position": 13,
+     "compound": "SOFT",
+     "tyre_age": 12,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      86.141,
+      86.396,
+      86.335
+     ],
+     "car_ahead": {
+      "driver": "COL",
+      "gap_s": 0.138,
+      "compound": "SOFT",
+      "tyre_age": 12
+     },
+     "car_behind": {
+      "driver": "OCO",
+      "gap_s": 3.127,
+      "compound": "SOFT",
+      "tyre_age": 12
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 1.453
+     },
+     {
+      "position": 3,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 3.588
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 8.892
+     },
+     {
+      "position": 5,
+      "driver": "PIA",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 11.859
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 12.524
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 20.987
+     },
+     {
+      "position": 8,
+      "driver": "HUL",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 25.758
+     },
+     {
+      "position": 9,
+      "driver": "HAD",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 26.901
+     },
+     {
+      "position": 10,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 30.629
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 14",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L019-HAD-C",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 19,
+   "driver": "HAD",
+   "dp_type": "C",
+   "question": "It is lap 19 of 66. Decide for HAD: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 19,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "HAD",
+     "position": 9,
+     "compound": "HARD",
+     "tyre_age": 3,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      102.237,
+      82.786,
+      81.835
+     ],
+     "car_ahead": {
+      "driver": "LIN",
+      "gap_s": 6.273,
+      "compound": "MEDIUM",
+      "tyre_age": 18
+     },
+     "car_behind": {
+      "driver": "LAW",
+      "gap_s": 5.64,
+      "compound": "HARD",
+      "tyre_age": 7
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 7,
+      "gap_to_leader_s": 1.957
+     },
+     {
+      "position": 3,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 7.691
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 9.507
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 6,
+      "gap_to_leader_s": 13.681
+     },
+     {
+      "position": 6,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 21.758
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 23.414
+     },
+     {
+      "position": 8,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 35.165
+     },
+     {
+      "position": 9,
+      "driver": "HAD",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 41.438
+     },
+     {
+      "position": 10,
+      "driver": "LAW",
+      "compound": "HARD",
+      "tyre_age": 7,
+      "gap_to_leader_s": 47.078
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival BEA pitted on lap 18 (0.9s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L021-LIN-A",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 21,
+   "driver": "LIN",
+   "dp_type": "A",
+   "question": "It is lap 21 of 66. Decide for LIN: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 21,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "LIN",
+     "position": 8,
+     "compound": "MEDIUM",
+     "tyre_age": 20,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      85.512,
+      85.813,
+      86.116
+     ],
+     "car_ahead": {
+      "driver": "PIA",
+      "gap_s": 18.969,
+      "compound": "HARD",
+      "tyre_age": 6
+     },
+     "car_behind": {
+      "driver": "HAD",
+      "gap_s": 0.145,
+      "compound": "HARD",
+      "tyre_age": 5
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 8,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 9,
+      "gap_to_leader_s": 2.08
+     },
+     {
+      "position": 3,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 6.702
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 7,
+      "gap_to_leader_s": 9.145
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 8,
+      "gap_to_leader_s": 14.115
+     },
+     {
+      "position": 6,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 20.537
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 23.166
+     },
+     {
+      "position": 8,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 42.135
+     },
+     {
+      "position": 9,
+      "driver": "HAD",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 42.28
+     },
+     {
+      "position": 10,
+      "driver": "LAW",
+      "compound": "HARD",
+      "tyre_age": 9,
+      "gap_to_leader_s": 50.214
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 22",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L029-SAI-A",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 29,
+   "driver": "SAI",
+   "dp_type": "A",
+   "question": "It is lap 29 of 66. Decide for SAI: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 29,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "SAI",
+     "position": 13,
+     "compound": "HARD",
+     "tyre_age": 14,
+     "compounds_used": [
+      "SOFT",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      85.483,
+      85.102,
+      85.724
+     ],
+     "car_ahead": {
+      "driver": "COL",
+      "gap_s": 12.032,
+      "compound": "HARD",
+      "tyre_age": 16
+     },
+     "car_behind": {
+      "driver": "BOR",
+      "gap_s": 0.569,
+      "compound": "HARD",
+      "tyre_age": 13
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 16,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 14,
+      "gap_to_leader_s": 2.866
+     },
+     {
+      "position": 3,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 5.369
+     },
+     {
+      "position": 4,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 16,
+      "gap_to_leader_s": 14.897
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 12,
+      "gap_to_leader_s": 16.471
+     },
+     {
+      "position": 6,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 14,
+      "gap_to_leader_s": 23.117
+     },
+     {
+      "position": 7,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 1,
+      "gap_to_leader_s": 23.399
+     },
+     {
+      "position": 8,
+      "driver": "HAD",
+      "compound": "HARD",
+      "tyre_age": 13,
+      "gap_to_leader_s": 43.847
+     },
+     {
+      "position": 9,
+      "driver": "LAW",
+      "compound": "HARD",
+      "tyre_age": 17,
+      "gap_to_leader_s": 63.51
+     },
+     {
+      "position": 10,
+      "driver": "HUL",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 64.385
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 30",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L030-LAW-C",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 30,
+   "driver": "LAW",
+   "dp_type": "C",
+   "question": "It is lap 30 of 66. Decide for LAW: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 30,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "LAW",
+     "position": 9,
+     "compound": "HARD",
+     "tyre_age": 18,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      84.682,
+      84.888,
+      84.901
+     ],
+     "car_ahead": {
+      "driver": "HAD",
+      "gap_s": 20.806,
+      "compound": "HARD",
+      "tyre_age": 14
+     },
+     "car_behind": {
+      "driver": "GAS",
+      "gap_s": 2.003,
+      "compound": "HARD",
+      "tyre_age": 15
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 17,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 2.281
+     },
+     {
+      "position": 3,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 16,
+      "gap_to_leader_s": 5.415
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 13,
+      "gap_to_leader_s": 16.387
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 18.931
+     },
+     {
+      "position": 6,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 2,
+      "gap_to_leader_s": 20.824
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 23.583
+     },
+     {
+      "position": 8,
+      "driver": "HAD",
+      "compound": "HARD",
+      "tyre_age": 14,
+      "gap_to_leader_s": 44.397
+     },
+     {
+      "position": 9,
+      "driver": "LAW",
+      "compound": "HARD",
+      "tyre_age": 18,
+      "gap_to_leader_s": 65.203
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 67.206
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival HUL pitted on lap 29 (0.9s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L035-GAS-B",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 35,
+   "driver": "GAS",
+   "dp_type": "B",
+   "question": "It is lap 35 of 66. Decide for GAS: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 35,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "GAS",
+     "position": 10,
+     "compound": "HARD",
+     "tyre_age": 20,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      84.877,
+      85.359,
+      85.113
+     ],
+     "car_ahead": {
+      "driver": "LAW",
+      "gap_s": 0.827,
+      "compound": "HARD",
+      "tyre_age": 23
+     },
+     "car_behind": {
+      "driver": "COL",
+      "gap_s": 4.678,
+      "compound": "HARD",
+      "tyre_age": 22
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 22,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 0.842
+     },
+     {
+      "position": 3,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 21,
+      "gap_to_leader_s": 5.137
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 7,
+      "gap_to_leader_s": 9.403
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 18,
+      "gap_to_leader_s": 16.48
+     },
+     {
+      "position": 6,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 24.464
+     },
+     {
+      "position": 7,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 31.819
+     },
+     {
+      "position": 8,
+      "driver": "HAD",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 67.068
+     },
+     {
+      "position": 9,
+      "driver": "LAW",
+      "compound": "HARD",
+      "tyre_age": 23,
+      "gap_to_leader_s": 75.107
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 75.934
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 35",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L035-LAW-B",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 35,
+   "driver": "LAW",
+   "dp_type": "B",
+   "question": "It is lap 35 of 66. Decide for LAW: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 35,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "LAW",
+     "position": 9,
+     "compound": "HARD",
+     "tyre_age": 23,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      85.134,
+      85.27,
+      85.306
+     ],
+     "car_ahead": {
+      "driver": "HAD",
+      "gap_s": 8.039,
+      "compound": "HARD",
+      "tyre_age": 2
+     },
+     "car_behind": {
+      "driver": "GAS",
+      "gap_s": 0.827,
+      "compound": "HARD",
+      "tyre_age": 20
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 22,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 0.842
+     },
+     {
+      "position": 3,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 21,
+      "gap_to_leader_s": 5.137
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 7,
+      "gap_to_leader_s": 9.403
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 18,
+      "gap_to_leader_s": 16.48
+     },
+     {
+      "position": 6,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 24.464
+     },
+     {
+      "position": 7,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 31.819
+     },
+     {
+      "position": 8,
+      "driver": "HAD",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 67.068
+     },
+     {
+      "position": 9,
+      "driver": "LAW",
+      "compound": "HARD",
+      "tyre_age": 23,
+      "gap_to_leader_s": 75.107
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 75.934
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "HARD",
+   "trigger": "VSC deployed on lap 35",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L036-GAS-C",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 36,
+   "driver": "GAS",
+   "dp_type": "C",
+   "question": "It is lap 36 of 66. Decide for GAS: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 36,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "GAS",
+     "position": 9,
+     "compound": "HARD",
+     "tyre_age": 21,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      85.359,
+      85.113,
+      85.068
+     ],
+     "car_ahead": {
+      "driver": "HAD",
+      "gap_s": 11.938,
+      "compound": "HARD",
+      "tyre_age": 3
+     },
+     "car_behind": {
+      "driver": "LAW",
+      "gap_s": 3.338,
+      "compound": "HARD",
+      "tyre_age": 24
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 23,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 21,
+      "gap_to_leader_s": 0.582
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 8,
+      "gap_to_leader_s": 7.633
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 22,
+      "gap_to_leader_s": 9.515
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 19,
+      "gap_to_leader_s": 16.599
+     },
+     {
+      "position": 6,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 21,
+      "gap_to_leader_s": 24.987
+     },
+     {
+      "position": 7,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 30.672
+     },
+     {
+      "position": 8,
+      "driver": "HAD",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 66.143
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 21,
+      "gap_to_leader_s": 78.081
+     },
+     {
+      "position": 10,
+      "driver": "LAW",
+      "compound": "HARD",
+      "tyre_age": 24,
+      "gap_to_leader_s": 81.419
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival LAW pitted on lap 35 (0.8s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L037-ANT-C",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 37,
+   "driver": "ANT",
+   "dp_type": "C",
+   "question": "It is lap 37 of 66. Decide for ANT: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 37,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "ANT",
+     "position": 1,
+     "compound": "HARD",
+     "tyre_age": 22,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      82.717,
+      82.661,
+      83.424
+     ],
+     "car_ahead": null,
+     "car_behind": {
+      "driver": "RUS",
+      "gap_s": 3.731,
+      "compound": "HARD",
+      "tyre_age": 24
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 22,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 24,
+      "gap_to_leader_s": 3.731
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 9,
+      "gap_to_leader_s": 4.854
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 15.361
+     },
+     {
+      "position": 5,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 25.471
+     },
+     {
+      "position": 6,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 22,
+      "gap_to_leader_s": 27.898
+     },
+     {
+      "position": 7,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 7,
+      "gap_to_leader_s": 28.787
+     },
+     {
+      "position": 8,
+      "driver": "HAD",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 64.366
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 22,
+      "gap_to_leader_s": 78.392
+     },
+     {
+      "position": 10,
+      "driver": "LIN",
+      "compound": "HARD",
+      "tyre_age": 14,
+      "gap_to_leader_s": 95.633
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "HARD",
+   "trigger": "rival RUS pitted on lap 36 (0.6s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L038-ANT-B",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 38,
+   "driver": "ANT",
+   "dp_type": "B",
+   "question": "It is lap 38 of 66. Decide for ANT: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 38,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "ANT",
+     "position": 1,
+     "compound": "HARD",
+     "tyre_age": 23,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      82.661,
+      83.424,
+      85.693
+     ],
+     "car_ahead": null,
+     "car_behind": {
+      "driver": "HAM",
+      "gap_s": 0.14,
+      "compound": "MEDIUM",
+      "tyre_age": 10
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 23,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 0.14
+     },
+     {
+      "position": 3,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 21,
+      "gap_to_leader_s": 12.692
+     },
+     {
+      "position": 4,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 17.67
+     },
+     {
+      "position": 5,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 20.01
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 8,
+      "gap_to_leader_s": 24.978
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 44.572
+     },
+     {
+      "position": 8,
+      "driver": "HAD",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 60.812
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 23,
+      "gap_to_leader_s": 77.804
+     },
+     {
+      "position": 10,
+      "driver": "LIN",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 97.274
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 38",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L038-HAM-B",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 38,
+   "driver": "HAM",
+   "dp_type": "B",
+   "question": "It is lap 38 of 66. Decide for HAM: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 38,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "HAM",
+     "position": 2,
+     "compound": "MEDIUM",
+     "tyre_age": 10,
+     "compounds_used": [
+      "SOFT",
+      "HARD",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      81.151,
+      81.227,
+      80.979
+     ],
+     "car_ahead": {
+      "driver": "ANT",
+      "gap_s": 0.14,
+      "compound": "HARD",
+      "tyre_age": 23
+     },
+     "car_behind": {
+      "driver": "LEC",
+      "gap_s": 12.552,
+      "compound": "HARD",
+      "tyre_age": 21
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 23,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 0.14
+     },
+     {
+      "position": 3,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 21,
+      "gap_to_leader_s": 12.692
+     },
+     {
+      "position": 4,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 17.67
+     },
+     {
+      "position": 5,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 20.01
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 8,
+      "gap_to_leader_s": 24.978
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 44.572
+     },
+     {
+      "position": 8,
+      "driver": "HAD",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 60.812
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 23,
+      "gap_to_leader_s": 77.804
+     },
+     {
+      "position": 10,
+      "driver": "LIN",
+      "compound": "HARD",
+      "tyre_age": 15,
+      "gap_to_leader_s": 97.274
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 38",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L060-ANT-B",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 60,
+   "driver": "ANT",
+   "dp_type": "B",
+   "question": "It is lap 60 of 66. Decide for ANT: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 60,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "ANT",
+     "position": 3,
+     "compound": "HARD",
+     "tyre_age": 22,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      81.927,
+      81.87,
+      82.091
+     ],
+     "car_ahead": {
+      "driver": "RUS",
+      "gap_s": 0.755,
+      "compound": "HARD",
+      "tyre_age": 23
+     },
+     "car_behind": {
+      "driver": "NOR",
+      "gap_s": 2.942,
+      "compound": "HARD",
+      "tyre_age": 24
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 18,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 23,
+      "gap_to_leader_s": 14.635
+     },
+     {
+      "position": 3,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 22,
+      "gap_to_leader_s": 15.39
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 24,
+      "gap_to_leader_s": 18.332
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 19,
+      "gap_to_leader_s": 34.269
+     },
+     {
+      "position": 6,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 41.511
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 23,
+      "gap_to_leader_s": 51.168
+     },
+     {
+      "position": 8,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 4,
+      "gap_to_leader_s": 108.141
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 19,
+      "gap_to_leader_s": 130.204
+     },
+     {
+      "position": 10,
+      "driver": "COL",
+      "compound": "HARD",
+      "tyre_age": 25,
+      "gap_to_leader_s": 142.223
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 60",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-barcelona-L060-RUS-B",
+   "race_id": "2026-barcelona",
+   "season": 2026,
+   "lap": 60,
+   "driver": "RUS",
+   "dp_type": "B",
+   "question": "It is lap 60 of 66. Decide for RUS: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-barcelona",
+    "track": "Barcelona",
+    "total_laps": 66,
+    "current_lap": 60,
+    "weather": {
+     "air_temp_c": 30.5,
+     "track_temp_c": 50.3,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 25.04,
+    "focal": {
+     "driver": "RUS",
+     "position": 2,
+     "compound": "HARD",
+     "tyre_age": 23,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      82.072,
+      81.946,
+      82.271
+     ],
+     "car_ahead": {
+      "driver": "HAM",
+      "gap_s": 14.635,
+      "compound": "HARD",
+      "tyre_age": 18
+     },
+     "car_behind": {
+      "driver": "ANT",
+      "gap_s": 0.755,
+      "compound": "HARD",
+      "tyre_age": 22
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 18,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 23,
+      "gap_to_leader_s": 14.635
+     },
+     {
+      "position": 3,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 22,
+      "gap_to_leader_s": 15.39
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 24,
+      "gap_to_leader_s": 18.332
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 19,
+      "gap_to_leader_s": 34.269
+     },
+     {
+      "position": 6,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 20,
+      "gap_to_leader_s": 41.511
+     },
+     {
+      "position": 7,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 23,
+      "gap_to_leader_s": 51.168
+     },
+     {
+      "position": 8,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 4,
+      "gap_to_leader_s": 108.141
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 19,
+      "gap_to_leader_s": 130.204
+     },
+     {
+      "position": 10,
+      "driver": "COL",
+      "compound": "HARD",
+      "tyre_age": 25,
+      "gap_to_leader_s": 142.223
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 60",
+   "changeable_conditions": false
+  }
+ ]
+}

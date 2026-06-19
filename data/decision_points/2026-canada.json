@@ -1,0 +1,2335 @@
+{
+ "race_id": "2026-canada",
+ "decision_points": [
+  {
+   "dp_id": "2026-canada-L004-STR-C",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 4,
+   "driver": "STR",
+   "dp_type": "C",
+   "question": "It is lap 4 of 68. Decide for STR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 4,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "STR",
+     "position": 15,
+     "compound": "SOFT",
+     "tyre_age": 3,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      101.845,
+      85.078,
+      84.513
+     ],
+     "car_ahead": {
+      "driver": "NOR",
+      "gap_s": 3.406,
+      "compound": "MEDIUM",
+      "tyre_age": 1
+     },
+     "car_behind": {
+      "driver": "PIA",
+      "gap_s": 0.526,
+      "compound": "MEDIUM",
+      "tyre_age": 2
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "ANT",
+      "compound": "SOFT",
+      "tyre_age": 7,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 6,
+      "gap_to_leader_s": 0.549
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 6,
+      "gap_to_leader_s": 1.139
+     },
+     {
+      "position": 4,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 8,
+      "gap_to_leader_s": 2.056
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 7,
+      "gap_to_leader_s": 2.567
+     },
+     {
+      "position": 6,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 7,
+      "gap_to_leader_s": 3.753
+     },
+     {
+      "position": 7,
+      "driver": "COL",
+      "compound": "MEDIUM",
+      "tyre_age": 3,
+      "gap_to_leader_s": 8.133
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 3,
+      "gap_to_leader_s": 9.463
+     },
+     {
+      "position": 9,
+      "driver": "BEA",
+      "compound": "SOFT",
+      "tyre_age": 8,
+      "gap_to_leader_s": 13.138
+     },
+     {
+      "position": 10,
+      "driver": "ALO",
+      "compound": "SOFT",
+      "tyre_age": 3,
+      "gap_to_leader_s": 13.657
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival BOT pitted on lap 3 (0.5s away)",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2026-canada-L012-STR-A",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 12,
+   "driver": "STR",
+   "dp_type": "A",
+   "question": "It is lap 12 of 68. Decide for STR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 12,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "STR",
+     "position": 19,
+     "compound": "SOFT",
+     "tyre_age": 11,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      80.904,
+      80.266,
+      80.574
+     ],
+     "car_ahead": {
+      "driver": "BOR",
+      "gap_s": 0.668,
+      "compound": "SOFT",
+      "tyre_age": 9
+     },
+     "car_behind": {
+      "driver": "PER",
+      "gap_s": 1.971,
+      "compound": "SOFT",
+      "tyre_age": 9
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 1.152
+     },
+     {
+      "position": 3,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 16,
+      "gap_to_leader_s": 5.599
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 14,
+      "gap_to_leader_s": 6.319
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 7.631
+     },
+     {
+      "position": 6,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 10.264
+     },
+     {
+      "position": 7,
+      "driver": "COL",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 25.648
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 28.462
+     },
+     {
+      "position": 9,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 9,
+      "gap_to_leader_s": 36.028
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 36.161
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 14",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L013-STR-A",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 13,
+   "driver": "STR",
+   "dp_type": "A",
+   "question": "It is lap 13 of 68. Decide for STR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 13,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "STR",
+     "position": 17,
+     "compound": "SOFT",
+     "tyre_age": 12,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      80.266,
+      80.574,
+      80.133
+     ],
+     "car_ahead": {
+      "driver": "BOR",
+      "gap_s": 2.356,
+      "compound": "SOFT",
+      "tyre_age": 10
+     },
+     "car_behind": {
+      "driver": "PER",
+      "gap_s": 0.525,
+      "compound": "SOFT",
+      "tyre_age": 10
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "SOFT",
+      "tyre_age": 16,
+      "gap_to_leader_s": 0.264
+     },
+     {
+      "position": 3,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 17,
+      "gap_to_leader_s": 5.147
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 15,
+      "gap_to_leader_s": 5.742
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 16,
+      "gap_to_leader_s": 7.045
+     },
+     {
+      "position": 6,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 16,
+      "gap_to_leader_s": 10.122
+     },
+     {
+      "position": 7,
+      "driver": "COL",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 26.546
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 29.842
+     },
+     {
+      "position": 9,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 10,
+      "gap_to_leader_s": 36.092
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 38.376
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 14",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L015-OCO-A",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 15,
+   "driver": "OCO",
+   "dp_type": "A",
+   "question": "It is lap 15 of 68. Decide for OCO: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 15,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "OCO",
+     "position": 14,
+     "compound": "SOFT",
+     "tyre_age": 14,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      79.613,
+      79.544,
+      79.115
+     ],
+     "car_ahead": {
+      "driver": "SAI",
+      "gap_s": 0.006,
+      "compound": "MEDIUM",
+      "tyre_age": 20
+     },
+     "car_behind": {
+      "driver": "HUL",
+      "gap_s": 5.893,
+      "compound": "SOFT",
+      "tyre_age": 16
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 17,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "SOFT",
+      "tyre_age": 18,
+      "gap_to_leader_s": 0.69
+     },
+     {
+      "position": 3,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 19,
+      "gap_to_leader_s": 4.518
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 17,
+      "gap_to_leader_s": 5.089
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 18,
+      "gap_to_leader_s": 10.543
+     },
+     {
+      "position": 6,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 18,
+      "gap_to_leader_s": 11.115
+     },
+     {
+      "position": 7,
+      "driver": "COL",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 29.17
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 33.007
+     },
+     {
+      "position": 9,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 37.04
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 42.088
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 16",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L015-PER-C",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 15,
+   "driver": "PER",
+   "dp_type": "C",
+   "question": "It is lap 15 of 68. Decide for PER: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 15,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "PER",
+     "position": 17,
+     "compound": "SOFT",
+     "tyre_age": 12,
+     "compounds_used": [
+      "INTERMEDIATE",
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      78.687,
+      79.271,
+      79.206
+     ],
+     "car_ahead": {
+      "driver": "BOR",
+      "gap_s": 5.381,
+      "compound": "SOFT",
+      "tyre_age": 12
+     },
+     "car_behind": {
+      "driver": "PIA",
+      "gap_s": 6.99,
+      "compound": "MEDIUM",
+      "tyre_age": 6
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 17,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "SOFT",
+      "tyre_age": 18,
+      "gap_to_leader_s": 0.69
+     },
+     {
+      "position": 3,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 19,
+      "gap_to_leader_s": 4.518
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 17,
+      "gap_to_leader_s": 5.089
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 18,
+      "gap_to_leader_s": 10.543
+     },
+     {
+      "position": 6,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 18,
+      "gap_to_leader_s": 11.115
+     },
+     {
+      "position": 7,
+      "driver": "COL",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 29.17
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 33.007
+     },
+     {
+      "position": 9,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 37.04
+     },
+     {
+      "position": 10,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 42.088
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "MEDIUM",
+   "trigger": "rival STR pitted on lap 14 (0.7s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L016-OCO-A",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 16,
+   "driver": "OCO",
+   "dp_type": "A",
+   "question": "It is lap 16 of 68. Decide for OCO: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 16,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "OCO",
+     "position": 13,
+     "compound": "SOFT",
+     "tyre_age": 15,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      79.544,
+      79.115,
+      79.683
+     ],
+     "car_ahead": {
+      "driver": "ALO",
+      "gap_s": 0.161,
+      "compound": "SOFT",
+      "tyre_age": 15
+     },
+     "car_behind": {
+      "driver": "NOR",
+      "gap_s": 0.859,
+      "compound": "MEDIUM",
+      "tyre_age": 13
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 18,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "SOFT",
+      "tyre_age": 19,
+      "gap_to_leader_s": 0.534
+     },
+     {
+      "position": 3,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 20,
+      "gap_to_leader_s": 4.901
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 18,
+      "gap_to_leader_s": 5.557
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 19,
+      "gap_to_leader_s": 11.509
+     },
+     {
+      "position": 6,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 19,
+      "gap_to_leader_s": 12.165
+     },
+     {
+      "position": 7,
+      "driver": "COL",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 30.861
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 35.105
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 43.892
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "SOFT",
+      "tyre_age": 20,
+      "gap_to_leader_s": 45.081
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "MEDIUM",
+   "trigger": "own pit stop on lap 16",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L017-ALO-C",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 17,
+   "driver": "ALO",
+   "dp_type": "C",
+   "question": "It is lap 17 of 68. Decide for ALO: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 17,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "ALO",
+     "position": 12,
+     "compound": "SOFT",
+     "tyre_age": 16,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      79.699,
+      80.224,
+      80.409
+     ],
+     "car_ahead": {
+      "driver": "SAI",
+      "gap_s": 3.432,
+      "compound": "MEDIUM",
+      "tyre_age": 22
+     },
+     "car_behind": {
+      "driver": "HUL",
+      "gap_s": 2.39,
+      "compound": "SOFT",
+      "tyre_age": 18
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 19,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "SOFT",
+      "tyre_age": 20,
+      "gap_to_leader_s": 0.468
+     },
+     {
+      "position": 3,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 21,
+      "gap_to_leader_s": 5.556
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 19,
+      "gap_to_leader_s": 6.087
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 20,
+      "gap_to_leader_s": 12.615
+     },
+     {
+      "position": 6,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 20,
+      "gap_to_leader_s": 13.225
+     },
+     {
+      "position": 7,
+      "driver": "COL",
+      "compound": "MEDIUM",
+      "tyre_age": 16,
+      "gap_to_leader_s": 32.676
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 16,
+      "gap_to_leader_s": 37.429
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 16,
+      "gap_to_leader_s": 45.984
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "SOFT",
+      "tyre_age": 21,
+      "gap_to_leader_s": 47.724
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival OCO pitted on lap 16 (0.2s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L017-NOR-C",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 17,
+   "driver": "NOR",
+   "dp_type": "C",
+   "question": "It is lap 17 of 68. Decide for NOR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 17,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "NOR",
+     "position": 14,
+     "compound": "MEDIUM",
+     "tyre_age": 4,
+     "compounds_used": [
+      "INTERMEDIATE",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      76.801,
+      98.836,
+      83.114
+     ],
+     "car_ahead": {
+      "driver": "HUL",
+      "gap_s": 1.335,
+      "compound": "SOFT",
+      "tyre_age": 18
+     },
+     "car_behind": {
+      "driver": "BOR",
+      "gap_s": 3.486,
+      "compound": "SOFT",
+      "tyre_age": 14
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 19,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "SOFT",
+      "tyre_age": 20,
+      "gap_to_leader_s": 0.468
+     },
+     {
+      "position": 3,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 21,
+      "gap_to_leader_s": 5.556
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 19,
+      "gap_to_leader_s": 6.087
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 20,
+      "gap_to_leader_s": 12.615
+     },
+     {
+      "position": 6,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 20,
+      "gap_to_leader_s": 13.225
+     },
+     {
+      "position": 7,
+      "driver": "COL",
+      "compound": "MEDIUM",
+      "tyre_age": 16,
+      "gap_to_leader_s": 32.676
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 16,
+      "gap_to_leader_s": 37.429
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 16,
+      "gap_to_leader_s": 45.984
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "SOFT",
+      "tyre_age": 21,
+      "gap_to_leader_s": 47.724
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival OCO pitted on lap 16 (0.9s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L021-NOR-C",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 21,
+   "driver": "NOR",
+   "dp_type": "C",
+   "question": "It is lap 21 of 68. Decide for NOR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 21,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "NOR",
+     "position": 12,
+     "compound": "MEDIUM",
+     "tyre_age": 8,
+     "compounds_used": [
+      "INTERMEDIATE",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      78.118,
+      76.877,
+      76.598
+     ],
+     "car_ahead": {
+      "driver": "SAI",
+      "gap_s": 6.955,
+      "compound": "MEDIUM",
+      "tyre_age": 26
+     },
+     "car_behind": {
+      "driver": "PIA",
+      "gap_s": 15.879,
+      "compound": "MEDIUM",
+      "tyre_age": 12
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 23,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "SOFT",
+      "tyre_age": 24,
+      "gap_to_leader_s": 0.466
+     },
+     {
+      "position": 3,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 25,
+      "gap_to_leader_s": 6.639
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 23,
+      "gap_to_leader_s": 6.957
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 24,
+      "gap_to_leader_s": 14.989
+     },
+     {
+      "position": 6,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 24,
+      "gap_to_leader_s": 16.052
+     },
+     {
+      "position": 7,
+      "driver": "COL",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 37.817
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 44.593
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 52.605
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "SOFT",
+      "tyre_age": 25,
+      "gap_to_leader_s": 54.548
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival HUL pitted on lap 20 (1.2s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L028-ANT-B",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 28,
+   "driver": "ANT",
+   "dp_type": "B",
+   "question": "It is lap 28 of 68. Decide for ANT: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 28,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "ANT",
+     "position": 2,
+     "compound": "SOFT",
+     "tyre_age": 31,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      78.543,
+      76.48,
+      75.971
+     ],
+     "car_ahead": {
+      "driver": "RUS",
+      "gap_s": 0.206,
+      "compound": "SOFT",
+      "tyre_age": 30
+     },
+     "car_behind": {
+      "driver": "VER",
+      "gap_s": 6.414,
+      "compound": "SOFT",
+      "tyre_age": 32
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 30,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "SOFT",
+      "tyre_age": 31,
+      "gap_to_leader_s": 0.206
+     },
+     {
+      "position": 3,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 32,
+      "gap_to_leader_s": 6.62
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 30,
+      "gap_to_leader_s": 11.495
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 31,
+      "gap_to_leader_s": 13.581
+     },
+     {
+      "position": 6,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 31,
+      "gap_to_leader_s": 15.537
+     },
+     {
+      "position": 7,
+      "driver": "COL",
+      "compound": "MEDIUM",
+      "tyre_age": 27,
+      "gap_to_leader_s": 42.623
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 27,
+      "gap_to_leader_s": 52.962
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 27,
+      "gap_to_leader_s": 59.908
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "SOFT",
+      "tyre_age": 32,
+      "gap_to_leader_s": 62.209
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 28",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L028-HAD-B",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 28,
+   "driver": "HAD",
+   "dp_type": "B",
+   "question": "It is lap 28 of 68. Decide for HAD: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 28,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "HAD",
+     "position": 6,
+     "compound": "SOFT",
+     "tyre_age": 31,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      76.56,
+      76.153,
+      76.318
+     ],
+     "car_ahead": {
+      "driver": "LEC",
+      "gap_s": 1.956,
+      "compound": "SOFT",
+      "tyre_age": 31
+     },
+     "car_behind": {
+      "driver": "COL",
+      "gap_s": 27.086,
+      "compound": "MEDIUM",
+      "tyre_age": 27
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 30,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "SOFT",
+      "tyre_age": 31,
+      "gap_to_leader_s": 0.206
+     },
+     {
+      "position": 3,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 32,
+      "gap_to_leader_s": 6.62
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 30,
+      "gap_to_leader_s": 11.495
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 31,
+      "gap_to_leader_s": 13.581
+     },
+     {
+      "position": 6,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 31,
+      "gap_to_leader_s": 15.537
+     },
+     {
+      "position": 7,
+      "driver": "COL",
+      "compound": "MEDIUM",
+      "tyre_age": 27,
+      "gap_to_leader_s": 42.623
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 27,
+      "gap_to_leader_s": 52.962
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 27,
+      "gap_to_leader_s": 59.908
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "SOFT",
+      "tyre_age": 32,
+      "gap_to_leader_s": 62.209
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 28",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L028-HAM-B",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 28,
+   "driver": "HAM",
+   "dp_type": "B",
+   "question": "It is lap 28 of 68. Decide for HAM: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 28,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "HAM",
+     "position": 4,
+     "compound": "SOFT",
+     "tyre_age": 30,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      76.404,
+      76.433,
+      76.415
+     ],
+     "car_ahead": {
+      "driver": "VER",
+      "gap_s": 4.875,
+      "compound": "SOFT",
+      "tyre_age": 32
+     },
+     "car_behind": {
+      "driver": "LEC",
+      "gap_s": 2.086,
+      "compound": "SOFT",
+      "tyre_age": 31
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 30,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "SOFT",
+      "tyre_age": 31,
+      "gap_to_leader_s": 0.206
+     },
+     {
+      "position": 3,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 32,
+      "gap_to_leader_s": 6.62
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 30,
+      "gap_to_leader_s": 11.495
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 31,
+      "gap_to_leader_s": 13.581
+     },
+     {
+      "position": 6,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 31,
+      "gap_to_leader_s": 15.537
+     },
+     {
+      "position": 7,
+      "driver": "COL",
+      "compound": "MEDIUM",
+      "tyre_age": 27,
+      "gap_to_leader_s": 42.623
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 27,
+      "gap_to_leader_s": 52.962
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 27,
+      "gap_to_leader_s": 59.908
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "SOFT",
+      "tyre_age": 32,
+      "gap_to_leader_s": 62.209
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 28",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L028-LEC-B",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 28,
+   "driver": "LEC",
+   "dp_type": "B",
+   "question": "It is lap 28 of 68. Decide for LEC: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 28,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "LEC",
+     "position": 5,
+     "compound": "SOFT",
+     "tyre_age": 31,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      76.246,
+      76.279,
+      76.09
+     ],
+     "car_ahead": {
+      "driver": "HAM",
+      "gap_s": 2.086,
+      "compound": "SOFT",
+      "tyre_age": 30
+     },
+     "car_behind": {
+      "driver": "HAD",
+      "gap_s": 1.956,
+      "compound": "SOFT",
+      "tyre_age": 31
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 30,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "SOFT",
+      "tyre_age": 31,
+      "gap_to_leader_s": 0.206
+     },
+     {
+      "position": 3,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 32,
+      "gap_to_leader_s": 6.62
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 30,
+      "gap_to_leader_s": 11.495
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 31,
+      "gap_to_leader_s": 13.581
+     },
+     {
+      "position": 6,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 31,
+      "gap_to_leader_s": 15.537
+     },
+     {
+      "position": 7,
+      "driver": "COL",
+      "compound": "MEDIUM",
+      "tyre_age": 27,
+      "gap_to_leader_s": 42.623
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 27,
+      "gap_to_leader_s": 52.962
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 27,
+      "gap_to_leader_s": 59.908
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "SOFT",
+      "tyre_age": 32,
+      "gap_to_leader_s": 62.209
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 28",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L029-ANT-A",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 29,
+   "driver": "ANT",
+   "dp_type": "A",
+   "question": "It is lap 29 of 68. Decide for ANT: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 29,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "ANT",
+     "position": 2,
+     "compound": "SOFT",
+     "tyre_age": 32,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      76.48,
+      75.971,
+      76.427
+     ],
+     "car_ahead": {
+      "driver": "RUS",
+      "gap_s": 0.361,
+      "compound": "SOFT",
+      "tyre_age": 31
+     },
+     "car_behind": {
+      "driver": "VER",
+      "gap_s": 6.088,
+      "compound": "SOFT",
+      "tyre_age": 33
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 31,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "SOFT",
+      "tyre_age": 32,
+      "gap_to_leader_s": 0.361
+     },
+     {
+      "position": 3,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 33,
+      "gap_to_leader_s": 6.449
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 31,
+      "gap_to_leader_s": 11.403
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 32,
+      "gap_to_leader_s": 13.77
+     },
+     {
+      "position": 6,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 32,
+      "gap_to_leader_s": 15.894
+     },
+     {
+      "position": 7,
+      "driver": "COL",
+      "compound": "MEDIUM",
+      "tyre_age": 28,
+      "gap_to_leader_s": 43.416
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 28,
+      "gap_to_leader_s": 54.223
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 28,
+      "gap_to_leader_s": 60.617
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "SOFT",
+      "tyre_age": 33,
+      "gap_to_leader_s": 63.311
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 31",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L030-ANT-A",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 30,
+   "driver": "ANT",
+   "dp_type": "A",
+   "question": "It is lap 30 of 68. Decide for ANT: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 30,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "ANT",
+     "position": 2,
+     "compound": "SOFT",
+     "tyre_age": 33,
+     "compounds_used": [
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      75.971,
+      76.427,
+      75.752
+     ],
+     "car_ahead": {
+      "driver": "RUS",
+      "gap_s": 0.572,
+      "compound": "SOFT",
+      "tyre_age": 32
+     },
+     "car_behind": {
+      "driver": "VER",
+      "gap_s": 6.591,
+      "compound": "SOFT",
+      "tyre_age": 34
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "SOFT",
+      "tyre_age": 32,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "SOFT",
+      "tyre_age": 33,
+      "gap_to_leader_s": 0.572
+     },
+     {
+      "position": 3,
+      "driver": "VER",
+      "compound": "SOFT",
+      "tyre_age": 34,
+      "gap_to_leader_s": 7.163
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "SOFT",
+      "tyre_age": 32,
+      "gap_to_leader_s": 12.236
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "SOFT",
+      "tyre_age": 33,
+      "gap_to_leader_s": 14.525
+     },
+     {
+      "position": 6,
+      "driver": "HAD",
+      "compound": "SOFT",
+      "tyre_age": 33,
+      "gap_to_leader_s": 17.446
+     },
+     {
+      "position": 7,
+      "driver": "COL",
+      "compound": "MEDIUM",
+      "tyre_age": 29,
+      "gap_to_leader_s": 44.58
+     },
+     {
+      "position": 8,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 29,
+      "gap_to_leader_s": 55.947
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 29,
+      "gap_to_leader_s": 61.943
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "SOFT",
+      "tyre_age": 34,
+      "gap_to_leader_s": 65.053
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 31",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L043-HAD-B",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 43,
+   "driver": "HAD",
+   "dp_type": "B",
+   "question": "It is lap 43 of 68. Decide for HAD: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 43,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "HAD",
+     "position": 5,
+     "compound": "MEDIUM",
+     "tyre_age": 11,
+     "compounds_used": [
+      "SOFT",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      76.248,
+      75.615,
+      75.781
+     ],
+     "car_ahead": {
+      "driver": "LEC",
+      "gap_s": 1.259,
+      "compound": "MEDIUM",
+      "tyre_age": 11
+     },
+     "car_behind": {
+      "driver": "COL",
+      "gap_s": 39.511,
+      "compound": "HARD",
+      "tyre_age": 12
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 4.838
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 8.884
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 16.336
+     },
+     {
+      "position": 5,
+      "driver": "HAD",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 17.595
+     },
+     {
+      "position": 6,
+      "driver": "COL",
+      "compound": "HARD",
+      "tyre_age": 12,
+      "gap_to_leader_s": 57.106
+     },
+     {
+      "position": 7,
+      "driver": "LAW",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 70.279
+     },
+     {
+      "position": 8,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 12,
+      "gap_to_leader_s": 72.567
+     },
+     {
+      "position": 9,
+      "driver": "SAI",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 88.726
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 95.603
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 43",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L043-LEC-B",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 43,
+   "driver": "LEC",
+   "dp_type": "B",
+   "question": "It is lap 43 of 68. Decide for LEC: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 43,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "LEC",
+     "position": 4,
+     "compound": "MEDIUM",
+     "tyre_age": 11,
+     "compounds_used": [
+      "SOFT",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      75.608,
+      75.612,
+      75.662
+     ],
+     "car_ahead": {
+      "driver": "HAM",
+      "gap_s": 7.452,
+      "compound": "MEDIUM",
+      "tyre_age": 11
+     },
+     "car_behind": {
+      "driver": "HAD",
+      "gap_s": 1.259,
+      "compound": "MEDIUM",
+      "tyre_age": 11
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 4.838
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 8.884
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 16.336
+     },
+     {
+      "position": 5,
+      "driver": "HAD",
+      "compound": "MEDIUM",
+      "tyre_age": 11,
+      "gap_to_leader_s": 17.595
+     },
+     {
+      "position": 6,
+      "driver": "COL",
+      "compound": "HARD",
+      "tyre_age": 12,
+      "gap_to_leader_s": 57.106
+     },
+     {
+      "position": 7,
+      "driver": "LAW",
+      "compound": "SOFT",
+      "tyre_age": 12,
+      "gap_to_leader_s": 70.279
+     },
+     {
+      "position": 8,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 12,
+      "gap_to_leader_s": 72.567
+     },
+     {
+      "position": 9,
+      "driver": "SAI",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 88.726
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "MEDIUM",
+      "tyre_age": 12,
+      "gap_to_leader_s": 95.603
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "VSC deployed on lap 43",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-canada-L053-LEC-C",
+   "race_id": "2026-canada",
+   "season": 2026,
+   "lap": 53,
+   "driver": "LEC",
+   "dp_type": "C",
+   "question": "It is lap 53 of 68. Decide for LEC: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-canada",
+    "track": "Montr\u00e9al",
+    "total_laps": 68,
+    "current_lap": 53,
+    "weather": {
+     "air_temp_c": 12.8,
+     "track_temp_c": 17.8,
+     "rain": false
+    },
+    "track_status": "VSC",
+    "pit_loss_s": 28.71,
+    "focal": {
+     "driver": "LEC",
+     "position": 4,
+     "compound": "MEDIUM",
+     "tyre_age": 21,
+     "compounds_used": [
+      "SOFT",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      75.433,
+      77.12,
+      83.237
+     ],
+     "car_ahead": {
+      "driver": "HAM",
+      "gap_s": 14.923,
+      "compound": "MEDIUM",
+      "tyre_age": 21
+     },
+     "car_behind": {
+      "driver": "HAD",
+      "gap_s": 27.939,
+      "compound": "MEDIUM",
+      "tyre_age": 21
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 21,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 21,
+      "gap_to_leader_s": 10.655
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 21,
+      "gap_to_leader_s": 13.703
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 21,
+      "gap_to_leader_s": 28.626
+     },
+     {
+      "position": 5,
+      "driver": "HAD",
+      "compound": "MEDIUM",
+      "tyre_age": 21,
+      "gap_to_leader_s": 56.565
+     },
+     {
+      "position": 6,
+      "driver": "COL",
+      "compound": "HARD",
+      "tyre_age": 22,
+      "gap_to_leader_s": 97.251
+     },
+     {
+      "position": 7,
+      "driver": "LAW",
+      "compound": "SOFT",
+      "tyre_age": 22,
+      "gap_to_leader_s": 120.792
+     },
+     {
+      "position": 8,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 22,
+      "gap_to_leader_s": 122.849
+     },
+     {
+      "position": 9,
+      "driver": "SAI",
+      "compound": "MEDIUM",
+      "tyre_age": 22,
+      "gap_to_leader_s": 143.526
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "MEDIUM",
+      "tyre_age": 22,
+      "gap_to_leader_s": 147.448
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival HAD pitted on lap 52 (0.9s away)",
+   "changeable_conditions": false
+  }
+ ]
+}

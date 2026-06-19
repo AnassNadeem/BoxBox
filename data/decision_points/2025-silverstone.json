@@ -1,0 +1,2359 @@
+{
+ "race_id": "2025-silverstone",
+ "decision_points": [
+  {
+   "dp_id": "2025-silverstone-L009-LEC-A",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 9,
+   "driver": "LEC",
+   "dp_type": "A",
+   "question": "It is lap 9 of 52. Decide for LEC: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 9,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "LEC",
+     "position": 15,
+     "compound": "MEDIUM",
+     "tyre_age": 8,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      137.909,
+      112.542,
+      104.73
+     ],
+     "car_ahead": {
+      "driver": "ANT",
+      "gap_s": 0.244,
+      "compound": "HARD",
+      "tyre_age": 6
+     },
+     "car_behind": {
+      "driver": "HAD",
+      "gap_s": 2.178,
+      "compound": "MEDIUM",
+      "tyre_age": 8
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 8,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 8,
+      "gap_to_leader_s": 0.992
+     },
+     {
+      "position": 3,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 8,
+      "gap_to_leader_s": 3.664
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 8,
+      "gap_to_leader_s": 7.336
+     },
+     {
+      "position": 5,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 8,
+      "gap_to_leader_s": 8.189
+     },
+     {
+      "position": 6,
+      "driver": "ALO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 8,
+      "gap_to_leader_s": 9.381
+     },
+     {
+      "position": 7,
+      "driver": "SAI",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 8,
+      "gap_to_leader_s": 10.91
+     },
+     {
+      "position": 8,
+      "driver": "ALB",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 8,
+      "gap_to_leader_s": 12.204
+     },
+     {
+      "position": 9,
+      "driver": "TSU",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 8,
+      "gap_to_leader_s": 14.024
+     },
+     {
+      "position": 10,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 8,
+      "gap_to_leader_s": 15.128
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 10",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L010-ALB-A",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 10,
+   "driver": "ALB",
+   "dp_type": "A",
+   "question": "It is lap 10 of 52. Decide for ALB: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 10,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "ALB",
+     "position": 9,
+     "compound": "INTERMEDIATE",
+     "tyre_age": 9,
+     "compounds_used": [
+      "INTERMEDIATE"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      121.594,
+      106.496,
+      108.888
+     ],
+     "car_ahead": {
+      "driver": "HUL",
+      "gap_s": 0.085,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9
+     },
+     "car_behind": {
+      "driver": "TSU",
+      "gap_s": 1.932,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 2.925
+     },
+     {
+      "position": 3,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 4.866
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 10.992
+     },
+     {
+      "position": 5,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 11.758
+     },
+     {
+      "position": 6,
+      "driver": "ALO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 12.557
+     },
+     {
+      "position": 7,
+      "driver": "SAI",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 14.336
+     },
+     {
+      "position": 8,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 16.614
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 16.699
+     },
+     {
+      "position": 10,
+      "driver": "TSU",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 18.631
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 12",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L010-LEC-C",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 10,
+   "driver": "LEC",
+   "dp_type": "C",
+   "question": "It is lap 10 of 52. Decide for LEC: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 10,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "LEC",
+     "position": 15,
+     "compound": "MEDIUM",
+     "tyre_age": 9,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      112.542,
+      104.73,
+      100.941
+     ],
+     "car_ahead": {
+      "driver": "ANT",
+      "gap_s": 1.849,
+      "compound": "HARD",
+      "tyre_age": 7
+     },
+     "car_behind": {
+      "driver": "HAD",
+      "gap_s": 2.942,
+      "compound": "MEDIUM",
+      "tyre_age": 9
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 2.925
+     },
+     {
+      "position": 3,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 4.866
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 10.992
+     },
+     {
+      "position": 5,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 11.758
+     },
+     {
+      "position": 6,
+      "driver": "ALO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 12.557
+     },
+     {
+      "position": 7,
+      "driver": "SAI",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 14.336
+     },
+     {
+      "position": 8,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 16.614
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 16.699
+     },
+     {
+      "position": 10,
+      "driver": "TSU",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 18.631
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "INTERMEDIATE",
+   "trigger": "rival ANT pitted on lap 9 (0.2s away)",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L011-GAS-A",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 11,
+   "driver": "GAS",
+   "dp_type": "A",
+   "question": "It is lap 11 of 52. Decide for GAS: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 11,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "GAS",
+     "position": 6,
+     "compound": "INTERMEDIATE",
+     "tyre_age": 10,
+     "compounds_used": [
+      "INTERMEDIATE"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      106.083,
+      107.962,
+      108.953
+     ],
+     "car_ahead": {
+      "driver": "STR",
+      "gap_s": 0.42,
+      "compound": "SOFT",
+      "tyre_age": 4
+     },
+     "car_behind": {
+      "driver": "ALO",
+      "gap_s": 0.797,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 10
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 10,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 10,
+      "gap_to_leader_s": 4.467
+     },
+     {
+      "position": 3,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 10,
+      "gap_to_leader_s": 5.833
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 10,
+      "gap_to_leader_s": 14.344
+     },
+     {
+      "position": 5,
+      "driver": "STR",
+      "compound": "SOFT",
+      "tyre_age": 4,
+      "gap_to_leader_s": 15.401
+     },
+     {
+      "position": 6,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 10,
+      "gap_to_leader_s": 15.821
+     },
+     {
+      "position": 7,
+      "driver": "ALO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 10,
+      "gap_to_leader_s": 16.618
+     },
+     {
+      "position": 8,
+      "driver": "SAI",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 10,
+      "gap_to_leader_s": 17.977
+     },
+     {
+      "position": 9,
+      "driver": "ALB",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 10,
+      "gap_to_leader_s": 21.027
+     },
+     {
+      "position": 10,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 10,
+      "gap_to_leader_s": 21.532
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "INTERMEDIATE",
+   "trigger": "own pit stop on lap 11",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L012-STR-C",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 12,
+   "driver": "STR",
+   "dp_type": "C",
+   "question": "It is lap 12 of 52. Decide for STR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 12,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "STR",
+     "position": 11,
+     "compound": "INTERMEDIATE",
+     "tyre_age": 1,
+     "compounds_used": [
+      "INTERMEDIATE",
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      104.912,
+      100.708,
+      126.264
+     ],
+     "car_ahead": {
+      "driver": "OCO",
+      "gap_s": 2.233,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 11
+     },
+     "car_behind": {
+      "driver": "HUL",
+      "gap_s": 0.52,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 2
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 11,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 11,
+      "gap_to_leader_s": 7.631
+     },
+     {
+      "position": 3,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 11,
+      "gap_to_leader_s": 9.027
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 11,
+      "gap_to_leader_s": 17.891
+     },
+     {
+      "position": 5,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 11,
+      "gap_to_leader_s": 19.124
+     },
+     {
+      "position": 6,
+      "driver": "ALO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 11,
+      "gap_to_leader_s": 20.159
+     },
+     {
+      "position": 7,
+      "driver": "SAI",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 11,
+      "gap_to_leader_s": 21.728
+     },
+     {
+      "position": 8,
+      "driver": "ALB",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 11,
+      "gap_to_leader_s": 27.081
+     },
+     {
+      "position": 9,
+      "driver": "TSU",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 11,
+      "gap_to_leader_s": 29.132
+     },
+     {
+      "position": 10,
+      "driver": "OCO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 11,
+      "gap_to_leader_s": 33.495
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival GAS pitted on lap 11 (0.4s away)",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L013-ALB-B",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 13,
+   "driver": "ALB",
+   "dp_type": "B",
+   "question": "It is lap 13 of 52. Decide for ALB: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 13,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "SC",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "ALB",
+     "position": 3,
+     "compound": "INTERMEDIATE",
+     "tyre_age": 12,
+     "compounds_used": [
+      "INTERMEDIATE"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      109.218,
+      111.991,
+      109.68
+     ],
+     "car_ahead": {
+      "driver": "VER",
+      "gap_s": 0.82,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1
+     },
+     "car_behind": {
+      "driver": "NOR",
+      "gap_s": 1.321,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 9.791
+     },
+     {
+      "position": 3,
+      "driver": "ALB",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 12,
+      "gap_to_leader_s": 10.611
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 11.932
+     },
+     {
+      "position": 5,
+      "driver": "STR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 2,
+      "gap_to_leader_s": 16.732
+     },
+     {
+      "position": 6,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 3,
+      "gap_to_leader_s": 17.445
+     },
+     {
+      "position": 7,
+      "driver": "OCO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 12,
+      "gap_to_leader_s": 18.131
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 18.785
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 19.977
+     },
+     {
+      "position": 10,
+      "driver": "ALO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 21.525
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "SC deployed on lap 13",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L013-ALO-B",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 13,
+   "driver": "ALO",
+   "dp_type": "B",
+   "question": "It is lap 13 of 52. Decide for ALO: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 13,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "SC",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "ALO",
+     "position": 10,
+     "compound": "INTERMEDIATE",
+     "tyre_age": 1,
+     "compounds_used": [
+      "INTERMEDIATE"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      108.951,
+      109.478,
+      127.516
+     ],
+     "car_ahead": {
+      "driver": "GAS",
+      "gap_s": 1.548,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1
+     },
+     "car_behind": {
+      "driver": "RUS",
+      "gap_s": 0.372,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 2
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 9.791
+     },
+     {
+      "position": 3,
+      "driver": "ALB",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 12,
+      "gap_to_leader_s": 10.611
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 11.932
+     },
+     {
+      "position": 5,
+      "driver": "STR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 2,
+      "gap_to_leader_s": 16.732
+     },
+     {
+      "position": 6,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 3,
+      "gap_to_leader_s": 17.445
+     },
+     {
+      "position": 7,
+      "driver": "OCO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 12,
+      "gap_to_leader_s": 18.131
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 18.785
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 19.977
+     },
+     {
+      "position": 10,
+      "driver": "ALO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 21.525
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "SC deployed on lap 13",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L013-HAM-B",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 13,
+   "driver": "HAM",
+   "dp_type": "B",
+   "question": "It is lap 13 of 52. Decide for HAM: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 13,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "SC",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "HAM",
+     "position": 8,
+     "compound": "INTERMEDIATE",
+     "tyre_age": 1,
+     "compounds_used": [
+      "INTERMEDIATE"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      108.242,
+      109.484,
+      127.044
+     ],
+     "car_ahead": {
+      "driver": "OCO",
+      "gap_s": 0.654,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 12
+     },
+     "car_behind": {
+      "driver": "GAS",
+      "gap_s": 1.192,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 9.791
+     },
+     {
+      "position": 3,
+      "driver": "ALB",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 12,
+      "gap_to_leader_s": 10.611
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 11.932
+     },
+     {
+      "position": 5,
+      "driver": "STR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 2,
+      "gap_to_leader_s": 16.732
+     },
+     {
+      "position": 6,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 3,
+      "gap_to_leader_s": 17.445
+     },
+     {
+      "position": 7,
+      "driver": "OCO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 12,
+      "gap_to_leader_s": 18.131
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 18.785
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 19.977
+     },
+     {
+      "position": 10,
+      "driver": "ALO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 21.525
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "SC deployed on lap 13",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L013-HUL-B",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 13,
+   "driver": "HUL",
+   "dp_type": "B",
+   "question": "It is lap 13 of 52. Decide for HUL: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 13,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "SC",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "HUL",
+     "position": 6,
+     "compound": "INTERMEDIATE",
+     "tyre_age": 3,
+     "compounds_used": [
+      "INTERMEDIATE"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      124.672,
+      105.789,
+      107.347
+     ],
+     "car_ahead": {
+      "driver": "STR",
+      "gap_s": 0.713,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 2
+     },
+     "car_behind": {
+      "driver": "OCO",
+      "gap_s": 0.686,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 12
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 9.791
+     },
+     {
+      "position": 3,
+      "driver": "ALB",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 12,
+      "gap_to_leader_s": 10.611
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 11.932
+     },
+     {
+      "position": 5,
+      "driver": "STR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 2,
+      "gap_to_leader_s": 16.732
+     },
+     {
+      "position": 6,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 3,
+      "gap_to_leader_s": 17.445
+     },
+     {
+      "position": 7,
+      "driver": "OCO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 12,
+      "gap_to_leader_s": 18.131
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 18.785
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 19.977
+     },
+     {
+      "position": 10,
+      "driver": "ALO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 21.525
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "SC deployed on lap 13",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L013-OCO-B",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 13,
+   "driver": "OCO",
+   "dp_type": "B",
+   "question": "It is lap 13 of 52. Decide for OCO: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 13,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "SC",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "OCO",
+     "position": 7,
+     "compound": "INTERMEDIATE",
+     "tyre_age": 12,
+     "compounds_used": [
+      "INTERMEDIATE"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      109.77,
+      111.866,
+      110.786
+     ],
+     "car_ahead": {
+      "driver": "HUL",
+      "gap_s": 0.686,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 3
+     },
+     "car_behind": {
+      "driver": "HAM",
+      "gap_s": 0.654,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 9.791
+     },
+     {
+      "position": 3,
+      "driver": "ALB",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 12,
+      "gap_to_leader_s": 10.611
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 11.932
+     },
+     {
+      "position": 5,
+      "driver": "STR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 2,
+      "gap_to_leader_s": 16.732
+     },
+     {
+      "position": 6,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 3,
+      "gap_to_leader_s": 17.445
+     },
+     {
+      "position": 7,
+      "driver": "OCO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 12,
+      "gap_to_leader_s": 18.131
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 18.785
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 19.977
+     },
+     {
+      "position": 10,
+      "driver": "ALO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 21.525
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "SC deployed on lap 13",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L013-STR-B",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 13,
+   "driver": "STR",
+   "dp_type": "B",
+   "question": "It is lap 13 of 52. Decide for STR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 13,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "SC",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "STR",
+     "position": 5,
+     "compound": "INTERMEDIATE",
+     "tyre_age": 2,
+     "compounds_used": [
+      "INTERMEDIATE",
+      "SOFT"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      100.708,
+      126.264,
+      107.154
+     ],
+     "car_ahead": {
+      "driver": "NOR",
+      "gap_s": 4.8,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1
+     },
+     "car_behind": {
+      "driver": "HUL",
+      "gap_s": 0.713,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 3
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 9.791
+     },
+     {
+      "position": 3,
+      "driver": "ALB",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 12,
+      "gap_to_leader_s": 10.611
+     },
+     {
+      "position": 4,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 11.932
+     },
+     {
+      "position": 5,
+      "driver": "STR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 2,
+      "gap_to_leader_s": 16.732
+     },
+     {
+      "position": 6,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 3,
+      "gap_to_leader_s": 17.445
+     },
+     {
+      "position": 7,
+      "driver": "OCO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 12,
+      "gap_to_leader_s": 18.131
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 18.785
+     },
+     {
+      "position": 9,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 19.977
+     },
+     {
+      "position": 10,
+      "driver": "ALO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 1,
+      "gap_to_leader_s": 21.525
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "SC deployed on lap 13",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L017-OCO-A",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 17,
+   "driver": "OCO",
+   "dp_type": "A",
+   "question": "It is lap 17 of 52. Decide for OCO: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 17,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "SC",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "OCO",
+     "position": 7,
+     "compound": "INTERMEDIATE",
+     "tyre_age": 16,
+     "compounds_used": [
+      "INTERMEDIATE"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      136.497,
+      147.377
+     ],
+     "car_ahead": {
+      "driver": "GAS",
+      "gap_s": 1.13,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 5
+     },
+     "car_behind": {
+      "driver": "HAM",
+      "gap_s": 0.446,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 5
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 5,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 5,
+      "gap_to_leader_s": 1.137
+     },
+     {
+      "position": 3,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 5,
+      "gap_to_leader_s": 3.531
+     },
+     {
+      "position": 4,
+      "driver": "STR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 6,
+      "gap_to_leader_s": 5.148
+     },
+     {
+      "position": 5,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 7,
+      "gap_to_leader_s": 6.241
+     },
+     {
+      "position": 6,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 5,
+      "gap_to_leader_s": 7.383
+     },
+     {
+      "position": 7,
+      "driver": "OCO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 16,
+      "gap_to_leader_s": 8.513
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 5,
+      "gap_to_leader_s": 8.959
+     },
+     {
+      "position": 9,
+      "driver": "RUS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 6,
+      "gap_to_leader_s": 9.849
+     },
+     {
+      "position": 10,
+      "driver": "ALO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 5,
+      "gap_to_leader_s": 11.049
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 18",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L021-BEA-C",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 21,
+   "driver": "BEA",
+   "dp_type": "C",
+   "question": "It is lap 21 of 52. Decide for BEA: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 21,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "SC",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "BEA",
+     "position": 15,
+     "compound": "INTERMEDIATE",
+     "tyre_age": 10,
+     "compounds_used": [
+      "HARD",
+      "INTERMEDIATE"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      131.242
+     ],
+     "car_ahead": {
+      "driver": "TSU",
+      "gap_s": 0.774,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9
+     },
+     "car_behind": {
+      "driver": "OCO",
+      "gap_s": 1.514,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 2
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 1.112
+     },
+     {
+      "position": 3,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 4.053
+     },
+     {
+      "position": 4,
+      "driver": "STR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 10,
+      "gap_to_leader_s": 5.448
+     },
+     {
+      "position": 5,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 11,
+      "gap_to_leader_s": 6.72
+     },
+     {
+      "position": 6,
+      "driver": "ANT",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 11,
+      "gap_to_leader_s": 7.761
+     },
+     {
+      "position": 7,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 7.868
+     },
+     {
+      "position": 8,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 8.555
+     },
+     {
+      "position": 9,
+      "driver": "RUS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 10,
+      "gap_to_leader_s": 10.101
+     },
+     {
+      "position": 10,
+      "driver": "ALO",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 9,
+      "gap_to_leader_s": 11.251
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival ANT pitted on lap 20 (0.4s away)",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L039-ALO-C",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 39,
+   "driver": "ALO",
+   "dp_type": "C",
+   "question": "It is lap 39 of 52. Decide for ALO: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 39,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "ALO",
+     "position": 15,
+     "compound": "MEDIUM",
+     "tyre_age": 2,
+     "compounds_used": [
+      "INTERMEDIATE",
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      102.516,
+      100.138,
+      136.801
+     ],
+     "car_ahead": {
+      "driver": "TSU",
+      "gap_s": 5.88,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 27
+     },
+     "car_behind": null
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 27,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 27,
+      "gap_to_leader_s": 1.86
+     },
+     {
+      "position": 3,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 29,
+      "gap_to_leader_s": 31.019
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 27,
+      "gap_to_leader_s": 32.171
+     },
+     {
+      "position": 5,
+      "driver": "STR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 28,
+      "gap_to_leader_s": 40.704
+     },
+     {
+      "position": 6,
+      "driver": "RUS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 28,
+      "gap_to_leader_s": 44.511
+     },
+     {
+      "position": 7,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 27,
+      "gap_to_leader_s": 45.616
+     },
+     {
+      "position": 8,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 27,
+      "gap_to_leader_s": 47.762
+     },
+     {
+      "position": 9,
+      "driver": "SAI",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 27,
+      "gap_to_leader_s": 54.55
+     },
+     {
+      "position": 10,
+      "driver": "LEC",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 28,
+      "gap_to_leader_s": 54.999
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival RUS pitted on lap 38 (0.4s away)",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L041-GAS-A",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 41,
+   "driver": "GAS",
+   "dp_type": "A",
+   "question": "It is lap 41 of 52. Decide for GAS: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 41,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "GAS",
+     "position": 6,
+     "compound": "INTERMEDIATE",
+     "tyre_age": 29,
+     "compounds_used": [
+      "INTERMEDIATE"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      102.926,
+      101.869,
+      102.307
+     ],
+     "car_ahead": {
+      "driver": "STR",
+      "gap_s": 4.841,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30
+     },
+     "car_behind": {
+      "driver": "VER",
+      "gap_s": 0.202,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 29
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 29,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 29,
+      "gap_to_leader_s": 1.435
+     },
+     {
+      "position": 3,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 31,
+      "gap_to_leader_s": 31.955
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 29,
+      "gap_to_leader_s": 34.443
+     },
+     {
+      "position": 5,
+      "driver": "STR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 45.69
+     },
+     {
+      "position": 6,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 29,
+      "gap_to_leader_s": 50.531
+     },
+     {
+      "position": 7,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 29,
+      "gap_to_leader_s": 50.733
+     },
+     {
+      "position": 8,
+      "driver": "LEC",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 56.422
+     },
+     {
+      "position": 9,
+      "driver": "SAI",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 29,
+      "gap_to_leader_s": 61.323
+     },
+     {
+      "position": 10,
+      "driver": "ALB",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 28,
+      "gap_to_leader_s": 62.184
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "MEDIUM",
+   "trigger": "own pit stop on lap 41",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L041-VER-A",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 41,
+   "driver": "VER",
+   "dp_type": "A",
+   "question": "It is lap 41 of 52. Decide for VER: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 41,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "VER",
+     "position": 7,
+     "compound": "INTERMEDIATE",
+     "tyre_age": 29,
+     "compounds_used": [
+      "INTERMEDIATE"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      101.19,
+      100.758,
+      101.474
+     ],
+     "car_ahead": {
+      "driver": "GAS",
+      "gap_s": 0.202,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 29
+     },
+     "car_behind": {
+      "driver": "LEC",
+      "gap_s": 5.689,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 29,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 29,
+      "gap_to_leader_s": 1.435
+     },
+     {
+      "position": 3,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 31,
+      "gap_to_leader_s": 31.955
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 29,
+      "gap_to_leader_s": 34.443
+     },
+     {
+      "position": 5,
+      "driver": "STR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 45.69
+     },
+     {
+      "position": 6,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 29,
+      "gap_to_leader_s": 50.531
+     },
+     {
+      "position": 7,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 29,
+      "gap_to_leader_s": 50.733
+     },
+     {
+      "position": 8,
+      "driver": "LEC",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 56.422
+     },
+     {
+      "position": 9,
+      "driver": "SAI",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 29,
+      "gap_to_leader_s": 61.323
+     },
+     {
+      "position": 10,
+      "driver": "ALB",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 28,
+      "gap_to_leader_s": 62.184
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "MEDIUM",
+   "trigger": "own pit stop on lap 41",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L042-GAS-C",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 42,
+   "driver": "GAS",
+   "dp_type": "C",
+   "question": "It is lap 42 of 52. Decide for GAS: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 42,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "GAS",
+     "position": 7,
+     "compound": "INTERMEDIATE",
+     "tyre_age": 30,
+     "compounds_used": [
+      "INTERMEDIATE"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      101.869,
+      102.307,
+      102.126
+     ],
+     "car_ahead": {
+      "driver": "VER",
+      "gap_s": 2.459,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30
+     },
+     "car_behind": {
+      "driver": "LEC",
+      "gap_s": 3.381,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 31
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 1.459
+     },
+     {
+      "position": 3,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 32,
+      "gap_to_leader_s": 33.398
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 34.723
+     },
+     {
+      "position": 5,
+      "driver": "STR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 31,
+      "gap_to_leader_s": 47.368
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 50.925
+     },
+     {
+      "position": 7,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 53.384
+     },
+     {
+      "position": 8,
+      "driver": "LEC",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 31,
+      "gap_to_leader_s": 56.765
+     },
+     {
+      "position": 9,
+      "driver": "SAI",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 62.314
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 31,
+      "gap_to_leader_s": 63.565
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival VER pitted on lap 41 (0.2s away)",
+   "changeable_conditions": true
+  },
+  {
+   "dp_id": "2025-silverstone-L042-VER-C",
+   "race_id": "2025-silverstone",
+   "season": 2025,
+   "lap": 42,
+   "driver": "VER",
+   "dp_type": "C",
+   "question": "It is lap 42 of 52. Decide for VER: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2025-silverstone",
+    "track": "Silverstone",
+    "total_laps": 52,
+    "current_lap": 42,
+    "weather": {
+     "air_temp_c": 17.9,
+     "track_temp_c": 23.6,
+     "rain": true
+    },
+    "track_status": "YELLOW",
+    "pit_loss_s": 24.38,
+    "focal": {
+     "driver": "VER",
+     "position": 6,
+     "compound": "INTERMEDIATE",
+     "tyre_age": 30,
+     "compounds_used": [
+      "INTERMEDIATE"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD",
+      "INTERMEDIATE",
+      "WET"
+     ],
+     "last_lap_times_s": [
+      100.758,
+      101.474,
+      99.465
+     ],
+     "car_ahead": {
+      "driver": "STR",
+      "gap_s": 3.557,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 31
+     },
+     "car_behind": {
+      "driver": "GAS",
+      "gap_s": 2.459,
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "NOR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 1.459
+     },
+     {
+      "position": 3,
+      "driver": "HUL",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 32,
+      "gap_to_leader_s": 33.398
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 34.723
+     },
+     {
+      "position": 5,
+      "driver": "STR",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 31,
+      "gap_to_leader_s": 47.368
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 50.925
+     },
+     {
+      "position": 7,
+      "driver": "GAS",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 53.384
+     },
+     {
+      "position": 8,
+      "driver": "LEC",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 31,
+      "gap_to_leader_s": 56.765
+     },
+     {
+      "position": 9,
+      "driver": "SAI",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 30,
+      "gap_to_leader_s": 62.314
+     },
+     {
+      "position": 10,
+      "driver": "BEA",
+      "compound": "INTERMEDIATE",
+      "tyre_age": 31,
+      "gap_to_leader_s": 63.565
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival GAS pitted on lap 41 (0.2s away)",
+   "changeable_conditions": true
+  }
+ ]
+}

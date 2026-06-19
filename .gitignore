@@ -15,9 +15,11 @@ __pycache__/
 build/
 dist/
 
-# Data is local-only (FastF1 cache is gigabytes)
+# Data: FastF1 cache is gigabytes — ignore everything except the frozen dataset
 data/*
 !data/.gitkeep
+!data/decision_points/
+data/decision_points/.gitkeep
 
 # Outputs: block everything, then allow published artifacts
 outputs/*
@@ -36,3 +38,8 @@ outputs/*
 Thumbs.db
 .DS_Store
 .gstack/
+
+# Claude Code tooling / internal build artifacts
+.claude/
+CLAUDE.md
+docs/build-process/

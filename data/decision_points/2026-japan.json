@@ -1,0 +1,2332 @@
+{
+ "race_id": "2026-japan",
+ "decision_points": [
+  {
+   "dp_id": "2026-japan-L015-LEC-A",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 15,
+   "driver": "LEC",
+   "dp_type": "A",
+   "question": "It is lap 15 of 53. Decide for LEC: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 15,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "LEC",
+     "position": 3,
+     "compound": "MEDIUM",
+     "tyre_age": 14,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      95.201,
+      95.408,
+      95.305
+     ],
+     "car_ahead": {
+      "driver": "RUS",
+      "gap_s": 2.797,
+      "compound": "MEDIUM",
+      "tyre_age": 14
+     },
+     "car_behind": {
+      "driver": "ANT",
+      "gap_s": 0.331,
+      "compound": "MEDIUM",
+      "tyre_age": 14
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 1.102
+     },
+     {
+      "position": 3,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 3.899
+     },
+     {
+      "position": 4,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 4.23
+     },
+     {
+      "position": 5,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 5.51
+     },
+     {
+      "position": 6,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 7.065
+     },
+     {
+      "position": 7,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 13.226
+     },
+     {
+      "position": 8,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 17.459
+     },
+     {
+      "position": 9,
+      "driver": "OCO",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 23.484
+     },
+     {
+      "position": 10,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 14,
+      "gap_to_leader_s": 26.766
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 17",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L016-COL-A",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 16,
+   "driver": "COL",
+   "dp_type": "A",
+   "question": "It is lap 16 of 53. Decide for COL: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 16,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "COL",
+     "position": 13,
+     "compound": "MEDIUM",
+     "tyre_age": 15,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      97.357,
+      96.909,
+      96.841
+     ],
+     "car_ahead": {
+      "driver": "LAW",
+      "gap_s": 0.956,
+      "compound": "MEDIUM",
+      "tyre_age": 15
+     },
+     "car_behind": {
+      "driver": "BOR",
+      "gap_s": 0.416,
+      "compound": "MEDIUM",
+      "tyre_age": 15
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 1.345
+     },
+     {
+      "position": 3,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 4.702
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 4.897
+     },
+     {
+      "position": 5,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 5.92
+     },
+     {
+      "position": 6,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 7.214
+     },
+     {
+      "position": 7,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 14.261
+     },
+     {
+      "position": 8,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 18.206
+     },
+     {
+      "position": 9,
+      "driver": "OCO",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 25.187
+     },
+     {
+      "position": 10,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 29.15
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 17",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L016-LEC-A",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 16,
+   "driver": "LEC",
+   "dp_type": "A",
+   "question": "It is lap 16 of 53. Decide for LEC: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 16,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "LEC",
+     "position": 4,
+     "compound": "MEDIUM",
+     "tyre_age": 15,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      95.408,
+      95.305,
+      95.903
+     ],
+     "car_ahead": {
+      "driver": "ANT",
+      "gap_s": 0.195,
+      "compound": "MEDIUM",
+      "tyre_age": 15
+     },
+     "car_behind": {
+      "driver": "NOR",
+      "gap_s": 1.023,
+      "compound": "MEDIUM",
+      "tyre_age": 15
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 1.345
+     },
+     {
+      "position": 3,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 4.702
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 4.897
+     },
+     {
+      "position": 5,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 5.92
+     },
+     {
+      "position": 6,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 7.214
+     },
+     {
+      "position": 7,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 14.261
+     },
+     {
+      "position": 8,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 18.206
+     },
+     {
+      "position": 9,
+      "driver": "OCO",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 25.187
+     },
+     {
+      "position": 10,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 29.15
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 17",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L016-LIN-A",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 16,
+   "driver": "LIN",
+   "dp_type": "A",
+   "question": "It is lap 16 of 53. Decide for LIN: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 16,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "LIN",
+     "position": 10,
+     "compound": "MEDIUM",
+     "tyre_age": 15,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      96.242,
+      96.534,
+      97.289
+     ],
+     "car_ahead": {
+      "driver": "OCO",
+      "gap_s": 3.963,
+      "compound": "MEDIUM",
+      "tyre_age": 15
+     },
+     "car_behind": {
+      "driver": "HAD",
+      "gap_s": 0.198,
+      "compound": "MEDIUM",
+      "tyre_age": 15
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 1.345
+     },
+     {
+      "position": 3,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 4.702
+     },
+     {
+      "position": 4,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 4.897
+     },
+     {
+      "position": 5,
+      "driver": "NOR",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 5.92
+     },
+     {
+      "position": 6,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 7.214
+     },
+     {
+      "position": 7,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 14.261
+     },
+     {
+      "position": 8,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 18.206
+     },
+     {
+      "position": 9,
+      "driver": "OCO",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 25.187
+     },
+     {
+      "position": 10,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 15,
+      "gap_to_leader_s": 29.15
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 18",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L018-ANT-C",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 18,
+   "driver": "ANT",
+   "dp_type": "C",
+   "question": "It is lap 18 of 53. Decide for ANT: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 18,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "ANT",
+     "position": 3,
+     "compound": "MEDIUM",
+     "tyre_age": 17,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      95.377,
+      96.164,
+      94.686
+     ],
+     "car_ahead": {
+      "driver": "RUS",
+      "gap_s": 3.921,
+      "compound": "MEDIUM",
+      "tyre_age": 17
+     },
+     "car_behind": {
+      "driver": "HAM",
+      "gap_s": 1.893,
+      "compound": "MEDIUM",
+      "tyre_age": 17
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 1.83
+     },
+     {
+      "position": 3,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 5.751
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 7.644
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 7.851
+     },
+     {
+      "position": 6,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 16.203
+     },
+     {
+      "position": 7,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 19.527
+     },
+     {
+      "position": 8,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 28.822
+     },
+     {
+      "position": 9,
+      "driver": "OCO",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 29.622
+     },
+     {
+      "position": 10,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 32.724
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival LEC pitted on lap 17 (0.7s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L018-LAW-C",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 18,
+   "driver": "LAW",
+   "dp_type": "C",
+   "question": "It is lap 18 of 53. Decide for LAW: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 18,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "LAW",
+     "position": 12,
+     "compound": "MEDIUM",
+     "tyre_age": 17,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      96.726,
+      96.822,
+      96.72
+     ],
+     "car_ahead": {
+      "driver": "HAD",
+      "gap_s": 0.752,
+      "compound": "MEDIUM",
+      "tyre_age": 17
+     },
+     "car_behind": {
+      "driver": "BOR",
+      "gap_s": 1.931,
+      "compound": "MEDIUM",
+      "tyre_age": 17
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "PIA",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 1.83
+     },
+     {
+      "position": 3,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 5.751
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 7.644
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 7.851
+     },
+     {
+      "position": 6,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 16.203
+     },
+     {
+      "position": 7,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 19.527
+     },
+     {
+      "position": 8,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 28.822
+     },
+     {
+      "position": 9,
+      "driver": "OCO",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 29.622
+     },
+     {
+      "position": 10,
+      "driver": "LIN",
+      "compound": "MEDIUM",
+      "tyre_age": 17,
+      "gap_to_leader_s": 32.724
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival COL pitted on lap 17 (0.8s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L019-ALO-A",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 19,
+   "driver": "ALO",
+   "dp_type": "A",
+   "question": "It is lap 19 of 53. Decide for ALO: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 19,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "ALO",
+     "position": 21,
+     "compound": "MEDIUM",
+     "tyre_age": 18,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      98.731,
+      98.303,
+      98.504
+     ],
+     "car_ahead": {
+      "driver": "STR",
+      "gap_s": 0.465,
+      "compound": "MEDIUM",
+      "tyre_age": 18
+     },
+     "car_behind": {
+      "driver": "BOT",
+      "gap_s": 9.538,
+      "compound": "HARD",
+      "tyre_age": 18
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 0.709
+     },
+     {
+      "position": 3,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 3.228
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 5.985
+     },
+     {
+      "position": 5,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 15.41
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 18.517
+     },
+     {
+      "position": 7,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 25.57
+     },
+     {
+      "position": 8,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 27.12
+     },
+     {
+      "position": 9,
+      "driver": "OCO",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 29.46
+     },
+     {
+      "position": 10,
+      "driver": "HAD",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 33.412
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 21",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L019-PER-A",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 19,
+   "driver": "PER",
+   "dp_type": "A",
+   "question": "It is lap 19 of 53. Decide for PER: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 19,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "GREEN",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "PER",
+     "position": 18,
+     "compound": "MEDIUM",
+     "tyre_age": 18,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      97.789,
+      97.91,
+      99.088
+     ],
+     "car_ahead": {
+      "driver": "COL",
+      "gap_s": 1.345,
+      "compound": "HARD",
+      "tyre_age": 1
+     },
+     "car_behind": {
+      "driver": "BEA",
+      "gap_s": 0.203,
+      "compound": "HARD",
+      "tyre_age": 2
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 0.709
+     },
+     {
+      "position": 3,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 3.228
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 5.985
+     },
+     {
+      "position": 5,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 15.41
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 18.517
+     },
+     {
+      "position": 7,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 25.57
+     },
+     {
+      "position": 8,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 27.12
+     },
+     {
+      "position": 9,
+      "driver": "OCO",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 29.46
+     },
+     {
+      "position": 10,
+      "driver": "HAD",
+      "compound": "MEDIUM",
+      "tyre_age": 18,
+      "gap_to_leader_s": 33.412
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "own pit stop on lap 21",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L021-BOR-B",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 21,
+   "driver": "BOR",
+   "dp_type": "B",
+   "question": "It is lap 21 of 53. Decide for BOR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 21,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "SC",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "BOR",
+     "position": 10,
+     "compound": "MEDIUM",
+     "tyre_age": 20,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      96.582,
+      96.561,
+      96.022
+     ],
+     "car_ahead": {
+      "driver": "LAW",
+      "gap_s": 1.334,
+      "compound": "MEDIUM",
+      "tyre_age": 20
+     },
+     "car_behind": {
+      "driver": "HUL",
+      "gap_s": 0.51,
+      "compound": "MEDIUM",
+      "tyre_age": 20
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 2.302
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 6.623
+     },
+     {
+      "position": 4,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 17.23
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 20.194
+     },
+     {
+      "position": 6,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 20.51
+     },
+     {
+      "position": 7,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 24.752
+     },
+     {
+      "position": 8,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 25.666
+     },
+     {
+      "position": 9,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 38.122
+     },
+     {
+      "position": 10,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 39.456
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "SC deployed on lap 21",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L021-LAW-B",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 21,
+   "driver": "LAW",
+   "dp_type": "B",
+   "question": "It is lap 21 of 53. Decide for LAW: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 21,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "SC",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "LAW",
+     "position": 9,
+     "compound": "MEDIUM",
+     "tyre_age": 20,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      96.604,
+      96.716,
+      96.442
+     ],
+     "car_ahead": {
+      "driver": "NOR",
+      "gap_s": 12.456,
+      "compound": "HARD",
+      "tyre_age": 4
+     },
+     "car_behind": {
+      "driver": "BOR",
+      "gap_s": 1.334,
+      "compound": "MEDIUM",
+      "tyre_age": 20
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 2.302
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 6.623
+     },
+     {
+      "position": 4,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 17.23
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 20.194
+     },
+     {
+      "position": 6,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 20.51
+     },
+     {
+      "position": 7,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 24.752
+     },
+     {
+      "position": 8,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 25.666
+     },
+     {
+      "position": 9,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 38.122
+     },
+     {
+      "position": 10,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 39.456
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "SC deployed on lap 21",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L021-LEC-B",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 21,
+   "driver": "LEC",
+   "dp_type": "B",
+   "question": "It is lap 21 of 53. Decide for LEC: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 21,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "SC",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "LEC",
+     "position": 7,
+     "compound": "HARD",
+     "tyre_age": 3,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      114.337,
+      94.426,
+      94.266
+     ],
+     "car_ahead": {
+      "driver": "PIA",
+      "gap_s": 4.242,
+      "compound": "HARD",
+      "tyre_age": 2
+     },
+     "car_behind": {
+      "driver": "NOR",
+      "gap_s": 0.914,
+      "compound": "HARD",
+      "tyre_age": 4
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 2.302
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 6.623
+     },
+     {
+      "position": 4,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 17.23
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 20.194
+     },
+     {
+      "position": 6,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 20.51
+     },
+     {
+      "position": 7,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 24.752
+     },
+     {
+      "position": 8,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 25.666
+     },
+     {
+      "position": 9,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 38.122
+     },
+     {
+      "position": 10,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 39.456
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "SC deployed on lap 21",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L021-NOR-B",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 21,
+   "driver": "NOR",
+   "dp_type": "B",
+   "question": "It is lap 21 of 53. Decide for NOR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 21,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "SC",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "NOR",
+     "position": 8,
+     "compound": "HARD",
+     "tyre_age": 4,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      94.916,
+      94.285,
+      93.771
+     ],
+     "car_ahead": {
+      "driver": "LEC",
+      "gap_s": 0.914,
+      "compound": "HARD",
+      "tyre_age": 3
+     },
+     "car_behind": {
+      "driver": "LAW",
+      "gap_s": 12.456,
+      "compound": "MEDIUM",
+      "tyre_age": 20
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 2.302
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 6.623
+     },
+     {
+      "position": 4,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 17.23
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 20.194
+     },
+     {
+      "position": 6,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 20.51
+     },
+     {
+      "position": 7,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 24.752
+     },
+     {
+      "position": 8,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 25.666
+     },
+     {
+      "position": 9,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 38.122
+     },
+     {
+      "position": 10,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 39.456
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "SC deployed on lap 21",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L021-PIA-B",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 21,
+   "driver": "PIA",
+   "dp_type": "B",
+   "question": "It is lap 21 of 53. Decide for PIA: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 21,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "SC",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "PIA",
+     "position": 6,
+     "compound": "HARD",
+     "tyre_age": 2,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      97.327,
+      114.537,
+      94.774
+     ],
+     "car_ahead": {
+      "driver": "VER",
+      "gap_s": 0.316,
+      "compound": "MEDIUM",
+      "tyre_age": 20
+     },
+     "car_behind": {
+      "driver": "LEC",
+      "gap_s": 4.242,
+      "compound": "HARD",
+      "tyre_age": 3
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 2.302
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 6.623
+     },
+     {
+      "position": 4,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 17.23
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 20.194
+     },
+     {
+      "position": 6,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 20.51
+     },
+     {
+      "position": 7,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 24.752
+     },
+     {
+      "position": 8,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 25.666
+     },
+     {
+      "position": 9,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 38.122
+     },
+     {
+      "position": 10,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 39.456
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "SC deployed on lap 21",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L021-VER-B",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 21,
+   "driver": "VER",
+   "dp_type": "B",
+   "question": "It is lap 21 of 53. Decide for VER: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 21,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "SC",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "VER",
+     "position": 5,
+     "compound": "MEDIUM",
+     "tyre_age": 20,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      95.608,
+      95.587,
+      95.6
+     ],
+     "car_ahead": {
+      "driver": "GAS",
+      "gap_s": 2.964,
+      "compound": "MEDIUM",
+      "tyre_age": 20
+     },
+     "car_behind": {
+      "driver": "PIA",
+      "gap_s": 0.316,
+      "compound": "HARD",
+      "tyre_age": 2
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 2.302
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 6.623
+     },
+     {
+      "position": 4,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 17.23
+     },
+     {
+      "position": 5,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 20.194
+     },
+     {
+      "position": 6,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 20.51
+     },
+     {
+      "position": 7,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 24.752
+     },
+     {
+      "position": 8,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 25.666
+     },
+     {
+      "position": 9,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 38.122
+     },
+     {
+      "position": 10,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 20,
+      "gap_to_leader_s": 39.456
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "SC deployed on lap 21",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L022-STR-C",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 22,
+   "driver": "STR",
+   "dp_type": "C",
+   "question": "It is lap 22 of 53. Decide for STR: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 22,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "SC",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "STR",
+     "position": 19,
+     "compound": "MEDIUM",
+     "tyre_age": 21,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      98.372,
+      98.406,
+      111.658
+     ],
+     "car_ahead": {
+      "driver": "PER",
+      "gap_s": 11.659,
+      "compound": "MEDIUM",
+      "tyre_age": 21
+     },
+     "car_behind": {
+      "driver": "ALO",
+      "gap_s": 7.832,
+      "compound": "MEDIUM",
+      "tyre_age": 21
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 21,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "RUS",
+      "compound": "MEDIUM",
+      "tyre_age": 21,
+      "gap_to_leader_s": 0.255
+     },
+     {
+      "position": 3,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 21,
+      "gap_to_leader_s": 5.383
+     },
+     {
+      "position": 4,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 21,
+      "gap_to_leader_s": 16.635
+     },
+     {
+      "position": 5,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 3,
+      "gap_to_leader_s": 18.27
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 21,
+      "gap_to_leader_s": 20.068
+     },
+     {
+      "position": 7,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 22.634
+     },
+     {
+      "position": 8,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 23.577
+     },
+     {
+      "position": 9,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 21,
+      "gap_to_leader_s": 38.052
+     },
+     {
+      "position": 10,
+      "driver": "BOR",
+      "compound": "MEDIUM",
+      "tyre_age": 21,
+      "gap_to_leader_s": 39.031
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival ALO pitted on lap 21 (0.5s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L023-HUL-C",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 23,
+   "driver": "HUL",
+   "dp_type": "C",
+   "question": "It is lap 23 of 53. Decide for HUL: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 23,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "SC",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "HUL",
+     "position": 9,
+     "compound": "MEDIUM",
+     "tyre_age": 22,
+     "compounds_used": [
+      "MEDIUM"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      95.655,
+      95.944,
+      124.599
+     ],
+     "car_ahead": {
+      "driver": "NOR",
+      "gap_s": 20.142,
+      "compound": "HARD",
+      "tyre_age": 6
+     },
+     "car_behind": {
+      "driver": "LAW",
+      "gap_s": 0.107,
+      "compound": "MEDIUM",
+      "tyre_age": 22
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 22,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 22,
+      "gap_to_leader_s": 8.926
+     },
+     {
+      "position": 3,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 23.866
+     },
+     {
+      "position": 4,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 22,
+      "gap_to_leader_s": 24.219
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 26.142
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 22,
+      "gap_to_leader_s": 28.448
+     },
+     {
+      "position": 7,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 29.564
+     },
+     {
+      "position": 8,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 30.741
+     },
+     {
+      "position": 9,
+      "driver": "HUL",
+      "compound": "MEDIUM",
+      "tyre_age": 22,
+      "gap_to_leader_s": 50.883
+     },
+     {
+      "position": 10,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 22,
+      "gap_to_leader_s": 50.99
+     }
+    ]
+   },
+   "team_action": "PIT",
+   "team_compound": "HARD",
+   "trigger": "rival BOR pitted on lap 22 (0.6s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L023-RUS-C",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 23,
+   "driver": "RUS",
+   "dp_type": "C",
+   "question": "It is lap 23 of 53. Decide for RUS: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 23,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "SC",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "RUS",
+     "position": 5,
+     "compound": "HARD",
+     "tyre_age": 1,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      94.523,
+      96.505,
+      139.263
+     ],
+     "car_ahead": {
+      "driver": "GAS",
+      "gap_s": 1.923,
+      "compound": "MEDIUM",
+      "tyre_age": 22
+     },
+     "car_behind": {
+      "driver": "VER",
+      "gap_s": 2.306,
+      "compound": "MEDIUM",
+      "tyre_age": 22
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "ANT",
+      "compound": "MEDIUM",
+      "tyre_age": 22,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "HAM",
+      "compound": "MEDIUM",
+      "tyre_age": 22,
+      "gap_to_leader_s": 8.926
+     },
+     {
+      "position": 3,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 4,
+      "gap_to_leader_s": 23.866
+     },
+     {
+      "position": 4,
+      "driver": "GAS",
+      "compound": "MEDIUM",
+      "tyre_age": 22,
+      "gap_to_leader_s": 24.219
+     },
+     {
+      "position": 5,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 26.142
+     },
+     {
+      "position": 6,
+      "driver": "VER",
+      "compound": "MEDIUM",
+      "tyre_age": 22,
+      "gap_to_leader_s": 28.448
+     },
+     {
+      "position": 7,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 29.564
+     },
+     {
+      "position": 8,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 30.741
+     },
+     {
+      "position": 9,
+      "driver": "HUL",
+      "compound": "MEDIUM",
+      "tyre_age": 22,
+      "gap_to_leader_s": 50.883
+     },
+     {
+      "position": 10,
+      "driver": "LAW",
+      "compound": "MEDIUM",
+      "tyre_age": 22,
+      "gap_to_leader_s": 50.99
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival ANT pitted on lap 22 (0.3s away)",
+   "changeable_conditions": false
+  },
+  {
+   "dp_id": "2026-japan-L024-LAW-C",
+   "race_id": "2026-japan",
+   "season": 2026,
+   "lap": 24,
+   "driver": "LAW",
+   "dp_type": "C",
+   "question": "It is lap 24 of 53. Decide for LAW: pit at the end of this lap, or stay out? If pitting, choose the new compound.",
+   "state": {
+    "race_id": "2026-japan",
+    "track": "Suzuka",
+    "total_laps": 53,
+    "current_lap": 24,
+    "weather": {
+     "air_temp_c": 18.6,
+     "track_temp_c": 34.1,
+     "rain": false
+    },
+    "track_status": "SC",
+    "pit_loss_s": 25.42,
+    "focal": {
+     "driver": "LAW",
+     "position": 10,
+     "compound": "HARD",
+     "tyre_age": 1,
+     "compounds_used": [
+      "MEDIUM",
+      "HARD"
+     ],
+     "compounds_available": [
+      "SOFT",
+      "MEDIUM",
+      "HARD"
+     ],
+     "last_lap_times_s": [
+      96.18,
+      126.314,
+      144.976
+     ],
+     "car_ahead": {
+      "driver": "HUL",
+      "gap_s": 15.664,
+      "compound": "MEDIUM",
+      "tyre_age": 23
+     },
+     "car_behind": {
+      "driver": "BOR",
+      "gap_s": 1.654,
+      "compound": "HARD",
+      "tyre_age": 1
+     }
+    },
+    "top10": [
+     {
+      "position": 1,
+      "driver": "ANT",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 0.0
+     },
+     {
+      "position": 2,
+      "driver": "PIA",
+      "compound": "HARD",
+      "tyre_age": 5,
+      "gap_to_leader_s": 2.856
+     },
+     {
+      "position": 3,
+      "driver": "RUS",
+      "compound": "HARD",
+      "tyre_age": 2,
+      "gap_to_leader_s": 4.325
+     },
+     {
+      "position": 4,
+      "driver": "HAM",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 6.424
+     },
+     {
+      "position": 5,
+      "driver": "LEC",
+      "compound": "HARD",
+      "tyre_age": 6,
+      "gap_to_leader_s": 7.717
+     },
+     {
+      "position": 6,
+      "driver": "NOR",
+      "compound": "HARD",
+      "tyre_age": 7,
+      "gap_to_leader_s": 10.406
+     },
+     {
+      "position": 7,
+      "driver": "GAS",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 13.019
+     },
+     {
+      "position": 8,
+      "driver": "VER",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 14.089
+     },
+     {
+      "position": 9,
+      "driver": "HUL",
+      "compound": "MEDIUM",
+      "tyre_age": 23,
+      "gap_to_leader_s": 20.381
+     },
+     {
+      "position": 10,
+      "driver": "LAW",
+      "compound": "HARD",
+      "tyre_age": 1,
+      "gap_to_leader_s": 36.045
+     }
+    ]
+   },
+   "team_action": "STAY",
+   "team_compound": null,
+   "trigger": "rival HUL pitted on lap 23 (0.1s away)",
+   "changeable_conditions": false
+  }
+ ]
+}
