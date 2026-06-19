@@ -1,5 +1,7 @@
 # BOXBOX
 
+[![CI](https://github.com/AnassNadeem/BoxBox/actions/workflows/ci.yml/badge.svg)](https://github.com/AnassNadeem/BoxBox/actions/workflows/ci.yml)
+
 **Can frontier LLMs call an F1 race?**
 
 BOXBOX is a contamination-resistant benchmark that tests whether large language models can make Formula 1 pit-stop strategy decisions in real time. We reconstruct *decision points* from real 2026 races — *pit now or stay out? which compound?* — feed the identical frozen race state to five frontier models, and score every call against an ex-ante optimal strategy computed by a race simulator.
@@ -73,10 +75,13 @@ Real model runs require `.env` with `OPENROUTER_API_KEY` and `ALLOW_SPEND=1` (se
 
 ```bash
 python scripts/verify_models.py          # verify model IDs against OpenRouter
-python scripts/run_benchmark.py          # live run (~$13 for 5 models × 177 DPs)
-python scripts/run_consistency_probe.py  # 5 reruns on top-disagreement DPs
+python scripts/run_benchmark.py          # main pass only (flexible: --models, --limit)
+python scripts/run_full_benchmark.py     # main pass + probe in one shot (paper run)
+python scripts/run_consistency_probe.py  # probe only, after a completed main pass
 python analysis/figures.py               # regenerate all paper figures
 ```
+
+> **`run_benchmark.py` vs `run_full_benchmark.py`:** Use `run_benchmark.py` for development — it accepts `--models`, `--limit`, and `--mock` flags for partial or mock runs. `run_full_benchmark.py` is the locked-down paper run: it executes the full preregistered roster (5 models × all DPs) plus the consistency probe in sequence on a single shared spend cap, with no flags needed. Both write to `outputs/raw_results/`; run `score_results.py` afterwards in either case.
 
 ---
 
@@ -144,6 +149,7 @@ DecisionPoints  ←  rule-based extractor (pit neighborhoods,       │
 | `outputs/hypothesis_tests.md` | Pre-registered H1/H2/H3 statistical tests |
 | `outputs/contamination.md` | Per-model contamination analysis |
 | `outputs/cost_ledger.csv` | Per-call token + cost tracking |
+| `outputs/fable_comparison.md` | Claude Fable 5 exploratory data points (export-control withdrawal context) |
 | `outputs/figures/` | All paper figures (PNG) |
 
 ---
@@ -173,6 +179,6 @@ git show prereg-v4 --no-patch --format="%H %ai %s"
 
 ## Paper
 
-Full manuscript: [`paper/boxbox_final_complete.md`](paper/boxbox_final_complete.md)
+Full manuscript: [`paper/BOXBOX_Report.pdf`](paper/BOXBOX_Report.pdf)
 
 Muhammad Anas Nadeem · Department of Computer Science, Brunel University London
