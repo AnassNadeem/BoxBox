@@ -31,9 +31,9 @@ Because every completed 2026 race postdates all models' training data, the 2026 
 - Model price does not predict decision quality: the cheapest (open-weight) model has the lowest mean delta, and there is no evidence costlier models decide better.
 - Accuracy and self-consistency diverge: Claude Haiku 4.5 never flips (0.0%) and Opus rarely does (5.6%), while GPT-5.5 flips on half the probed points — the most accurate model is among the least consistent.
 - All models show median delta = 0 — they mostly stay out when the team stays out, but are penalised on the minority of laps where the optimal call is to pit.
-- **Contamination test:** a weak, inconsistent signal — deepseek-v3.2 and gemini-3.1-pro score significantly better on 2024-25 than 2026 (the recall direction), but gpt-5.5 and claude-haiku-4.5 go the opposite way and a same-circuit (Monaco ×3) comparison shows no consistent advantage. See the paper's Section 4.5.
+- **Mixed contamination signal** (Mann-Whitney U, Holm-corrected): deepseek-v3.2 and gemini-3.1-pro do slightly better on 2024-25 races (weak recall direction), but gpt-5.5 and claude-haiku-4.5 do significantly *worse* on older races (opposite direction), and claude-opus-4.8 shows no gap. The signal is too weak and inconsistent to overturn the rankings. A same-circuit comparison (Monaco, all three seasons) shows no consistent pattern. See the paper's Section 4.5.
 
-### Robustness check (all 177 dry decision points)
+### Robustness check — full set (177 dry decision points, all 3 seasons)
 
 The full set pools all three seasons (177 dry DPs, 883 valid scored calls). DeepSeek remains first; the middle of the table reorders, consistent with overlapping confidence intervals (paper Appendix C).
 
