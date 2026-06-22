@@ -6,6 +6,8 @@ BOXBOX is a contamination-resistant benchmark that tests whether large language 
 
 Because every completed 2026 race postdates all models' training data, the 2026 test set is **designed to resist contamination by construction**. A direct test against a 2024/2025 control set finds a weak, inconsistent signal rather than a clean null — see Section 4.5 of the paper. Contamination resistance is a matter of degree, not a guarantee.
 
+[![Contamination Check](https://github.com/AnassNadeem/BoxBox/raw/main/outputs/figures/season_gap.png)](outputs/figures/season_gap.png)
+
 A sixth model, Claude Fable 5, was in the original design but became unavailable due to a US export-control directive before the main run. It answered 3 decision points during connectivity testing; these are reported as an exploratory observation in the paper (Section 4.6), not on the leaderboard.
 
 ---
@@ -29,6 +31,8 @@ A sixth model, Claude Fable 5, was in the original design but became unavailable
 - **All models lose to the human pit wall.** Beat-team rate is 16–24% across the board (binomial p < 1e-8 for each). Caveat: real teams had telemetry, tyre sensors, and radio the models did not — this is a text agent vs a fully-resourced team.
 - **Price does not predict quality.** DeepSeek V3.2 (open-weight, ~100x cheaper than the flagships) achieves the lowest mean error. The confidence intervals overlap, so the honest claim is: paying more bought no measurable improvement.
 - **Accuracy ≠ consistency.** The most accurate model reverses its own call ~40% of the time on identical repeated inputs. GPT-5.5 flips on half. Claude Haiku never flips but is least accurate. These are distinct, weakly-correlated properties that must be measured separately.
+
+[![Accuracy vs Consistency](https://github.com/AnassNadeem/BoxBox/raw/main/outputs/figures/accuracy_vs_consistency.png)](outputs/figures/accuracy_vs_consistency.png)
 
 ### Robustness check — full set (177 dry decision points · all 11 races)
 
@@ -58,18 +62,18 @@ A sixth model, Claude Fable 5, was in the original design but became unavailable
 
 ```bash
 pip install -r requirements.txt
-pytest                                   # 61 tests, all green
-python scripts/build_dataset.py          # ingest → extract → data/decision_points/
-python scripts/run_benchmark.py --mock   # mock mode: $0, fully deterministic
-python scripts/score_results.py          # scores → outputs/leaderboard.{md,csv,json}
+pytest                                    # 61 tests, all green
+python scripts/build_dataset.py           # ingest → extract → data/decision_points/
+python scripts/run_benchmark.py --mock    # mock mode: $0, fully deterministic
+python scripts/score_results.py           # scores → outputs/leaderboard.{md,csv,json}
 ```
 
 Real model runs require `.env` with `OPENROUTER_API_KEY` and `ALLOW_SPEND=1` (see `.env.example`).
 
 ```bash
-python scripts/run_benchmark.py          # live run (~$13 for 5 models × 177 DPs)
-python scripts/run_consistency_probe.py  # 5 reruns on top-disagreement DPs
-python analysis/figures.py               # regenerate all paper figures
+python scripts/run_benchmark.py           # live run (~$13 for 5 models × 177 DPs)
+python scripts/run_consistency_probe.py   # 5 reruns on top-disagreement DPs
+python analysis/figures.py                # regenerate all paper figures
 ```
 
 ---
@@ -83,11 +87,6 @@ python analysis/figures.py               # regenerate all paper figures
 | 3 | **Simulate** `boxbox.sim` | Per-car tyre-degradation fits + pit-loss estimates → ex-ante optimum (no future SC knowledge) |
 | 4 | **Harness** `boxbox.harness` | Identical prompts to every model via OpenRouter, strict JSON answers, SHA-256 disk cache, cost ledger, mock mode |
 | 5 | **Score** `boxbox.score` | `Δ_exante = sim(model action) − sim(ex-ante optimal)` → beat-team rate, flip rate, invalid rate → leaderboard |
-1. **Ingest** — FastF1 (OpenF1 fallback) → normalised `RaceData`.
-2. **Extract** — rule-based Type A/B/C decision points. State at lap *t* contains zero information from after lap *t*. Leakage is tested by an automated assertion.
-3. **Simulate** — per-car tyre-degradation fits + pit-loss estimates → ex-ante optimum (no future SC knowledge).
-4. **Harness** — identical prompts to every model via OpenRouter, strict JSON answers, SHA-256 disk cache, cost ledger, mock mode.
-5. **Score** — `Δ_exante = sim(model action) − sim(ex-ante optimal)`; plus beat-the-team rate, flip rate, invalid rate → leaderboard.
 
 ---
 
@@ -121,10 +120,16 @@ git show prereg-v4 --no-patch --format="%H %ai %s"
 
 Full manuscript: [`paper/boxbox_final_complete.md`](paper/boxbox_final_complete.md)
 
-**Muhammad Anas Nadeem** · Department of Computer Science, Brunel University London
-
 ---
 
 ## Cost
 
 Total model-inference spend: **~$13.46** across the main pass, consistency probe, and re-runs. Preregistered spend cap of $20 was never reached.
+
+---
+
+## Author
+
+**Muhammad Anas Nadeem**  
+Department of Computer Science, Brunel University London  
+[anass.nadeem42@gmail.com](mailto:anass.nadeem42@gmail.com) · [LinkedIn](https://www.linkedin.com/in/anass-nadeem/)
