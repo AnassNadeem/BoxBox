@@ -1,62 +1,56 @@
 # BOXBOX
 
-[![CI](https://github.com/AnassNadeem/BoxBox/actions/workflows/ci.yml/badge.svg)](https://github.com/AnassNadeem/BoxBox/actions/workflows/ci.yml)
-
 **Can frontier LLMs call an F1 race?**
 
-BOXBOX is a contamination-resistant benchmark that tests whether large language models can make Formula 1 pit-stop strategy decisions in real time. We reconstruct *decision points* from real 2026 races — *pit now or stay out? which compound?* — feed the identical frozen race state to five frontier models, and score every call against an ex-ante optimal strategy computed by a race simulator.
+BOXBOX is a contamination-resistant benchmark that tests whether large language models can make Formula 1 pit-stop strategy decisions. We reconstruct *decision points* from real 2026 races — *pit now or stay out? which compound?* — feed the identical frozen race state to five frontier models, and score every call against an ex-ante optimal strategy computed by a calibrated race simulator.
 
-Because every completed 2026 race postdates all models' training data, the 2026 test set is designed to resist contamination by construction. A direct test against a 2024/2025 control set finds a weak and inconsistent signal — see the paper's Section 4.5 for the full result and its caveats.
+Because every completed 2026 race postdates all models' training data, the 2026 test set is **designed to resist contamination by construction**. A direct test against a 2024/2025 control set finds a weak, inconsistent signal rather than a clean null — see Section 4.5 of the paper. Contamination resistance is a matter of degree, not a guarantee.
 
-*A sixth model, Claude Fable 5, was in the original design but became unavailable due to an export-control directive before the main run — see the paper's Section 4.6 for the 3 data points it produced before withdrawal.*
+A sixth model, Claude Fable 5, was in the original design but became unavailable due to a US export-control directive before the main run. It answered 3 decision points during connectivity testing; these are reported as an exploratory observation in the paper (Section 4.6), not on the leaderboard.
 
 ---
 
-## Results (primary set: 125 dry decision points · 2026 season · 5 models)
+## Results — primary 2026 set (125 dry decision points · 7 races · 5 models)
 
-![Leaderboard bar chart](outputs/figures/leaderboard_bar.png)
+[![Leaderboard bar chart](https://github.com/AnassNadeem/BoxBox/raw/main/outputs/figures/leaderboard_bar.png)](outputs/figures/leaderboard_bar.png)
 
-| # | Model | Mean Δ ex-ante (s) ↓ | Median (s) | Beat team % | Flip rate % |
-|---|-------|---------------------:|------------|------------:|------------:|
-| 1 | deepseek-v3.2 | **4.93** | 0.0 | 19.2% | 38.9% |
-| 2 | gpt-5.5 | 8.08 | 0.0 | 19.4% | 50.0% |
-| 3 | gemini-3.1-pro | 8.08 | 0.0 | 20.0% | 22.2% |
-| 4 | claude-haiku-4.5 | 8.81 | 0.0 | 16.0% | 0.0% |
-| 5 | claude-opus-4.8 | 9.21 | 0.0 | **24.0%** | **5.6%** |
+| # | Model | Mean Δ (s) ↓ | 95% CI | Beat team % | Flip rate % |
+|---|---|---|---|---|---|
+| 1 | DeepSeek V3.2 | **4.93** | [1.55, 9.26] | 19.2% | 38.9% |
+| 2 | GPT-5.5 | 8.08 | [5.16, 11.36] | 19.4% | 50.0% |
+| 2 | Gemini 3.1 Pro | 8.08 | [4.95, 11.50] | 20.0% | 22.2% |
+| 4 | Claude Haiku 4.5 | 8.81 | [5.53, 12.43] | 16.0% | 0.0% |
+| 5 | Claude Opus 4.8 | 9.21 | [5.87, 12.87] | 24.0% | 5.6% |
 
-*Primary metric: **mean Δ ex-ante** — seconds lost vs. the no-future-SC optimal strategy (lower is better). Primary set = the 125 dry decision points from the post-cutoff 2026 season (matches paper Table 2).*
+*Lower mean Δ is better. Confidence intervals from 10,000-sample bootstrap. Confidence intervals for positions 2–5 overlap substantially — the middle four models are broadly indistinguishable.*
 
-**Key findings:**
-- DeepSeek V3.2 leads on raw accuracy but reverses its own call on identical inputs ~2 in 5 times (flip rate 38.9%).
-- Model price does not predict decision quality: the cheapest (open-weight) model has the lowest mean delta, and there is no evidence costlier models decide better.
-- Accuracy and self-consistency diverge: Claude Haiku 4.5 never flips (0.0%) and Opus rarely does (5.6%), while GPT-5.5 flips on half the probed points — the most accurate model is among the least consistent.
-- All models show median delta = 0 — they mostly stay out when the team stays out, but are penalised on the minority of laps where the optimal call is to pit.
-- **Mixed contamination signal** (Mann-Whitney U, Holm-corrected): deepseek-v3.2 and gemini-3.1-pro do slightly better on 2024-25 races (weak recall direction), but gpt-5.5 and claude-haiku-4.5 do significantly *worse* on older races (opposite direction), and claude-opus-4.8 shows no gap. The signal is too weak and inconsistent to overturn the rankings. A same-circuit comparison (Monaco, all three seasons) shows no consistent pattern. See the paper's Section 4.5.
+**Three headline findings:**
 
-### Robustness check — full set (177 dry decision points, all 3 seasons)
+- **All models lose to the human pit wall.** Beat-team rate is 16–24% across the board (binomial p < 1e-8 for each). Caveat: real teams had telemetry, tyre sensors, and radio the models did not — this is a text agent vs a fully-resourced team.
+- **Price does not predict quality.** DeepSeek V3.2 (open-weight, ~100x cheaper than the flagships) achieves the lowest mean error. The confidence intervals overlap, so the honest claim is: paying more bought no measurable improvement.
+- **Accuracy ≠ consistency.** The most accurate model reverses its own call ~40% of the time on identical repeated inputs. GPT-5.5 flips on half. Claude Haiku never flips but is least accurate. These are distinct, weakly-correlated properties that must be measured separately.
 
-The full set pools all three seasons (177 dry DPs, 883 valid scored calls). DeepSeek remains first; the middle of the table reorders, consistent with overlapping confidence intervals (paper Appendix C).
+### Robustness check — full set (177 dry decision points · all 11 races)
 
-| # | Model | Mean Δ ex-ante (s) ↓ | Median (s) | Beat team % | Flip rate % |
-|---|-------|---------------------:|------------|------------:|------------:|
-| 1 | deepseek-v3.2 | **4.74** | 0.0 | 18.1% | 38.9% |
-| 2 | gemini-3.1-pro | 7.11 | 0.0 | 18.2% | 22.2% |
-| 3 | claude-opus-4.8 | 7.34 | 0.0 | **21.5%** | **5.6%** |
-| 4 | gpt-5.5 | 8.54 | 0.5 | 17.6% | 50.0% |
-| 5 | claude-haiku-4.5 | 12.66 | 0.0 | 15.3% | 0.0% |
+| # | Model | Mean Δ (s) ↓ | Beat team % | Flip rate % |
+|---|---|---|---|---|
+| 1 | DeepSeek V3.2 | **4.74** | 18.1% | 38.9% |
+| 2 | Gemini 3.1 Pro | 7.11 | 18.2% | 22.2% |
+| 3 | Claude Opus 4.8 | 7.34 | 21.5% | 5.6% |
+| 4 | GPT-5.5 | 8.54 | 17.6% | 50.0% |
+| 5 | Claude Haiku 4.5 | 12.66 | 15.3% | 0.0% |
 
-*Dry subset of all 11 races; 19 changeable-condition DPs excluded from the 196 total (v1 simulator cannot model wet→dry crossovers).*
+*The reordering between sets is consistent with overlapping confidence intervals — positions 2–5 should not be treated as a strict ranking.*
 
 ---
 
 ## Races
 
-| Set | Races | Decision points |
-|-----|-------|-----------------|
-| **2026 (primary, post-cutoff)** | Australia, China, Japan, Miami, Monaco, Canada, Barcelona | 125 dry DPs (+1 excluded, wet) |
-| **2024/25 (contamination control)** | Bahrain 2024, Monaco 2024, Monaco 2025, Silverstone 2025 | 52 dry DPs (+18 excluded, wet) |
-
-*177 dry decision points total (196 including changeable-condition exclusions).*
+| Set | Races | Dry decision points |
+|---|---|---|
+| **2026 primary (post-cutoff)** | Australia, China, Japan, Miami, Canada, Monaco, Barcelona-Catalunya | 125 |
+| **2024/25 control** | Bahrain 2024, Monaco 2024, Monaco 2025, Silverstone 2025 | 52 (+ 18 excluded wet) |
+| **Total** | 11 races | 177 dry / 196 total |
 
 ---
 
@@ -64,101 +58,44 @@ The full set pools all three seasons (177 dry DPs, 883 valid scored calls). Deep
 
 ```bash
 pip install -r requirements.txt
-pytest                                   # all tests green
-python scripts/build_dataset.py          # ingest -> extract -> data/decision_points/
+pytest                                   # 61 tests, all green
+python scripts/build_dataset.py          # ingest → extract → data/decision_points/
 python scripts/run_benchmark.py --mock   # mock mode: $0, fully deterministic
-python scripts/score_results.py          # scores -> outputs/leaderboard.{md,csv,json}
-python -m boxbox.live.replay --race monaco-2026 --speed 60 --mock
+python scripts/score_results.py          # scores → outputs/leaderboard.{md,csv,json}
 ```
 
 Real model runs require `.env` with `OPENROUTER_API_KEY` and `ALLOW_SPEND=1` (see `.env.example`).
 
 ```bash
-python scripts/verify_models.py          # verify model IDs against OpenRouter
-python scripts/run_benchmark.py          # main pass only (flexible: --models, --limit)
-python scripts/run_full_benchmark.py     # main pass + probe in one shot (paper run)
-python scripts/run_consistency_probe.py  # probe only, after a completed main pass
+python scripts/run_benchmark.py          # live run (~$13 for 5 models × 177 DPs)
+python scripts/run_consistency_probe.py  # 5 reruns on top-disagreement DPs
 python analysis/figures.py               # regenerate all paper figures
 ```
-
-> **`run_benchmark.py` vs `run_full_benchmark.py`:** Use `run_benchmark.py` for development — it accepts `--models`, `--limit`, and `--mock` flags for partial or mock runs. `run_full_benchmark.py` is the locked-down paper run: it executes the full preregistered roster (5 models × all DPs) plus the consistency probe in sequence on a single shared spend cap, with no flags needed. Both write to `outputs/raw_results/`; run `score_results.py` afterwards in either case.
 
 ---
 
 ## How it works
 
-```
-FastF1 / OpenF1
-      │
-      ▼
-  RaceData  ──────────────────────────────────────────────────────┐
-      │                                                            │
-      ▼                                                            │
-DecisionPoints  ←  rule-based extractor (pit neighborhoods,       │
-  (Type A/B/C)      SC/VSC moments, undercut threats)             │
-      │                                                            │
-      ▼                                                            │
-  Harness  ──→  OpenRouter  ──→  model responses (JSON)           │
-      │                                                            │
-      ▼                                                            │
-  Simulator  ←─────────────────────────────────────────────────────┘
-  (per-car degradation fit + counterfactual rollout)
-      │
-      ▼
-  Score  ──→  outputs/leaderboard.{md,csv,json}
-                      │
-                      ▼
-               site/index.html  (static leaderboard)
-```
-
-1. **Ingest** (`boxbox.data`) — FastF1 (OpenF1 fallback) → normalised `RaceData`.
-2. **Extract** (`boxbox.extract`) — rule-based Type A/B/C decision points. State at lap *t* contains zero information from after lap *t−1* (plus current track status). Leakage is tested.
-3. **Simulate** (`boxbox.sim`) — per-car tyre-degradation fits + pit-loss estimates → counterfactual race time for any candidate strategy → ex-ante optimum (no future SC knowledge).
-4. **Harness** (`boxbox.harness`) — identical prompts to every model via OpenRouter, strict JSON answers, SHA-256 disk cache, cost ledger, mock mode.
-5. **Score** (`boxbox.score`) — `Δ_exante = sim(model action) − sim(ex-ante optimal)`; plus beat-the-team rate, invalid rate, consistency flip rate → leaderboard.
-6. **Live** (`boxbox.live`) — Sunday demo loop: poll OpenF1, trigger decisions, draft (never post) social updates. Replay mode runs historic races through the same pipeline.
-
----
-
-## Module map
-
-| Path | Purpose |
-|------|---------|
-| `src/boxbox/data/schemas.py` | All pydantic v2 models (single source of truth) |
-| `src/boxbox/data/ingest.py` | FastF1 → RaceData normalisation |
-| `src/boxbox/data/openf1.py` | OpenF1 REST client (historic + live) |
-| `src/boxbox/extract/decision_points.py` | Rule-based Type A/B/C extractor |
-| `src/boxbox/sim/` | Degradation fits, race simulator, optimal search |
-| `src/boxbox/harness/` | Prompt templates, disk cache, OpenRouter runner |
-| `src/boxbox/score/` | Per-call scoring + leaderboard aggregation |
-| `src/boxbox/live/` | Live Sunday loop + Nx-speed replay |
-| `scripts/` | Thin CLI wrappers over the library |
-| `analysis/figures.py` | Paper figures (PNG → `outputs/figures/`) |
-| `site/index.html` | Static leaderboard page |
-
----
-
-## Outputs
-
-| File | Description |
-|------|-------------|
-| `outputs/leaderboard.md` | Human-readable leaderboard |
-| `outputs/leaderboard.csv` | Machine-readable leaderboard |
-| `outputs/leaderboard.json` | Leaderboard consumed by `site/index.html` |
-| `outputs/scores.jsonl` | Per-call scored results |
-| `outputs/hypothesis_tests.md` | Pre-registered H1/H2/H3 statistical tests |
-| `outputs/contamination.md` | Per-model contamination analysis |
-| `outputs/cost_ledger.csv` | Per-call token + cost tracking |
-| `outputs/fable_comparison.md` | Claude Fable 5 exploratory data points (export-control withdrawal context) |
-| `outputs/figures/` | All paper figures (PNG) |
+| Step | Component | What it does |
+|---|---|---|
+| 1 | **Ingest** `boxbox.data` | FastF1 (OpenF1 fallback) → normalised `RaceData` |
+| 2 | **Extract** `boxbox.extract` | Rule-based Type A/B/C decision points. State at lap *t* contains zero information from after lap *t*. Leakage tested by automated assertion. |
+| 3 | **Simulate** `boxbox.sim` | Per-car tyre-degradation fits + pit-loss estimates → ex-ante optimum (no future SC knowledge) |
+| 4 | **Harness** `boxbox.harness` | Identical prompts to every model via OpenRouter, strict JSON answers, SHA-256 disk cache, cost ledger, mock mode |
+| 5 | **Score** `boxbox.score` | `Δ_exante = sim(model action) − sim(ex-ante optimal)` → beat-team rate, flip rate, invalid rate → leaderboard |
+1. **Ingest** — FastF1 (OpenF1 fallback) → normalised `RaceData`.
+2. **Extract** — rule-based Type A/B/C decision points. State at lap *t* contains zero information from after lap *t*. Leakage is tested by an automated assertion.
+3. **Simulate** — per-car tyre-degradation fits + pit-loss estimates → ex-ante optimum (no future SC knowledge).
+4. **Harness** — identical prompts to every model via OpenRouter, strict JSON answers, SHA-256 disk cache, cost ledger, mock mode.
+5. **Score** — `Δ_exante = sim(model action) − sim(ex-ante optimal)`; plus beat-the-team rate, flip rate, invalid rate → leaderboard.
 
 ---
 
 ## Pre-registration
 
-Before running any model on the full dataset, the design, hypotheses, and analysis plan were written down and committed to this repository with a timestamp, so the results could not be shaped by what the data showed.
+Before running any model on the full dataset, the design, hypotheses, and analysis plan were written down and committed to this repository with a timestamp, so the results could not shape the analysis after the fact.
 
-Hypotheses were pre-registered before data collection. The full procedure is in `docs/PREREGISTRATION.md`; amendments are in `docs/DECISIONS.md`. The pre-registration trail is anchored to git tags:
+The full procedure is in `docs/PREREGISTRATION.md`; amendments are in `docs/DECISIONS.md`. The trail is anchored to git tags — each is a distinct, separately timestamped commit verifiable by hash:
 
 ```bash
 git show prereg-v1 --no-patch --format="%H %ai %s"
@@ -167,18 +104,27 @@ git show prereg-v4 --no-patch --format="%H %ai %s"
 
 ---
 
-## Conventions
+## Outputs
 
-- Python 3.11+, pydantic v2, pytest. Formatting: `black` + `ruff`.
-- All thresholds live in `config/extraction.yaml` — never hardcoded.
-- Every assumption → `docs/DECISIONS.md` with one-line rationale.
-- Time units: seconds (float) everywhere. Laps are 1-indexed ints.
-- Mock mode is the default. Real runs require `ALLOW_SPEND=1` + `OPENROUTER_API_KEY`.
+| File | Description |
+|---|---|
+| `outputs/leaderboard.json` | Leaderboard (primary source of truth) |
+| `outputs/scores.jsonl` | Per-call scored results |
+| `outputs/hypothesis_tests.md` | H1/H2/H3 statistical test results |
+| `outputs/contamination.md` | Per-model contamination analysis |
+| `outputs/cost_ledger.csv` | Per-call token and cost tracking |
+| `outputs/figures/` | All paper figures (PNG) |
 
 ---
 
 ## Paper
 
-Full manuscript: [`paper/BOXBOX_Report.pdf`](paper/BOXBOX_Report.pdf)
+Full manuscript: [`paper/boxbox_final_complete.md`](paper/boxbox_final_complete.md)
 
-Muhammad Anas Nadeem · Department of Computer Science, Brunel University London
+**Muhammad Anas Nadeem** · Department of Computer Science, Brunel University London
+
+---
+
+## Cost
+
+Total model-inference spend: **~$13.46** across the main pass, consistency probe, and re-runs. Preregistered spend cap of $20 was never reached.
